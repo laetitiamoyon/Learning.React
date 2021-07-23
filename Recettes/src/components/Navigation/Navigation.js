@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
+import EditRecipe from '../EditRecipe/EditRecipe'
 import Home from '../Homes/Home'
 import Ingredients from '../Ingredients/Ingredients'
 import NewRecipe from '../NewRecipe/NewRecipe'
@@ -34,6 +35,7 @@ const Navigation = () =>
             <Route path="/ingredients" exact component={Ingredients} />
             <Route path="/creer-une-recette" exact component={NewRecipe} />
             <Route path="/description-de-la-recette/:id" exact component={RecipeDescription} />
+            <Route path="/modification-de-la-recette/:id" exact component={EditRecipe} />
         </Switch>
   </BrowserRouter>
   

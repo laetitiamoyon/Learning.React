@@ -1,0 +1,41 @@
+.formTitle { margin-top: 30px; text-align: center;}
+
+.formContainer
+{
+    margin-top: 50px;
+    margin-left: 200px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.submitButton
+{
+    width: 130px;
+    height: 30px;
+
+    background-color: turquoise;
+    border: turquoise;
+    border-radius: 8px;
+
+    color: white;
+    font-weight: 600;
+
+}
+
+.recipeTitle, .recipeDescription
+{
+    width: 500px;
+    border: 2px solid turquoise; 
+    border-radius: 8px;
+}
+
+.title { margin-top: 20px;}
+
+.selectIngredient
+{
+    width: 500px;
+    margin-bottom: 30px;
+    border: 2px solid turquoise;
+    border-radius: 8px;
+}
