@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './EditRecipe.module.css'
 import { useParams } from "react-router-dom";
-import { recipes } from '../Recipes/recipes.model'
+import { RecipeContext } from '../../recipes.provider'
 
-
-const EditRecipe = () => {
-
+const EditRecipe = () =>
+{
+    const { recipes } = useContext(RecipeContext)
     let { id } = useParams();
     const { title : t, ingredients, description } = recipes.find(r => r.id === parseInt(id))
     const [title] = useState(t)

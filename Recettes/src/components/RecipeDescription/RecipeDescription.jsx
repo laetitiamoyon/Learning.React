@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from "react-router-dom";
-import { recipes } from '../Recipes/recipes.model'
 import styles from './RecipeDescription.module.css'
 import { useHistory } from "react-router-dom";
+import { RecipeContext } from '../../recipes.provider'
 
 const RecipeDescription = () => 
 {
+    const { recipes } = useContext(RecipeContext)
     let { id } = useParams();
     const { title, ingredients, description } = recipes.find(r => r.id === parseInt(id))
 
@@ -18,7 +19,6 @@ const RecipeDescription = () =>
         <div className={styles.descriptionRecipe}>{description}</div>
         <button className={styles.editButton} onClick={onClick}>Modifier</button>
     </div>
-
 }
 
 export default RecipeDescription;

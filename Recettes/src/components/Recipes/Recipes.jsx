@@ -1,25 +1,20 @@
-
+import React, { useContext } from 'react'
 import styles from './Recipes.module.css'
-import { recipes } from './recipes.model'
 import Recipe from '../Recipe/Recipe'
-import RecipeDescription from '../RecipeDescription/RecipeDescription';
+import { RecipeContext } from '../../recipes.provider'
 
-const Recipes = () => <>
-    <h1 className={styles.title}>Nos recettes</h1>
+const Recipes = () => 
+{
+    const { recipes } = useContext(RecipeContext)
 
-    <div className={styles.recipeContainer}>
-        { recipes.map(r => <Recipe {...r} key={r.id} />) }
-    </div> 
+    return <>
+        <h1 className={styles.title}>Nos recettes</h1>
 
-</>
+        <div className={styles.recipeContainer}>
+            { recipes.map(r => <Recipe {...r} key={r.id} />) }
+        </div> 
 
-export const EditRecipes = () => <>
-    <h1 className={styles.title}>Nos recettes</h1>
-
-    <div className={styles.editRecipeContainer}>
-        { recipes.map(r => < RecipeDescription {...r} key={r.id} />) }
-    </div> 
-
-</>
+    </>
+}
 
 export default Recipes;
