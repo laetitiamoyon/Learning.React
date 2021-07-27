@@ -1,0 +1,33 @@
+@mixin text($fontSize : undefined, $color : undefined, $textAlign : undefined, $lineHeight : undefined, $fontWeight : undefind)
+{
+    @if ($fontSize != undefined) { font-size: $fontSize; }
+    @if ($color != undefined) { color: $color; }
+    @if ($textAlign != undefined) { text-align: $textAlign; }
+    @if ($lineHeight != undefined) { line-height: $lineHeight; }
+    @if ($fontWeight != undefined) { font-weight: $fontWeight; }
+}
+
+@mixin flex($justifyContent : undefined, $alignItems : undefined, $flexDirection : undefined)
+{
+    display : flex;
+    @if ($justifyContent != undefined) { justify-content: $justifyContent; }
+    @if ($alignItems != undefined) { align-items: $alignItems; }
+    @if ($flexDirection != undefined) { flex-direction: $flexDirection; }
+}
+
+@mixin widthHeight($width : undefined, $height : undefined)
+{
+    @if ($width != undefined) { width: $width; }
+    @if ($height != undefined) { height: $height; }
+}
+
+@mixin borderAndRadius($border: undefined, $radius : undefined)
+{
+    @if ($border != undefined) { border: $border; }
+    @if ($radius != undefined) { border-radius: $radius; }  
+}
+
+// @import '../../../../styles/styles.scss'; 
+//@include widthHeight(40px, 30px)
+//@include text(40px, undefined, blue)
+// margin-top : $spacingMd;
