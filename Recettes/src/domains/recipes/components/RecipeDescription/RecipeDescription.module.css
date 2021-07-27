@@ -13,19 +13,26 @@
 
 .editButton
 {
-    background-color: turquoise;
-    border: turquoise;
+    color: white;
+    font-weight: 600;
+
+    border: #BDBDBD solid 1px;
+    color: #394044;
     border-radius: 8px;
 
     width: 130px;
     height: 30px;
 
-    color: white;
-    font-weight: 600;
+    cursor: pointer;
 
     margin-left: 280px;
     margin-top: 30px;
 
-    cursor: pointer;
+}
+
+.editButton:hover {
+    background-color: #D15E3F;
+    border:  #D15E3F;
+    color: white;
 }
 

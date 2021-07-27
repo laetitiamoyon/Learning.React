@@ -1,14 +1,12 @@
 export const recipes = [
     { 
         id : 1, 
-        image : "./images/carbonara.jpg", 
         title : "Pizza Régina", 
         description : "1. Commencez à préparer la garniture de votre pizza en divisant les tranches de jambon blanc et en les coupant en deux. 2. Couvrez la pâte à pizza de sauce tomate, puis parsemez de jambon, de champignons et de Mozzarella râpée Galbani. 3. Assaisonnez avec un peu d’huile d’olive et de poivre. 4. Enfournez et laissez cuire pendant environ 15 minutes." 
     },
     
     { 
         id : 2, 
-        image : "./images/salade-cesar.jpg",
         title : "Salade César",
         description : "Couper les tranches de pain en cube. Faire revenir les croûtons dans un filet d'huile d'olive pendant 2 minutes et laisser refroidir. Couper le poulet en petits morceaux et faire cuire dans une poêle anti-adhésive sans matière grasse. Faire dorer et laisser refroidir. Déchirer la laitue et petits morceaux. Pour finir dresser dans l'ordre : salade, poulet, croûtons et sauce César." 
     },

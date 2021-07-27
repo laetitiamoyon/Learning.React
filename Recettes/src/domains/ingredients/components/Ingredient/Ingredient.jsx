@@ -33,7 +33,7 @@ const Ingredient = ({id, title, quantity, unity}) =>
                 name="unité"
                 value={unity}/>
             <div className={styles.updateButton} onClick={updateIngredient}>Mettre à jour</div>
-            <div className={styles.removeButton} onClick={removeIngredient}>Supprimer</div>
+            <div className={styles.removeButton} onClick={removeIngredient}>X</div>
         </form>
 
     </>

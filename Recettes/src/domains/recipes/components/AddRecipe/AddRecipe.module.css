@@ -1,4 +1,4 @@
-.formTitle { margin-top: 30px; text-align: center;}
+.formTitle { font-size: 30px; text-align: center; margin-bottom: 32px;}
 
 .formContainer
 {
@@ -14,19 +14,23 @@
     width: 130px;
     height: 30px;
 
-    background-color: turquoise;
-    border: turquoise;
+    color: #394044;
+    border: #BDBDBD solid 1px;
     border-radius: 8px;
 
-    color: white;
     font-weight: 600;
-
+}
+.submitButton:hover {
+    background-color: #D15E3F;
+    border:  #D15E3F;
+    color: white;
 }
 
 .recipeTitle, .recipeDescription
 {
     width: 500px;
-    border: 2px solid turquoise; 
+    color: #394044;
+    border: #BDBDBD solid 1px;
     border-radius: 8px;
 }
 
@@ -36,6 +40,7 @@
 {
     width: 500px;
     margin-bottom: 30px;
-    border: 2px solid turquoise;
+    color: #394044;
+    border: #BDBDBD solid 1px;
     border-radius: 8px;
 }

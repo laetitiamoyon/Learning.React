@@ -1,5 +1,5 @@
 import React, { useState, useContext} from 'react';
-import styles from './NewRecipe.module.css'
+import styles from './AddRecipe.module.css'
 import { useHistory } from 'react-router-dom';
 import { RecipeContext } from '../../recipes.provider';
 

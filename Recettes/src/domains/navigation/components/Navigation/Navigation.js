@@ -9,13 +9,14 @@ import Home from '../Homes/Home'
 
 
 import styles from './Navigation.module.css'
+import AddIngredient from '../../../ingredients/components/AddIngredient/AddIngredient'
 
 const Navigation = () =>
     <BrowserRouter>
         <nav className={styles.navBar}>
             <ul className={styles.leftUl}>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Accueil</Link>
                 </li>
                 <li>
                     <Link to="/recettes">Recettes</Link>
@@ -34,8 +35,8 @@ const Navigation = () =>
             <Route path="/description-de-la-recette/:id" exact component={RecipeDescription} />
             <Route path="/modification-de-la-recette/:id" exact component={EditRecipe} />
             <Route path="/creer-une-recette/" exact component={NewRecipe} />
+            <Route path="/ajouter-un-ingredient/" exact component={AddIngredient} />
         </Switch>
-  </BrowserRouter>
-  
+    </BrowserRouter>
 
 export default Navigation;

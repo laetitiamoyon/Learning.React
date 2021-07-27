@@ -1,32 +1,38 @@
 .navBar 
 { 
-    background-color: turquoise;
+    background-color: rgba(0, 0, 0, 0.5);
+    position : absolute;
     
     display : flex;
     
-    padding-top : 8px;
-    padding-bottom : 8px;
-    margin-bottom : 24px;
+    height : 8vh;
+    width : 100%;
+
+    line-height: 8vh;
 }
 
 a {
-    color: white;
+    color: #394044;
     list-style: none;
     text-decoration: none;
 
-    margin-left: 30px;
+    margin-left: 100px;
 
-    font-weight: 600;
+    color: white;
+    font-size:20px;
+    font-weight: 400;
+
+    
+    text-shadow: 2px 2px 4px #000000c7;
 }
 
 a:hover {
-    color: rgb(219, 239, 245);
+    color: #ffae71;
   }
 
 .leftUl, .rightUl
 {
     width : 50%;
-    height: 50px;
 
     display: flex;
     align-items: center;

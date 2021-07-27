@@ -16,9 +16,9 @@ const Recipes = () =>
 
     return <>
 
-            <div className={styles.addRecipeContainer}>
+        <div className={styles.addRecipeContainer}>
             <div className={styles.addRecipeElement} onClick={onClick}>Ajouter une recette</div>
-            </div>
+        </div>
         <h1 className={styles.title}>Nos recettes</h1>
 
         <div className={styles.recipeContainer}>

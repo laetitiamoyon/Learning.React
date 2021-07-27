@@ -14,19 +14,23 @@
     width: 130px;
     height: 30px;
 
-    background-color: turquoise;
-    border: turquoise;
+    border: #BDBDBD solid 1px;
+    color: #394044;
     border-radius: 8px;
 
-    color: white;
     font-weight: 600;
+}
 
+.submitButton:hover {
+    background-color: #D15E3F;
+    border:  #D15E3F;
+    color: white;
 }
 
 .recipeTitle, .recipeDescription
 {
     width: 500px;
-    border: 2px solid turquoise; 
+    border: 1px solid #BDBDBD; 
     border-radius: 8px;
 }
 
@@ -36,6 +40,6 @@
 {
     width: 500px;
     margin-bottom: 30px;
-    border: 2px solid turquoise;
+    border: 1px solid #BDBDBD; 
     border-radius: 8px;
 }

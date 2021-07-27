@@ -1,7 +1,16 @@
-.title { font-size: 30px; text-align: center; margin-bottom: 32px;}
+.title
+{
+    font-size: 28px;
+    text-align: center;
+
+    padding-top: calc(8vh + 32px);
+    margin-bottom: 48px;
+}
 
 .recipeContainer
 {
+    margin: auto;
+   
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -9,34 +18,24 @@
     gap: 32px;
 
     width: 80%;
-
-    margin: auto;
 }
 
 .addRecipeContainer 
 { 
-    background-color: turquoise;
-    float: right;
-    margin-top: -70px;
-
-    width: 250px;
-}
-
-a {
-    color: white;
-    list-style: none;
-    text-decoration: none;
-
+    background-color: #F1EEEB;
+    color: #394044;
+    cursor: pointer;
     font-weight: 600;
+    float: right;
+    margin-top: -74px;
+    font-size: 20px;
+
+    width: 230px;
 }
 
-a:hover {
-    color: rgb(219, 239, 245);
-  }
-
-.leftUl, .rightUl
-{
-
-    list-style-type: none;
+.addRecipeContainer:hover {
+    color: #D15E3F;
 }
+
+
 

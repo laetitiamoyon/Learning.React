@@ -1,0 +1,35 @@
+.title
+{ 
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    text-align: center;
+
+    padding-top: calc(8vh + 32px);
+    margin-bottom: 32px;
+    
+    text-shadow: 2px 2px 4px black;
+}
+
+.descriptionAppli
+{
+    color: white;
+    text-align: center;
+
+    text-shadow: 3px 3px 6px #000000ad;
+ 
+    width: 800px;
+ 
+    margin: auto;
+}
+
+.homeContainer
+{
+    background-image: url(./Images/background-home.jpeg);
+    background-size: cover;
+    
+    margin: auto;
+    padding: 0 24px;
+
+    height: 100vh;
+}

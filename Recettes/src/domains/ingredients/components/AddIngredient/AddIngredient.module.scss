@@ -1,12 +1,13 @@
 $color : blue;
+.formTitle { font-size: 30px; text-align: center; margin-bottom: 32px;}
 
 .formContainer
 {
     margin-top: 50px;
-    margin-left: 200px;
     margin-bottom: 50px;
 
     display: flex;
+    justify-content: center;
 }
 
 .submitButton
@@ -14,21 +15,25 @@ $color : blue;
     width: 130px;
     height: 30px;
 
-    background-color: $color;
-    border:$color;
+    color: #394044;
+    border: #BDBDBD solid 1px;
     border-radius: 8px;
 
-    color: white;
     font-weight: 600;
 
     margin-left: 20px;
+}
+.submitButton:hover {
+    background-color: #D15E3F;
+    border:  #D15E3F;
+    color: white;
 }
 
 .ingredientTitle, .ingredientQuantity, .ingredientUnity
 {
     width: 130px;
 
-    border: 2px solid turquoise; 
+    border: 1px solid #BDBDBD; 
     border-radius: 8px;
 
     margin-left: 22px;
@@ -36,4 +41,4 @@ $color : blue;
     text-align: center;
 }
 
-.title { margin-top: 20px;}
+

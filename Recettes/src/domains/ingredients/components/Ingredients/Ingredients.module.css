@@ -1,4 +1,11 @@
-.title { font-size: 30px; text-align: center; margin-bottom: 32px;}
+.title
+{
+    font-size: 28px;
+    text-align: center;
+
+    padding-top: calc(8vh + 32px);
+    margin-bottom: 32px;
+}
 
 .recipeContainer
 {
@@ -13,7 +20,21 @@
     margin: auto;
 }
 
-.addIngredientContainer
-{
-    background-color: blueviolet;
+.addIngredientContainer 
+{ 
+    background-color: #F1EEEB;
+    color: #394044;
+    cursor: pointer;
+    font-weight: 600;
+    float: right;
+    margin-top: -74px;
+    font-size: 20px;
+
+    width: 230px;
 }
+
+.addIngredientContainer:hover {
+    color: #D15E3F;
+}
+
+.title { font-size: 30px; text-align: center; margin-bottom: 32px;}

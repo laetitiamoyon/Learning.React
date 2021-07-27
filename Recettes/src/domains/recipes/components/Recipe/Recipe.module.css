@@ -2,7 +2,7 @@
 {
     width: 200px;
     height: 200px;
-    border: turquoise solid 3px;
+    border: #BDBDBD solid 1px;
     border-radius: 8px;
 
     text-align: center;
@@ -11,39 +11,50 @@
 
 .recipeButton
 {
-    background-color: turquoise;
     color: white;
     font-weight: 600;
 
+    border: #BDBDBD solid 1px;
+    color: #394044;
     border-radius: 8px;
 
     width: 130px;
     height: 30px;
+    line-height: 30px;
 
     cursor: pointer;
 
     margin: auto;
+}
+
+.recipeButton:hover {
+    background-color: #D15E3F;
+    border:  #D15E3F;
+    color: white;
 }
 
 .recipeTitle
 {
+    cursor: pointer;
     padding-bottom: 15px;
+    padding-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
 }
+
+.recipeTitle:hover { color: #D15E3F;}
 
 .removeButton 
 {
-    background-color: red;
-    color: white;
-    font-weight: 600;
+    color: red;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
 
-    border-radius: 8px;
-
-    width: 130px;
-    height: 30px;
+    width: 28px;
+    height: 25px;
 
     cursor: pointer;
-
-    margin: auto;
-    margin-top: 22px;
-
+    float: right;
+    margin-right: 10px;
 }
