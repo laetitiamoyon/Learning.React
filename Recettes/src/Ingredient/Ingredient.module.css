@@ -1,0 +1,70 @@
+.formContainer
+{
+    margin-top: 50px;
+    margin-left: 200px;
+
+    display: flex;
+}
+
+.submitButton
+{
+    width: 130px;
+    height: 30px;
+
+    background-color: turquoise;
+    border: turquoise;
+    border-radius: 8px;
+
+    color: white;
+    font-weight: 600;
+}
+
+.ingredientTitle, .ingredientQuantity, .ingredientUnity
+{
+    width: 130px;
+
+    border: 2px solid turquoise; 
+    border-radius: 8px;
+
+    text-align: center;
+
+    margin-left: 20px;
+}
+
+.title { margin-top: 20px;}
+
+.removeButton 
+{
+    background-color: red;
+
+    color: white;
+    text-align: center;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    width: 130px;
+    height: 30px;
+
+    cursor: pointer;
+
+    margin-left: 22px;
+}
+
+.updateButton
+{
+    background-color: blue;
+    
+    color: white;
+    font-weight: 600;
+    text-align: center;
+
+    border-radius: 8px;
+
+    width: 130px;
+    height: 30px;
+
+    cursor: pointer;
+
+    margin-left: 22px;
+}

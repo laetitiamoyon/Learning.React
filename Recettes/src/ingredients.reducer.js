@@ -1,18 +1,29 @@
-import { newGuid } from 'shared/utils/string'
+import { newGuid } from './shared/utils/string'
 
 export const ingredientsReducer = (state, action) =>
 {
-    const { title, quantity, unity } = action.payload
 
     switch (action.type)
     {
-        case 'ADD_INGREDIENT' : return [
-            ...state,
-            { title, quantity, unity, id : newGuid() }
-        ]
+        case 'ADD_INGREDIENT' : 
+        {
+            const { title, quantity, unity } = action.payload
 
-        case 'REMOVE_INGREDIENT' : return 
-            state.filter(ingredient => ingredient.id !== id)
+            return [...state, { title, quantity, unity, id : newGuid() }]
+        }
+
+        case 'REMOVE_INGREDIENT' : 
+        {
+            const { id } = action.payload
+            
+            return state.filter(ingredient => ingredient.id !== id)
+        }
+        case 'UPDATE_INGREDIENT' : 
+        {
+            const { title, quantity, unity } = action.payload
+            
+            return [...state, { title, quantity, unity }]
+        }
 
         default : return state
     }
