@@ -1,8 +1,7 @@
-import { newGuid } from './shared/utils/string'
+import { newGuid } from '../../shared/utils/string'
 
 export const recipesReducer = (state, action) =>
 {
-
     switch (action.type)
     {
         case 'ADD_RECIPE' : 

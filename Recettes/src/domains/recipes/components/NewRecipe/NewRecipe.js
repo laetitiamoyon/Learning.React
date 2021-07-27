@@ -1,7 +1,7 @@
 import React, { useState, useContext} from 'react';
 import styles from './NewRecipe.module.css'
-import { RecipeContext } from '../../recipes.provider'
 import { useHistory } from 'react-router-dom';
+import { RecipeContext } from '../../recipes.provider';
 
 const NewRecipe = () => 
 {

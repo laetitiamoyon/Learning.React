@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import styles from './EditRecipe.module.css'
 import { useParams } from "react-router-dom";
-import { RecipeContext } from '../../recipes.provider'
+import { RecipeContext } from '../../recipes.provider';
+
 
 const EditRecipe = () =>
 {

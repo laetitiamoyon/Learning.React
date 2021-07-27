@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
-import { recipesReducer } from './recipes.reducer'
 import { recipes as initialState } from './recipes.model'
+import { recipesReducer } from './recipes.reducer'
 
 export const RecipeContext = React.createContext({})
 export const RecipeContextProvider = ({children}) =>

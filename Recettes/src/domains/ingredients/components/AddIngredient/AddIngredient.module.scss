@@ -1,3 +1,4 @@
+$color : blue;
 
 .formContainer
 {
@@ -13,8 +14,8 @@
     width: 130px;
     height: 30px;
 
-    background-color: blue;
-    border: blue;
+    background-color: $color;
+    border:$color;
     border-radius: 8px;
 
     color: white;

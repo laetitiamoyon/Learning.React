@@ -12,3 +12,31 @@
 
     margin: auto;
 }
+
+.addRecipeContainer 
+{ 
+    background-color: turquoise;
+    float: right;
+    margin-top: -70px;
+
+    width: 250px;
+}
+
+a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+a:hover {
+    color: rgb(219, 239, 245);
+  }
+
+.leftUl, .rightUl
+{
+
+    list-style-type: none;
+}
+

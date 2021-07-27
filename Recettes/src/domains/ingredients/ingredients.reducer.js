@@ -1,4 +1,4 @@
-import { newGuid } from './shared/utils/string'
+import { newGuid } from '../../shared/utils/string'
 
 export const ingredientsReducer = (state, action) =>
 {

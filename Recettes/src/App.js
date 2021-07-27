@@ -1,15 +1,13 @@
 import React from 'react';
-import {RecipeContextProvider} from './recipes.provider';
-import {IngredientContextProvider} from './ingredients.provider';
 import Navigation from './domains/navigation/components/Navigation/Navigation';
+import { IngredientContextProvider } from './domains/ingredients/ingredients.provider';
+import { RecipeContextProvider } from './domains/recipes/recipes.provider';
 
 const App = () => 
-    <>
-        <RecipeContextProvider>
-            <IngredientContextProvider>
-                <Navigation/>
-            </IngredientContextProvider>
-        </RecipeContextProvider>
-    </>
+    <RecipeContextProvider>
+        <IngredientContextProvider>
+            <Navigation/>
+        </IngredientContextProvider>
+    </RecipeContextProvider>
 
 export default App;

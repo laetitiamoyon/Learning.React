@@ -1,11 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-import EditRecipe from '../EditRecipe/EditRecipe'
+import Ingredients from '../../../ingredients/components/Ingredients/Ingredients'
+import EditRecipe from '../../../recipes/components/EditRecipe/EditRecipe'
+import NewRecipe from '../../../recipes/components/NewRecipe/NewRecipe'
+import Recipes from '../../../recipes/components/Recipes/Recipes'
+import RecipeDescription from '../../../recipes/components/RecipeDescription/RecipeDescription'
 import Home from '../Homes/Home'
-import Ingredients from '../Ingredients/Ingredients'
-import NewRecipe from '../NewRecipe/NewRecipe'
-import RecipeDescription from '../RecipeDescription/RecipeDescription'
-import Recipes from '../Recipes/Recipes'
+
+
 import styles from './Navigation.module.css'
 
 const Navigation = () =>
@@ -22,11 +24,6 @@ const Navigation = () =>
                     <Link to="/ingredients">Ingrédients</Link>
                 </li>
             </ul>
-            <ul className={styles.rightUl}>
-                <li>
-                    <Link to="/creer-une-recette" className={styles.addRecipe}>Ajouter une recette</Link>
-                </li>
-            </ul>
         </nav>
 
         <Switch>
@@ -36,6 +33,7 @@ const Navigation = () =>
             <Route path="/creer-une-recette" exact component={NewRecipe} />
             <Route path="/description-de-la-recette/:id" exact component={RecipeDescription} />
             <Route path="/modification-de-la-recette/:id" exact component={EditRecipe} />
+            <Route path="/creer-une-recette/" exact component={NewRecipe} />
         </Switch>
   </BrowserRouter>
   

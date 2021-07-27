@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import AddIngredient from '../AddIngredient/AddIngredient';
-import { IngredientContext } from '../ingredients.provider';
+import { IngredientContext } from '../../ingredients.provider';
 import styles from './Ingredient.module.css'
 
 

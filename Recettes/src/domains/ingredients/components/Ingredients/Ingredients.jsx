@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import styles from './Ingredients.module.css'
-import { IngredientContext } from '../../ingredients.provider'
-import Ingredient from '../../Ingredient/Ingredient';
-import AddIngredient from '../../AddIngredient/AddIngredient';
+import AddIngredient from '../AddIngredient/AddIngredient';
+import Ingredient from '../Ingredient/Ingredient';
+import { IngredientContext } from '../../ingredients.provider';
 
 const Ingredients = () => 
 {
@@ -12,14 +12,10 @@ const Ingredients = () =>
         <h1 className={styles.title}>Gérer les ingrédients</h1>
     
         <div className={styles.ingredientContainer}>
-            { ingredients.map(i => <Ingredient {...i} key={i.id} />)}
+            { ingredients && ingredients.map(i => <Ingredient {...i} key={i.id} />)}
         </div> 
         <div><AddIngredient/></div>
-    
     </>
-
 }
-
-
 
 export default Ingredients;
