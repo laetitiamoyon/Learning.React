@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { IngredientContext } from '../ingredients.provider';
-import styles from './AddIngredient.module.css'
+import styles from './AddIngredient.module.scss'
 
 const AddIngredient = () => 
 {
