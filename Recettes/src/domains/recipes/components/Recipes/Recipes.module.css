@@ -1,13 +1,29 @@
 .title
 {
+    color: white;
+    text-align: center;
     font-size: 28px;
     text-align: center;
 
     padding-top: calc(8vh + 32px);
-    margin-bottom: 48px;
+    margin-bottom: 32px;
+    
+    text-shadow: 2px 2px 4px black;
 }
 
 .recipeContainer
+{
+
+    background-image: url(./images/background-recipe.jpg);
+    background-size: cover;
+    
+    margin: auto;
+    padding: 0 24px;
+
+    height: 100vh;
+}
+
+.recipeElementContainer
 {
     margin: auto;
    
@@ -17,25 +33,8 @@
 
     gap: 32px;
 
-    width: 80%;
 }
 
-.addRecipeContainer 
-{ 
-    background-color: #F1EEEB;
-    color: #394044;
-    cursor: pointer;
-    font-weight: 600;
-    float: right;
-    margin-top: -74px;
-    font-size: 20px;
-
-    width: 230px;
+.addRecipe:hover {
+    color: #ffae71;
 }
-
-.addRecipeContainer:hover {
-    color: #D15E3F;
-}
-
-
-

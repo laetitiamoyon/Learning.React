@@ -1,42 +1,46 @@
-import React from 'react'
+import styles from './Navigation.module.css'
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 import Ingredients from '../../../ingredients/components/Ingredients/Ingredients'
 import EditRecipe from '../../../recipes/components/EditRecipe/EditRecipe'
-import NewRecipe from '../../../recipes/components/NewRecipe/NewRecipe'
 import Recipes from '../../../recipes/components/Recipes/Recipes'
 import RecipeDescription from '../../../recipes/components/RecipeDescription/RecipeDescription'
 import Home from '../Homes/Home'
-
-
-import styles from './Navigation.module.css'
 import AddIngredient from '../../../ingredients/components/AddIngredient/AddIngredient'
+import AddRecipe from '../../../recipes/components/AddRecipe/AddRecipe'
+import RightNavigation from '../RightNavigation/RightNavigation'
+import routes from '../../../../shared/constants/routes'
 
 const Navigation = () =>
-    <BrowserRouter>
+{
+    const { recipes, ingredients, addRecipe, addIngredient } = routes
+
+    return <BrowserRouter>
         <nav className={styles.navBar}>
             <ul className={styles.leftUl}>
                 <li>
                     <Link to="/">Accueil</Link>
                 </li>
                 <li>
-                    <Link to="/recettes">Recettes</Link>
+                    <Link to={recipes}>Recettes</Link>
                 </li>
                 <li>
-                    <Link to="/ingredients">Ingrédients</Link>
+                    <Link to={ingredients}>Ingrédients</Link>
                 </li>
             </ul>
+
+            <RightNavigation/>
         </nav>
 
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/recettes" exact component={Recipes} />
-            <Route path="/ingredients" exact component={Ingredients} />
-            <Route path="/creer-une-recette" exact component={NewRecipe} />
+            <Route path={recipes} exact component={Recipes} />
+            <Route path={ingredients} exact component={Ingredients} />
+            <Route path={addRecipe} exact component={AddRecipe} />
             <Route path="/description-de-la-recette/:id" exact component={RecipeDescription} />
             <Route path="/modification-de-la-recette/:id" exact component={EditRecipe} />
-            <Route path="/creer-une-recette/" exact component={NewRecipe} />
-            <Route path="/ajouter-un-ingredient/" exact component={AddIngredient} />
+            <Route path={addIngredient} exact component={AddIngredient} />
         </Switch>
     </BrowserRouter>
+}
 
 export default Navigation;

@@ -30,7 +30,7 @@ a:hover {
     color: #ffae71;
   }
 
-.leftUl, .rightUl
+.leftUl
 {
     width : 50%;
 
@@ -39,11 +39,4 @@ a:hover {
 
     margin : 0;
     list-style-type: none;
-}
-
-.rightUl
-{
-    justify-content: flex-end;
-
-    margin-right : 32px;
 }

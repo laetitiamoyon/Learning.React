@@ -3,7 +3,7 @@ import styles from './AddRecipe.module.css'
 import { useHistory } from 'react-router-dom';
 import { RecipeContext } from '../../recipes.provider';
 
-const NewRecipe = () => 
+const AddRecipe = () => 
 {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -50,4 +50,4 @@ const NewRecipe = () =>
     </>
 }
 
-export default NewRecipe;
+export default AddRecipe;

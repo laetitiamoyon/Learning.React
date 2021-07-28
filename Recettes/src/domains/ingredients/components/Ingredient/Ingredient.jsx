@@ -21,19 +21,19 @@ const Ingredient = ({id, title, quantity, unity}) =>
                 onChange={onTitleChange}
                 className={styles.ingredientTitle}
                 name="titre"
-                value={title}/>
+                defaultValue={title}/>
             <input 
                 onChange={onQuantityChange}
                 className={styles.ingredientQuantity}
-                name="quantité"
-                value={quantity}/>
+                placeholder="quantité"
+                defaultValue={quantity}/>
             <input 
                 onChange={onUnityChange}
                 className={styles.ingredientUnity}
                 name="unité"
-                value={unity}/>
+                defaultValue={unity}/>
             <div className={styles.updateButton} onClick={updateIngredient}>Mettre à jour</div>
-            <div className={styles.removeButton} onClick={removeIngredient}>X</div>
+            <div className={styles.removeButton} onClick={removeIngredient}></div>
         </form>
 
     </>

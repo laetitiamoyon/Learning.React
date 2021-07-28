@@ -7,8 +7,15 @@
 
 .titleRecipe
 {
+    color: white;
     text-align: center;
+    font-size: 28px;
+    text-align: center;
+
+    padding-top: calc(8vh + 32px);
     margin-bottom: 32px;
+    
+    text-shadow: 2px 2px 4px black;
 }
 
 .editButton
@@ -35,4 +42,3 @@
     border:  #D15E3F;
     color: white;
 }
-
