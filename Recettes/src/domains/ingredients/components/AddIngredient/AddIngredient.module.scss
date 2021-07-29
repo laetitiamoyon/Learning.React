@@ -12,13 +12,31 @@ $color : blue;
     text-shadow: 2px 2px 4px black;
 }
 
-.formContainer
+.addIngredientContainer
 {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    background-image: url(./Images/background-addIngredient.jpg);
+    background-size: cover;
+        
+    margin: auto;
+    padding: 0 24px;
+
+    height: 100vh;
+}
+
+.formElement
+{
+    margin-top: 80px;
+    margin-bottom: 80px;
 
     display: flex;
     justify-content: center;
+}
+
+.titleLabel
+{
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .submitButton
@@ -32,7 +50,7 @@ $color : blue;
 
     font-weight: 600;
 
-    margin-left: 20px;
+    margin-left: 45%;
 }
 .submitButton:hover {
     background-color: #D15E3F;
@@ -40,16 +58,19 @@ $color : blue;
     color: white;
 }
 
-.ingredientTitle, .ingredientQuantity, .ingredientUnity
+.ingredientInput
 {
-    width: 130px;
+    width: 180px;
 
     border: 1px solid #BDBDBD; 
     border-radius: 8px;
 
-    margin-left: 22px;
+    margin-left: 18px;
+    margin-right: 18px;
 
     text-align: center;
 }
+
+.titleLabel { margin-left: 12px;}
 
 

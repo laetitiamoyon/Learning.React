@@ -7,30 +7,22 @@ const Ingredient = ({id, title, quantity, unity}) =>
 {
     const { dispatch } = useContext(IngredientContext)
     const removeIngredient = () => dispatch({ type: 'REMOVE_INGREDIENT', payload : { id } })
-    const updateIngredient = () => dispatch({ type: 'UPDATE_INGREDIENT', payload : { title, quantity, unity } })
-
-  
-    const onTitleChange = (event) => onTitleChange(event.target.value)
-    const onQuantityChange = (event) => onQuantityChange(event.target.value)
-    const onUnityChange = (event) => onUnityChange(event.target.value)
+    const updateIngredient = () => dispatch({ type: 'UPDATE_INGREDIENT', payload : { title } })
 
 
     return <>
         <form className={styles.formContainer}>
             <input 
-                onChange={onTitleChange}
                 className={styles.ingredientTitle}
-                name="titre"
+                placeholder="titre"
                 defaultValue={title}/>
             <input 
-                onChange={onQuantityChange}
                 className={styles.ingredientQuantity}
                 placeholder="quantité"
                 defaultValue={quantity}/>
             <input 
-                onChange={onUnityChange}
                 className={styles.ingredientUnity}
-                name="unité"
+                placeholder="unité"
                 defaultValue={unity}/>
             <div className={styles.updateButton} onClick={updateIngredient}>Mettre à jour</div>
             <div className={styles.removeButton} onClick={removeIngredient}></div>

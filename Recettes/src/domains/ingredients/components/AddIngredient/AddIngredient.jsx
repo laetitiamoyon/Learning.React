@@ -27,28 +27,34 @@ const AddIngredient = () =>
     }
 
     return <>
-        <h1 className={styles.formTitle}>Ajouter un nouvel ingrédient</h1>
-        <form className={styles.formContainer} onSubmit={onSubmit}>
-            <input 
-                onChange={onTitleChange}
-                className={styles.ingredientTitle}
-                name="Nom de l'ingrédient"
-                value={title} required/>
-            
-            <input 
-                onChange={onQuantityChange}
-                className={styles.ingredientQuantity}
-                name="Quantité"
-                value={quantity} required/>
-            
-            <input 
-                onChange={onUnityChange}
-                className={styles.ingredientUnity}
-                name="Unité"
-                value={unity} required/>
-
-            <button className={styles.submitButton}>Créer</button>
-        </form>
+        <div className={styles.addIngredientContainer}>
+            <h1 className={styles.formTitle}>Ajouter un nouvel ingrédient</h1>
+            <form className={styles.formContainer} onSubmit={onSubmit}>
+                <div className={styles.formElement}>
+                    <label className={styles.titleLabel}>Nom de l'ingrédient :</label>
+                    <input 
+                        onChange={onTitleChange}
+                        className={styles.ingredientInput}
+                        placeholder="Nom de l'ingrédient"
+                        value={title} required/>
+                    
+                    <label className={styles.titleLabel}>Quantité :</label>
+                    <input 
+                        onChange={onQuantityChange}
+                        className={styles.ingredientInput}
+                        placeholder="Quantité"
+                        value={quantity} required/>
+                    
+                    <label className={styles.titleLabel}>Unité :</label>
+                    <input 
+                        onChange={onUnityChange}
+                        className={styles.ingredientInput}
+                        placeholder="Unité"
+                        value={unity} required/>
+                </div>
+                <button className={styles.submitButton}>Ajouter</button>
+            </form>
+        </div>
     </>
 };
 

@@ -8,6 +8,7 @@ export const RecipeContextProvider = ({children}) =>
     const [recipes, dispatch] = useReducer(recipesReducer, initialState)
 
     return <RecipeContext.Provider value={{recipes, dispatch}}>
-        {children}
+            {children}
     </RecipeContext.Provider>
+    
 }

@@ -1,3 +1,15 @@
+.addRecipeContainer
+{
+    background-image: url(./images/background-addRecipe.jpg);
+    background-size: cover;
+    
+    margin: auto;
+    padding: 0 24px;
+
+    height: 100vh;
+
+}
+
 .formTitle
 { 
     color: white;
@@ -13,11 +25,10 @@
 
 .formContainer
 {
-    margin-top: 50px;
-    margin-left: 200px;
-
     display: flex;
     flex-direction: column;
+    margin-left: 300px;
+
 }
 
 .submitButton
@@ -35,6 +46,23 @@
     background-color: #D15E3F;
     border:  #D15E3F;
     color: white;
+}
+
+
+.addIngredientButton 
+{
+    width: 50px;
+    height: 25px;
+    line-height: 20px;
+    font-size: 18px;
+
+    margin-left: 18px;
+
+    color: #394044;
+    border: #BDBDBD solid 1px;
+    border-radius: 8px;
+
+    font-weight: 600;
 }
 
 .recipeTitle, .recipeDescription
