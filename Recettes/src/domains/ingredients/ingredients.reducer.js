@@ -20,8 +20,11 @@ export const ingredientsReducer = (state, action) =>
         }
         case 'UPDATE_INGREDIENT' : 
         {
-            const { title, quantity, unity } = action.payload
-            return state.map(newTitle => newTitle !== title.id ? newTitle : title ) 
+            const { id, title, quantity, unity } = action.payload
+            
+            return state.map(ingredient => 
+                ingredient.id === id ? {...ingredient, title, quantity, unity} :
+                ingredient) 
         }
     
         default : return state

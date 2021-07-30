@@ -13,11 +13,16 @@ const RecipeDescription = () =>
     const history = useHistory();
     const onClick = () => history.push(`/modification-de-la-recette/${id}`, { id : id })
 
-    return <div className={styles.editRecipeContainer}>
+    return <div className={styles.descriptionRecipeContainer}>
         <h1 className={styles.titleRecipe}>{title}</h1>
-        <div className={styles.ingredientsRecipe}>{ingredients}</div>
-        <div className={styles.descriptionRecipe}>{description}</div>
-        <button className={styles.editButton} onClick={onClick}>Modifier</button>
+        <div className={styles.recipeContainer}>
+            <div className={styles.descriptionRecipe}>{description}</div>
+            <div className={styles.ingredientsRecipe}>Ingrédients : {ingredients}</div>
+            <div className={styles.buttonContainer}>
+                <button className={styles.editButton} onClick={onClick}>Modifier</button>
+            </div>
+
+        </div>
     </div>
 }
 

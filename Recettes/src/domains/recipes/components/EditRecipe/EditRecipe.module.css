@@ -1,12 +1,33 @@
-.formTitle{ margin-top: 30px; text-align: center;}
+.editRecipeContainer
+{
+    background-image: url(./images/background-editRecipe.jpg);
+    background-size: cover;
+    
+    margin: auto;
+    padding: 0 24px;
+
+    height: 100vh;
+
+}
+
+.formTitle
+{     
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    text-align: center;
+
+    padding-top: calc(8vh + 32px);
+    margin-bottom: 32px;
+    
+    text-shadow: 2px 2px 4px black;
+}
 
 .formContainer
 {
-    margin-top: 50px;
-    margin-left: 200px;
-
     display: flex;
     flex-direction: column;
+    margin-left: 300px;
 }
 
 .submitButton
@@ -17,6 +38,7 @@
     border: #BDBDBD solid 1px;
     color: #394044;
     border-radius: 8px;
+    margin-top: 32px;
 
     font-weight: 600;
 }
@@ -27,19 +49,20 @@
     color: white;
 }
 
-.recipeTitle, .recipeDescription
+.input
 {
     width: 500px;
     border: 1px solid #BDBDBD; 
     border-radius: 8px;
+    padding: 6px;
 }
 
-.title { margin-top: 20px;}
-
-.selectIngredient
+.title 
 {
-    width: 500px;
-    margin-bottom: 30px;
-    border: 1px solid #BDBDBD; 
-    border-radius: 8px;
+     margin-top: 20px; 
+
+     font-size: 18px;
+     color: white; 
+     font-weight: 400;
+     text-shadow: 2px 2px 4px black;
 }

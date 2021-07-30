@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styles from './EditRecipe.module.css'
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.provider';
 
 
@@ -8,23 +8,58 @@ const EditRecipe = () =>
 {
     const { recipes } = useContext(RecipeContext)
     let { id } = useParams();
-    const { title : t, ingredients, description } = recipes.find(r => r.id === parseInt(id))
-    const [title] = useState(t)
+    const { title, ingredients, description } = recipes.find(r => r.id === parseInt(id))
 
-    return <form className={styles.formContainer} onSubmit>
-        <label className={styles.title}>Titre:</label>
-        <input className={styles.recipeTitle} defaultValue={title}/>
-        
-        <label className={styles.title}> Description:</label>
-        <textarea rows="10" className={styles.recipeDescription} value={description}/>
+    const [newTitle, setNewTitle] = useState(title)
+    const [newDescription, setNewDescription] = useState(description)
+    const [newIngredients, setNewIngredients] = useState(ingredients)
 
-        <label className={styles.title}>Ingrédients </label>
-        <select className={styles.selectIngredient} >
-        <option>{ingredients}</option>
-        </select>
+    const { dispatch } = useContext(RecipeContext)
+    const updateRecipe = () => dispatch(
+    { 
+        type: 'UPDATE_RECIPE',
+        payload :
+        { 
+            id : parseInt(id), 
+            title : newTitle,
+            description : newDescription,
+            ingredients : newIngredients,
+        } 
+    })
 
-        <button className={styles.submitButton}>Enregistrer</button>
-    </form>
+    const history = useHistory()
+    const redirectToRecipes = () => history.push('/recettes')
+
+    const onChangeTitle = (event) => setNewTitle(event.target.value)
+    const onChangeDescription = (event) => setNewDescription(event.target.value)
+    const onChangeIngredients = (event) => setNewIngredients(event.target.value)
+    
+    const onSubmit = (event) =>
+    {
+        event.preventDefault()
+        updateRecipe()
+        redirectToRecipes()
+    }
+
+    return <div className={styles.editRecipeContainer} >
+            <h1 className={styles.formTitle}>Modifier la recette</h1>
+                <form className={styles.formContainer} onSubmit={onSubmit}>
+                    <label className={styles.title}>Titre:</label>
+                    <input className={styles.input} 
+                    onChange={onChangeTitle} 
+                    value={newTitle}/>
+                    
+                    <label className={styles.title}> Description:</label>
+                    <textarea rows="10" className={styles.input} 
+                    onChange={onChangeDescription} 
+                    value={newDescription}/>
+
+                    <label className={styles.title}>Ingrédients </label>
+                    <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> 
+                 
+                    <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
+                </form>
+            </div>
 }
 
 export default EditRecipe;
