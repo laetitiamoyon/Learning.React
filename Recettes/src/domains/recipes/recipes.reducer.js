@@ -16,6 +16,14 @@ export const recipesReducer = (state, action) =>
             
             return state.filter(recipe => recipe.id !== id)
         }
+        case 'UPDATE_RECIPE' : 
+        {
+            const { id, title, description, ingredients } = action.payload
+            
+            return state.map(recipe => 
+                recipe.id === id ? {...recipe, title, description, ingredients} :
+                recipe) 
+        }
 
         default : return state
     }
