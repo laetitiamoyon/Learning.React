@@ -23,13 +23,9 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.formContainer
-{
-    display: flex;
-    flex-direction: column;
-    margin-left: 300px;
+.formContainer { display: flex; flex-direction: column; }
 
-}
+.formElementContainer { display: flex; justify-content: center; }
 
 .submitButton
 {
@@ -41,6 +37,8 @@
     border-radius: 8px;
 
     font-weight: 600;
+
+    margin-top: 32px;
 }
 .submitButton:hover {
     background-color: #D15E3F;
@@ -53,10 +51,10 @@
 {
     width: 50px;
     height: 25px;
+
     line-height: 20px;
     font-size: 18px;
 
-    margin-left: 18px;
 
     color: #394044;
     border: #BDBDBD solid 1px;
@@ -65,21 +63,37 @@
     font-weight: 600;
 }
 
-.recipeTitle, .recipeDescription
+.input
 {
     width: 500px;
     color: #394044;
     border: #BDBDBD solid 1px;
     border-radius: 8px;
+    padding: 6px;
 }
 
 .title { margin-top: 20px;}
 
-.selectIngredient
+
+.addIngredientButton
 {
-    width: 500px;
-    margin-bottom: 30px;
+    width: 200px;
+    height: 40px;
+
     color: #394044;
-    border: #BDBDBD solid 1px;
+    border: dotted 2px;
     border-radius: 8px;
+
+    font-weight: 600;
+
+    margin-top: 32px;
+
 }
+.addIngredientButton:hover {
+    background-color: #D15E3F;
+    border:  #D15E3F;
+    color: white;
+}
+
+
+

@@ -34,12 +34,6 @@ const Ingredient = ({id, title, quantity, unity}) =>
             value={newTitle}/>
 
         <input 
-            placeholder="quantité"
-            type="number"
-            onChange={onChangeQuantity}
-            value={newQuantity}/>
-
-        <input 
             placeholder="unité"
             onChange={onChangeUnity}
             value={newUnity}/>

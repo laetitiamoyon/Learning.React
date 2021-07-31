@@ -9,6 +9,7 @@ import AddIngredient from '../../../ingredients/components/AddIngredient/AddIngr
 import AddRecipe from '../../../recipes/components/AddRecipe/AddRecipe'
 import RightNavigation from '../RightNavigation/RightNavigation'
 import routes from '../../../../shared/constants/routes'
+import AddMoreIngredient from '../../../ingredients/components/AddMoreIngredient/AddMoreIngredient'
 
 const Navigation = () =>
 {
