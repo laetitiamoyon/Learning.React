@@ -8,6 +8,7 @@ const AddIngredient = () =>
 {
     const { ingredients } = useContext(IngredientContext)
     const [addedIngredients, setAddedIngredients] = useState([])
+    const [ingredientSelectedList, setIngredientSelectedList] = useState([addedIngredients])
     const [currentWindow, setWindow] = useState('ADD_INGREDIENT_BUTTON')
     const [id, setId] = useState()
     const [title, setTitle] = useState()
@@ -20,7 +21,8 @@ const AddIngredient = () =>
         setWindow('INGREDIENT_SELECTED')
         
         const {id, title, unity} = ingredients.find(i => i.id === parseInt(event.target.value))
-        
+
+
         setId(id)
         setTitle(title)
         setUnity(unity)
@@ -32,6 +34,15 @@ const AddIngredient = () =>
     const addIngredientToTheList = () => 
         setAddedIngredients([...addedIngredients, { id : newGuid(), title, unity, quantity }])
 
+    const removeIngredientToTheList = (id) => 
+    {
+        const updateIngredientSelected = [...addedIngredients]
+        updateIngredientSelected.filter(ingredient => ingredient.id !== id);
+
+        setIngredientSelectedList(updateIngredientSelected)
+    }
+
+
     const onSubmit = (event) =>
     {
         event.preventDefault()
@@ -39,20 +50,22 @@ const AddIngredient = () =>
         setWindow('ADD_INGREDIENT_BUTTON')
     }
 
-    return <>
+    return <> 
+
         { addedIngredients &&  
             <div className={styles.ingredients}>Ingrédients :</div> }
         
         <ul className={styles.addedIngredients}>
             { addedIngredients &&
-                addedIngredients.map(i => <AddedIngredient key={i.id} {...i} />) }
-        </ul>     
+                addedIngredients.map(i => <AddedIngredient key={i.id} {...i} />)}
+             <button onClick={removeIngredientToTheList}>Supprimer l'ingrédient</button> 
+        </ul>   
 
         { currentWindow === 'ADD_INGREDIENT_BUTTON' && 
         <button className={styles.button} onClick={clickOnAddIngredient}>
             Ajouter un ingrédient
         </button>}
-       
+    
         <div className={styles.formContainer}>
             { ['SELECT_AN_INGREDIENT','INGREDIENT_SELECTED'].includes(currentWindow) &&
             <select 
@@ -68,7 +81,7 @@ const AddIngredient = () =>
                 <div className={styles.inputContainer}>
                     <label>Unité :</label>
                     <div className={styles.input}>{unity}</div>
-                </div>
+                </div> 
 
                 <div className={styles.inputContainer}>
                     <label>Quantité :</label>
@@ -84,8 +97,7 @@ const AddIngredient = () =>
                         Ajouter votre ingrédient
                     </button>}
             </div>}
-            {/* <button className={styles.addButton}>Ajouter</button>
-            <button className={styles.removeButton}>Supprimer</button> */}
+            
         </div>
     </>
 };

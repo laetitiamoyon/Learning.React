@@ -23,7 +23,7 @@ const AddRecipe = () =>
         event.preventDefault()
 
         addRecipe()
-        // redirectToRecipes();
+        redirectToRecipes();
     }
 
     return <div className={styles.addRecipeContainer}>
