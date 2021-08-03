@@ -73,27 +73,3 @@
 }
 
 .title { margin-top: 20px;}
-
-
-.addIngredientButton
-{
-    width: 200px;
-    height: 40px;
-
-    color: #394044;
-    border: dotted 2px;
-    border-radius: 8px;
-
-    font-weight: 600;
-
-    margin-top: 32px;
-
-}
-.addIngredientButton:hover {
-    background-color: #D15E3F;
-    border:  #D15E3F;
-    color: white;
-}
-
-
-
