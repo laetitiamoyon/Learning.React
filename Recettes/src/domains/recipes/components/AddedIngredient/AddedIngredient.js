@@ -1,4 +1,4 @@
-import styles from './AddedIngredient.module.css'
+import styles from './AddedIngredient.module.scss'
 
 
 const AddedIngredient = ({id, title, quantity, unity, removeAddedIngredient}) =>

@@ -1,4 +1,4 @@
-import styles from './Navigation.module.css'
+import styles from './Navigation.module.scss'
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 import Ingredients from '../../../ingredients/components/Ingredients/Ingredients'
 import EditRecipe from '../../../recipes/components/EditRecipe/EditRecipe'

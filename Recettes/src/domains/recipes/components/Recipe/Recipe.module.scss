@@ -1,0 +1,53 @@
+@import '../../../../styles/styles.scss'; 
+
+.recipeElement
+{
+    @include widthHeight(230px, 215px);
+
+    background-color: #e2f5ef;
+    border-radius: $defaultBorderRadius;
+
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.6);
+}
+
+.viewRecipeButton
+{
+    @include widthHeight(130px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+
+    cursor: pointer;
+
+    margin: auto;
+}
+.viewRecipeButton:hover { color : $secondaryColor;}
+
+.recipeTitle
+{
+    cursor: pointer;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    @include text($textH5FontSize, undefined, $fontWeightSemiBold);
+}
+
+.recipeTitle:hover { color: $secondaryColor;}
+
+.recipeImage { background-size: contain; @include widthHeight(100px, 100px); }
+
+.removeButton 
+{
+    background-image: url(./Icons/trash.png);
+    background-size: cover;
+
+    @include widthHeight(25px, 25px);
+
+    cursor: pointer;
+    float: right;
+    
+    margin-right: 10px;
+    margin-top: 10px;
+}

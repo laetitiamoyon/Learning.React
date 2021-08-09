@@ -1,9 +1,8 @@
+@import '../../../../styles/styles.scss'; 
+
 .title
 {
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    text-align: center;
+    @include text($textH3FontSize, $primaryColor, undefined, center);
 
     padding-top: calc(8vh + 32px);
     margin-bottom: 32px;
@@ -33,4 +32,4 @@
     gap: 32px;
 }
 
-.addRecipe:hover { color: #ffae71; }
+.addRecipe:hover { color: $secondaryColor; }

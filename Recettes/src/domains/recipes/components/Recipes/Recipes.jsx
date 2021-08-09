@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import styles from './Recipes.module.css'
+import styles from './Recipes.module.scss'
 import Recipe from '../Recipe/Recipe'
 import { RecipeContext } from '../../recipes.provider'
 

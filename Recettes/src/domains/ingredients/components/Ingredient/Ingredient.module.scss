@@ -1,20 +1,17 @@
+@import '../../../../styles/styles.scss'; 
 
 .formContainer
 {
     margin-top: 50px;
 
-    display: flex;
-    justify-content: center;
+    @include flex(center);
 
     > input
     {
-        width: 130px;
+        @include text(undefined, $tertiaryColor, undefined, center);
+        @include borderAndRadius($defaultBorder, $defaultBorderRadius);
 
-        border: #BDBDBD solid 1px;
-        border-radius: 8px;
-        
-        color: #394044;
-        text-align: center;
+        width: 130px;
 
         margin-left: 20px;
     }
@@ -24,13 +21,13 @@
 
 .removeButton 
 {
+    /* mixin perso, superBackground */
     background-image: url(./Icons/trash.png);
     background-size: cover;
 
     filter: drop-shadow(0 0 0.75rem black);
 
-    width: 25px;
-    height: 25px;
+    @include widthHeight(25px, 25px);
 
     cursor: pointer;
 
@@ -39,27 +36,19 @@
 
 .updateButton
 {
-    width: 130px;
-    height: 30px;
+    @include widthHeight(130px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH5LineHeight);
 
-    line-height: 26px;
-    text-align: center;
-    color: #394044;
-    font-weight: 600;
+    margin-left: 20px;
 
     background-color: #F1EEEB;
 
     cursor: pointer;
-
-    border: #BDBDBD solid 1px;
-    border-radius: 8px;
-
-    margin-left: 20px;
 }
-.updateButton:hover
+.updateButton:hover /* utilise ta mixin */
 {
-
-    background-color: #ffae71;
-    border:  #ffae71;
-    color: white;
+    background-color: $secondaryColor;
+    border:  $secondaryColor;
+    color: $primaryColor;
 }

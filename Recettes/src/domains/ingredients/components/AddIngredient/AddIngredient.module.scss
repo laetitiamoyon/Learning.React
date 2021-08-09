@@ -1,10 +1,8 @@
-$color : blue;
+@import '../../../../styles/styles.scss'; 
+
 .formTitle
 { 
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    text-align: center;
+    @include text($textH3FontSize, $primaryColor, undefined, center);
 
     padding-top: calc(8vh + 32px);
     margin-bottom: 32px;
@@ -28,46 +26,34 @@ $color : blue;
     margin-top: 80px;
     margin-bottom: 80px;
 
-    display: flex;
-    justify-content: center;
+    @include flex(center);
 }
 
-.titleLabel
-{
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-}
+.titleLabel { @include text($textH5FontSize, $primaryColor, $fontWeightRegular); }
 
 .submitButton
 {
-    width: 130px;
-    height: 30px;
-
-    color: #394044;
-    border: #BDBDBD solid 1px;
-    border-radius: 8px;
-
-    font-weight: 600;
+    @include widthHeight(130px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
 
     margin-left: 45%;
 }
-.submitButton:hover
+.submitButton:hover /* Mixins : globales, _personalMixins, et l'inclure dans le styles.scss, buttonHover */
 {
-    background-color: #D15E3F;
-    border:  #D15E3F;
-    color: white;
+    background-color: $secondaryColor;
+    border:  $secondaryColor;
+    color: $primaryColor;
 }
 
 .ingredientInput
 {
     width: 180px;
 
-    border: 1px solid #BDBDBD; 
-    border-radius: 8px;
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
 
-    margin-left: 18px;
-    margin-right: 18px;
+    margin-left: $spacingSm;
+    margin-right: $spacingSm;
 
     text-align: center;
 }

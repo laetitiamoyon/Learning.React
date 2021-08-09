@@ -1,9 +1,8 @@
+@import '../../../../styles/styles.scss'; 
+
 .title
 { 
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    text-align: center;
+    @include text($textH3FontSize, $primaryColor, undefined, center);
 
     padding-top: calc(8vh + 32px);
     margin-bottom: 32px;
@@ -13,8 +12,7 @@
 
 .descriptionAppli
 {
-    color: white;
-    text-align: center;
+    @include text(undefined, $primaryColor, undefined, center);
 
     text-shadow: 3px 3px 6px #000000ad;
  
@@ -25,9 +23,11 @@
 
 .homeContainer
 {
+    /* Utilise ta mixin */
     background-image: url(./Images/background-home.jpeg);
     background-size: cover;
     
+    /* ceux partagés, marginPadding */
     margin: auto;
     padding: 0 24px;
 

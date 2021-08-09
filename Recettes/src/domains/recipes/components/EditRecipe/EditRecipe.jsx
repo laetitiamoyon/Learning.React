@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import styles from './EditRecipe.module.css'
+import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.provider';
 import { updateRecipeAction } from '../../recipes.action';

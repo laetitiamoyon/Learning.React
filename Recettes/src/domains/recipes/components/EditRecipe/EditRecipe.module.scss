@@ -1,0 +1,62 @@
+@import '../../../../styles/styles.scss'; 
+
+.editRecipeContainer
+{
+    // Utilise ta mIXIN
+    background-image: url(./images/background-editRecipe.jpg);
+    background-size: cover;
+    
+    // Utilise notre mixin marginPAdding
+    margin: auto;
+    padding: 0 24px;
+
+    height: 100vh;
+
+}
+
+.formTitle
+{     
+    @include text($textH3FontSize, $primaryColor, undefined, center);
+    
+    padding-top: calc(8vh + 32px);
+    margin-bottom: 32px;
+    
+    text-shadow: 2px 2px 4px black;
+}
+
+.formContainer { @include flex(undefined, undefined, column); margin-left: 300px; }
+
+.submitButton
+{
+    @include widthHeight(130px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+
+    margin-top: 32px;
+}
+.submitButton:hover
+{
+    // buttonHover
+    background-color: $secondaryColor;
+    border:  $secondaryColor;
+    color: $primaryColor;
+}
+
+.input
+{
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor);
+
+    width: 500px;
+
+    padding: 6px;
+}
+
+.title 
+{
+    @include text($textH5FontSize, $primaryColor, $fontWeightRegular);
+
+    margin-top: 20px; 
+
+    text-shadow: 2px 2px 4px black;
+}

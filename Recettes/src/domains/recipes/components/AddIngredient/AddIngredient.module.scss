@@ -1,0 +1,79 @@
+@import '../../../../styles/styles.scss'; 
+
+.ingredients { margin-top: 32px;}
+
+.addedIngredients { list-style : square; }
+
+.button
+{
+    @include widthHeight(200px, 40px);
+    @include dottedBorderAndRadius($dottedBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+}
+
+.button:hover
+{
+    /* Utilise ta mixin */
+    background-color: $secondaryColor;
+    border:  $secondaryColor;
+    color: $primaryColor;
+}
+
+.select
+{
+    width: 500px;
+
+    @include text(undefined, $tertiaryColor);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+    padding: 6px;
+    margin-top: 32px;
+    margin-bottom : 4px;
+}
+
+.inputContainer
+{ 
+    /* Utilise la mixin grid */
+    display : grid;
+    grid-template-columns: 80px 1fr;
+    margin-left : 12px;
+}
+.input { margin-left : 12px; }
+
+.addIngredientToTheList
+{
+    display : flex;
+
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+    /* Utilise la mixin marginPadding*/
+    margin : auto;
+    padding : 12px 16px;
+    
+    margin-top: 32px;
+}
+.addIngredientToTheList:hover {
+    // Utilise ta mixin
+    background-color: $secondaryColor;
+    border:  $secondaryColor;
+    color: $primaryColor;
+}
+
+
+.removeButton
+{
+    @include widthHeight(100px, 30px);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+    margin-left: 12px;
+}
+
+.removeButton:hover
+{
+    // Utilise ta mixin
+    background-color: $secondaryColor;
+    border:  $secondaryColor;
+    color: $primaryColor;
+}

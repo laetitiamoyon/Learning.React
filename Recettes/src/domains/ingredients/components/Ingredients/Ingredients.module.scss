@@ -1,9 +1,8 @@
+@import '../../../../styles/styles.scss'; 
+
 .title
 {
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    text-align: center;
+    @include text($textH3FontSize, $primaryColor, undefined, center);
 
     padding-top: calc(8vh + 32px);
     margin-bottom: 32px;
@@ -13,6 +12,7 @@
 
 .ingredientContainer
 {
+    /* Utilise ta mixin */
     background-image: url(./images/background-ingredient.jpg);
     background-size: cover;
 

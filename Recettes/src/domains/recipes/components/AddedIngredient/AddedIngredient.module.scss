@@ -1,0 +1,18 @@
+@import '../../../../styles/styles.scss'; 
+
+.li { padding-top: 10px; }
+
+.removeButton
+{
+    @include widthHeight(100px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+
+    margin-left: 12px;
+}
+.removeButton:hover
+{
+    background-color: $secondaryColor;
+    border:  $secondaryColor;
+    color: $primaryColor;
+}

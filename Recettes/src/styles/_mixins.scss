@@ -1,4 +1,4 @@
-@mixin text($fontSize : undefined, $color : undefined, $textAlign : undefined, $lineHeight : undefined, $fontWeight : undefind)
+@mixin text($fontSize : undefined, $color : undefined, $fontWeight : undefined, $textAlign : undefined, $lineHeight : undefined)
 {
     @if ($fontSize != undefined) { font-size: $fontSize; }
     @if ($color != undefined) { color: $color; }
@@ -24,6 +24,12 @@
 @mixin borderAndRadius($border: undefined, $radius : undefined)
 {
     @if ($border != undefined) { border: $border; }
+    @if ($radius != undefined) { border-radius: $radius; }  
+}
+
+@mixin dottedBorderAndRadius($border: undefined, $radius : undefined)
+{
+    @if ($dottedBorder != undefined) { border: $dottedBorder; }
     @if ($radius != undefined) { border-radius: $radius; }  
 }
 
