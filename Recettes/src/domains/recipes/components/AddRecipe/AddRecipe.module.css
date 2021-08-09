@@ -40,7 +40,8 @@
 
     margin-top: 32px;
 }
-.submitButton:hover {
+.submitButton:hover
+{
     background-color: #D15E3F;
     border:  #D15E3F;
     color: white;
@@ -55,20 +56,22 @@
     line-height: 20px;
     font-size: 18px;
 
-
     color: #394044;
+    font-weight: 600;
+   
     border: #BDBDBD solid 1px;
     border-radius: 8px;
-
-    font-weight: 600;
 }
 
 .input
 {
     width: 500px;
+   
     color: #394044;
+   
     border: #BDBDBD solid 1px;
     border-radius: 8px;
+   
     padding: 6px;
 }
 

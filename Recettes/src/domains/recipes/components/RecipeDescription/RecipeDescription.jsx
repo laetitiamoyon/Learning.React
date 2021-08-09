@@ -8,20 +8,21 @@ const RecipeDescription = () =>
 {
     const { recipes } = useContext(RecipeContext)
     let { id } = useParams();
-    const { title, ingredients, description } = recipes.find(r => r.id === parseInt(id))
+    const { title, ingredients, description } = recipes.find(r => r.id === id)
 
     const history = useHistory();
     const onClick = () => history.push(`/modification-de-la-recette/${id}`, { id : id })
 
     return <div className={styles.descriptionRecipeContainer}>
         <h1 className={styles.titleRecipe}>{title}</h1>
+       
         <div className={styles.recipeContainer}>
             <div className={styles.descriptionRecipe}>{description}</div>
             <div className={styles.ingredientsRecipe}>Ingrédients : {ingredients}</div>
+           
             <div className={styles.buttonContainer}>
                 <button className={styles.editButton} onClick={onClick}>Modifier</button>
             </div>
-
         </div>
     </div>
 }

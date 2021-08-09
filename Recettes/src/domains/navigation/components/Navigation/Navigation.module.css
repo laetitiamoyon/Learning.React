@@ -12,23 +12,20 @@
 }
 
 a {
-    color: #394044;
-    list-style: none;
-    text-decoration: none;
-
-    margin-left: 100px;
 
     color: white;
     font-size:20px;
     font-weight: 400;
+    text-decoration: none;
 
-    
+    list-style: none;
+
+    margin-left: 100px;
+
     text-shadow: 2px 2px 4px #000000c7;
 }
 
-a:hover {
-    color: #ffae71;
-  }
+a:hover { color: #ffae71; }
 
 .leftUl
 {

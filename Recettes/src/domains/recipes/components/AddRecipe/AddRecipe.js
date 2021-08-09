@@ -3,6 +3,7 @@ import styles from './AddRecipe.module.css'
 import { RecipeContext } from '../../recipes.provider';
 import AddIngredient from '../AddIngredient/AddIngredient';
 import { useHistory } from 'react-router-dom';
+import { addRecipeAction } from '../../recipes.action';
 
 const AddRecipe = () => 
 {
@@ -13,7 +14,7 @@ const AddRecipe = () =>
     const history = useHistory();
     const redirectToRecipes = () => history.push('/recettes')
 
-    const addRecipe = () => dispatch({ type: 'ADD_RECIPE', payload : { title, description} })
+    const addRecipe = () => dispatch(addRecipeAction(title, description))
 
     const onTitleChange = (event) => setTitle(event.target.value)
     const onDescriptionChange = (event) => setDescription(event.target.value)
@@ -49,7 +50,6 @@ const AddRecipe = () =>
                 <AddIngredient/>
 
                 <button className={styles.submitButton}>Enregistrer</button>
-                
             </form>
         </div>
     </div>

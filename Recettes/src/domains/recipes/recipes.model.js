@@ -1,6 +1,6 @@
 export const recipes = [
     { 
-        id : 1, 
+        id : "1", 
         image : "./images/regina.jpg",
         ingredients : "lardons, Sel, Huile, Champignons marinés à l'huile, Jambon blanc, Sauce tomate, Mozzarella, Pâte à pizza",
         title : "Pizza Régina", 
@@ -8,7 +8,7 @@ export const recipes = [
     },
     
     { 
-        id : 2, 
+        id : "2", 
         image : "./images/salade-cersar.jpg",
         ingredients : "Tomates, Sel, Huile, Poulets, Oeufs, Laitue, Oignons, Olives",
         title : "Salade César",
@@ -16,7 +16,7 @@ export const recipes = [
     },
     
     { 
-        id : 3, 
+        id : "3", 
         image : "./images/tarte-pommes.jpg",
         ingredients : "Pommes, Pâte feuilletée, Beurre, Sucre",
         title : "Tarte aux pommes", 
@@ -24,7 +24,7 @@ export const recipes = [
     },
     
     { 
-        id : 4, 
+        id : "4", 
         image : "./images/carbonara.jpg",
         title : "Pate Carbonara",
         ingredients : "Crème fraiche, Lardons, Oeufs, Jaune d'oeufs, Pâtes, Parmesan",
@@ -32,7 +32,7 @@ export const recipes = [
     },
     
     { 
-        id : 5, 
+        id : "5", 
         image : "./images/curry-legumes.jpg",
         ingredients : "Courgettes, Poivrons, Carottes, Curry en poudre, Lait de coco",
         title : "Curry de légume", 
@@ -40,7 +40,7 @@ export const recipes = [
     },
 
     { 
-        id : 6, 
+        id : "6", 
         image : "./images/risotto.jpg",
         ingredients : "Riz spécial risotto, Crème fraiche, Cèpes, Vin, Bouillon de légumes",
         title : "Risotto aux cèpes",
@@ -48,7 +48,7 @@ export const recipes = [
     },
 
     { 
-        id : 7, 
+        id : "7", 
         image : "./images/tarte-courgettes.jpg",
         ingredients : "Courgettes, Pâte brisée, Crème fraiche, Oeufs, Fromage rapée",
         title : "Tarte aux courgettes",
@@ -56,7 +56,7 @@ export const recipes = [
     },
 
     { 
-        id : 8, 
+        id : "8", 
         ingredients : "Pains spécial tacos, Courgettes, Oignons, Mais, Coriandre, Avocat",
         title : "Tacos mexicain",
         description : "A la poêle, faire dorer l'oignon émincé dans un peu d'huile d'olive. Rajouter la viande, assaisonner et laisser cuire 5 min. Laver les feuilles de laitue. Couper les tomates et le poivron en petits dés. Incorporer le tout à la poêlée avec le coulis de tomate, et poursuivre la cuisson pendant 5 min. Egoutter les haricots rouges et les ajouter 2 min avant la fin de cuisson. Hors du feu, ajuster l'assaisonnement et saupoudrer généreusement de cumin; on peut aussi rajouter quelques gouttes de Tabasco. Garnir les tortillas de préparation et les refermer en les roulant comme des crêpes. Disposer 1 feuille de laitue sur chaque tacos avant de servir."

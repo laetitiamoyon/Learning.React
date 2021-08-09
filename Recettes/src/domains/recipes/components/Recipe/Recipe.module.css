@@ -51,11 +51,13 @@
 {
     background-image: url(./Icons/trash.png);
     background-size: cover;
+
     width: 25px;
     height: 25px;
 
     cursor: pointer;
     float: right;
+    
     margin-right: 10px;
     margin-top: 10px;
 }

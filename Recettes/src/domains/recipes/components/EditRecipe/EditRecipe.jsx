@@ -2,30 +2,21 @@ import React, { useState, useContext } from 'react';
 import styles from './EditRecipe.module.css'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.provider';
+import { updateRecipeAction } from '../../recipes.action';
 
 
 const EditRecipe = () =>
 {
     const { recipes } = useContext(RecipeContext)
     let { id } = useParams();
-    const { title, ingredients, description } = recipes.find(r => r.id === parseInt(id))
+    const { title, ingredients, description } = recipes.find(r => r.id === id)
 
     const [newTitle, setNewTitle] = useState(title)
     const [newDescription, setNewDescription] = useState(description)
     const [newIngredients, setNewIngredients] = useState(ingredients)
 
     const { dispatch } = useContext(RecipeContext)
-    const updateRecipe = () => dispatch(
-    { 
-        type: 'UPDATE_RECIPE',
-        payload :
-        { 
-            id : parseInt(id), 
-            title : newTitle,
-            description : newDescription,
-            ingredients : newIngredients,
-        } 
-    })
+    const updateRecipe = () => dispatch(updateRecipeAction(id, newTitle, newDescription, newIngredients))
 
     const history = useHistory()
     const redirectToRecipes = () => history.push('/recettes')
@@ -42,24 +33,21 @@ const EditRecipe = () =>
     }
 
     return <div className={styles.editRecipeContainer} >
-            <h1 className={styles.formTitle}>Modifier la recette</h1>
-                <form className={styles.formContainer} onSubmit={onSubmit}>
-                    <label className={styles.title}>Titre:</label>
-                    <input className={styles.input} 
-                    onChange={onChangeTitle} 
-                    value={newTitle}/>
-                    
-                    <label className={styles.title}> Description:</label>
-                    <textarea rows="10" className={styles.input} 
-                    onChange={onChangeDescription} 
-                    value={newDescription}/>
+        <h1 className={styles.formTitle}>Modifier la recette</h1>
 
-                    <label className={styles.title}>Ingrédients </label>
-                    <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> 
-                 
-                    <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
-                </form>
-            </div>
+        <form className={styles.formContainer} onSubmit={onSubmit}>
+            <label className={styles.title}>Titre:</label>
+            <input className={styles.input} onChange={onChangeTitle} value={newTitle}/>
+            
+            <label className={styles.title}> Description:</label>
+            <textarea rows="10" className={styles.input} onChange={onChangeDescription} value={newDescription}/>
+
+            <label className={styles.title}>Ingrédients </label>
+            <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> 
+            
+            <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
+        </form>
+    </div>
 }
 
 export default EditRecipe;

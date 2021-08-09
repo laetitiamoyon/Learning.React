@@ -30,11 +30,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 32px;
-
 }
 
-.addRecipe:hover {
-    color: #ffae71;
-}
+.addRecipe:hover { color: #ffae71; }

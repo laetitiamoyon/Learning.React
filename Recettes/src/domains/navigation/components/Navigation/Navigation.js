@@ -42,8 +42,6 @@ const Navigation = () => {
             <Route path={addIngredient} exact component={AddIngredient} />
         </Switch>
     </BrowserRouter>
-    
 }
-
 
 export default Navigation;

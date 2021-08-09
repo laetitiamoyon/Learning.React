@@ -7,7 +7,6 @@
     padding: 0 24px;
 
     height: 100vh;
-
 }
 
 .recipeContainer
@@ -15,8 +14,8 @@
     background-color: rgb(216, 214, 214);
 
     margin: auto;
-
     padding: 24px;
+
     width: 60%;
     line-height: 32px;
 
@@ -41,10 +40,8 @@
 
 .ingredientsRecipe
 {
- 
     line-height: 32px;
     margin-top: 22px;
-
 }
 
 .descriptionRecipe, .ingredientsRecipe
@@ -61,11 +58,10 @@
 
 .editButton
 {
-    color: white;
+    color: #394044;
     font-weight: 600;
 
     border: #BDBDBD solid 1px;
-    color: #394044;
     border-radius: 8px;
 
     width: 130px;
@@ -74,7 +70,8 @@
     cursor: pointer;
 }
 
-.editButton:hover {
+.editButton:hover
+{
     background-color: #D15E3F;
     border:  #D15E3F;
     color: white;

@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import styles from './AddedIngredient.module.css'
 
 
-const AddedIngredient = ({title, quantity, unity}) =>
-{
-    return <li>
+const AddedIngredient = ({id, title, quantity, unity, removeAddedIngredient}) =>
+    <li className={styles.li}>
         {quantity}{unity} de {title}
-        {/* <button className={styles.removeButton}>Supprimer</button> */}
+        <button className={styles.removeButton} onClick={() => removeAddedIngredient(id)}>Supprimer</button> 
     </li>
-}
 
 export default AddedIngredient
