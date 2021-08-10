@@ -7,7 +7,7 @@
 
 @mixin superBackground($image: undefined, $size : undefined)
 {
-    @if ($image != undefined) { background-image: url(); }
+    @if ($image != undefined) { background-image: $image; }
     @if ($size != undefined) { background-size: cover; }  
 }
 
