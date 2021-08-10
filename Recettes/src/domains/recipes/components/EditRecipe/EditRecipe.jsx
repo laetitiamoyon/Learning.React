@@ -21,11 +21,11 @@ const EditRecipe = () =>
     const history = useHistory()
     const redirectToRecipes = () => history.push('/recettes')
 
-    const onChangeTitle = (event) => setNewTitle(event.target.value)
-    const onChangeDescription = (event) => setNewDescription(event.target.value)
-    const onChangeIngredients = (event) => setNewIngredients(event.target.value)
+    const onChangeTitle = event => setNewTitle(event.target.value)
+    const onChangeDescription = event => setNewDescription(event.target.value)
+    const onChangeIngredients = event => setNewIngredients(event.target.value)
     
-    const onSubmit = (event) =>
+    const onSubmit = event =>
     {
         event.preventDefault()
         updateRecipe()

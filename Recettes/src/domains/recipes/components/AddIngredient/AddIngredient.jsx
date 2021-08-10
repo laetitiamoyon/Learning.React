@@ -43,7 +43,7 @@ const AddIngredient = () =>
     }
 
     return <> 
-        { addedIngredients && <div className={styles.ingredients}>Ingrédients :</div> }
+        { addedIngredients && <div className={styles.ingredients}></div> }
         
         <ul className={styles.addedIngredients}>
             { addedIngredients && addedIngredients.map(i => 

@@ -1,0 +1,19 @@
+
+@mixin dottedBorderAndRadius($border: undefined, $radius : undefined)
+{
+    @if ($dottedBorder != undefined) { border: $dottedBorder; }
+    @if ($radius != undefined) { border-radius: $radius; }  
+}
+
+@mixin superBackground($image: undefined, $size : undefined)
+{
+    @if ($image != undefined) { background-image: url(); }
+    @if ($size != undefined) { background-size: cover; }  
+}
+
+@mixin buttonHover($primaryColor: undefined, $defaultBorder: undefined)
+{
+    @if ($primaryColor != undefined) { background-color: $primaryColor; }
+    @if ($defaultBorder != undefined) { border: $defaultBorder; } 
+    @if ($primaryColor != undefined) { color: $primaryColor; }  
+}

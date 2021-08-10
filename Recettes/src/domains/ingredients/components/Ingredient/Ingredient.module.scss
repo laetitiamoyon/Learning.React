@@ -21,7 +21,7 @@
 
 .removeButton 
 {
-    @include superBackground(url(../images/icons/trash-red.png), $size);
+    @include superBackground(url(../images/icons/trash-red.png), cover);
 
     filter: drop-shadow(0 0 0.75rem black);
 
@@ -45,4 +45,4 @@
     cursor: pointer;
 }
 
-.updateButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
+.updateButton:hover { @include buttonHover($primaryColor, $defaultBorder); }

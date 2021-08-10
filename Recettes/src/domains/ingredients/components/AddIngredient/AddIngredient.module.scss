@@ -12,8 +12,8 @@
 
 .addIngredientContainer
 {
-    @include superBackground(url(../images/backgrounds/add-ingredient.jpg), $size);
-    @include marginPadding($marginAuto, $padding);
+    @include superBackground(url(../images/backgrounds/add-ingredient.jpg), cover);
+    @include marginPadding(auto, 0 24px);
 
     height: 100vh;
 }
@@ -36,7 +36,7 @@
 
     margin-left: 45%;
 }
-.submitButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
+.submitButton:hover { @include buttonHover($primaryColor, $defaultBorder); }
 
 .ingredientInput
 {

@@ -11,7 +11,7 @@
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
 }
 
-.button:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
+.button:hover { @include buttonHover($primaryColor, $defaultBorder); }
 
 .select
 {
@@ -25,7 +25,7 @@
     margin-bottom : 4px;
 }
 
-.inputContainer { @include grid($gridTemplateColumns); margin-left : 12px; }
+.inputContainer { @include grid(80px 1fr); margin-left : 12px; }
 
 .input { margin-left : 12px; }
 
@@ -35,11 +35,11 @@
 
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include marginPadding($marginAuto, $padding);
+    @include marginPadding(auto, 0 24px);
     
     margin-top: 32px;
 }
-.addIngredientToTheList:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
+.addIngredientToTheList:hover { @include buttonHover($primaryColor, $defaultBorder); }
 
 
 .removeButton
@@ -51,4 +51,4 @@
     margin-left: 12px;
 }
 
-.removeButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
+.removeButton:hover { @include buttonHover($primaryColor, $defaultBorder); }

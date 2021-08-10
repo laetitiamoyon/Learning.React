@@ -5,16 +5,16 @@ export const addRecipeAction = (title, description) => ({
 
 export const removeRecipeAction = (id) => ({ 
     type: 'REMOVE_RECIPE',
-     payload : { id } 
+    payload : { id } 
 })
 
-export const updateRecipeAction = (id, newTitle, newDescription, newIngredients) => ({ 
+export const updateRecipeAction = (id, title, description, ingredients) => ({ 
     type: 'UPDATE_RECIPE',
     payload :
     { 
-        id : id, 
-        title : newTitle,
-        description : newDescription,
-        ingredients : newIngredients,
+        id, 
+        title,
+        description,
+        ingredients,
     } 
 })

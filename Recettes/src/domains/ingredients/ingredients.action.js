@@ -8,12 +8,12 @@ export const removeIngredientAction = (id) => ({
     payload : { id } 
 })
 
-export const updateIngredientAction = (id, newTitle, newUnity) => ({ 
+export const updateIngredientAction = (id, title, unity) => ({ 
     type: 'UPDATE_INGREDIENT',
     payload :
     { 
-        id : id, 
-        title : newTitle,
-        unity : newUnity
+        id, 
+        title,
+        unity
     } 
 })

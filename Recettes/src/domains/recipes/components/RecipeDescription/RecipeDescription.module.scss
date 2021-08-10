@@ -2,8 +2,8 @@
 
 .descriptionRecipeContainer
 {
-    @include superBackground(url(../images/backgrounds/description-recipe.jpg), $size);
-    @include marginPadding($marginAuto, $padding);
+    @include superBackground(url(../images/backgrounds/description-recipe.jpg), cover);
+    @include marginPadding(auto, 0 24px);
 
     height: 100vh;
 }
@@ -12,6 +12,7 @@
 {
     background-color: rgb(216, 214, 214);
 
+    // marginPadding
     margin: auto;
     padding: 24px;
 
@@ -40,11 +41,7 @@
     margin-top: 22px;
 }
 
-.descriptionRecipe, .ingredientsRecipe
-{
-    margin: auto;
-    padding: 12px;
-}
+.descriptionRecipe, .ingredientsRecipe { @include marginPadding(auto, 12px); }
 
 .buttonContainer { @include flex(center);}
 
@@ -57,4 +54,4 @@
     cursor: pointer;
 }
 
-.editButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
+.editButton:hover { @include buttonHover($primaryColor, $defaultBorder); }

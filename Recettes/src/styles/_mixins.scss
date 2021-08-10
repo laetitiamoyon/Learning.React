@@ -1,13 +1,12 @@
 @mixin text(
     $fontSize : undefined, 
-    $color : undefined, 
+    $primaryColor : undefined, 
     $fontWeight : undefined, 
     $textAlign : undefined, 
-    $lineHeight : undefined
-)
+    $lineHeight : undefined)
 {
     @if ($fontSize != undefined) { font-size: $fontSize; }
-    @if ($color != undefined) { color: $color; }
+    @if ($primaryColor != undefined) { color: $primaryColor; }
     @if ($textAlign != undefined) { text-align: $textAlign; }
     @if ($lineHeight != undefined) { line-height: $lineHeight; }
     @if ($fontWeight != undefined) { font-weight: $fontWeight; }
@@ -17,8 +16,7 @@
     $justifyContent : undefined, 
     $alignItems : undefined, $flexDirection : undefined, 
     $gap : undefined, 
-    $flexWrap : undefined
-)
+    $flexWrap : undefined)
 {
     display : flex;
     @if ($justifyContent != undefined) { justify-content: $justifyContent; }
@@ -33,8 +31,7 @@
     $gridTemplateRows : undefined, 
     $justifyItems: undefined, 
     $alignItems: undefined, 
-    $gridGap: undefined
-)
+    $gridGap: undefined)
 {
     display : grid;
     @if ($gridTemplateColumns != undefined) { grid-template-columns: $gridTemplateColumns; }
@@ -48,8 +45,7 @@
     $gridColumn : undefined, 
     $gridRow : undefined, 
     $justifySelf: undefined, 
-    $alignSelf: undefined, 
-)
+    $alignSelf: undefined)
 {
     display : grid;
     @if ($gridColumn != undefined) { grid-column: $gridColumn; }
@@ -70,28 +66,8 @@
     @if ($radius != undefined) { border-radius: $radius; }  
 }
 
-@mixin dottedBorderAndRadius($border: undefined, $radius : undefined)
-{
-    @if ($dottedBorder != undefined) { border: $dottedBorder; }
-    @if ($radius != undefined) { border-radius: $radius; }  
-}
-
-@mixin superBackground($image: undefined, $size : undefined)
-{
-    @if ($image != undefined) { background-image: $image; }
-    @if ($size != undefined) { background-size: $size; }  
-}
-
-@mixin buttonHover($backgroundColor: undefined, $defaultBorder: undefined, $color: undefined)
-{
-    @if ($backgroundColor != undefined) { background-color: $backgroundColor; }
-    @if ($defaultBorder != undefined) { border: $defaultBorder; } 
-    @if ($color != undefined) { color: $color; }  
-}
-
 @mixin marginPadding($marginAuto: undefined, $padding: undefined)
 {
     @if ($marginAuto != undefined) { margin: $marginAuto; }
     @if ($padding != undefined) { padding: $padding; } 
 }
-

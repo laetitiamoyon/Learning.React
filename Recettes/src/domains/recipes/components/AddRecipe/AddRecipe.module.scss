@@ -2,8 +2,8 @@
 
 .addRecipeContainer
 {
-    @include superBackground(url(../images/backgrounds/add-recipe.jpg), $size);
-    @include marginPadding($marginAuto, $padding);
+    @include superBackground(url(../images/backgrounds/add-recipe.jpg), cover);
+    @include marginPadding(auto, 0 24px);
 
     height: 100vh;
 }
@@ -30,7 +30,7 @@
 
     margin-top: 32px;
 }
-.submitButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
+.submitButton:hover { @include buttonHover($primaryColor, $defaultBorder); }
 
 .addIngredientButton 
 {
