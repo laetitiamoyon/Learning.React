@@ -2,12 +2,8 @@
 
 .addRecipeContainer
 {
-    // Utilise ta mixin
-    background-image: url(./images/background-addRecipe.jpg);
-    background-size: cover;
-    
-    margin: auto;
-    padding: 0 24px;
+    @include superBackground(url(./images/backgrounds/add-recipe.jpg), $size);
+    @include marginPadding($marginAuto, $padding);
 
     height: 100vh;
 }
@@ -22,7 +18,7 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.formContainer { display: flex; flex-direction: column; }
+.formContainer { @include flex(undefined, undefined, column); }
 
 .formElementContainer { @include flex(center); }
 
@@ -34,13 +30,7 @@
 
     margin-top: 32px;
 }
-.submitButton:hover
-{
-    // UTilise ta mixin
-    background-color: $secondaryColor;
-    border:  $secondaryColor;
-    color: $primaryColor;
-}
+.submitButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
 
 .addIngredientButton 
 {

@@ -21,9 +21,7 @@
 
 .removeButton 
 {
-    /* mixin perso, superBackground */
-    background-image: url(./Icons/trash.png);
-    background-size: cover;
+    @include superBackground(url(./images/icons/trash-red.png), $size);
 
     filter: drop-shadow(0 0 0.75rem black);
 
@@ -46,9 +44,5 @@
 
     cursor: pointer;
 }
-.updateButton:hover /* utilise ta mixin */
-{
-    background-color: $secondaryColor;
-    border:  $secondaryColor;
-    color: $primaryColor;
-}
+
+.updateButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }

@@ -1,7 +1,8 @@
+@import '../../../../styles/styles.scss'; 
+
 .rightUl
 {
-    display : flex;
-    justify-content: flex-end;
+    @include flex(flex-end);
 
     width: 100%;
     

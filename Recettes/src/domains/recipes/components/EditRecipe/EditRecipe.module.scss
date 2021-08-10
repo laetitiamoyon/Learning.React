@@ -2,16 +2,10 @@
 
 .editRecipeContainer
 {
-    // Utilise ta mIXIN
-    background-image: url(./images/background-editRecipe.jpg);
-    background-size: cover;
-    
-    // Utilise notre mixin marginPAdding
-    margin: auto;
-    padding: 0 24px;
+    @include superBackground(url(./images/backgrounds/edit-recipe.jpg), $size);
+    @include marginPadding($marginAuto, $padding);
 
     height: 100vh;
-
 }
 
 .formTitle
@@ -34,13 +28,7 @@
 
     margin-top: 32px;
 }
-.submitButton:hover
-{
-    // buttonHover
-    background-color: $secondaryColor;
-    border:  $secondaryColor;
-    color: $primaryColor;
-}
+.submitButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
 
 .input
 {

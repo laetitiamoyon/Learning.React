@@ -10,9 +10,4 @@
 
     margin-left: 12px;
 }
-.removeButton:hover
-{
-    background-color: $secondaryColor;
-    border:  $secondaryColor;
-    color: $primaryColor;
-}
+.removeButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }

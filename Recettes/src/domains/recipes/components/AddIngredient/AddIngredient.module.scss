@@ -31,13 +31,8 @@
     margin-bottom : 4px;
 }
 
-.inputContainer
-{ 
-    /* Utilise la mixin grid */
-    display : grid;
-    grid-template-columns: 80px 1fr;
-    margin-left : 12px;
-}
+.inputContainer { @include grid($gridTemplateColumn); margin-left : 12px; }
+
 .input { margin-left : 12px; }
 
 .addIngredientToTheList
@@ -46,19 +41,11 @@
 
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-
-    /* Utilise la mixin marginPadding*/
-    margin : auto;
-    padding : 12px 16px;
+    @include marginPadding($marginAuto, $padding);
     
     margin-top: 32px;
 }
-.addIngredientToTheList:hover {
-    // Utilise ta mixin
-    background-color: $secondaryColor;
-    border:  $secondaryColor;
-    color: $primaryColor;
-}
+.addIngredientToTheList:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
 
 
 .removeButton
@@ -70,10 +57,4 @@
     margin-left: 12px;
 }
 
-.removeButton:hover
-{
-    // Utilise ta mixin
-    background-color: $secondaryColor;
-    border:  $secondaryColor;
-    color: $primaryColor;
-}
+.removeButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }

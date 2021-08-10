@@ -14,12 +14,9 @@
 }
 
 a {
+    @include text($textH4FontSize, $primaryColor, $fontWeightRegular);
 
-    color: white;
-    font-size:20px;
-    font-weight: 400;
     text-decoration: none;
-
     list-style: none;
 
     margin-left: 100px;

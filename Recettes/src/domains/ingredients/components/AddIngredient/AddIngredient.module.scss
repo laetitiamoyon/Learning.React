@@ -12,11 +12,8 @@
 
 .addIngredientContainer
 {
-    background-image: url(./Images/background-addIngredient.jpg);
-    background-size: cover;
-        
-    margin: auto;
-    padding: 0 24px;
+    @include superBackground(url(./images/backgrounds/add-ingredient.jpg), $size);
+    @include marginPadding($marginAuto, $padding);
 
     height: 100vh;
 }
@@ -39,12 +36,7 @@
 
     margin-left: 45%;
 }
-.submitButton:hover /* Mixins : globales, _personalMixins, et l'inclure dans le styles.scss, buttonHover */
-{
-    background-color: $secondaryColor;
-    border:  $secondaryColor;
-    color: $primaryColor;
-}
+.submitButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }
 
 .ingredientInput
 {

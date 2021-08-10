@@ -4,7 +4,7 @@ import Ingredients from '../../../ingredients/components/Ingredients/Ingredients
 import EditRecipe from '../../../recipes/components/EditRecipe/EditRecipe'
 import Recipes from '../../../recipes/components/Recipes/Recipes'
 import RecipeDescription from '../../../recipes/components/RecipeDescription/RecipeDescription'
-import Home from '../Homes/Home'
+import Home from '../Home/Home'
 import AddIngredient from '../../../ingredients/components/AddIngredient/AddIngredient'
 import AddRecipe from '../../../recipes/components/AddRecipe/AddRecipe'
 

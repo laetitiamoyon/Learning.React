@@ -12,24 +12,12 @@
 
 .recipeContainer
 {
-
-    background-image: url(./images/backgound-recipes.jpg);
-    background-size: cover;
-    
-    margin: auto;
-    padding: 0 24px;
+    @include superBackground(url(./images/backgrounds/recipes-list.jpg), $size);
+    @include marginPadding($marginAuto, $padding);
 
     height: 100vh;
 }
 
-.recipeElementContainer
-{
-    margin: auto;
-   
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 32px;
-}
+.recipeElementContainer { margin: auto; @include flex(center, undefined, undefined, $gap, $flexWrap);}
 
 .addRecipe:hover { color: $secondaryColor; }

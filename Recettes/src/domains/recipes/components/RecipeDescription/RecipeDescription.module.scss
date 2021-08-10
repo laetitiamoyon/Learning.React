@@ -2,11 +2,8 @@
 
 .descriptionRecipeContainer
 {
-    background-image: url(./images/background-description.jpg);
-    background-size: cover;
-    
-    margin: auto;
-    padding: 0 24px;
+    @include superBackground(url(./images/backgrounds/description-recipe.jpg), $size);
+    @include marginPadding($marginAuto, $padding);
 
     height: 100vh;
 }
@@ -29,10 +26,7 @@
 
 .titleRecipe
 {
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    text-align: center;
+    @include text($textH3FontSize, $primaryColor, undefined, center);
 
     padding-top: calc(8vh + 32px);
     margin-bottom: 32px;
@@ -56,21 +50,11 @@
 
 .editButton
 {
-    color: #394044;
-    font-weight: 600;
-
-    border: #BDBDBD solid 1px;
-    border-radius: 8px;
-
-    width: 130px;
-    height: 30px;
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+    @include widthHeight(130px, 30px);
 
     cursor: pointer;
 }
 
-.editButton:hover
-{
-    background-color: #D15E3F;
-    border:  #D15E3F;
-    color: white;
-}
+.editButton:hover { @include buttonHover($backgroundColor, $defaultBorder, $primaryColor); }

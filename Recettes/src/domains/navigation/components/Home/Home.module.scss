@@ -23,13 +23,8 @@
 
 .homeContainer
 {
-    /* Utilise ta mixin */
-    background-image: url(./Images/background-home.jpeg);
-    background-size: cover;
-    
-    /* ceux partagés, marginPadding */
-    margin: auto;
-    padding: 0 24px;
+    @include superBackground(url(./images/backgrounds/home.jpeg), $size);
+    @include marginPadding($marginAuto, $padding);
 
     height: 100vh;
 }

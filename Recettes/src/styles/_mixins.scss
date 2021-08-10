@@ -7,12 +7,20 @@
     @if ($fontWeight != undefined) { font-weight: $fontWeight; }
 }
 
-@mixin flex($justifyContent : undefined, $alignItems : undefined, $flexDirection : undefined)
+@mixin flex($justifyContent : undefined, $alignItems : undefined, $flexDirection : undefined, $gap : undefined, $flexWrap : undefined)
 {
     display : flex;
     @if ($justifyContent != undefined) { justify-content: $justifyContent; }
     @if ($alignItems != undefined) { align-items: $alignItems; }
     @if ($flexDirection != undefined) { flex-direction: $flexDirection; }
+    @if ($gap != undefined) { gap: $gap; }
+    @if ($flexWrap!= undefined) { flex-wrap: $flexWrap; }
+}
+
+@mixin grid($gridTemplateColumn : undefined)
+{
+    display : grid;
+    @if ($gridTemplateColumn != undefined) { grid-template-columns: $gridTemplateColumn; }
 }
 
 @mixin widthHeight($width : undefined, $height : undefined)
@@ -31,6 +39,25 @@
 {
     @if ($dottedBorder != undefined) { border: $dottedBorder; }
     @if ($radius != undefined) { border-radius: $radius; }  
+}
+
+@mixin superBackground($image: undefined, $size : undefined)
+{
+    @if ($image != undefined) { background-image: $image; }
+    @if ($size != undefined) { background-size: $size; }  
+}
+
+@mixin buttonHover($backgroundColor: undefined, $defaultBorder: undefined, $color: undefined)
+{
+    @if ($backgroundColor != undefined) { background-color: $backgroundColor; }
+    @if ($defaultBorder != undefined) { border: $defaultBorder; } 
+    @if ($color != undefined) { color: $color; }  
+}
+
+@mixin marginPadding($marginAuto: undefined, $padding: undefined)
+{
+    @if ($marginAuto != undefined) { margin: $marginAuto; }
+    @if ($padding != undefined) { padding: $padding; } 
 }
 
 // @import '../../../../styles/styles.scss'; 
