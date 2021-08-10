@@ -23,7 +23,7 @@
 
 .homeContainer
 {
-    @include superBackground(url(./images/backgrounds/home.jpeg), $size);
+    @include superBackground(url(../images/backgrounds/home.jpeg), $size);
     @include marginPadding($marginAuto, $padding);
 
     height: 100vh;

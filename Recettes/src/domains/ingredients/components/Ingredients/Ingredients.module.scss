@@ -12,7 +12,7 @@
 
 .ingredientContainer
 {
-    @include superBackground(url(./images/backgrounds/ingredients-list.jpg), $size);
+    @include superBackground(url(../images/backgrounds/ingredients-list.jpg), $size);
 
     padding-bottom: calc(8vh + 32px);
 }

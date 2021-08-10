@@ -40,7 +40,7 @@
 
 .removeButton 
 {
-    @include superBackground(url(./images/icons/trash.png), $size);
+    @include superBackground(url(../images/icons/trash.png), $size);
 
     @include widthHeight(25px, 25px);
 

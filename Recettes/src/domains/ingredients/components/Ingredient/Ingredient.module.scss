@@ -21,7 +21,7 @@
 
 .removeButton 
 {
-    @include superBackground(url(./images/icons/trash-red.png), $size);
+    @include superBackground(url(../images/icons/trash-red.png), $size);
 
     filter: drop-shadow(0 0 0.75rem black);
 

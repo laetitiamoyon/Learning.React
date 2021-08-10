@@ -12,7 +12,7 @@
 
 .addIngredientContainer
 {
-    @include superBackground(url(./images/backgrounds/add-ingredient.jpg), $size);
+    @include superBackground(url(../images/backgrounds/add-ingredient.jpg), $size);
     @include marginPadding($marginAuto, $padding);
 
     height: 100vh;

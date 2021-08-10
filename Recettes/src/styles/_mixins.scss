@@ -1,4 +1,10 @@
-@mixin text($fontSize : undefined, $color : undefined, $fontWeight : undefined, $textAlign : undefined, $lineHeight : undefined)
+@mixin text(
+    $fontSize : undefined, 
+    $color : undefined, 
+    $fontWeight : undefined, 
+    $textAlign : undefined, 
+    $lineHeight : undefined
+)
 {
     @if ($fontSize != undefined) { font-size: $fontSize; }
     @if ($color != undefined) { color: $color; }
@@ -7,7 +13,12 @@
     @if ($fontWeight != undefined) { font-weight: $fontWeight; }
 }
 
-@mixin flex($justifyContent : undefined, $alignItems : undefined, $flexDirection : undefined, $gap : undefined, $flexWrap : undefined)
+@mixin flex(
+    $justifyContent : undefined, 
+    $alignItems : undefined, $flexDirection : undefined, 
+    $gap : undefined, 
+    $flexWrap : undefined
+)
 {
     display : flex;
     @if ($justifyContent != undefined) { justify-content: $justifyContent; }
@@ -17,10 +28,34 @@
     @if ($flexWrap!= undefined) { flex-wrap: $flexWrap; }
 }
 
-@mixin grid($gridTemplateColumn : undefined)
+@mixin grid(
+    $gridTemplateColumns : undefined, 
+    $gridTemplateRows : undefined, 
+    $justifyItems: undefined, 
+    $alignItems: undefined, 
+    $gridGap: undefined
+)
 {
     display : grid;
-    @if ($gridTemplateColumn != undefined) { grid-template-columns: $gridTemplateColumn; }
+    @if ($gridTemplateColumns != undefined) { grid-template-columns: $gridTemplateColumns; }
+    @if ($gridTemplateRows != undefined) { grid-template-rows: $gridTemplateRows; }
+    @if ($justifyItems != undefined) { justify-items: $justifyItems; }
+    @if ($alignItems != undefined) { align-items: $alignItems; }
+    @if ($gridGap != undefined) { gap: $gridGap; }
+}
+
+@mixin gridElement(
+    $gridColumn : undefined, 
+    $gridRow : undefined, 
+    $justifySelf: undefined, 
+    $alignSelf: undefined, 
+)
+{
+    display : grid;
+    @if ($gridColumn != undefined) { grid-column: $gridColumn; }
+    @if ($gridTemplateRows != undefined) { grid-row: $gridRow; }
+    @if ($justifySelf != undefined) { justify-self: $justifySelf; }
+    @if ($alignSelf != undefined) { align-self: $alignSelf; }
 }
 
 @mixin widthHeight($width : undefined, $height : undefined)
@@ -60,7 +95,3 @@
     @if ($padding != undefined) { padding: $padding; } 
 }
 
-// @import '../../../../styles/styles.scss'; 
-//@include widthHeight(40px, 30px)
-//@include text(40px, undefined, blue)
-// margin-top : $spacingMd;

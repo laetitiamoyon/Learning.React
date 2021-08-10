@@ -2,7 +2,7 @@
 
 .addRecipeContainer
 {
-    @include superBackground(url(./images/backgrounds/add-recipe.jpg), $size);
+    @include superBackground(url(../images/backgrounds/add-recipe.jpg), $size);
     @include marginPadding($marginAuto, $padding);
 
     height: 100vh;
