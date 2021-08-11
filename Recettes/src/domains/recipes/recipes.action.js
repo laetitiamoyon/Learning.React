@@ -1,6 +1,6 @@
-export const addRecipeAction = (title, description) => ({ 
+export const addRecipeAction = (title, description, image) => ({ 
     type: 'ADD_RECIPE', 
-    payload : { title, description } 
+    payload : { title, description, image } 
 })
 
 export const removeRecipeAction = (id) => ({ 

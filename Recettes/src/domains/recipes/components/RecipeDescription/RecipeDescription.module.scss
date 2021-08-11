@@ -54,4 +54,4 @@
     cursor: pointer;
 }
 
-.editButton:hover { @include buttonHover($primaryColor, $defaultBorder); }
+.editButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

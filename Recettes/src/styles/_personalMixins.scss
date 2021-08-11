@@ -11,9 +11,9 @@
     @if ($size != undefined) { background-size: cover; }  
 }
 
-@mixin buttonHover($primaryColor: undefined, $defaultBorder: undefined)
+@mixin buttonHover($econdaryColor: undefined, $defaultBorder: undefined, $primaryColor: undefined)
 {
-    @if ($primaryColor != undefined) { background-color: $primaryColor; }
+    @if ($secondaryColor != undefined) { background-color: $secondaryColor; }  
     @if ($defaultBorder != undefined) { border: $defaultBorder; } 
-    @if ($primaryColor != undefined) { color: $primaryColor; }  
+    @if ($primaryColor != undefined) { color: $primaryColor; }
 }

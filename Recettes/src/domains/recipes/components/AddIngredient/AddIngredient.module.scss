@@ -11,7 +11,7 @@
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
 }
 
-.button:hover { @include buttonHover($primaryColor, $defaultBorder); }
+.button:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
 .select
 {
@@ -39,7 +39,7 @@
     
     margin-top: 32px;
 }
-.addIngredientToTheList:hover { @include buttonHover($primaryColor, $defaultBorder); }
+.addIngredientToTheList:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
 
 .removeButton
@@ -51,4 +51,4 @@
     margin-left: 12px;
 }
 
-.removeButton:hover { @include buttonHover($primaryColor, $defaultBorder); }
+.removeButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

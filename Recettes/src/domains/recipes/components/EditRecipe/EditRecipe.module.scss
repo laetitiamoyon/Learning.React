@@ -28,7 +28,7 @@
 
     margin-top: 32px;
 }
-.submitButton:hover { @include buttonHover($primaryColor, $defaultBorder); }
+.submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
 .input
 {

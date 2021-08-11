@@ -8,6 +8,33 @@
     height: 100vh;
 }
 
+.addRecipeElement { @include flex(center, undefined, undefined, 122px); }
+
+.uploadImageContainer
+{
+    @include widthHeight(500px, 400px);
+    @include flex(space-around, center, column);
+
+    margin-top: 22px;
+    padding: 22px;
+
+    border: dotted 2px white;
+}
+
+.titleUploadImage
+{
+    @include text($textH5FontSize, $primaryColor, undefined, center);
+
+    text-shadow: 2px 2px 4px black;
+}
+
+.imageUploaded
+{
+    margin: 28px 8px;
+
+    @include widthHeight(150px, 150px);
+}
+
 .formTitle
 { 
     @include text($textH3FontSize, $primaryColor, undefined, center);
@@ -30,7 +57,7 @@
 
     margin-top: 32px;
 }
-.submitButton:hover { @include buttonHover($primaryColor, $defaultBorder); }
+.submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
 .addIngredientButton 
 {
@@ -50,3 +77,18 @@
 }
 
 .title { margin-top: 20px;}
+
+.uploadImageButton, .removeImageButton, .addImageButton
+{
+    @include widthHeight(200px, 40px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+}
+
+.removeImageButton 
+{
+    background-color: rgb(245, 33, 33);
+ 
+    color: white;
+    font-weight: bold;
+}

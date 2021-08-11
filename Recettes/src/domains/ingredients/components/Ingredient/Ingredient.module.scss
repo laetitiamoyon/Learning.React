@@ -45,4 +45,4 @@
     cursor: pointer;
 }
 
-.updateButton:hover { @include buttonHover($primaryColor, $defaultBorder); }
+.updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
