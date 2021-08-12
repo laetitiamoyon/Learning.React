@@ -1,7 +1,7 @@
 import React, { useState, useContext} from 'react';
 import styles from './AddRecipe.module.scss'
 import { RecipeContext } from '../../recipes.provider';
-import AddIngredient from '../AddIngredient/AddIngredient';
+import AddRecipeIngredient from '../AddRecipeIngredient/AddRecipeIngredient';
 import { useHistory } from 'react-router-dom';
 import { addRecipeAction } from '../../recipes.action';
 
@@ -74,7 +74,7 @@ const AddRecipe = () =>
                         name="Description"
                         value={description}/>
 
-                    <AddIngredient/>
+                    <AddRecipeIngredient/>
 
                     <button className={styles.submitButton}>Enregistrer</button>
                 </form>

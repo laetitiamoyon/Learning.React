@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { newGuid } from '../../../../shared/utils/string';
 import { IngredientContext } from '../../../ingredients/ingredients.provider';
 import AddedIngredient from '../AddedIngredient/AddedIngredient';
-import styles from './AddIngredient.module.scss'
+import styles from './AddRecipeIngredient.module.scss'
 
 const AddIngredient = () => 
 {
