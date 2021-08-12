@@ -6,9 +6,12 @@ export const recipesReducer = (state, action) =>
     {
         case 'ADD_RECIPE' : 
         {
-            const { title, description, ingredients, image } = action.payload
 
-            return [...state, { title, description, ingredients, image, id : newGuid() }]
+            
+            const { title, description, ingredients, imageData } = action.payload
+            console.log(imageData);
+
+            return [...state, { title, description, ingredients, imageData, id : newGuid() }]
         }
         case 'REMOVE_RECIPE' : 
         {

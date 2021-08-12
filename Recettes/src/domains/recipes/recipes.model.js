@@ -1,7 +1,7 @@
 export const recipes = [
     { 
         id : "1", 
-        image : "./images/regina.jpg",
+        imagePath : "./images/regina.jpg",
         ingredients : "lardons, Sel, Huile, Champignons marinés à l'huile, Jambon blanc, Sauce tomate, Mozzarella, Pâte à pizza",
         title : "Pizza Régina", 
         description : "1. Commencez à préparer la garniture de votre pizza en divisant les tranches de jambon blanc et en les coupant en deux. 2. Couvrez la pâte à pizza de sauce tomate, puis parsemez de jambon, de champignons et de Mozzarella râpée Galbani. 3. Assaisonnez avec un peu d’huile d’olive et de poivre. 4. Enfournez et laissez cuire pendant environ 15 minutes." 
@@ -9,7 +9,7 @@ export const recipes = [
     
     { 
         id : "2", 
-        image : "./images/salade-cersar.jpg",
+        imagePath : "./images/salade-cersar.jpg",
         ingredients : "Tomates, Sel, Huile, Poulets, Oeufs, Laitue, Oignons, Olives",
         title : "Salade César",
         description : "Couper les tranches de pain en cube. Faire revenir les croûtons dans un filet d'huile d'olive pendant 2 minutes et laisser refroidir. Couper le poulet en petits morceaux et faire cuire dans une poêle anti-adhésive sans matière grasse. Faire dorer et laisser refroidir. Déchirer la laitue et petits morceaux. Pour finir dresser dans l'ordre : salade, poulet, croûtons et sauce César." 
@@ -17,7 +17,7 @@ export const recipes = [
     
     { 
         id : "3", 
-        image : "./images/tarte-pommes.jpg",
+        imagePath : "./images/tarte-pommes.jpg",
         ingredients : "Pommes, Pâte feuilletée, Beurre, Sucre",
         title : "Tarte aux pommes", 
         description : "Déroulez, étalez et piquez la pâte dans un moule à tarte. Pelez, videz et coupez en fines tranches les pommes. Posez-les sur la pâte en rosace. Dans un saladier, battez les œufs avec le sucre, puis ajoutez la crème et la cannelle. Versez le mélange sur les pommes. Pour finir, mettez au four à 210°C (thermostat 7) pour 40 minutes environ. Vers la fin de la cuisson, répartissez sur la tarte le sucre vanillé et remettez au four pour caramélisé." 
@@ -25,7 +25,7 @@ export const recipes = [
     
     { 
         id : "4", 
-        image : "./images/carbonara.jpg",
+        imagePath : "./images/carbonara.jpg",
         title : "Pate Carbonara",
         ingredients : "Crème fraiche, Lardons, Oeufs, Jaune d'oeufs, Pâtes, Parmesan",
         description : "Cuire les pâtes. Pendant ce temps, faire dorer les lardons dans une poêle à sec. Lorsqu'ils sont dorés, ajouter la crème et laisser mijoter durant 10 minutes. Egoutter les pâtes, les verser dans la sauce, ajouter l'oeuf battu, mélanger et servir saupoudrer de fromage."
@@ -33,7 +33,7 @@ export const recipes = [
     
     { 
         id : "5", 
-        image : "./images/curry-legumes.jpg",
+        imagePath : "./images/curry-legumes.jpg",
         ingredients : "Courgettes, Poivrons, Carottes, Curry en poudre, Lait de coco",
         title : "Curry de légume", 
         description : "Débiter les carottes en fines tranches et la patate en petits morceaux. Découper les courgettes en quarts de rondelles tout en conservant la peau. Détailler les échalotes et l'ail et les faire dorer dans une grande sauteuse avec un peu d'huile. Ajouter les légumes, réduire le feu et couvrir. En parallèle, dans un saladier, mélanger la crème de coco, le concentré de tomates et la pâte de curry avec le jus des citrons verts. Ajouter le piment et le basilic moulus, le cumin, et napper les légumes de ce mélange bien homogène. Ajouter 1/2 verre d'eau. Poivrer et saler à discrétion. Bien laisser mijoter sous couvercle à feu minimum."
@@ -41,7 +41,7 @@ export const recipes = [
 
     { 
         id : "6", 
-        image : "./images/risotto.jpg",
+        imagePath : "./images/risotto.jpg",
         ingredients : "Riz spécial risotto, Crème fraiche, Cèpes, Vin, Bouillon de légumes",
         title : "Risotto aux cèpes",
         description : "Préparer des copeaux de Parmesan avec un couteau économe. Préparer un bouillon en faisant chauffer l'eau et le bouillon cube de légumes. Hydrater les cèpes dans le l'eau tiède pendant 30 minutes. Faire revenir l'oignon émincé dans la moitiée du beurre pendant 3 à 4 minutes et ajouter le riz, laisser revenir jusqu'à ce que le riz soit translucide. Verser le vin blanc et laisser évaporer. Ajouter louche par louche le bouillon chaud et attendre chaque fois entre chaque louche que le liquide se soit évaporé. Pendant ce temps, faire revenir les champignons de Paris en lamelles et les cèpes réhydratées rincés et égouttées dans le restant du beurre (compter environ 7 à 10 mn). En fin de cuisson ajouter la crème fraiche et bien mélanger. Arrêter le feu. Ajouter au riz, une fois la dernière louche de bouillon évaporée, la poêlée de Champignons et bien mélanger l'ensemble. Hors du feu, ajouter des copeaux de parmesan (la quantité est fonction des goûts de chacun). Poivrer si nécessaire. Mélanger à nouveau et servir rapidement. Décorer avec quelques copeaux de parmesan." 
@@ -49,7 +49,7 @@ export const recipes = [
 
     { 
         id : "7", 
-        image : "./images/tarte-courgettes.jpg",
+        imagePath : "./images/tarte-courgettes.jpg",
         ingredients : "Courgettes, Pâte brisée, Crème fraiche, Oeufs, Fromage rapée",
         title : "Tarte aux courgettes",
         description : "Peler les courgettes et l'oignon, les couper en dés et les faire revenir dans l'huile avec les lardons. Dérouler la pâte dans un moule à tartes et la piquer avec une fourchette. Mélanger la crème et l'oeuf. Saler et poivrer. Disposer sur la pâte les cougettes, l'oignon et les lardons, puis la préparation. Saupouder d'emmental et enfourner pendant 20 mn environ à four chaud. (180°C, Th 6)."

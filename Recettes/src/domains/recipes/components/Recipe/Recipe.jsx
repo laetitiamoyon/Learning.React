@@ -4,7 +4,7 @@ import { removeRecipeAction } from '../../recipes.action';
 import { RecipeContext } from '../../recipes.provider';
 import styles from './Recipe.module.scss'
 
-const Recipe = ({id, title, image}) =>
+const Recipe = ({id, title, imagePath, imageData}) =>
 {
     const history = useHistory();
     const seeRecipeOnClick = () => history.push(`/description-de-la-recette/${id}`, { id : id })
@@ -15,7 +15,7 @@ const Recipe = ({id, title, image}) =>
         <div className={styles.removeButton} onClick={removeRecipe}></div>
        
         <div className={styles.recipeElement}>
-            <img className={styles.recipeImage} alt='' style={{ backgroundImage :`url(${image})`}}/>
+            <img className={styles.recipeImage} alt='' src={imageData} style={{ backgroundImage : `url(${imagePath})`}} />
             <div className={styles.recipeTitle}>{title}</div>
             <div className={styles.viewRecipeButton} onClick={seeRecipeOnClick}>Voir la recette</div>
         </div>
