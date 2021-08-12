@@ -28,12 +28,7 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.imageUploaded
-{
-    margin: 28px 8px;
-
-    @include widthHeight(150px, 150px);
-}
+.imageUpload { @include widthHeight(150px, 150px); }
 
 .formTitle
 { 
@@ -78,17 +73,18 @@
 
 .title { margin-top: 20px;}
 
-.uploadImageButton, .removeImageButton, .addImageButton
+.labelUpload
 {
     @include widthHeight(200px, 40px);
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH3LineHeight);
+    background-color: white;
+
+    cursor: pointer;
 }
 
-.removeImageButton 
-{
-    background-color: rgb(245, 33, 33);
- 
-    color: white;
-    font-weight: bold;
-}
+.labelUpload:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.inputUpload {display: none;}
+
+

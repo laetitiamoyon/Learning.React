@@ -40,11 +40,20 @@ const AddRecipe = () =>
 
     return <div className={styles.addRecipeContainer}>
         <h1 className={styles.formTitle}>Ajouter une nouvelle recette</h1>
+        <div className={styles.addRecipeElement}>
+            <div className={styles.uploadImageContainer}>
+                <div className={styles.titleUploadImage}>Choisissez l'image de votre recette</div>
+                <label for="imageUpload" className={styles.labelUpload}>Téléchargez l'image</label>
+                <input className={styles.inputUpload} 
+                    id="imageUpload" 
+                    type="file"  
+                    accept="image/png, image/jpeg" 
+                    onChange={uploadImage} />
+                <img className={styles.imageUpload} alt='' src={imageData}/>
+            </div>
+
             <div className={styles.formElementContainer}>
                 <form className={styles.formContainer} onSubmit={onSubmit}>
-                    <input id="browse" type="file" onChange={uploadImage}/>
-                    <img width="200" height="200" alt='' src={imageData}/>
-
                     <label className={styles.title}>Titre:</label>
                     <input 
                         onChange={onTitleChange}
@@ -66,6 +75,7 @@ const AddRecipe = () =>
                 </form>
             
             </div>
+        </div>
         
     </div>
 }
