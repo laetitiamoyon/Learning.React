@@ -19,14 +19,16 @@ const AddRecipe = () =>
 
     const onTitleChange = (event) => setTitle(event.target.value)
     const onDescriptionChange = (event) => setDescription(event.target.value)
-    const [imageData, setImageData] = useState(null)
 
+    const [imageData, setImageData] = useState(null)
     const uploadImage = (event) =>
     {
-        var file = event.target.files[0]
-        var reader = new FileReader();
+        if (!event.target.files || !event.target.files[0]) return
 
-        reader.onload = (event) => setImageData(event.target.result);
+        var file = event.target.files[0]
+        var reader = new FileReader()
+
+        reader.onload = (event) => setImageData(event.target.result)
         reader.readAsDataURL(file)
     }
 
@@ -40,15 +42,18 @@ const AddRecipe = () =>
 
     return <div className={styles.addRecipeContainer}>
         <h1 className={styles.formTitle}>Ajouter une nouvelle recette</h1>
+
         <div className={styles.addRecipeElement}>
             <div className={styles.uploadImageContainer}>
                 <div className={styles.titleUploadImage}>Choisissez l'image de votre recette</div>
                 <label for="imageUpload" className={styles.labelUpload}>Téléchargez l'image</label>
+               
                 <input className={styles.inputUpload} 
                     id="imageUpload" 
                     type="file"  
                     accept="image/png, image/jpeg" 
                     onChange={uploadImage} />
+
                 <img className={styles.imageUpload} alt='' src={imageData}/>
             </div>
 
