@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { useHistory } from "react-router-dom";
 import { removeRecipeAction } from '../../recipes.action';
-import { RecipeContext } from '../../recipes.provider';
+import { RecipeContext } from '../../recipes.context';
+import { Recipe as RecipeModel } from '../../recipes.model'
 import styles from './Recipe.module.scss'
 
-const Recipe = ({id, title, imagePath, imageData}) =>
+const Recipe = ({id, title, imagePath, imageData} : RecipeModel) =>
 {
     const history = useHistory();
     const seeRecipeOnClick = () => history.push(`/description-de-la-recette/${id}`, { id : id })

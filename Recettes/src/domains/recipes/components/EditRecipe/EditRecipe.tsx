@@ -1,22 +1,30 @@
 import React, { useState, useContext } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
-import { RecipeContext } from '../../recipes.provider';
+import { RecipeContext } from '../../recipes.context';
 import { updateRecipeAction } from '../../recipes.action';
 
 
 const EditRecipe = () =>
 {
-    const { recipes } = useContext(RecipeContext)
+    const { recipesState : { recipes } } = useContext(RecipeContext)
     let { id } = useParams();
-    const { title, ingredients, description } = recipes.find(r => r.id === id)
+    const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id)
 
     const [newTitle, setNewTitle] = useState(title)
     const [newDescription, setNewDescription] = useState(description)
     const [newIngredients, setNewIngredients] = useState(ingredients)
 
     const { dispatch } = useContext(RecipeContext)
-    const updateRecipe = () => dispatch(updateRecipeAction(id, newTitle, newDescription, newIngredients))
+    const updateRecipe = () => dispatch(updateRecipeAction(
+    { 
+        id,
+        title : newTitle,
+        description : newDescription,
+        ingredients : newIngredients,
+        imagePath,
+        imageData
+    }))
 
     const history = useHistory()
     const redirectToRecipes = () => history.push('/recettes')
@@ -40,7 +48,7 @@ const EditRecipe = () =>
             <input className={styles.input} onChange={onChangeTitle} value={newTitle}/>
             
             <label className={styles.title}> Description:</label>
-            <textarea rows="10" className={styles.input} onChange={onChangeDescription} value={newDescription}/>
+            <textarea rows={10} className={styles.input} onChange={onChangeDescription} value={newDescription}/>
 
             <label className={styles.title}>Ingrédients </label>
             <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useParams } from "react-router-dom";
 import styles from './RecipeDescription.module.scss'
 import { useHistory } from "react-router-dom";
-import { RecipeContext } from '../../recipes.provider';
+import { RecipeContext } from '../../recipes.context';
 
 const RecipeDescription = () => 
 {

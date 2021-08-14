@@ -1,6 +1,5 @@
 import styles from './AddedIngredient.module.scss'
 
-
 const AddedIngredient = ({id, title, quantity, unity, removeAddedIngredient}) =>
 
     <><div>Ingrédients :</div>

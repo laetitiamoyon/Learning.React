@@ -1,6 +1,6 @@
 import React, { useState, useContext} from 'react';
 import styles from './AddRecipe.module.scss'
-import { RecipeContext } from '../../recipes.provider';
+import { RecipeContext } from '../../recipes.context';
 import AddRecipeIngredient from '../AddRecipeIngredient/AddRecipeIngredient';
 import { useHistory } from 'react-router-dom';
 import { addRecipeAction } from '../../recipes.action';
@@ -17,11 +17,11 @@ const AddRecipe = () =>
 
     const addRecipe = () => dispatch(addRecipeAction(title, description, imageData))
 
-    const onTitleChange = (event) => setTitle(event.target.value)
-    const onDescriptionChange = (event) => setDescription(event.target.value)
+    const onTitleChange = (event: any) => setTitle(event.target.value)
+    const onDescriptionChange = (event: any) => setDescription(event.target.value)
 
     const [imageData, setImageData] = useState(null)
-    const uploadImage = (event) =>
+    const uploadImage = (event: any) =>
     {
         if (!event.target.files || !event.target.files[0]) return
 
@@ -32,7 +32,7 @@ const AddRecipe = () =>
         reader.readAsDataURL(file)
     }
 
-    const onSubmit = (event) =>
+    const onSubmit = (event: any) =>
     {
         event.preventDefault()
 

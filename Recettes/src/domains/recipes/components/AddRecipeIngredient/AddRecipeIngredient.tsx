@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react';
+import { string } from 'prop-types';
+import React, { FC, useContext, useState } from 'react';
 import { newGuid } from '../../../../shared/utils/string';
 import { IngredientContext } from '../../../ingredients/ingredients.provider';
 import AddedIngredient from '../AddedIngredient/AddedIngredient';
 import styles from './AddRecipeIngredient.module.scss'
 
-const AddIngredient = () => 
+const AddIngredient : FC = () => 
 {
-    const { ingredients } = useContext(IngredientContext)
+    const {ingredients} = useContext(IngredientContext)
     const [addedIngredients, setAddedIngredients] = useState([])
     const [currentWindow, setWindow] = useState('ADD_INGREDIENT_BUTTON')
     const [id, setId] = useState()
