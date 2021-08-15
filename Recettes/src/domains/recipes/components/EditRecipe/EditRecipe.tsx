@@ -3,13 +3,18 @@ import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
 import { updateRecipeAction } from '../../recipes.action';
+import { Recipe } from '../../recipes.model';
 
+interface RouteProps
+{
+    id : string
+}
 
 const EditRecipe = () =>
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
-    let { id } = useParams();
-    const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id)
+    let { id } = useParams<RouteProps>();
+    const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id) as Recipe
 
     const [newTitle, setNewTitle] = useState(title)
     const [newDescription, setNewDescription] = useState(description)

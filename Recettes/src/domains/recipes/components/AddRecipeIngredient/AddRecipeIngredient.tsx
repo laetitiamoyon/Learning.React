@@ -1,17 +1,19 @@
 import React, { FC, useContext, useState, ChangeEvent, MouseEvent } from 'react';
 import { newGuid } from '../../../../shared/utils/string';
 import { IngredientContext } from '../../../ingredients/ingredients.context';
+import { Ingredient } from '../../../ingredients/ingredients.model';
+import { RecipeIngredient } from '../../recipes.model';
 import AddedIngredient from '../AddedIngredient/AddedIngredient';
 import styles from './AddRecipeIngredient.module.scss'
 
 const AddIngredient : FC = () => 
 {
     const {ingredientsState : { ingredients }} = useContext(IngredientContext)
-    const [addedIngredients, setAddedIngredients] = useState([])
+    const [addedIngredients, setAddedIngredients] = useState<RecipeIngredient[]>([])
     const [currentWindow, setWindow] = useState('ADD_INGREDIENT_BUTTON')
-    const [id, setId] = useState<string>()
-    const [title, setTitle] = useState<string>()
-    const [unity, setUnity] = useState<string>()
+    const [id, setId] = useState<string>('')
+    const [title, setTitle] = useState<string>('')
+    const [unity, setUnity] = useState<string>('')
     const [quantity, setQuantity] = useState(0)
 
     const clickOnAddIngredient = () => setWindow('SELECT_AN_INGREDIENT')
@@ -19,7 +21,7 @@ const AddIngredient : FC = () =>
     {
         setWindow('INGREDIENT_SELECTED')
         
-        const {title, unity} = ingredients.find(i => i.id === event.target.value)
+        const {title, unity} = ingredients.find(i => i.id === event.target.value) as Ingredient
 
         setId(id)
         setTitle(title)
@@ -31,14 +33,20 @@ const AddIngredient : FC = () =>
         setQuantity(parseInt(event.target.value))
 
     const addIngredientToTheList = () => 
-        setAddedIngredients([...addedIngredients, { id : newGuid(), title, unity, quantity }])
+        setAddedIngredients([
+            ...addedIngredients,
+            { 
+                id : newGuid(),
+                title,
+                unity,
+                quantity
+            }])
 
-    const removeAddedIngredient = id =>
+    const removeAddedIngredient = (id : string) =>
         setAddedIngredients(addedIngredients.filter(a => a.id !== id))
 
-    const onSubmit = (event: MouseEvent<HTMLInputElement>) =>
+    const onSubmit = () =>
     {
-        event.preventDefault()
         addIngredientToTheList()
         setWindow('ADD_INGREDIENT_BUTTON')
     }

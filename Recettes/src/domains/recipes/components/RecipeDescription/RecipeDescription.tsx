@@ -3,12 +3,18 @@ import { useParams } from "react-router-dom";
 import styles from './RecipeDescription.module.scss'
 import { useHistory } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
+import { Recipe } from '../../recipes.model';
+
+interface RouteProps
+{
+    id : string
+}
 
 const RecipeDescription = () => 
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
-    let { id } = useParams();
-    const { title, ingredients, description } = recipes.find(r => r.id === id)
+    let { id } = useParams<RouteProps>();
+    const { title, ingredients, description } = recipes.find(r => r.id === id) as Recipe
 
     const history = useHistory();
     const onClick = () => history.push(`/modification-de-la-recette/${id}`, { id : id })

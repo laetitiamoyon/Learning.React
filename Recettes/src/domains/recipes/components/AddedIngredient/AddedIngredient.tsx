@@ -1,12 +1,11 @@
+import { RecipeIngredient } from '../../recipes.model'
 import styles from './AddedIngredient.module.scss'
-import { Ingredient } from '../../../ingredients/ingredients.model';
 
-interface Props
+interface Props extends RecipeIngredient
 {
-    quantity : number
     removeAddedIngredient : (id : string) => void
 }
-const AddedIngredient = ({id, title, quantity, unity, removeAddedIngredient} : Ingredient & Props) =>
+const AddedIngredient = ({id, title, quantity, unity, removeAddedIngredient} : Props) =>
     <>
         <div>Ingrédients :</div>
         <li className={styles.li}>

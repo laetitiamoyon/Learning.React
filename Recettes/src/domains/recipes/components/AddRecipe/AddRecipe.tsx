@@ -27,7 +27,7 @@ const AddRecipe = () =>
     const onTitleChange = (event: ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)
     const onDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => setDescription(event.target.value)
 
-    const [imageData, setImageData] = useState(null)
+    const [imageData, setImageData] = useState<string | undefined>(undefined)
     const uploadImage = (event: ChangeEvent<HTMLInputElement>) =>
     {
         if (!event.target.files || !event.target.files[0]) return
@@ -35,7 +35,7 @@ const AddRecipe = () =>
         var file = event.target.files[0]
         var reader = new FileReader()
 
-        reader.onload = (event) => setImageData(event.target.result)
+        reader.onload = (event : ProgressEvent<FileReader>) => setImageData(event?.target?.result as string)
         reader.readAsDataURL(file)
     }
 

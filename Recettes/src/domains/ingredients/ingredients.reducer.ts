@@ -4,7 +4,6 @@ import { IngredientState } from './ingredients.state';
 
 export const ingredientsReducer = (state : IngredientState, action : IngredientActions) =>
 {
-
     switch (action.type)
     {
         case IngredientAction.ADD_INGREDIENT : 

@@ -4,7 +4,7 @@ import routes from '../../../../shared/constants/routes'
 
 const RightNavigation = () =>
 {
-    const route = useLocation().pathname
+    const route = useLocation().pathname as string
     const { recipes, ingredients, addRecipe, addIngredient } = routes
 
     const redirectTo = 

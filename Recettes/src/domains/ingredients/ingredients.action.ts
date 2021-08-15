@@ -16,7 +16,7 @@ export interface AddIngredientAction
 export interface UpdateIngredientAction
 { 
     type: IngredientAction.UPDATE_INGREDIENT
-    payload : Recipe
+    payload : Ingredient
 }
 
 export interface RemoveRecipeAction
@@ -25,22 +25,22 @@ export interface RemoveRecipeAction
     payload : { id : string }
 }
 
-export const addIngredientAction = (title, unity) => ({ 
-    type: 'ADD_INGREDIENT', 
-    payload : { title, unity } 
+export const addIngredientAction = (payload : Ingredient) : AddIngredientAction => ({ 
+    type: IngredientAction.ADD_INGREDIENT,
+    payload
 })
 
-export const removeIngredientAction = (id) => ({ 
-    type: 'REMOVE_INGREDIENT', 
+export const updateIngredientAction = (payload : Ingredient) : UpdateIngredientAction => ({ 
+    type: IngredientAction.UPDATE_INGREDIENT,
+    payload
+})
+
+export const removeIngredientAction = (id : string) : RemoveRecipeAction => ({ 
+    type: IngredientAction.REMOVE_INGREDIENT, 
     payload : { id } 
 })
 
-export const updateIngredientAction = (id, title, unity) => ({ 
-    type: 'UPDATE_INGREDIENT',
-    payload :
-    { 
-        id, 
-        title,
-        unity
-    } 
-})
+export type IngredientActions = 
+    AddIngredientAction |
+    UpdateIngredientAction |
+    RemoveRecipeAction
