@@ -53,8 +53,8 @@ const AddRecipe = () =>
         <div className={styles.addRecipeElement}>
             <div className={styles.uploadImageContainer}>
                 <div className={styles.titleUploadImage}>Choisissez l'image de votre recette</div>
-                <label id="imageUpload" className={styles.labelUpload}>Téléchargez l'image</label>
-               
+                <label htmlFor="imageUpload" className={styles.labelUpload}>Téléchargez l'image</label>
+                
                 <input className={styles.inputUpload} 
                     id="imageUpload" 
                     type="file"  

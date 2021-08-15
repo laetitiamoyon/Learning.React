@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState, ChangeEvent, MouseEvent } from 'react';
+import React, { FC, useContext, useState, ChangeEvent } from 'react';
 import { newGuid } from '../../../../shared/utils/string';
 import { IngredientContext } from '../../../ingredients/ingredients.context';
 import { Ingredient } from '../../../ingredients/ingredients.model';
