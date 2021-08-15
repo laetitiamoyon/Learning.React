@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import styles from './Ingredients.module.scss'
 import Ingredient from '../Ingredient/Ingredient';
-import { IngredientContext } from '../../ingredients.provider';
-
+import { IngredientContext } from '../../ingredients.context';
 
 const Ingredients = () => 
 {
-    const { ingredients } = useContext(IngredientContext)
+    const { ingredientsState : { ingredients} } = useContext(IngredientContext)
 
     return <div className={styles.ingredientContainer}>
         <h1 className={styles.title}>Gérer les ingrédients</h1>

@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useContext, FormEvent, ChangeEvent } from 'react';
 import styles from './AddRecipe.module.scss'
 import { RecipeContext } from '../../recipes.context';
 import AddRecipeIngredient from '../AddRecipeIngredient/AddRecipeIngredient';
@@ -15,13 +15,20 @@ const AddRecipe = () =>
     const history = useHistory();
     const redirectToRecipes = () => history.push('/recettes')
 
-    const addRecipe = () => dispatch(addRecipeAction(title, description, imageData))
+    const addRecipe = () => dispatch(addRecipeAction(
+    { 
+        id : '',
+        title,
+        description,
+        imageData,
+        ingredients : ''
+    }))
 
-    const onTitleChange = (event: any) => setTitle(event.target.value)
-    const onDescriptionChange = (event: any) => setDescription(event.target.value)
+    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)
+    const onDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => setDescription(event.target.value)
 
     const [imageData, setImageData] = useState(null)
-    const uploadImage = (event: any) =>
+    const uploadImage = (event: ChangeEvent<HTMLInputElement>) =>
     {
         if (!event.target.files || !event.target.files[0]) return
 
@@ -32,7 +39,7 @@ const AddRecipe = () =>
         reader.readAsDataURL(file)
     }
 
-    const onSubmit = (event: any) =>
+    const onSubmit = (event: FormEvent<HTMLFormElement>) =>
     {
         event.preventDefault()
 
@@ -46,7 +53,7 @@ const AddRecipe = () =>
         <div className={styles.addRecipeElement}>
             <div className={styles.uploadImageContainer}>
                 <div className={styles.titleUploadImage}>Choisissez l'image de votre recette</div>
-                <label for="imageUpload" className={styles.labelUpload}>Téléchargez l'image</label>
+                <label id="imageUpload" className={styles.labelUpload}>Téléchargez l'image</label>
                
                 <input className={styles.inputUpload} 
                     id="imageUpload" 
@@ -69,7 +76,7 @@ const AddRecipe = () =>
                     <label className={styles.title}> Description:</label>
                     <textarea 
                         onChange={onDescriptionChange}
-                        rows="5"
+                        rows={5}
                         className={styles.input} 
                         name="Description"
                         value={description}/>

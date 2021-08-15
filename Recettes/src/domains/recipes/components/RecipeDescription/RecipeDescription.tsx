@@ -6,7 +6,7 @@ import { RecipeContext } from '../../recipes.context';
 
 const RecipeDescription = () => 
 {
-    const { recipes } = useContext(RecipeContext)
+    const { recipesState : { recipes } } = useContext(RecipeContext)
     let { id } = useParams();
     const { title, ingredients, description } = recipes.find(r => r.id === id)
 

@@ -1,32 +1,37 @@
 import { newGuid } from '../../shared/utils/string'
+import { IngredientAction, IngredientActions } from './ingredients.action'
+import { IngredientState } from './ingredients.state';
 
-export const ingredientsReducer = (state, action) =>
+export const ingredientsReducer = (state : IngredientState, action : IngredientActions) =>
 {
 
     switch (action.type)
     {
-        case 'ADD_INGREDIENT' : 
+        case IngredientAction.ADD_INGREDIENT : 
         {
-            const { title, quantity, unity } = action.payload
-
-            return [...state, { title, quantity, unity, id : newGuid() }]
+            return { 
+                ...state, 
+                ingredients : [...state.ingredients, {...action.payload, id : newGuid() }]
+            }
         }
 
-        case 'REMOVE_INGREDIENT' : 
+        case IngredientAction.UPDATE_INGREDIENT : 
         {
-            const { id } = action.payload
-            
-            return state.filter(ingredient => ingredient.id !== id)
+            return {
+                ...state,
+                ingredients : state.ingredients.map(ingredient => 
+                    ingredient.id === action.payload.id ? action.payload :ingredient)
+                }
         }
-        case 'UPDATE_INGREDIENT' : 
+        
+        case IngredientAction.REMOVE_INGREDIENT : 
         {
-            const { id, title, unity } = action.payload
-            
-            return state.map(ingredient => 
-                ingredient.id === id ? {...ingredient, title, unity} :
-                ingredient) 
+            return {
+                ...state,
+                ingredients : state.ingredients.filter(ingredient => ingredient.id !== action.payload.id)
+            }
         }
-    
+
         default : return state
     }
 }

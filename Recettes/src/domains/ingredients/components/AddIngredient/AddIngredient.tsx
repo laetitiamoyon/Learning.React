@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, ChangeEvent, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
-import { IngredientContext } from '../../ingredients.provider';
+import { IngredientContext } from '../../ingredients.context';
 import styles from './AddIngredient.module.scss'
 import { addIngredientAction } from '../../ingredients.action'
 
@@ -12,12 +12,17 @@ const AddIngredient = () =>
 
     const history = useHistory();
     const redirectToIngredients = () => history.push('/ingredients')
-    const addIngredient = () => dispatch(addIngredientAction(title, unity))
+    const addIngredient = () => dispatch(addIngredientAction(
+    { 
+        id : '',
+        title,
+        unity
+    }))
 
-    const onTitleChange = (event) => setTitle(event.target.value)
-    const onUnityChange = (event) => setUnity(event.target.value)
+    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)
+    const onUnityChange = (event: ChangeEvent<HTMLInputElement>) => setUnity(event.target.value)
 
-    const onSubmit = (event) =>
+    const onSubmit = (event: FormEvent<HTMLFormElement>) =>
     {
         event.preventDefault()
 

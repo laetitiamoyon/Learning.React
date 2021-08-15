@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, ChangeEvent, FormEvent } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
@@ -29,11 +29,11 @@ const EditRecipe = () =>
     const history = useHistory()
     const redirectToRecipes = () => history.push('/recettes')
 
-    const onChangeTitle = event => setNewTitle(event.target.value)
-    const onChangeDescription = event => setNewDescription(event.target.value)
-    const onChangeIngredients = event => setNewIngredients(event.target.value)
+    const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) => setNewTitle(event.target.value)
+    const onChangeDescription = (event : ChangeEvent<HTMLTextAreaElement>) => setNewDescription(event.target.value)
+    const onChangeIngredients = (event : ChangeEvent<HTMLInputElement>) => setNewIngredients(event.target.value)
     
-    const onSubmit = event =>
+    const onSubmit = (event : FormEvent<HTMLFormElement>) =>
     {
         event.preventDefault()
         updateRecipe()

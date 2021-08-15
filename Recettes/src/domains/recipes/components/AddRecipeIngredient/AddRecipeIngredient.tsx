@@ -1,22 +1,21 @@
-import { string } from 'prop-types';
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, useContext, useState, ChangeEvent, MouseEvent } from 'react';
 import { newGuid } from '../../../../shared/utils/string';
-import { IngredientContext } from '../../../ingredients/ingredients.provider';
+import { IngredientContext } from '../../../ingredients/ingredients.context';
 import AddedIngredient from '../AddedIngredient/AddedIngredient';
 import styles from './AddRecipeIngredient.module.scss'
 
 const AddIngredient : FC = () => 
 {
-    const {ingredients} = useContext(IngredientContext)
+    const {ingredientsState : { ingredients }} = useContext(IngredientContext)
     const [addedIngredients, setAddedIngredients] = useState([])
     const [currentWindow, setWindow] = useState('ADD_INGREDIENT_BUTTON')
-    const [id, setId] = useState()
-    const [title, setTitle] = useState()
-    const [unity, setUnity] = useState()
+    const [id, setId] = useState<string>()
+    const [title, setTitle] = useState<string>()
+    const [unity, setUnity] = useState<string>()
     const [quantity, setQuantity] = useState(0)
 
     const clickOnAddIngredient = () => setWindow('SELECT_AN_INGREDIENT')
-    const selectAnIngredient = (event) =>
+    const selectAnIngredient = (event : ChangeEvent<HTMLSelectElement>) =>
     {
         setWindow('INGREDIENT_SELECTED')
         
@@ -28,7 +27,8 @@ const AddIngredient : FC = () =>
         setQuantity(0)
     }
 
-    const onQuantityChange = (event) => setQuantity(event.target.value)
+    const onQuantityChange = (event : ChangeEvent<HTMLInputElement>) =>
+        setQuantity(parseInt(event.target.value))
 
     const addIngredientToTheList = () => 
         setAddedIngredients([...addedIngredients, { id : newGuid(), title, unity, quantity }])
@@ -36,7 +36,7 @@ const AddIngredient : FC = () =>
     const removeAddedIngredient = id =>
         setAddedIngredients(addedIngredients.filter(a => a.id !== id))
 
-    const onSubmit = (event) =>
+    const onSubmit = (event: MouseEvent<HTMLInputElement>) =>
     {
         event.preventDefault()
         addIngredientToTheList()

@@ -42,5 +42,5 @@ export const removeRecipeAction = (id: string) : RemoveRecipeAction => ({
 
 export type RecipeActions = 
     AddRecipeAction |
-    RemoveRecipeAction |
-    UpdateRecipeAction
+    UpdateRecipeAction |
+    RemoveRecipeAction
