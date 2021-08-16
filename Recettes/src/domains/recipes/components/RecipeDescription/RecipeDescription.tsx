@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { useParams } from "react-router-dom";
 import styles from './RecipeDescription.module.scss'
 import { useHistory } from "react-router-dom";
@@ -10,7 +10,7 @@ interface RouteProps
     id : string
 }
 
-const RecipeDescription = () => 
+const RecipeDescription :FC = () => 
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
     let { id } = useParams<RouteProps>();

@@ -1,10 +1,10 @@
-import React, { useState, useContext, ChangeEvent } from 'react';
+import { useState, useContext, ChangeEvent, FC } from 'react';
 import { removeIngredientAction, updateIngredientAction } from '../../ingredients.action';
 import { IngredientContext } from '../../ingredients.context';
 import { Ingredient as IngredientModel } from '../../ingredients.model';
 import styles from './Ingredient.module.scss'
 
-const Ingredient = ({id, title, unity} : IngredientModel) => 
+const Ingredient : FC<IngredientModel> = ({id, title, unity}) => 
 {
     const [newTitle, setNewTitle] = useState(title)
     const [newUnity, setNewUnity] = useState(unity)

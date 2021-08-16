@@ -1,5 +1,6 @@
 import { RecipeState } from './recipes.state';
 import { RecipeActions, RecipeAction } from './recipes.action';
+import { newGuid } from '../../shared/utils/string';
 
 export const recipesReducer = (state: RecipeState, action: RecipeActions) =>
 {
@@ -9,7 +10,11 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) =>
         {
             return {
                 ...state,
-                recipes: [...state.recipes, action.payload] 
+                recipes: [...state.recipes, 
+                    { 
+                        ...action.payload,
+                        id : newGuid()
+                    }] 
               }
         }
 

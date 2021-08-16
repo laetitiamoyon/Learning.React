@@ -10,8 +10,9 @@ import AddRecipe from '../../../recipes/components/AddRecipe/AddRecipe'
 
 import routes from '../../../../shared/constants/routes'
 import RightNavigation from '../RightNavigation/RightNavigation'
+import { FC } from 'react'
 
-const Navigation = () => {
+const Navigation :FC = () => {
 
     const { recipes, ingredients, addRecipe, addIngredient } = routes
 

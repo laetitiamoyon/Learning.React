@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { RecipeIngredient } from '../../recipes.model'
 import styles from './AddedIngredient.module.scss'
 
@@ -5,7 +6,8 @@ interface Props extends RecipeIngredient
 {
     removeAddedIngredient : (id : string) => void
 }
-const AddedIngredient = ({id, title, quantity, unity, removeAddedIngredient} : Props) =>
+
+const AddedIngredient : FC<Props> = ({id, title, quantity, unity, removeAddedIngredient}) =>
     <>
         <div>Ingrédients :</div>
         <li className={styles.li}>

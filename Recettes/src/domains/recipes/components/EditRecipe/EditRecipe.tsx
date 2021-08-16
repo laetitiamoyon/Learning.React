@@ -1,4 +1,4 @@
-import React, { useState, useContext, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
@@ -10,7 +10,7 @@ interface RouteProps
     id : string
 }
 
-const EditRecipe = () =>
+const EditRecipe :FC = () =>
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
     let { id } = useParams<RouteProps>();

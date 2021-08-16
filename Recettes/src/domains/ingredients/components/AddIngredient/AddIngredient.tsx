@@ -1,10 +1,10 @@
-import React, { useContext, useState, ChangeEvent, FormEvent } from 'react';
+import React, { useContext, useState, ChangeEvent, FormEvent, FC } from 'react';
 import { useHistory } from 'react-router-dom';
 import { IngredientContext } from '../../ingredients.context';
 import styles from './AddIngredient.module.scss'
 import { addIngredientAction } from '../../ingredients.action'
 
-const AddIngredient = () => 
+const AddIngredient : FC = () => 
 {
     const [title, setTitle] = useState('')
     const [unity, setUnity] = useState('')

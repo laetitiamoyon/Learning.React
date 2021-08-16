@@ -6,11 +6,16 @@ import { RecipeIngredient } from '../../recipes.model';
 import AddedIngredient from '../AddedIngredient/AddedIngredient';
 import styles from './AddRecipeIngredient.module.scss'
 
+type CurrentWindow = 
+    'ADD_INGREDIENT_BUTTON' |
+    'SELECT_AN_INGREDIENT' |
+    'INGREDIENT_SELECTED'
+
 const AddIngredient : FC = () => 
 {
     const {ingredientsState : { ingredients }} = useContext(IngredientContext)
     const [addedIngredients, setAddedIngredients] = useState<RecipeIngredient[]>([])
-    const [currentWindow, setWindow] = useState('ADD_INGREDIENT_BUTTON')
+    const [currentWindow, setWindow] = useState<CurrentWindow>('ADD_INGREDIENT_BUTTON')
     const [id, setId] = useState<string>('')
     const [title, setTitle] = useState<string>('')
     const [unity, setUnity] = useState<string>('')
@@ -72,7 +77,7 @@ const AddIngredient : FC = () =>
                     className={styles.select}
                     defaultValue=""
                     placeholder="Nom de l'ingrédient"> 
-                    <option value="" disabled selected>Sélectionner votre ingrédient</option>
+                    <option value="" disabled>Sélectionner votre ingrédient</option>
                     {ingredients && ingredients.map(i => <option value={i.id} key={i.id}>{i.title}</option>)}
                 </select>
             }

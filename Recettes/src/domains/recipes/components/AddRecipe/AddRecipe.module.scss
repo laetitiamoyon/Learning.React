@@ -10,26 +10,6 @@
 
 .addRecipeElement { @include flex(center, undefined, undefined, 122px); }
 
-.uploadImageContainer
-{
-    @include widthHeight(500px, 400px);
-    @include flex(space-around, center, column);
-
-    margin-top: 22px;
-    padding: 22px;
-
-    border: dotted 2px white;
-}
-
-.titleUploadImage
-{
-    @include text($textH5FontSize, $primaryColor, undefined, center);
-
-    text-shadow: 2px 2px 4px black;
-}
-
-.imageUpload { @include widthHeight(150px, 150px); }
-
 .formTitle
 { 
     @include text($textH3FontSize, $primaryColor, undefined, center);
@@ -72,19 +52,5 @@
 }
 
 .title { margin-top: 20px;}
-
-.labelUpload
-{
-    @include widthHeight(200px, 40px);
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH3LineHeight);
-    background-color: white;
-
-    cursor: pointer;
-}
-
-.labelUpload:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
-
-.inputUpload {display: none;}
 
 

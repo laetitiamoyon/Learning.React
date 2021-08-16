@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import styles from './Recipes.module.scss'
 import Recipe from '../Recipe/Recipe'
 import { RecipeContext } from '../../recipes.context'
 
-const Recipes = () => 
+const Recipes : FC = () => 
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
 

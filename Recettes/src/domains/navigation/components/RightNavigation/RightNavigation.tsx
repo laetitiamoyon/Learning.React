@@ -1,8 +1,9 @@
 import styles from './RightNavigation.module.scss'
 import { Link, useLocation } from "react-router-dom"
 import routes from '../../../../shared/constants/routes'
+import { FC } from 'react'
 
-const RightNavigation = () =>
+const RightNavigation: FC = () =>
 {
     const route = useLocation().pathname as string
     const { recipes, ingredients, addRecipe, addIngredient } = routes

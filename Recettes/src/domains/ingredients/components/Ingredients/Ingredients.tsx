@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import styles from './Ingredients.module.scss'
 import Ingredient from '../Ingredient/Ingredient';
 import { IngredientContext } from '../../ingredients.context';
 
-const Ingredients = () => 
+const Ingredients :FC = () => 
 {
     const { ingredientsState : { ingredients} } = useContext(IngredientContext)
 
