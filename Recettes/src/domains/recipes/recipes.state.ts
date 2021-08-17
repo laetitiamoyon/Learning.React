@@ -14,21 +14,33 @@ export const recipesInitialState : RecipeState =
         ingredients : [
             { 
                 id : "1", 
-                title : "sel", 
+                title : "mozzarella", 
                 unity : "gr",
-                quantity :1
+                quantity :100
             },
             { 
                 id : "2", 
-                title : "huile", 
+                title : "jambon", 
                 unity : "gr",
-                quantity :10
+                quantity :100
             },
             { 
                 id : "3", 
-                title : "farine", 
+                title : "pâte à pizza", 
+                unity : "pièce",
+                quantity :1
+            },
+            { 
+                id : "4", 
+                title : "champignon", 
                 unity : "gr",
-                quantity :200
+                quantity :100
+            },
+            { 
+                id : "5", 
+                title : "sauce tomate", 
+                unity : "gr",
+                quantity :100
             },
         ],
         title : "Pizza Régina", 

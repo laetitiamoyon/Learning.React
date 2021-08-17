@@ -21,7 +21,7 @@ const EditRecipe : FC = () =>
     const [newDescription, setNewDescription] = useState(description)
     const [newImageData, setNewImageData] = useState(imageData)
     const [newImagePath, setNewImagePath] = useState(imagePath)
-    //const [newIngredients, setNewIngredients] = useState(ingredients)
+    const [newIngredients, setNewIngredients] = useState(ingredients)
 
     const { dispatch } = useContext(RecipeContext)
     const updateRecipe = () => dispatch(updateRecipeAction(
@@ -29,7 +29,7 @@ const EditRecipe : FC = () =>
         id,
         title : newTitle,
         description : newDescription,
-        ingredients : ingredients, // todo : edit ingredients
+        ingredients : newIngredients, // todo : edit ingredients
         imagePath : newImagePath,
         imageData : newImageData,
     }))
@@ -79,6 +79,13 @@ const EditRecipe : FC = () =>
                 <textarea rows={10} className={styles.input} onChange={onChangeDescription} value={newDescription}/>
 
                 <label className={styles.title}>Ingrédients </label>
+                <ul>
+                    { newIngredients.map(({id, quantity, title, unity}) => 
+                        <li key={id} className={styles.recipeIngredient}>
+                            <span className={styles.recipeIngredientInput}>{quantity}</span> {unity} de {title}
+                        </li>)
+                    }
+                </ul>
                 { /* <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> */ } 
                 
                 <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>

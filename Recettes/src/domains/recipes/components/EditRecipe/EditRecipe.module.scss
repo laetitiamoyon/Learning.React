@@ -40,6 +40,11 @@
     padding: 6px;
 }
 
+.recipeIngredientInput
+{
+    color : $primaryColor;
+}
+
 .title 
 {
     @include text($textH5FontSize, $primaryColor, $fontWeightRegular);
@@ -84,3 +89,5 @@
 .label:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
 .inputImage {display: none;}
+
+.recipeIngredient { color : $primaryColor; }
