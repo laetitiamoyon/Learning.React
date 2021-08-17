@@ -5,6 +5,7 @@ import AddRecipeIngredient from '../AddRecipeIngredient/AddRecipeIngredient';
 import { useHistory } from 'react-router-dom';
 import { addRecipeAction } from '../../recipes.action';
 import AddRecipeImage from '../AddRecipeImage/AddRecipeImage';
+import { RecipeIngredient } from '../../recipes.model';
 
 
 const AddRecipe :FC = () => 
@@ -12,6 +13,13 @@ const AddRecipe :FC = () =>
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [imageData, setImageData] = useState<string | undefined>(undefined)
+    const [ingredients, setIngredients] = useState<RecipeIngredient[]>([])
+
+    const addIngredient = (ingredient : RecipeIngredient) => setIngredients(
+        [...ingredients, ingredient])
+    
+    const removeIngredient = (id : string) => setIngredients(
+        ingredients.filter(ingredient => ingredient.id !== id))
 
     const { dispatch } = useContext(RecipeContext)
 
@@ -23,7 +31,7 @@ const AddRecipe :FC = () =>
         id : '',
         title,
         description,
-        ingredients : '',
+        ingredients,
         imageData,
     }))
 
@@ -62,7 +70,11 @@ const AddRecipe :FC = () =>
                         name="Description"
                         value={description}/>
 
-                    <AddRecipeIngredient/>
+                    <AddRecipeIngredient
+                        ingredients={ingredients}
+                        addIngredient={addIngredient}
+                        removeIngredient={removeIngredient}/>
+                        
 
                     <button className={styles.submitButton}>Enregistrer</button>
                 </form>

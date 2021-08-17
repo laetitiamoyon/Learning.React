@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { RecipeIngredient } from '../../recipes.model'
+import { RecipeIngredient } from '../../recipes.model';
 import styles from './AddedIngredient.module.scss'
 
 interface Props extends RecipeIngredient

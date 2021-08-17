@@ -1,5 +1,10 @@
 import { Ingredient } from "../ingredients/ingredients.model";
 
+export interface RecipeIngredient extends Ingredient
+{
+    quantity : number
+}
+
 export interface Recipe
 {
     id : string
@@ -7,13 +12,6 @@ export interface Recipe
     description : string
     imagePath? : string
     imageData? : string
-    ingredients : string // RecipeIngredient[]
-    // TODO : array of Ingredient instead of string
-    // On va en avoir besoin lors de la suppression d'un ingrédient,
-    // En effet, ça doit également les supprimer de vos recettes 
+    ingredients : RecipeIngredient[]
 }
 
-export interface RecipeIngredient extends Ingredient
-{
-    quantity : number
-}

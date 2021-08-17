@@ -1,4 +1,4 @@
-import React, { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
+import { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
@@ -18,7 +18,7 @@ const EditRecipe :FC = () =>
 
     const [newTitle, setNewTitle] = useState(title)
     const [newDescription, setNewDescription] = useState(description)
-    const [newIngredients, setNewIngredients] = useState(ingredients)
+    //const [newIngredients, setNewIngredients] = useState(ingredients)
 
     const { dispatch } = useContext(RecipeContext)
     const updateRecipe = () => dispatch(updateRecipeAction(
@@ -26,7 +26,7 @@ const EditRecipe :FC = () =>
         id,
         title : newTitle,
         description : newDescription,
-        ingredients : newIngredients,
+        ingredients : ingredients, // todo : edit ingredients
         imagePath,
         imageData
     }))
@@ -36,7 +36,7 @@ const EditRecipe :FC = () =>
 
     const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) => setNewTitle(event.target.value)
     const onChangeDescription = (event : ChangeEvent<HTMLTextAreaElement>) => setNewDescription(event.target.value)
-    const onChangeIngredients = (event : ChangeEvent<HTMLInputElement>) => setNewIngredients(event.target.value)
+    //const onChangeIngredients = (event : ChangeEvent<HTMLInputElement>) => setNewIngredients(event.target.value)
     
     const onSubmit = (event : FormEvent<HTMLFormElement>) =>
     {
@@ -56,7 +56,7 @@ const EditRecipe :FC = () =>
             <textarea rows={10} className={styles.input} onChange={onChangeDescription} value={newDescription}/>
 
             <label className={styles.title}>Ingrédients </label>
-            <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> 
+            { /* <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> */ } 
             
             <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
         </form>

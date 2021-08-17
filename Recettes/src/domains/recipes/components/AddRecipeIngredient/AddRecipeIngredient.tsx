@@ -1,20 +1,26 @@
-import React, { FC, useContext, useState, ChangeEvent } from 'react';
+import React, { FC, useState, ChangeEvent, useContext } from 'react';
 import { newGuid } from '../../../../shared/utils/string';
-import { IngredientContext } from '../../../ingredients/ingredients.context';
 import { Ingredient } from '../../../ingredients/ingredients.model';
 import { RecipeIngredient } from '../../recipes.model';
 import AddedIngredient from '../AddedIngredient/AddedIngredient';
 import styles from './AddRecipeIngredient.module.scss'
+import { IngredientContext } from '../../../ingredients/ingredients.context';
 
 type CurrentWindow = 
     'ADD_INGREDIENT_BUTTON' |
     'SELECT_AN_INGREDIENT' |
     'INGREDIENT_SELECTED'
 
-const AddIngredient : FC = () => 
+interface Props
 {
-    const {ingredientsState : { ingredients }} = useContext(IngredientContext)
-    const [addedIngredients, setAddedIngredients] = useState<RecipeIngredient[]>([])
+    ingredients : RecipeIngredient[]
+    addIngredient : (ingredient : RecipeIngredient) => void
+    removeIngredient : (id : string) => void
+}
+
+const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient}) => 
+{
+    const { ingredientsState : { ingredients : ingredientList }} = useContext(IngredientContext)
     const [currentWindow, setWindow] = useState<CurrentWindow>('ADD_INGREDIENT_BUTTON')
     const [id, setId] = useState<string>('')
     const [title, setTitle] = useState<string>('')
@@ -26,7 +32,7 @@ const AddIngredient : FC = () =>
     {
         setWindow('INGREDIENT_SELECTED')
         
-        const {title, unity} = ingredients.find(i => i.id === event.target.value) as Ingredient
+        const {title, unity} = ingredientList.find(i => i.id === event.target.value) as Ingredient
 
         setId(id)
         setTitle(title)
@@ -38,30 +44,25 @@ const AddIngredient : FC = () =>
         setQuantity(parseInt(event.target.value))
 
     const addIngredientToTheList = () => 
-        setAddedIngredients([
-            ...addedIngredients,
-            { 
+        addIngredient({ 
                 id : newGuid(),
                 title,
                 unity,
                 quantity
-            }])
-
-    const removeAddedIngredient = (id : string) =>
-        setAddedIngredients(addedIngredients.filter(a => a.id !== id))
+            })
 
     const onSubmit = () =>
     {
         addIngredientToTheList()
         setWindow('ADD_INGREDIENT_BUTTON')
     }
-
+    
     return <> 
-        { addedIngredients && <div className={styles.ingredients}></div> }
+        { ingredients && <div className={styles.ingredients}></div> }
         
         <ul className={styles.addedIngredients}>
-            { addedIngredients && addedIngredients.map(i => 
-                <AddedIngredient key={i.id} {...i} removeAddedIngredient={removeAddedIngredient}/>)}
+            { ingredients && ingredients.map(i => 
+                <AddedIngredient key={i.id} {...i} removeAddedIngredient={removeIngredient}/>)}
         </ul> 
 
         { currentWindow === 'ADD_INGREDIENT_BUTTON' && 
@@ -78,7 +79,7 @@ const AddIngredient : FC = () =>
                     defaultValue=""
                     placeholder="Nom de l'ingrédient"> 
                     <option value="" disabled>Sélectionner votre ingrédient</option>
-                    {ingredients && ingredients.map(i => <option value={i.id} key={i.id}>{i.title}</option>)}
+                    {ingredientList && ingredientList.map(i => <option value={i.id} key={i.id}>{i.title}</option>)}
                 </select>
             }
 

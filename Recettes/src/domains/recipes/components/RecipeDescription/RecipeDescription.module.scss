@@ -25,7 +25,7 @@
 }
 
 
-.titleRecipe
+.title
 {
     @include text($textH3FontSize, $primaryColor, undefined, center);
 
@@ -35,17 +35,17 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.ingredientsRecipe
+.ingredients
 {
     line-height: 32px;
     margin-top: 22px;
 }
 
-.descriptionRecipe, .ingredientsRecipe { @include marginPadding(auto, 12px); }
+.description, .ingredients { @include marginPadding(auto, 12px); }
 
 .buttonContainer { @include flex(center);}
 
-.editButton
+.button
 {
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
@@ -54,4 +54,4 @@
     cursor: pointer;
 }
 
-.editButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+.button:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

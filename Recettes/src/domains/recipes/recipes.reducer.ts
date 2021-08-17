@@ -10,7 +10,8 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) =>
         {
             return {
                 ...state,
-                recipes: [...state.recipes, 
+                recipes: [
+                    ...state.recipes, 
                     { 
                         ...action.payload,
                         id : newGuid()
