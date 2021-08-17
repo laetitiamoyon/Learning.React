@@ -7,7 +7,6 @@ import styles from './Recipe.module.scss'
 
 const Recipe : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
 {
-    console.log(id)
     const history = useHistory();
     const seeRecipeOnClick = () => history.push(`/description-de-la-recette/${id}`, { id : id })
     const removeRecipe = () => dispatch(removeRecipeAction(id))

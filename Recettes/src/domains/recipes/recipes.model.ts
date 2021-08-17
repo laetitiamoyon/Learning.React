@@ -14,4 +14,3 @@ export interface Recipe
     imageData? : string
     ingredients : RecipeIngredient[]
 }
-

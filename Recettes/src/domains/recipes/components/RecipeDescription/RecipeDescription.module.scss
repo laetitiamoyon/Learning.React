@@ -45,6 +45,8 @@
 
 .buttonContainer { @include flex(center);}
 
+.image { background-size: cover; @include widthHeight(200px, 200px); }
+
 .button
 {
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);

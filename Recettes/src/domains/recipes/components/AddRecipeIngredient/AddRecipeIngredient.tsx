@@ -1,5 +1,4 @@
 import React, { FC, useState, ChangeEvent, useContext } from 'react';
-import { newGuid } from '../../../../shared/utils/string';
 import { Ingredient } from '../../../ingredients/ingredients.model';
 import { RecipeIngredient } from '../../recipes.model';
 import AddedIngredient from '../AddedIngredient/AddedIngredient';
@@ -22,36 +21,34 @@ const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient
 {
     const { ingredientsState : { ingredients : ingredientList }} = useContext(IngredientContext)
     const [currentWindow, setWindow] = useState<CurrentWindow>('ADD_INGREDIENT_BUTTON')
-    const [id, setId] = useState<string>('')
     const [title, setTitle] = useState<string>('')
     const [unity, setUnity] = useState<string>('')
     const [quantity, setQuantity] = useState(0)
 
-    const clickOnAddIngredient = () => setWindow('SELECT_AN_INGREDIENT')
-    const selectAnIngredient = (event : ChangeEvent<HTMLSelectElement>) =>
+    const clickOnAddIngredient = () : void => setWindow('SELECT_AN_INGREDIENT')
+    const selectAnIngredient = (event : ChangeEvent<HTMLSelectElement>) : void =>
     {
         setWindow('INGREDIENT_SELECTED')
         
         const {title, unity} = ingredientList.find(i => i.id === event.target.value) as Ingredient
 
-        setId(id)
         setTitle(title)
         setUnity(unity)
         setQuantity(0)
     }
 
-    const onQuantityChange = (event : ChangeEvent<HTMLInputElement>) =>
+    const onQuantityChange = (event : ChangeEvent<HTMLInputElement>) : void =>
         setQuantity(parseInt(event.target.value))
 
-    const addIngredientToTheList = () => 
-        addIngredient({ 
-                id : newGuid(),
-                title,
-                unity,
-                quantity
-            })
+    const addIngredientToTheList = () => addIngredient(
+    { 
+        id : '',
+        title,
+        unity,
+        quantity
+    })
 
-    const onSubmit = () =>
+    const onSubmit = () : void =>
     {
         addIngredientToTheList()
         setWindow('ADD_INGREDIENT_BUTTON')

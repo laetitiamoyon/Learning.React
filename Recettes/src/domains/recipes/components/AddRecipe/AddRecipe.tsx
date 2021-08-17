@@ -75,7 +75,6 @@ const AddRecipe :FC = () =>
                         addIngredient={addIngredient}
                         removeIngredient={removeIngredient}/>
                         
-
                     <button className={styles.submitButton}>Enregistrer</button>
                 </form>
             

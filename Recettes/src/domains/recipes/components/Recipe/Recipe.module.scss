@@ -36,7 +36,7 @@
 
 .recipeTitle:hover { color: $secondaryColor;}
 
-.recipeImage { background-size: contain; @include widthHeight(100px, 100px); }
+.recipeImage { background-size: cover; @include widthHeight(100px, 100px); }
 
 .removeButton 
 {
