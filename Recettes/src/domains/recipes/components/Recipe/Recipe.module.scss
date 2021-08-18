@@ -1,6 +1,6 @@
 @import '../../../../styles/styles.scss'; 
 
-.recipeElement
+.element
 {
     @include widthHeight(230px, 215px);
 
@@ -8,11 +8,13 @@
     border-radius: $defaultBorderRadius;
 
     text-align: center;
+
     padding: 15px;
+    
     box-shadow: 0 1px 0 rgba(0,0,0,0.6);
 }
 
-.viewRecipeButton
+.viewButton
 {
     @include widthHeight(130px, 30px);
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
@@ -22,9 +24,9 @@
 
     margin: auto;
 }
-.viewRecipeButton:hover { color : $secondaryColor;}
+.viewButton:hover { color : $secondaryColor;}
 
-.recipeTitle
+.title
 {
     cursor: pointer;
 
@@ -34,9 +36,14 @@
     @include text($textH5FontSize, undefined, $fontWeightSemiBold);
 }
 
-.recipeTitle:hover { color: $secondaryColor;}
+.title:hover { color: $secondaryColor;}
 
-.recipeImage { background-size: cover; @include widthHeight(100px, 100px); }
+.image
+{
+    background-size: cover;
+    @include widthHeight(100px, 100px);
+    margin-left : 21px;
+}
 
 .removeButton 
 {

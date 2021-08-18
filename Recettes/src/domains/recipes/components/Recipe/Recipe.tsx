@@ -15,10 +15,10 @@ const Recipe : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
     return <div className={styles.recipeContainer}>
         <div className={styles.removeButton} onClick={removeRecipe}></div>
        
-        <div className={styles.recipeElement}>
-            <img className={styles.recipeImage} alt='' src={imageData} style={{ backgroundImage : `url(${imagePath})`}} />
-            <div className={styles.recipeTitle}>{title}</div>
-            <div className={styles.viewRecipeButton} onClick={seeRecipeOnClick}>Voir la recette</div>
+        <div className={styles.element}>
+            <img className={styles.image} alt='' src={imageData} style={{ backgroundImage : `url(${imagePath})`}} />
+            <div className={styles.title}>{title}</div>
+            <div className={styles.viewButton} onClick={seeRecipeOnClick}>Voir la recette</div>
         </div>
     </div>
 }

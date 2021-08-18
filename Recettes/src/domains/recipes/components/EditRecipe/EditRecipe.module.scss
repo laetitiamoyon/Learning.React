@@ -42,7 +42,13 @@
 
 .recipeIngredientInput
 {
-    color : $primaryColor;
+    width : 50px;
+    margin-right : $spacingSm;
+}
+
+.recipeIngredient
+{
+    padding-top: 10px;
 }
 
 .title 
@@ -59,7 +65,7 @@
 .changeImageContainer
 {
     @include widthHeight(500px, 400px);
-    @include flex(space-around, center, column);
+    @include flex(space-evenly, center, column);
 
     margin-top: 22px;
     padding: 22px;
@@ -91,3 +97,13 @@
 .inputImage {display: none;}
 
 .recipeIngredient { color : $primaryColor; }
+
+.removeButton
+{
+    @include widthHeight(100px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+
+    margin-left: 12px;
+}
+.removeButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

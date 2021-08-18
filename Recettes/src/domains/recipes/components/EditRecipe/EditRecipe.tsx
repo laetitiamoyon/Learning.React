@@ -23,13 +23,19 @@ const EditRecipe : FC = () =>
     const [newImagePath, setNewImagePath] = useState(imagePath)
     const [newIngredients, setNewIngredients] = useState(ingredients)
 
+    const removeIngredient = (id : string) =>
+        setNewIngredients(newIngredients.filter(i => i.id !== id))
+
+    const updateIngredientQuantity = (id : string, quantiy : number) =>
+        setNewIngredients(newIngredients.map(i => i.id === id ? {...i, quantity : quantiy} : i))
+
     const { dispatch } = useContext(RecipeContext)
     const updateRecipe = () => dispatch(updateRecipeAction(
     { 
         id,
         title : newTitle,
         description : newDescription,
-        ingredients : newIngredients, // todo : edit ingredients
+        ingredients : newIngredients,
         imagePath : newImagePath,
         imageData : newImageData,
     }))
@@ -37,20 +43,19 @@ const EditRecipe : FC = () =>
     const history = useHistory()
     const redirectToRecipes = () => history.push('/recettes')
 
-    const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) => setNewTitle(event.target.value)
-    const onChangeDescription = (event : ChangeEvent<HTMLTextAreaElement>) => setNewDescription(event.target.value)
-    //const onChangeIngredients = (event : ChangeEvent<HTMLInputElement>) => setNewIngredients(event.target.value)
+    const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
+    const onChangeDescription = (event : ChangeEvent<HTMLTextAreaElement>) : void => setNewDescription(event.target.value)
   
-    const onImageUploaded = (image : string) =>
+    const onImageUploaded = (image : string) : void =>
     {
         setNewImageData(image)
         setNewImagePath(undefined)
     }
 
-    const onChangeImage = (event: ChangeEvent<HTMLInputElement>) =>
+    const onChangeImage = (event: ChangeEvent<HTMLInputElement>) : void =>
         imageUploader(event, onImageUploaded)
 
-    const onSubmit = (event : FormEvent<HTMLFormElement>) =>
+    const onSubmit = (event : FormEvent<HTMLFormElement>) : void =>
     {
         event.preventDefault()
         updateRecipe()
@@ -82,11 +87,20 @@ const EditRecipe : FC = () =>
                 <ul>
                     { newIngredients.map(({id, quantity, title, unity}) => 
                         <li key={id} className={styles.recipeIngredient}>
-                            <span className={styles.recipeIngredientInput}>{quantity}</span> {unity} de {title}
+                            <input
+                                value={quantity}
+                                type="number"
+                                onChange={(event: ChangeEvent<HTMLInputElement>) => updateIngredientQuantity(id, parseInt(event.target.value))}
+                                className={styles.recipeIngredientInput}/>
+                            {unity} de {title} 
+                            <button
+                                onClick={() => removeIngredient(id)} 
+                                className={styles.removeButton}>
+                                Supprimer
+                            </button>
                         </li>)
                     }
                 </ul>
-                { /* <input className={styles.input} value={newIngredients} onChange={onChangeIngredients}/> */ } 
                 
                 <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
             </form>
