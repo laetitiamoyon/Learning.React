@@ -1,10 +1,12 @@
-import { Recipe } from "./recipes.model"
+import { Recipe, RecipeIngredient } from './recipes.model';
 
 export enum RecipeAction
 {
     ADD_RECIPE = "recipes/ADD_RECIPE",
     UPDATE_RECIPE = "recipes/UPDATE_RECIPE",
+    UPDATE_RECIPE_INGREDIENT = "recipes/UPDATE_RECIPE_INGREDIENT",
     REMOVE_RECIPE = "recipes/REMOVE_RECIPE",
+    REMOVE_RECIPE_INGREDIENT = "recipes/REMOVE_RECIPES_INGREDIENT"
 }
 
 export interface AddRecipeAction
@@ -19,10 +21,22 @@ export interface UpdateRecipeAction
     payload : Recipe
 }
 
+export interface UpdateIngredientRecipeAction
+{ 
+    type: RecipeAction.UPDATE_RECIPE_INGREDIENT
+    payload : RecipeIngredient
+}
+
 export interface RemoveRecipeAction
 { 
     type: RecipeAction.REMOVE_RECIPE
     payload : { id : string }
+}
+
+export interface RemoveIngredientRecipeAction
+{ 
+    type: RecipeAction.REMOVE_RECIPE_INGREDIENT
+    payload : { ingredientId : string }
 }
 
 export const addRecipeAction = (payload : Recipe) : AddRecipeAction => ({
@@ -35,12 +49,24 @@ export const updateRecipeAction = (payload : Recipe) : UpdateRecipeAction => ({
     payload
 })
 
+export const updateIngredientRecipeAction = (payload : RecipeIngredient) : UpdateIngredientRecipeAction => ({
+    type : RecipeAction.UPDATE_RECIPE_INGREDIENT,
+    payload
+})
+
 export const removeRecipeAction = (id: string) : RemoveRecipeAction => ({ 
     type: RecipeAction.REMOVE_RECIPE,
     payload : { id } 
 })
 
+export const removeIngredientRecipeAction = (ingredientId: string) : RemoveIngredientRecipeAction => ({ 
+    type: RecipeAction.REMOVE_RECIPE_INGREDIENT,
+    payload : { ingredientId } 
+})
+
 export type RecipeActions = 
     AddRecipeAction |
     UpdateRecipeAction |
-    RemoveRecipeAction
+    UpdateIngredientRecipeAction |
+    RemoveRecipeAction |
+    RemoveIngredientRecipeAction

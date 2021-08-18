@@ -14,7 +14,7 @@ export const recipesInitialState : RecipeState =
         ingredients : [
             { 
                 id : "1", 
-                title : "mozzarella", 
+                title : "sel", 
                 unity : "gr",
                 quantity :100
             },
@@ -56,6 +56,12 @@ export const recipesInitialState : RecipeState =
                 title : "sel", 
                 unity : "gr",
                 quantity :1
+            },
+            { 
+                id : "2", 
+                title : "huile d'olive", 
+                unity : "gr",
+                quantity :10
             }
         ],
         title : "Salade César",

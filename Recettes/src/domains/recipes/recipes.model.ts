@@ -2,7 +2,7 @@ import { Ingredient } from "../ingredients/ingredients.model";
 
 export interface RecipeIngredient extends Ingredient
 {
-    quantity : number
+    quantity? : number
 }
 
 export interface Recipe

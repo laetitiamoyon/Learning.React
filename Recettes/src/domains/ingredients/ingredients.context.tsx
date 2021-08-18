@@ -1,4 +1,4 @@
-import React, { useReducer, ReactNode } from 'react'
+import React, { useReducer, ReactNode, FC } from 'react'
 import { IngredientActions } from './ingredients.action'
 import { ingredientsReducer } from './ingredients.reducer'
 import { IngredientState, ingredientInitialState } from './ingredients.state'
@@ -20,7 +20,7 @@ interface Props
     children : ReactNode
 }
 export const IngredientContext = React.createContext<IngredientContextState>(ingredientContextInitialState)
-export const IngredientContextProvider = ({children} : Props) =>
+export const IngredientContextProvider : FC<Props> = ({children}) =>
 {
     const [ingredientsState, dispatch] = useReducer(ingredientsReducer, ingredientInitialState)
 

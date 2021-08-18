@@ -3,15 +3,38 @@ import { removeIngredientAction, updateIngredientAction } from '../../ingredient
 import { IngredientContext } from '../../ingredients.context';
 import { Ingredient as IngredientModel } from '../../ingredients.model';
 import styles from './Ingredient.module.scss'
+import { RecipeContext } from '../../../recipes/recipes.context';
+import { removeIngredientRecipeAction, updateIngredientRecipeAction } from '../../../recipes/recipes.action';
 
 const Ingredient : FC<IngredientModel> = ({id, title, unity}) => 
 {
     const [newTitle, setNewTitle] = useState(title)
     const [newUnity, setNewUnity] = useState(unity)
 
-    const { dispatch } = useContext(IngredientContext)
-    const removeIngredient = () => dispatch(removeIngredientAction(id))
-    const updateIngredient = () => dispatch(updateIngredientAction(
+    const { dispatch: ingredientDispatch } = useContext(IngredientContext)
+    const { dispatch : recipeDispatch } = useContext(RecipeContext)
+    const removeIngredient = () => ingredientDispatch(removeIngredientAction(id))
+
+    const removeRecipeIngredient = () => 
+    {
+        ingredientDispatch(removeIngredientAction(id))
+        recipeDispatch(removeIngredientRecipeAction(id))
+    }
+    
+    const updateRecipeIngredient = () => {
+        ingredientDispatch(updateIngredientAction({
+            id, 
+            title : newTitle,
+            unity : newUnity
+        }))
+        recipeDispatch(updateIngredientRecipeAction({
+            id, 
+            title : newTitle,
+            unity : newUnity
+        }))
+    }
+
+    const updateIngredient = () => ingredientDispatch(updateIngredientAction(
     { 
         id, 
         title : newTitle,
@@ -32,8 +55,12 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
             onChange={onChangeUnity}
             value={newUnity}/>
 
-        <div className={styles.updateButton} onClick={updateIngredient}>Mettre à jour</div>
-        <div className={styles.removeButton} onClick={removeIngredient}></div>
+        <div className={styles.updateButton} onClick={() => {
+            updateIngredient();
+            updateRecipeIngredient();}}>Mettre à jour</div>
+        <div className={styles.removeButton} onClick={() => {
+            removeIngredient();
+            removeRecipeIngredient();}}></div>
     </form>
 };
 
