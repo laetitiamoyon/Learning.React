@@ -1,4 +1,5 @@
-import { Recipe, RecipeIngredient } from './recipes.model';
+import { Ingredient } from '../ingredients/ingredients.model';
+import { Recipe } from './recipes.model';
 
 export enum RecipeAction
 {
@@ -24,7 +25,7 @@ export interface UpdateRecipeAction
 export interface UpdateIngredientRecipeAction
 { 
     type: RecipeAction.UPDATE_RECIPE_INGREDIENT
-    payload : RecipeIngredient
+    payload : Ingredient
 }
 
 export interface RemoveRecipeAction
@@ -49,7 +50,7 @@ export const updateRecipeAction = (payload : Recipe) : UpdateRecipeAction => ({
     payload
 })
 
-export const updateIngredientRecipeAction = (payload : RecipeIngredient) : UpdateIngredientRecipeAction => ({
+export const updateIngredientRecipeAction = (payload: Ingredient) : UpdateIngredientRecipeAction => ({
     type : RecipeAction.UPDATE_RECIPE_INGREDIENT,
     payload
 })

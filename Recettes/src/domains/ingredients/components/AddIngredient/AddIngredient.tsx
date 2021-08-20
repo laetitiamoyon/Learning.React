@@ -11,18 +11,18 @@ const AddIngredient : FC = () =>
     const { dispatch } = useContext(IngredientContext)
 
     const history = useHistory();
-    const redirectToIngredients = () => history.push('/ingredients')
-    const addIngredient = () => dispatch(addIngredientAction(
+    const redirectToIngredients = () : void => history.push('/ingredients')
+    const addIngredient = () : void => dispatch(addIngredientAction(
     { 
         id : '',
         title,
         unity
     }))
 
-    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)
-    const onUnityChange = (event: ChangeEvent<HTMLInputElement>) => setUnity(event.target.value)
+    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) : void => setTitle(event.target.value)
+    const onUnityChange = (event: ChangeEvent<HTMLInputElement>) : void => setUnity(event.target.value)
 
-    const onSubmit = (event: FormEvent<HTMLFormElement>) =>
+    const onSubmit = (event: FormEvent<HTMLFormElement>) : void =>
     {
         event.preventDefault()
 

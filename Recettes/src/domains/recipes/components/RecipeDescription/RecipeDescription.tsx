@@ -17,7 +17,7 @@ const RecipeDescription :FC = () =>
     let { id } = useParams<RouteProps>();
     const {title, imagePath, imageData, description, ingredients} = recipes.find(r => r.id === id) as Recipe
     const history = useHistory();
-    const onClick = () => history.push(`/modification-de-la-recette/${id}`, { id : id })
+    const onClick = () : void => history.push(`/modification-de-la-recette/${id}`, { id : id })
 
     return <div className={styles.descriptionRecipeContainer}>
         <h1 className={styles.title}>{title}</h1>

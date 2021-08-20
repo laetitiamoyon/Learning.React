@@ -13,25 +13,18 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
 
     const { dispatch: ingredientDispatch } = useContext(IngredientContext)
     const { dispatch : recipeDispatch } = useContext(RecipeContext)
-    const removeIngredient = () => ingredientDispatch(removeIngredientAction(id))
 
-    const removeRecipeIngredient = () => 
-    {
-        ingredientDispatch(removeIngredientAction(id))
-        recipeDispatch(removeIngredientRecipeAction(id))
-    }
+    const removeIngredient = () => ingredientDispatch(removeIngredientAction(id))
+    const removeRecipeIngredient = () => recipeDispatch(removeIngredientRecipeAction(id))
     
     const updateRecipeIngredient = () => {
-        ingredientDispatch(updateIngredientAction({
+        const ingredient : IngredientModel = {
             id, 
             title : newTitle,
             unity : newUnity
-        }))
-        recipeDispatch(updateIngredientRecipeAction({
-            id, 
-            title : newTitle,
-            unity : newUnity
-        }))
+        }
+        
+        recipeDispatch(updateIngredientRecipeAction(ingredient))
     }
 
     const updateIngredient = () => ingredientDispatch(updateIngredientAction(
@@ -41,8 +34,8 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
         unity : newUnity
     }))
 
-    const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) => setNewTitle(event.target.value)
-    const onChangeUnity = (event: ChangeEvent<HTMLInputElement>) => setNewUnity(event.target.value)
+    const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
+    const onChangeUnity = (event: ChangeEvent<HTMLInputElement>) : void => setNewUnity(event.target.value)
 
     return <form className={styles.formContainer}>
         <input 

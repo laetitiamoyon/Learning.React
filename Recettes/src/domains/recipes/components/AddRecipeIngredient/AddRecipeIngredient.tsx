@@ -40,7 +40,7 @@ const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient
     const onQuantityChange = (event : ChangeEvent<HTMLInputElement>) : void =>
         setQuantity(parseInt(event.target.value))
 
-    const addIngredientToTheList = () => addIngredient(
+    const addIngredientToTheList = () : void => addIngredient(
     { 
         id : '',
         title,

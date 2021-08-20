@@ -15,18 +15,18 @@ const AddRecipe :FC = () =>
     const [imageData, setImageData] = useState<string | undefined>(undefined)
     const [ingredients, setIngredients] = useState<RecipeIngredient[]>([])
 
-    const addIngredient = (ingredient : RecipeIngredient) => setIngredients(
+    const addIngredient = (ingredient : RecipeIngredient) : void => setIngredients(
         [...ingredients, ingredient])
     
-    const removeIngredient = (id : string) => setIngredients(
+    const removeIngredient = (id : string) : void => setIngredients(
         ingredients.filter(ingredient => ingredient.id !== id))
 
     const { dispatch } = useContext(RecipeContext)
 
     const history = useHistory();
-    const redirectToRecipes = () => history.push('/recettes')
+    const redirectToRecipes = () : void => history.push('/recettes')
 
-    const addRecipe = () => dispatch(addRecipeAction(
+    const addRecipe = () : void => dispatch(addRecipeAction(
     { 
         id : '',
         title,
@@ -35,10 +35,10 @@ const AddRecipe :FC = () =>
         imageData,
     }))
 
-    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)
-    const onDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => setDescription(event.target.value)
+    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) : void => setTitle(event.target.value)
+    const onDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) : void => setDescription(event.target.value)
 
-    const onSubmit = (event: FormEvent<HTMLFormElement>) =>
+    const onSubmit = (event: FormEvent<HTMLFormElement>) : void =>
     {
         event.preventDefault()
 

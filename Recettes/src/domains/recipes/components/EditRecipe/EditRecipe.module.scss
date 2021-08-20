@@ -43,7 +43,7 @@
 .recipeIngredientInput
 {
     width : 50px;
-    margin-right : $spacingSm;
+    margin-right : $spacingXs;
 }
 
 .recipeIngredient
@@ -104,6 +104,8 @@
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
 
-    margin-left: 12px;
+    margin-left: $spacingSm;
 }
 .removeButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.select { margin-left : $spacingXs; }

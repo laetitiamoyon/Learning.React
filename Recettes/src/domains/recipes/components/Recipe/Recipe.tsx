@@ -8,8 +8,8 @@ import styles from './Recipe.module.scss'
 const Recipe : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
 {
     const history = useHistory();
-    const seeRecipeOnClick = () => history.push(`/description-de-la-recette/${id}`, { id : id })
-    const removeRecipe = () => dispatch(removeRecipeAction(id))
+    const seeRecipeOnClick = () : void => history.push(`/description-de-la-recette/${id}`, { id : id })
+    const removeRecipe = () : void => dispatch(removeRecipeAction(id))
     const { dispatch } = useContext(RecipeContext)
 
     return <div className={styles.recipeContainer}>

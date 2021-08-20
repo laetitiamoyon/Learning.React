@@ -1,4 +1,5 @@
 import { ChangeEvent, FC } from 'react';
+import { imageUploader } from '../../../../shared/utils/imageUploader';
 import styles from './AddRecipeImage.module.scss'
 
 interface Props
@@ -8,16 +9,8 @@ interface Props
 }
 const AddRecipeImage : FC<Props> = ({imageData, setImageData}) =>
 {    
-    const uploadImage = (event: ChangeEvent<HTMLInputElement>) =>
-    {
-        if (!event.target.files || !event.target.files[0]) return
-
-        var file = event.target.files[0]
-        var reader = new FileReader()
-
-        reader.onload = (event : ProgressEvent<FileReader>) => setImageData(event?.target?.result as string)
-        reader.readAsDataURL(file)
-    }
+    const uploadImage = (event: ChangeEvent<HTMLInputElement>) : void =>
+        imageUploader(event, setImageData)
 
     return <div className={styles.container}>
         <div className={styles.title}>Choisissez l'image de votre recette</div>

@@ -2,7 +2,7 @@ import { newGuid } from '../../shared/utils/string'
 import { IngredientAction, IngredientActions } from './ingredients.action'
 import { IngredientState } from './ingredients.state';
 
-export const ingredientsReducer = (state : IngredientState, action : IngredientActions) =>
+export const ingredientsReducer = (state : IngredientState, action : IngredientActions) : IngredientState =>
 {
     switch (action.type)
     {

@@ -3,7 +3,10 @@ import { RecipeActions, RecipeAction } from './recipes.action';
 import { newGuid } from '../../shared/utils/string';
 import { Recipe } from './recipes.model';
 
-export const recipesReducer = (state: RecipeState, action: RecipeActions) =>
+const containRecipeIngredient = (recipe : Recipe, id : string) : boolean =>
+    recipe.ingredients.some(recipeIngredient => recipeIngredient.id === id)
+
+export const recipesReducer = (state: RecipeState, action: RecipeActions) : RecipeState =>
 {
     switch (action.type)
     {
@@ -38,35 +41,30 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) =>
 
         case RecipeAction.UPDATE_RECIPE_INGREDIENT: 
         {
-            const containRecipeIngredient = (recipe : Recipe) : boolean =>
-                recipe.ingredients.some(
-                    // @ts-ignore
-                    recipeIngredient => recipeIngredient.id === action.payload.ingredientId)
-                    
+            const { id } = action.payload
             
             return {
                 ...state, 
                 recipes: state.recipes.map(
-                    recipe => containRecipeIngredient(recipe) ? 
+                    recipe => containRecipeIngredient(recipe, id) ? 
                     { 
                         ...recipe,                                                                                              
-                        ingredients : recipe.ingredients.map(recipeIngredient => recipeIngredient.id === action.payload.id ? action.payload : recipeIngredient)
+                        ingredients : recipe.ingredients.map(recipeIngredient => 
+                            recipeIngredient.id === id ? 
+                            action.payload : recipeIngredient)
                     }
                     : recipe)
-            }
+            }   
         }
 
         case RecipeAction.REMOVE_RECIPE_INGREDIENT : 
         {
             const { ingredientId } = action.payload
-            const containRecipeIngredient = (recipe : Recipe) : boolean =>
-                recipe.ingredients.some(
-                    recipeIngredient => recipeIngredient.id === ingredientId)
             
             return {
                 ...state, 
                 recipes: state.recipes.map(
-                    recipe => containRecipeIngredient(recipe) ? 
+                    recipe => containRecipeIngredient(recipe, ingredientId) ? 
                     { 
                         ...recipe,                                                                                              
                         ingredients : recipe.ingredients.filter(recipeIngredient => recipeIngredient.id !== action.payload.ingredientId)
