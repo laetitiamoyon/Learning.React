@@ -1,6 +1,5 @@
 import { TodoState } from './todos.state';
 import { TodoActions, TodoAction } from './todos.actions';
-import { newGuid } from '../../shared/utils/string';
 
 export const todosReducer = (state: TodoState, action: TodoActions) : TodoState =>
 {
@@ -8,10 +7,9 @@ export const todosReducer = (state: TodoState, action: TodoActions) : TodoState 
     {
         case TodoAction.ADD_TODO : 
         {
-            console.log(action, state)
             return {
                 ...state,
-                todos: [...state.todos, { ...action.payload, id : newGuid() } ] 
+                todos: [...state.todos, action.payload] 
               }
         }
         case TodoAction.UPDATE_TODO : 

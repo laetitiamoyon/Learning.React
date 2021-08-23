@@ -1,8 +1,8 @@
-import { Todo } from "./todos.model";
+import { ITodo } from "./todos.model";
 
 export interface TodoState
 { 
-    todos : Todo[]
+    todos : ITodo[]
 };
 
 export const todosInitialState : TodoState = 

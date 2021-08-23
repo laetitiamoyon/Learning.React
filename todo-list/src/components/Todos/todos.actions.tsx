@@ -1,4 +1,4 @@
-import { Todo } from './todos.model';
+import { ITodo } from './todos.model';
 
 export enum TodoAction
 {
@@ -10,13 +10,13 @@ export enum TodoAction
 export interface AddTodoAction
 { 
     type: TodoAction.ADD_TODO
-    payload : Todo
+    payload : ITodo
 }
 
 export interface UpdateTodoAction
 { 
     type: TodoAction.UPDATE_TODO
-    payload : Todo
+    payload : ITodo
 }
 
 export interface RemoveTodoAction
@@ -25,12 +25,12 @@ export interface RemoveTodoAction
     payload : {id : string}
 }
 
-export const addTodoAction = (payload : Todo) : AddTodoAction => ({
+export const addTodoAction = (payload : ITodo) : AddTodoAction => ({
     type : TodoAction.ADD_TODO,
     payload
 })
 
-export const updateTodoAction = (payload : Todo) : UpdateTodoAction => ({
+export const updateTodoAction = (payload : ITodo) : UpdateTodoAction => ({
     type : TodoAction.UPDATE_TODO,
     payload
 })

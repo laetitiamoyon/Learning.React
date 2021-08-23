@@ -1,20 +1,23 @@
-import React, { FC, useContext } from 'react';
-import { TodoContext } from '../todos.context';
+import React, { FC } from 'react';
 import './Todo.css'
-import { removeTodoAction } from '../todos.actions';
-import { Todo as TodoModel} from '../todos.model';
+import { ITodo } from '../todos.model';
 
-const Todo : FC<TodoModel> = ({ id, content, completed }) => {
-
-    const { dispatch } = useContext(TodoContext)
-    const removeTodo = () => dispatch(removeTodoAction(id))
+interface Props extends ITodo
+{
+    removeTodo : (id : string) => void
+    toggleTodo : (id : string) => void
+    editTodo : (id : string, title : string) => void
+}
+const Todo : FC<Props> = ({ id, content, completed, removeTodo, toggleTodo, editTodo }) =>
+{
+    const onChangeTitle = (e : any) => editTodo(id, e.target.value)
+    const onChecked = (e : any) => toggleTodo(id)
 
     return <div className="todosContainer">
-       
-        <div className="todos">
-            <div className="checkBox">{completed}</div>
-            <div className="content">{content}</div>
-            <div className="removeButton" onClick={removeTodo}>X</div>
+        <div className="todo">
+            <input type="checkbox" checked={completed} onChange={onChecked}/>
+            <input className="content" defaultValue={content} onChange={onChangeTitle}/>
+            <div className="removeButton" onClick={() => removeTodo(id)}>X</div>
         </div>
     </div>
 };
