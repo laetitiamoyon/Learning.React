@@ -1,12 +1,15 @@
 import { ITodo } from "./todos.model";
+import { ActionStatus, IActionMetadata } from '../../shared/domains/Redux/redux.model';
 
-export interface TodoState
+export interface TodoState extends IActionMetadata
 { 
     todos : ITodo[]
 };
 
 export const initialTodosState : TodoState = 
 {
+    status : ActionStatus.Loading,
+    error : undefined,
     todos : [
     { 
         id : "1", 
