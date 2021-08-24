@@ -1,11 +1,11 @@
-import { TodoContextProvider } from './components/Todos/todos.context';
 import React from 'react';
-import Todos from './components/Todos/Todos/Todos';
+import Todos from './domains/Todos/components/Todos/Todos';
+import store from './domains/Root/root.store';
+import { Provider } from 'react-redux';
 
 const App = () => 
-
-  <TodoContextProvider>
+  <Provider store={store}>
     <Todos/>
-  </TodoContextProvider>
+  </Provider>
 
 export default App;

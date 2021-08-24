@@ -5,7 +5,7 @@ export interface TodoState
     todos : ITodo[]
 };
 
-export const todosInitialState : TodoState = 
+export const initialTodosState : TodoState = 
 {
     todos : [
     { 
