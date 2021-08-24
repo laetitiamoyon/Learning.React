@@ -40,6 +40,17 @@
     padding: 6px;
 }
 
+.recipeIngredientInput
+{
+    width : 50px;
+    margin-right : $spacingXs;
+}
+
+.recipeIngredient
+{
+    padding-top: 10px;
+}
+
 .title 
 {
     @include text($textH5FontSize, $primaryColor, $fontWeightRegular);
@@ -48,3 +59,53 @@
 
     text-shadow: 2px 2px 4px black;
 }
+
+.addRecipeElement { @include flex(center, undefined, undefined); }
+
+.changeImageContainer
+{
+    @include widthHeight(500px, 400px);
+    @include flex(space-evenly, center, column);
+
+    margin-top: 22px;
+    padding: 22px;
+
+    border: dotted 2px white;
+}
+
+.titleImage
+{
+    @include text($textH5FontSize, $primaryColor, undefined, center);
+
+    text-shadow: 2px 2px 4px black;
+}
+
+.image { background-size: cover; @include widthHeight(150px, 150px); }
+
+.label
+{
+    @include widthHeight(300px, 40px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH3LineHeight);
+    background-color: white;
+
+    cursor: pointer;
+}
+
+.label:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.inputImage {display: none;}
+
+.recipeIngredient { color : $primaryColor; }
+
+.removeButton
+{
+    @include widthHeight(100px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+
+    margin-left: $spacingSm;
+}
+.removeButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.select { margin-left : $spacingXs; }

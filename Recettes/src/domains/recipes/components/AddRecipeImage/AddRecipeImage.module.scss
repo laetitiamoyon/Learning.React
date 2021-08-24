@@ -1,0 +1,36 @@
+@import '../../../../styles/styles.scss'; 
+
+.container
+{
+    @include widthHeight(500px, 400px);
+    @include flex(space-around, center, column);
+
+    margin-top: 22px;
+    padding: 22px;
+
+    border: dotted 2px white;
+}
+
+.title
+{
+    @include text($textH5FontSize, $primaryColor, undefined, center);
+
+    text-shadow: 2px 2px 4px black;
+}
+
+.image { @include widthHeight(150px, 150px); }
+
+.label
+{
+    @include widthHeight(200px, 40px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH3LineHeight);
+    background-color: white;
+
+    cursor: pointer;
+}
+
+.label:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.input {display: none;}
+
