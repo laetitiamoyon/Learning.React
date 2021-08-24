@@ -2,14 +2,14 @@ import { useState, ChangeEvent, FC } from 'react';
 import "./AddTodo.css"
 import { newGuid } from '../../../../shared/utils/string';
 import { useDispatch } from 'react-redux';
-import { addTodoAction } from '../../todos.actions';
+import { addTodoRequestAction } from '../../todos.actions';
 
 const AddTodo : FC = () => {
 
     const [title, setTitle] = useState('')
     const dispatch = useDispatch()
 
-    const addTodoInContextAndModel = () => dispatch(addTodoAction({
+    const addTodoInContextAndModel = () => dispatch(addTodoRequestAction({
         id: newGuid(),
         content: title,
         completed: false
