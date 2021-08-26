@@ -1,26 +1,22 @@
-import { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
+import { useState, useContext, ChangeEvent, FormEvent, FC, useEffect } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
 import { updateRecipeAction } from '../../recipes.action';
 import { Recipe } from '../../recipes.model';
-import { imageUploader } from '../../../../shared/utils/imageUploader';
-import { updateIngredientAction } from '../../../ingredients/ingredients.action';
-import UpdateRecipe from '../UpdateRecipe/UpdateRecipe';
+import { imageUploader } from '../../../../shared/utils/imageUploader'; 
 
 interface RouteProps
 {
     id : string
 }
 
-const EditRecipe : FC = ({recipeIngredientId, updateRecipeIngredient}) =>
+const EditRecipe : FC = () =>
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
     let { id } = useParams<RouteProps>();
     const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id) as Recipe
 
-    const [newTitle, setNewTitle] = useState(title)
-    const [newDescription, setNewDescription] = useState(description)
     const [newImageData, setNewImageData] = useState(imageData)
     const [newImagePath, setNewImagePath] = useState(imagePath)
     const [newIngredients, setNewIngredients] = useState(ingredients)
@@ -46,7 +42,21 @@ const EditRecipe : FC = ({recipeIngredientId, updateRecipeIngredient}) =>
     const history = useHistory()
     const redirectToRecipes = () : void => history.push('/recettes')
 
+    const [newTitle, setNewTitle] = useState(
+        localStorage.getItem('newTitle') || title)
+
+    const [newDescription, setNewDescription] = useState(
+        localStorage.getItem('newDescription') || description)
+    
+    useEffect(() => {
+
+       localStorage.setItem("newTitle", newTitle)
+       localStorage.setItem("newDescription", newDescription)
+        
+    }, [newTitle, newDescription]);
+
     const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
+    
     const onChangeDescription = (event : ChangeEvent<HTMLTextAreaElement>) : void => setNewDescription(event.target.value)
 
     const onImageUploaded = (image : string) : void =>
@@ -88,7 +98,7 @@ const EditRecipe : FC = ({recipeIngredientId, updateRecipeIngredient}) =>
 
                 <label className={styles.title}>Ingrédients </label>
                 <ul>
-                    { newIngredients.map(({id, quantity, unity}) => 
+                    { newIngredients.map(({id, quantity, unity, title}) => 
                         <li key={id} className={styles.recipeIngredient}>
                             <input
                                 value={quantity}
@@ -98,13 +108,12 @@ const EditRecipe : FC = ({recipeIngredientId, updateRecipeIngredient}) =>
                             {unity} de
 
                             <select 
-                                onChange={(event: ChangeEvent<HTMLInputElement>) => 
-                                    {updateRecipeIngredient(recipeIngredientId, event.target.value)}}
                                 className={styles.select}
                                 defaultValue=""
                                 placeholder="Nom de l'ingrédient">
- 
+                                
                             </select>
+
                             <button
                                 onClick={() => removeIngredient(id)} 
                                 className={styles.removeButton}>

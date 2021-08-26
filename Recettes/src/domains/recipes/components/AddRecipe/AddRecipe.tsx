@@ -35,7 +35,13 @@ const AddRecipe :FC = () =>
         imageData,
     }))
 
-    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) : void => setTitle(event.target.value)
+    const onTitleChange = (event: ChangeEvent<HTMLInputElement>) : void => 
+    {
+        localStorage.setItem('title',event.target.value)
+        setTitle(event?.target.value)
+    }
+
+
     const onDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) : void => setDescription(event.target.value)
 
     const onSubmit = (event: FormEvent<HTMLFormElement>) : void =>

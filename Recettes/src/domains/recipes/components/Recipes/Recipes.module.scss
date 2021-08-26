@@ -10,7 +10,7 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.recipeContainer
+.container
 {
     @include superBackground(url(../images/backgrounds/recipes-list.jpg), cover);
     @include marginPadding(auto, 0 24px);
@@ -18,6 +18,23 @@
     height: 100vh;
 }
 
-.recipeElementContainer { margin: auto; @include flex(center, undefined, undefined, 32px, wrap);}
+.recipes { margin: auto; @include flex(center, undefined, undefined, 32px, wrap);}
 
 .addRecipe:hover { color: $secondaryColor; }
+
+.form
+{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.input
+{
+  @include widthHeight(200px, 32px);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  text-align: center;
+  
+  outline: none;
+}

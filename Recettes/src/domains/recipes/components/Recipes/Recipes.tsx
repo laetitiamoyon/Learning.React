@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react'
+import React, { FC, useContext, useState, useEffect, ChangeEvent } from 'react'
 import styles from './Recipes.module.scss'
 import Recipe from '../Recipe/Recipe'
 import { RecipeContext } from '../../recipes.context'
@@ -6,11 +6,28 @@ import { RecipeContext } from '../../recipes.context'
 const Recipes : FC = () => 
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
+    const [filteredRecipes, setFilteredRecipes] = useState(recipes)
+    const [searchRecipeTerm, setSearchRecipeTerm] = useState('')
+    
+  
+    const onSearchRecipe = (event : ChangeEvent<HTMLInputElement>) : void => setSearchRecipeTerm(event.target.value)
+  
+    useEffect(() => {
+        setFilteredRecipes(recipes.filter(recipe =>
+            recipe.title.toLowerCase().includes(searchRecipeTerm.toLowerCase())))
+    }, [searchRecipeTerm, recipes]);
 
-    return <div className={styles.recipeContainer}>
+    return <div className={styles.container}>
         <h1 className={styles.title}>Nos recettes</h1>
-        <div className={styles.recipeElementContainer}>
-            { recipes && recipes.map(r => <Recipe {...r} key={r.id} />) }
+        <div className={styles.form}>
+            <input className={styles.input} 
+            type="text" 
+            placeholder="Rechercher" 
+            value={searchRecipeTerm}
+            onChange={onSearchRecipe}/>
+        </div>
+        <div className={styles.recipes}>
+            { filteredRecipes.map(recipe => <Recipe key={recipe.id} {...recipe} />) }
         </div>
     </div> 
 }
