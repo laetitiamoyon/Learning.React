@@ -13,7 +13,7 @@ const Todo : FC<ITodo> = ({ id, content, completed }) =>
 
     return <div className="todosContainer">
         <div className="todo">
-            <input type="checkbox" checked={completed} onChange={onChecked}/>
+            <input className="checkbox" type="checkbox" checked={completed} onChange={onChecked}/>
             <input className="content" defaultValue={content} onChange={onChangeTitle}/>
             <div className="removeButton" onClick={onRemove}>X</div>
         </div>
