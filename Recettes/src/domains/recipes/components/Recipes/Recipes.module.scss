@@ -22,12 +22,7 @@
 
 .addRecipe:hover { color: $secondaryColor; }
 
-.form
-{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
-}
+.form { @include flex(center); margin-bottom: 32px; }
 
 .input
 {
@@ -38,3 +33,5 @@
   
   outline: none;
 }
+
+.redLetter{color: red;}

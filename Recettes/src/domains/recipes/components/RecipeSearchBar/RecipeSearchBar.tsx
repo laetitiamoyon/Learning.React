@@ -3,9 +3,9 @@ import { useHistory } from "react-router-dom";
 import { removeRecipeAction } from '../../recipes.action';
 import { RecipeContext } from '../../recipes.context';
 import { Recipe as RecipeModel } from '../../recipes.model'
-import styles from './Recipe.module.scss'
+import styles from './RecipeSearchBar.module.scss'
 
-const Recipe : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
+const RecipeSearchBar : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
 {
     const history = useHistory();
     const seeRecipeOnClick = () : void => history.push(`/description-de-la-recette/${id}`, { id : id })
@@ -24,4 +24,4 @@ const Recipe : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
     </div>
 }
 
-export default Recipe;
+export default RecipeSearchBar;

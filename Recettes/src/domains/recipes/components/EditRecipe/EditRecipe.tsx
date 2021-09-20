@@ -42,11 +42,9 @@ const EditRecipe : FC = () =>
     const history = useHistory()
     const redirectToRecipes = () : void => history.push('/recettes')
 
-    const [newTitle, setNewTitle] = useState(
-        localStorage.getItem('newTitle') || title)
+    const [newTitle, setNewTitle] = useState(title)
 
-    const [newDescription, setNewDescription] = useState(
-        localStorage.getItem('newDescription') || description)
+    const [newDescription, setNewDescription] = useState(description)
     
     useEffect(() => {
 

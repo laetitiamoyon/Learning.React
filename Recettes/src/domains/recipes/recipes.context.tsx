@@ -1,8 +1,7 @@
 import React, { FC, useReducer, ReactNode } from 'react'
 import { recipesReducer } from './recipes.reducer';
 import { RecipeActions } from './recipes.action';
-import { recipesInitialState, RecipeState } from './recipes.state';
-import { useEffect } from 'react';
+import { RecipeState, localStorageRecipeState } from './recipes.state';
 
 interface RecipeContextState
 {
@@ -12,7 +11,7 @@ interface RecipeContextState
 
 const recipeContextInitialState : RecipeContextState =
 {
-  recipesState: recipesInitialState,
+  recipesState: localStorageRecipeState(),
   dispatch: () => null
 }
 
@@ -24,14 +23,7 @@ interface Props
 export const RecipeContext = React.createContext<RecipeContextState>(recipeContextInitialState);
 export const RecipeContextProvider : FC<Props> = ({children}) =>
 {
-    const [recipesState, dispatch] = useReducer(recipesReducer, recipesInitialState, () => {
-      const localRecipes = localStorage.getItem('recipesState')
-        return localRecipes ? JSON.parse(localRecipes) : recipesInitialState; 
-      })
-
-    useEffect(() => {
-      localStorage.setItem("localRecipes", JSON.stringify(recipesState));
-    }, [recipesState]);
+    const [recipesState, dispatch] = useReducer(recipesReducer, localStorageRecipeState())
 
     return <RecipeContext.Provider value={{recipesState, dispatch}}>
         {children}

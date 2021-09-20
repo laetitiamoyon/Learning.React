@@ -1,17 +1,16 @@
 import React, { FC, useContext, useState, useEffect, ChangeEvent } from 'react'
 import styles from './Recipes.module.scss'
-import Recipe from '../Recipe/Recipe'
+import Recipe from '../Recipe/Recipe';
 import { RecipeContext } from '../../recipes.context'
 
 const Recipes : FC = () => 
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
     const [filteredRecipes, setFilteredRecipes] = useState(recipes)
-    const [searchRecipeTerm, setSearchRecipeTerm] = useState('')
-    
+    const [searchRecipeTerm, setSearchRecipeTerm] = useState<string>('')
   
     const onSearchRecipe = (event : ChangeEvent<HTMLInputElement>) : void => setSearchRecipeTerm(event.target.value)
-  
+
     useEffect(() => {
         setFilteredRecipes(recipes.filter(recipe =>
             recipe.title.toLowerCase().includes(searchRecipeTerm.toLowerCase())))
@@ -23,12 +22,12 @@ const Recipes : FC = () =>
             <input className={styles.input} 
             type="text" 
             placeholder="Rechercher" 
-            value={searchRecipeTerm}
+            value={searchRecipeTerm } 
             onChange={onSearchRecipe}/>
         </div>
-        <div className={styles.recipes}>
-            { filteredRecipes.map(recipe => <Recipe key={recipe.id} {...recipe} />) }
-        </div>
+        <div className={styles.recipes} >
+        {filteredRecipes.map(recipe => <Recipe key={recipe.id} {...recipe} />)}
+      </div>
     </div> 
 }
 

@@ -1,15 +1,14 @@
 import { Recipe } from "./recipes.model";
+import { getOrDefaultDataFromLocalStorage } from '../../shared/domains/localStorage/localStorage.utils';
 
 export interface RecipeState
 { 
     recipes : Recipe[]
 };
 
-export const recipesInitialState : RecipeState = 
+export const initialRecipes : Recipe[] = [
 {
-    recipes : [
-    { 
-        id : "1", 
+    id : "1", 
         imagePath : "./images/regina.jpg",
         ingredients : [
             { 
@@ -156,4 +155,8 @@ export const recipesInitialState : RecipeState =
         title : "Tacos mexicain",
         description : "A la poêle, faire dorer l'oignon émincé dans un peu d'huile d'olive. Rajouter la viande, assaisonner et laisser cuire 5 min. Laver les feuilles de laitue. Couper les tomates et le poivron en petits dés. Incorporer le tout à la poêlée avec le coulis de tomate, et poursuivre la cuisson pendant 5 min. Egoutter les haricots rouges et les ajouter 2 min avant la fin de cuisson. Hors du feu, ajuster l'assaisonnement et saupoudrer généreusement de cumin; on peut aussi rajouter quelques gouttes de Tabasco. Garnir les tortillas de préparation et les refermer en les roulant comme des crêpes. Disposer 1 feuille de laitue sur chaque tacos avant de servir."
     }
-]}
+]
+
+export const localStorageRecipeState = () : RecipeState => ({
+    recipes : getOrDefaultDataFromLocalStorage('recipes', initialRecipes)
+})
