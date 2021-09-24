@@ -23,12 +23,6 @@ const EditRecipe : FC = () =>
     const [newImagePath, setNewImagePath] = useState(imagePath)
     const [newIngredients, setNewIngredients] = useState(ingredients)
 
-    // const updateIngredients = (oldId: string, newId: string) : void =>
-    //     setNewIngredients(newIngredients.map(r => r.id === oldId ? 
-    //         {
-    //             ...r,...(ingredients.find(i => i.id === newId))
-    //         } : r ))
-
     const removeIngredient = (id : string) : void =>
         setNewIngredients(newIngredients.filter(i => i.id !== id))
 

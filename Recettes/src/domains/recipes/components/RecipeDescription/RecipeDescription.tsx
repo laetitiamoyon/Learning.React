@@ -34,6 +34,9 @@ const RecipeDescription :FC = () =>
             <div className={styles.buttonContainer}>
                 <button className={styles.button} onClick={onClick}>Modifier</button>
             </div>
+
+            <div>
+        </div>
         </div>
     </div>
 }
