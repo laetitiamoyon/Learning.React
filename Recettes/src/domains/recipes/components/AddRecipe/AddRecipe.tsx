@@ -7,7 +7,6 @@ import { addRecipeAction } from '../../recipes.action';
 import AddRecipeImage from '../AddRecipeImage/AddRecipeImage';
 import { RecipeIngredient } from '../../recipes.model';
 
-
 const AddRecipe :FC = () => 
 {
     const [title, setTitle] = useState('')
@@ -40,7 +39,6 @@ const AddRecipe :FC = () =>
         localStorage.setItem('title',event.target.value)
         setTitle(event?.target.value)
     }
-
 
     const onDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) : void => setDescription(event.target.value)
 

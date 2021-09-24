@@ -1,10 +1,11 @@
-import { useState, useContext, ChangeEvent, FormEvent, FC, useEffect } from 'react';
+import { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
 import { updateRecipeAction } from '../../recipes.action';
 import { Recipe } from '../../recipes.model';
 import { imageUploader } from '../../../../shared/utils/imageUploader'; 
+import { IngredientContext } from '../../../ingredients/ingredients.context';
 
 interface RouteProps
 {
@@ -14,6 +15,7 @@ interface RouteProps
 const EditRecipe : FC = () =>
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
+    const { ingredientsState : { ingredients : ingredientList }} = useContext(IngredientContext)
     let { id } = useParams<RouteProps>();
     const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id) as Recipe
 
@@ -21,8 +23,17 @@ const EditRecipe : FC = () =>
     const [newImagePath, setNewImagePath] = useState(imagePath)
     const [newIngredients, setNewIngredients] = useState(ingredients)
 
+    // const updateIngredients = (oldId: string, newId: string) : void =>
+    //     setNewIngredients(newIngredients.map(r => r.id === oldId ? 
+    //         {
+    //             ...r,...(ingredients.find(i => i.id === newId))
+    //         } : r ))
+
     const removeIngredient = (id : string) : void =>
         setNewIngredients(newIngredients.filter(i => i.id !== id))
+
+    const updateIngredients = (id : string, title : string) : void =>
+        setNewIngredients(newIngredients.map(i => i.id === id ? {...i, title : title} : i))
 
     const updateIngredientQuantity = (id : string, quantiy : number) : void =>
         setNewIngredients(newIngredients.map(i => i.id === id ? {...i, quantity : quantiy} : i))
@@ -36,7 +47,6 @@ const EditRecipe : FC = () =>
         ingredients : newIngredients,
         imagePath : newImagePath,
         imageData : newImageData,
-        
     }))
 
     const history = useHistory()
@@ -45,13 +55,6 @@ const EditRecipe : FC = () =>
     const [newTitle, setNewTitle] = useState(title)
 
     const [newDescription, setNewDescription] = useState(description)
-    
-    useEffect(() => {
-
-       localStorage.setItem("newTitle", newTitle)
-       localStorage.setItem("newDescription", newDescription)
-        
-    }, [newTitle, newDescription]);
 
     const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
     
@@ -72,7 +75,7 @@ const EditRecipe : FC = () =>
         updateRecipe()
         redirectToRecipes()
     }
-
+   
     return <div className={styles.editRecipeContainer} >
         <h1 className={styles.formTitle}>Modifier la recette</h1>
         <div className={styles.addRecipeElement}>
@@ -103,13 +106,14 @@ const EditRecipe : FC = () =>
                                 type="number"
                                 onChange={(event: ChangeEvent<HTMLInputElement>) => updateIngredientQuantity(id, parseInt(event.target.value))}
                                 className={styles.recipeIngredientInput}/>
-                            {unity} de
+                            {unity} de 
 
                             <select 
                                 className={styles.select}
-                                defaultValue=""
-                                placeholder="Nom de l'ingrédient">
-                                
+                                onChange={(event: ChangeEvent<HTMLSelectElement>) => updateIngredients(id, event.target.value)}
+                                placeholder="Nom de l'ingrédient"> 
+                                <option>{title}</option>
+                                {ingredientList && ingredientList.map(i => <option key={i.id} value={i.title}>{i.title}</option>)}    
                             </select>
 
                             <button

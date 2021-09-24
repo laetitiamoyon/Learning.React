@@ -108,3 +108,5 @@
 }
 .removeButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
+.select { margin-left: 12px;}
+

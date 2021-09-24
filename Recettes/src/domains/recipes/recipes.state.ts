@@ -8,7 +8,7 @@ export interface RecipeState
 
 export const initialRecipes : Recipe[] = [
 {
-    id : "1", 
+        id : "1", 
         imagePath : "./images/regina.jpg",
         ingredients : [
             { 

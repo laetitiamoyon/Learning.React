@@ -31,7 +31,6 @@ const RecipeDescription :FC = () =>
                     <div key={`RecipeIngredient-${id}`}>{quantity} {unity} de {title}
                     </div>)
             }
-           
             <div className={styles.buttonContainer}>
                 <button className={styles.button} onClick={onClick}>Modifier</button>
             </div>
