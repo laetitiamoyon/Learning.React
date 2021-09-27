@@ -2,7 +2,7 @@ import { newGuid } from '../../shared/utils/string'
 import { IngredientAction, IngredientActions } from './ingredients.action'
 import { IngredientState } from './ingredients.state';
 import { Ingredient } from './ingredients.model';
-import { setLocalStorageData } from '../../shared/utils/localStorageHelper';
+import { setLocalStorageData } from '../../shared/domains/localStorage/localStorage.utils';
 
 const updateIngredientState = (state : IngredientState, ingredients : Ingredient[]) : IngredientState =>
 {

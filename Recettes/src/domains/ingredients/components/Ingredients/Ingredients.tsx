@@ -1,17 +1,33 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, useState, useEffect, ChangeEvent } from 'react';
 import styles from './Ingredients.module.scss'
 import Ingredient from '../Ingredient/Ingredient';
 import { IngredientContext } from '../../ingredients.context';
 
+
 const Ingredients :FC = () => 
 {
     const { ingredientsState : { ingredients} } = useContext(IngredientContext)
+    const [filteredIngredient, setFilteredIngredient] = useState(ingredients)
+    const [searchIngredientTerm, setSearchIngredientTerm] = useState('')
 
-    return <div className={styles.ingredientContainer}>
+    const onSearchIngredient = (event : ChangeEvent<HTMLInputElement>) : void => setSearchIngredientTerm(event.target.value)
+
+    useEffect(() => {
+        setFilteredIngredient(ingredients.filter(ingredient => 
+            ingredient.title.toLowerCase().includes(searchIngredientTerm.toLowerCase())
+            ))
+    }, [searchIngredientTerm, ingredients])
+
+    return <div className={styles.container}>
         <h1 className={styles.title}>Gérer les ingrédients</h1>
-        
-        <div className={styles.ingredientElementContainer}>
-            { ingredients && ingredients.map(i => <Ingredient {...i} key={i.id} />)}
+        <div className={styles.form}>
+            <input className={styles.input}
+                type="text"
+                placeholder="Rechercher"
+                onChange={onSearchIngredient}/>
+        </div>
+        <div>
+            { filteredIngredient.map(ingredient => <Ingredient {...ingredient} key={ingredient.id} />)}
         </div> 
     </div>
 }

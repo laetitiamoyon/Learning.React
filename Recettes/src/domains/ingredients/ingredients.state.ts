@@ -1,5 +1,5 @@
 import { Ingredient } from './ingredients.model';
-import { getOrDefaultDataFromLocalStorage } from '../../shared/utils/localStorageHelper';
+import { getOrDefaultDataFromLocalStorage } from '../../shared/domains/localStorage/localStorage.utils';
 
 export interface IngredientState
 {

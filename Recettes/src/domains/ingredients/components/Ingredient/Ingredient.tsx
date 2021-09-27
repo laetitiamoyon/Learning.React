@@ -23,7 +23,6 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
             title : newTitle,
             unity : newUnity
         }
-        
         recipeDispatch(updateIngredientRecipeAction(ingredient))
     }
 

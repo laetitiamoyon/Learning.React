@@ -1,5 +1,13 @@
 @import '../../../../styles/styles.scss'; 
 
+.container
+{
+    @include superBackground(url(../images/backgrounds/ingredients-list.jpg), cover);
+
+    padding-bottom: calc(8vh + 32px);
+    height: 100%;
+}
+
 .title
 {
     @include text($textH3FontSize, $primaryColor, undefined, center);
@@ -10,9 +18,14 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.ingredientContainer
-{
-    @include superBackground(url(../images/backgrounds/ingredients-list.jpg), cover);
+.form { @include flex(center); margin-bottom: 32px; }
 
-    padding-bottom: calc(8vh + 32px);
+.input
+{
+  @include widthHeight(200px, 32px);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  text-align: center;
+  
+  outline: none;
 }
