@@ -12,9 +12,6 @@ const Recipe : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
     const removeRecipe = () : void => dispatch(removeRecipeAction(id))
     const { dispatch } = useContext(RecipeContext)
 
-    console.log(title);
-    
-
     return <div className={styles.recipeContainer}>
         <div className={styles.removeButton} onClick={removeRecipe}></div>
        

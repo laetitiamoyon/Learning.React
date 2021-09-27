@@ -6,7 +6,7 @@ import { setLocalStorageData } from '../../shared/domains/localStorage/localStor
 
 const updateRecipeState = (state: RecipeState, recipes: Recipe[]) : RecipeState => 
 {
-    setLocalStorageData('recipes', recipes)
+    setLocalStorageData('localRecipes', recipes)
 
     return {
         ...state,
