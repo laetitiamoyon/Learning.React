@@ -2,17 +2,19 @@ import { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
-import { updateRecipeAction } from '../../recipes.action';
+import { updateRecipeAction, updateIngredientRecipeAction } from '../../recipes.action';
 import { Recipe } from '../../recipes.model';
 import { imageUploader } from '../../../../shared/utils/imageUploader'; 
+import {Ingredient as IngredientModel} from '../../../ingredients/ingredients.model';
 import { IngredientContext } from '../../../ingredients/ingredients.context';
+
 
 interface RouteProps
 {
     id : string
 }
 
-const EditRecipe : FC = () =>
+const EditRecipe : FC<IngredientModel> = ({unity}) =>
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
     const { ingredientsState : { ingredients : ingredientList }} = useContext(IngredientContext)
@@ -22,6 +24,9 @@ const EditRecipe : FC = () =>
     const [newImageData, setNewImageData] = useState(imageData)
     const [newImagePath, setNewImagePath] = useState(imagePath)
     const [newIngredients, setNewIngredients] = useState(ingredients)
+    const [newTitle, setNewTitle] = useState(title)
+    const [newDescription, setNewDescription] = useState(description)
+    const [newUnity, setNewUnity] = useState(unity)
 
     const removeIngredient = (id : string) : void =>
         setNewIngredients(newIngredients.filter(i => i.id !== id))
@@ -37,9 +42,6 @@ const EditRecipe : FC = () =>
     const history = useHistory()
     const redirectToRecipes = () : void => history.push('/recettes')
 
-    const [newTitle, setNewTitle] = useState(title)
-    const [newDescription, setNewDescription] = useState(description)
-
     const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
     
     const onChangeDescription = (event : ChangeEvent<HTMLTextAreaElement>) : void => setNewDescription(event.target.value)
@@ -53,7 +55,8 @@ const EditRecipe : FC = () =>
     const onChangeImage = (event: ChangeEvent<HTMLInputElement>) : void =>
         imageUploader(event, onImageUploaded)
 
-    const updateRecipe = () : void => dispatch(updateRecipeAction(
+    const updateRecipe = () : void => {
+        dispatch(updateRecipeAction(
         { 
             id,
             title : newTitle,
@@ -62,7 +65,13 @@ const EditRecipe : FC = () =>
             imagePath : newImagePath,
             imageData : newImageData,
         }))
-        
+        const ingredient : IngredientModel = {
+            id, 
+            title : newTitle,
+            unity : newUnity
+        }
+        dispatch(updateIngredientRecipeAction(ingredient))
+    }
 
     const onSubmit = (event : FormEvent<HTMLFormElement>) : void =>
     {
@@ -112,7 +121,7 @@ const EditRecipe : FC = () =>
                             </select>
 
                             <button
-                                onClick={() => removeIngredient(id)} 
+                                onClick={()=> removeIngredient(id)} 
                                 className={styles.removeButton}>
                                 Supprimer
                             </button>

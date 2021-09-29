@@ -9,6 +9,13 @@
 }
 
 .addRecipeElement { @include flex(center, undefined, undefined, 122px); }
+@media screen and (max-width: 1200px) { .addRecipeElement { 
+    @include flex(center, undefined, undefined, 50px); }}
+@media screen and (max-width: 900px) { .addRecipeElement { 
+    @include flex(center, undefined, undefined, 30px); }}
+@media screen and (max-width: 800px) { .addRecipeElement { 
+    @include flex(center, center, column, 30px); }}
+
 
 .formTitle
 { 
@@ -33,6 +40,7 @@
     margin-top: 32px;
 }
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+@media screen and (max-width: 800px) { .submitButton { margin-bottom: 22px; }}
 
 .addIngredientButton 
 {
@@ -50,6 +58,7 @@
    
     padding: 6px;
 }
+@media screen and (max-width: 1000px) { .input { width: 400px; }}
 
 .title { margin-top: 20px;}
 

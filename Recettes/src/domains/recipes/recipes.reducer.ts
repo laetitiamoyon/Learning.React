@@ -4,13 +4,17 @@ import { newGuid } from '../../shared/utils/string';
 import { Recipe } from './recipes.model';
 import { setLocalStorageData } from '../../shared/domains/localStorage/localStorage.utils';
 
-const updateRecipeState = (state: RecipeState, recipes: Recipe[]) : RecipeState => 
+const updateRecipeState = (
+    state: RecipeState,
+    recipes: Recipe[],
+    infoMessage : string | null = null) : RecipeState => 
 {
     setLocalStorageData('localRecipes', recipes)
 
     return {
         ...state,
-        recipes : recipes
+        recipes : recipes,
+        infoMessage
     }
 }
 
@@ -36,30 +40,45 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) : Reci
         case RecipeAction.UPDATE_RECIPE_INGREDIENT: 
         {
             const { id } = action.payload
+            let infoMessage : string | null = null
+            // supprimer les recettes avec 0 ingrédients
+            // calculer la string infoMessage
             return updateRecipeState(state, 
-                state.recipes.map(recipe => containRecipeIngredient(recipe, id) ? 
+                state.recipes    
+                .filter(recipe => containRecipeIngredient(recipe, id) ? 
+                recipe.ingredients.map(recipeIngredient => recipeIngredient.id === id ?
+                action.payload.id : recipeIngredient).length > 0 : infoMessage) 
+                .map(recipe => containRecipeIngredient(recipe, id) ? 
                     { 
                         ...recipe,                                                                                              
                         ingredients : recipe.ingredients.map(recipeIngredient => 
                             recipeIngredient.id === id ? 
                             action.payload : recipeIngredient)
                     }
-                    : recipe))
-        }   
-
+            : recipe))
+        }     
+        
         case RecipeAction.REMOVE_RECIPE_INGREDIENT : 
         {
             const { ingredientId } = action.payload
+            let infoMessage : string | null = null
+            
             return updateRecipeState(state, 
-                state.recipes.map(recipe => containRecipeIngredient(recipe, ingredientId) ? 
+                state.recipes
+                .filter(recipe => containRecipeIngredient(recipe, ingredientId) ? 
+                    recipe.ingredients.filter(recipeIngredient => recipeIngredient.id !== 
+                    action.payload.ingredientId).length > 0 : infoMessage) 
+                 
+                .map(recipe => containRecipeIngredient(recipe, ingredientId) ? 
                 { 
                     ...recipe,                                                                                              
-                    ingredients : recipe.ingredients.filter(recipeIngredient => recipeIngredient.id !== action.payload.ingredientId)
+                    ingredients : recipe.ingredients.filter(recipeIngredient => recipeIngredient.id !== 
+                    action.payload.ingredientId)
                 }
-                : recipe))
+            : recipe))
             
         }
-
+        
         default : return state
     }
 }

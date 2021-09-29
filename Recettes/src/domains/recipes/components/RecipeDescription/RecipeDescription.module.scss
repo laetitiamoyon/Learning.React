@@ -5,7 +5,7 @@
     @include superBackground(url(../images/backgrounds/description-recipe.jpg), cover);
     @include marginPadding(auto, 0 24px);
 
-    height: 100vh;
+    height: 100%;
 }
 
 .recipeContainer
@@ -14,6 +14,7 @@
 
     // marginPadding
     margin: auto;
+    margin-bottom: 50px;
     padding: 24px;
 
     width: 60%;
@@ -23,7 +24,17 @@
 
     box-shadow: 0 1px 0 rgba(0,0,0,0.8);
 }
+@media screen and (max-width: 1250px) { .recipeContainer { width: 70%; }}
+@media screen and (max-width: 850px) { .recipeContainer { width: 90%; }}
 
+.imageAndIngredientsContainer { 
+    @include flex(undefined, center, undefined, 100px);
+    margin-left: 12px;
+    margin-bottom: 22px;
+}
+@media screen and (max-width: 1250px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 50px); }}
+@media screen and (max-width: 700px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 30px); }}
+@media screen and (max-width: 650px) { .imageAndIngredientsContainer { flex-direction: column; }}
 
 .title
 {
@@ -31,27 +42,33 @@
 
     padding-top: calc(8vh + 32px);
     margin-bottom: 32px;
-    
     text-shadow: 2px 2px 4px black;
 }
+.ingredientsContainer { flex-direction: column; border: dotted 2px;}
 
 .ingredients
 {
-    line-height: 32px;
     margin-top: 22px;
 }
 
-.description, .ingredients { @include marginPadding(auto, 12px); }
+.ingredientsList {  line-height: 12px; font-size: 15px;}
+@media screen and (max-width: 650px) { .ingredientsList { font-size: 17px; }}
+
+.description, .ingredients, .ingredientsList { @include marginPadding(auto, 12px); }
+@media screen and (max-width: 550px) { .description, .ingredientsList { font-size: 15px; }}
 
 .buttonContainer { @include flex(center);}
 
-.image { background-size: cover; @include widthHeight(200px, 200px); }
+.image { background-size: cover; @include widthHeight(320px, 320px); }
+@media screen and (max-width: 950px) { .image { @include widthHeight(250px, 250px);}}
 
 .button
 {
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
     @include widthHeight(130px, 30px);
+
+    margin-top: 22px;
 
     cursor: pointer;
 }

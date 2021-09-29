@@ -4,6 +4,7 @@ import { getOrDefaultDataFromLocalStorage } from '../../shared/domains/localStor
 export interface RecipeState
 { 
     recipes : Recipe[]
+    infoMessage : string | null
 };
 
 export const initialRecipes : Recipe[] = [
@@ -18,19 +19,19 @@ export const initialRecipes : Recipe[] = [
             quantity :100
         },
         { 
-            id : "2", 
+            id : "4", 
             title : "jambon", 
             unity : "gr",
             quantity :100
         },
         { 
-            id : "3", 
+            id : "7", 
             title : "pâte à pizza", 
             unity : "pièce",
             quantity :1
         },
         { 
-            id : "4", 
+            id : "3", 
             title : "champignon", 
             unity : "gr",
             quantity :100
@@ -61,7 +62,25 @@ export const initialRecipes : Recipe[] = [
             title : "huile d'olive", 
             unity : "gr",
             quantity :10
-        }
+        },
+        { 
+            id : "8", 
+            title : "laitue", 
+            unity : "gr",
+            quantity :1
+        },
+        { 
+            id : "12", 
+            title : "ail", 
+            unity : "gr",
+            quantity :10
+        },
+        { 
+            id : "13", 
+            title : "Moutarde de Dijon", 
+            unity : "gr",
+            quantity :10
+        },
     ],
     title : "Salade César",
     description : "Couper les tranches de pain en cube. Faire revenir les croûtons dans un filet d'huile d'olive pendant 2 minutes et laisser refroidir. Couper le poulet en petits morceaux et faire cuire dans une poêle anti-adhésive sans matière grasse. Faire dorer et laisser refroidir. Déchirer la laitue et petits morceaux. Pour finir dresser dans l'ordre : salade, poulet, croûtons et sauce César." 
@@ -76,7 +95,14 @@ export const initialRecipes : Recipe[] = [
             title : "sel", 
             unity : "gr",
             quantity :1
-        }
+        },
+        { 
+            id : "15", 
+            title : "Pommes Golden", 
+            unity : "pièce",
+            quantity : 6
+        },
+
     ],
     title : "Tarte aux pommes", 
     description : "Déroulez, étalez et piquez la pâte dans un moule à tarte. Pelez, videz et coupez en fines tranches les pommes. Posez-les sur la pâte en rosace. Dans un saladier, battez les œufs avec le sucre, puis ajoutez la crème et la cannelle. Versez le mélange sur les pommes. Pour finir, mettez au four à 210°C (thermostat 7) pour 40 minutes environ. Vers la fin de la cuisson, répartissez sur la tarte le sucre vanillé et remettez au four pour caramélisé." 
@@ -157,5 +183,6 @@ export const initialRecipes : Recipe[] = [
 }]
 
 export const localStorageRecipeState = () : RecipeState => ({
-    recipes : getOrDefaultDataFromLocalStorage('localRecipes', initialRecipes)
+    recipes : getOrDefaultDataFromLocalStorage('localRecipes', initialRecipes),
+    infoMessage : null
 })

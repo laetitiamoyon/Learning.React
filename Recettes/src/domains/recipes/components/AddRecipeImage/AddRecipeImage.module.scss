@@ -10,6 +10,7 @@
 
     border: dotted 2px white;
 }
+@media screen and (max-width: 800px) { .container { @include widthHeight(450px, 350px); }}
 
 .title
 {
