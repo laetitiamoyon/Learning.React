@@ -19,7 +19,7 @@ const Recipes : FC<RecipeModel> = () =>
     }, [searchRecipeTerm, recipes]);
     
     return <div className={styles.container}>
-        <h1 className={styles.title}>Nos recettes</h1>
+        <h1 className={styles.title}>Mes recettes</h1>
         <div className={styles.form}>
             <input className={styles.input} 
             type="text" 
@@ -28,7 +28,7 @@ const Recipes : FC<RecipeModel> = () =>
             onChange={onSearchRecipe}/>
         </div>
         <div className={styles.recipes}>
-        {filteredRecipes.map(recipe => <Recipe key={recipe.id} {...recipe}/>)}
+        { filteredRecipes.map(recipe => <Recipe key={recipe.id} {...recipe}/>) }
       </div>
     </div> 
 }

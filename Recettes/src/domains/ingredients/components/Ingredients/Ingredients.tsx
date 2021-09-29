@@ -19,7 +19,7 @@ const Ingredients :FC = () =>
     }, [searchIngredientTerm, ingredients])
 
     return <div className={styles.container}>
-        <h1 className={styles.title}>Gérer les ingrédients</h1>
+        <h1 className={styles.title}>Gérer mes ingrédients</h1>
         <div className={styles.form}>
             <input className={styles.input}
                 type="text"

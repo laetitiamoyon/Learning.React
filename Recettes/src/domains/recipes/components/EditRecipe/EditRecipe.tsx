@@ -33,21 +33,11 @@ const EditRecipe : FC = () =>
         setNewIngredients(newIngredients.map(i => i.id === id ? {...i, quantity : quantiy} : i))
 
     const { dispatch } = useContext(RecipeContext)
-    const updateRecipe = () : void => dispatch(updateRecipeAction(
-    { 
-        id,
-        title : newTitle,
-        description : newDescription,
-        ingredients : newIngredients,
-        imagePath : newImagePath,
-        imageData : newImageData,
-    }))
 
     const history = useHistory()
     const redirectToRecipes = () : void => history.push('/recettes')
 
     const [newTitle, setNewTitle] = useState(title)
-
     const [newDescription, setNewDescription] = useState(description)
 
     const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
@@ -62,6 +52,17 @@ const EditRecipe : FC = () =>
 
     const onChangeImage = (event: ChangeEvent<HTMLInputElement>) : void =>
         imageUploader(event, onImageUploaded)
+
+    const updateRecipe = () : void => dispatch(updateRecipeAction(
+        { 
+            id,
+            title : newTitle,
+            description : newDescription,
+            ingredients : newIngredients,
+            imagePath : newImagePath,
+            imageData : newImageData,
+        }))
+        
 
     const onSubmit = (event : FormEvent<HTMLFormElement>) : void =>
     {

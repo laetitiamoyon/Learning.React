@@ -13,6 +13,7 @@
     line-height: 8vh;
 }
 
+
 a {
     @include text($textH4FontSize, $primaryColor, $fontWeightRegular);
 
@@ -23,6 +24,18 @@ a {
 
     text-shadow: 2px 2px 4px #000000c7;
 }
+@media screen and (max-width: 950px) { a { margin-left: 60px; }}
+@media screen and (max-width: 750px) { a {
+        @include text($textH5FontSize, $primaryColor, $fontWeightRegular, center);
+        
+    }
+}
+@media screen and (max-width: 700px) { a { margin-left: 40px; }}
+
+@media screen and (max-width: 640px) { a { margin-left: 20px; }}
+@media screen and (max-width: 550px) { a { margin-left: 15px; }}
+@media screen and (max-width: 530px) { a { margin-left: 10px; }}
+
 
 a:hover { color: #ffae71; }
 
@@ -35,3 +48,4 @@ a:hover { color: #ffae71; }
     margin : 0;
     list-style-type: none;
 }
+
