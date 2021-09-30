@@ -19,7 +19,7 @@
 }
 @media (max-width: 1063px) { .container { height: 100%; }}
 
-.recipes { margin: auto; @include flex(center, undefined, undefined, 32px, wrap);}
+.recipes { margin: auto; @include flex(center, undefined, undefined, 32px, wrap); padding-bottom: 22px;}
 
 .addRecipe:hover { color: $secondaryColor; }
 
