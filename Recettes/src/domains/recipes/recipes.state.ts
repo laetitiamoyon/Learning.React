@@ -77,7 +77,7 @@ export const initialRecipes : Recipe[] = [
         },
         { 
             id : "13", 
-            title : "Moutarde de Dijon", 
+            title : "Moutarde", 
             unity : "gr",
             quantity :10
         },

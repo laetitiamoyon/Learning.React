@@ -31,21 +31,21 @@ const AddIngredient : FC = () =>
     }
 
     return <>
-        <div className={styles.addIngredientContainer}>
-            <h1 className={styles.formTitle}>Ajouter un nouvel ingrédient</h1>
+        <div className={styles.container}>
+            <h1 className={styles.title}>Ajouter un nouvel ingrédient</h1>
             <form className={styles.formContainer} onSubmit={onSubmit}>
                 <div className={styles.formElement}>
-                    <label className={styles.titleLabel}>Nom de l'ingrédient :</label>
+                    <label className={styles.label}>Nom de l'ingrédient :</label>
                     <input 
                         onChange={onTitleChange}
-                        className={styles.ingredientInput}
+                        className={styles.input}
                         placeholder="Nom de l'ingrédient"
                         value={title} required/>
                     
-                    <label className={styles.titleLabel}>Unité :</label>
+                    <label className={styles.label}>Unité :</label>
                     <input 
                         onChange={onUnityChange}
-                        className={styles.ingredientInput}
+                        className={styles.input}
                         placeholder="Unité"
                         value={unity} required/>
                 </div>

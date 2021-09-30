@@ -69,7 +69,7 @@ export const initialIngredients : Ingredient[] = [
 },
 { 
     id : "13", 
-    title : "Moutarde de Dijon", 
+    title : "Moutarde", 
     unity : "Cuillère à café"
 },
 { 

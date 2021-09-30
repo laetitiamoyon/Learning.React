@@ -16,6 +16,7 @@
         margin-left: 20px;
     }
 }
+@media screen and (max-width: 600px) { .formContainer > input { width: 120px; font-size: 15px;}}
 
 .title { margin-top: 20px;}
 
@@ -31,6 +32,7 @@
 
     margin-left: 20px;
 }
+@media screen and (max-width: 600px) { .removeButton { @include widthHeight(25px, 25px);}}
 
 .updateButton
 {
@@ -44,5 +46,6 @@
 
     cursor: pointer;
 }
+@media screen and (max-width: 600px) { .updateButton { @include widthHeight(110px, 30px); font-size: 15px;}}
 
 .updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

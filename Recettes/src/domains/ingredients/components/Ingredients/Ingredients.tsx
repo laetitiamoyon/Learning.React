@@ -26,7 +26,7 @@ const Ingredients :FC = () =>
                 placeholder="Rechercher"
                 onChange={onSearchIngredient}/>
         </div>
-        <div>
+        <div className={styles.ingredientsList}>
             { filteredIngredient.map(ingredient => <Ingredient {...ingredient} key={ingredient.id} />)}
         </div> 
     </div>

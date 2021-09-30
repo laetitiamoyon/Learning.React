@@ -5,10 +5,12 @@
     @if ($radius != undefined) { border-radius: $radius; }  
 }
 
-@mixin superBackground($image: undefined, $size : undefined)
+@mixin superBackground($image: undefined, $size : undefined, $repeat : undefined)
 {
     @if ($image != undefined) { background-image: $image; }
-    @if ($size != undefined) { background-size: cover; }  
+    @if ($size != undefined) { background-size: contain; } 
+    @if ($repeat != undefined) { background-repeat: $repeat; }
+
 }
 
 @mixin buttonHover($econdaryColor: undefined, $defaultBorder: undefined, $primaryColor: undefined)

@@ -1,20 +1,18 @@
 @import '../../../../styles/styles.scss'; 
 
-.descriptionRecipeContainer
+body
 {
-    @include superBackground(url(../images/backgrounds/description-recipe.jpg), cover);
-    @include marginPadding(auto, 0 24px);
-
+    background: url(../../../../images/backgrounds/description-recipe.jpg) no-repeat center center fixed; 
     height: 100%;
 }
 
-.recipeContainer
+.container
 {
     background-color: rgb(216, 214, 214);
 
     // marginPadding
     margin: auto;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
     padding: 24px;
 
     width: 60%;
@@ -25,7 +23,8 @@
     box-shadow: 0 1px 0 rgba(0,0,0,0.8);
 }
 @media screen and (max-width: 1250px) { .recipeContainer { width: 70%; }}
-@media screen and (max-width: 850px) { .recipeContainer { width: 90%; }}
+@media screen and (max-width: 850px) { .recipeContainer { width: 80%; }}
+@media screen and (max-width: 760px) { .recipeContainer { width: 90%; }}
 
 .imageAndIngredientsContainer { 
     @include flex(undefined, center, undefined, 100px);
@@ -34,7 +33,7 @@
 }
 @media screen and (max-width: 1250px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 50px); }}
 @media screen and (max-width: 700px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 30px); }}
-@media screen and (max-width: 650px) { .imageAndIngredientsContainer { flex-direction: column; }}
+@media screen and (max-width: 660px) { .imageAndIngredientsContainer { flex-direction: column; }}
 
 .title
 {
@@ -46,13 +45,9 @@
 }
 .ingredientsContainer { flex-direction: column; border: dotted 2px;}
 
-.ingredients
-{
-    margin-top: 22px;
-}
+.ingredients{ margin-top: 22px; }
 
 .ingredientsList {  line-height: 12px; font-size: 15px;}
-@media screen and (max-width: 650px) { .ingredientsList { font-size: 17px; }}
 
 .description, .ingredients, .ingredientsList { @include marginPadding(auto, 12px); }
 @media screen and (max-width: 550px) { .description, .ingredientsList { font-size: 15px; }}

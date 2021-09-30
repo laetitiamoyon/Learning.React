@@ -14,8 +14,11 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
     const { dispatch: ingredientDispatch } = useContext(IngredientContext)
     const { dispatch : recipeDispatch } = useContext(RecipeContext)
 
-    const removeIngredient = () => ingredientDispatch(removeIngredientAction(id))
-    const removeRecipeIngredient = () => recipeDispatch(removeIngredientRecipeAction(id))
+    const removeIngredientAndRecipeIngredient = () => 
+    {
+        ingredientDispatch(removeIngredientAction(id))
+        recipeDispatch(removeIngredientRecipeAction(id))
+    }
     
     const updateRecipeIngredient = () => {
         const ingredient : IngredientModel = {
@@ -24,14 +27,13 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
             unity : newUnity
         }
         recipeDispatch(updateIngredientRecipeAction(ingredient))
+        ingredientDispatch(updateIngredientAction(
+            { 
+                id, 
+                title : newTitle,
+                unity : newUnity
+            }))
     }
-
-    const updateIngredient = () => ingredientDispatch(updateIngredientAction(
-    { 
-        id, 
-        title : newTitle,
-        unity : newUnity
-    }))
 
     const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
     const onChangeUnity = (event: ChangeEvent<HTMLInputElement>) : void => setNewUnity(event.target.value)
@@ -47,12 +49,8 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
             onChange={onChangeUnity}
             value={newUnity}/>
 
-        <div className={styles.updateButton} onClick={() => {
-            updateIngredient();
-            updateRecipeIngredient();}}>Mettre à jour</div>
-        <div className={styles.removeButton} onClick={() => {
-            removeIngredient();
-            removeRecipeIngredient();}}></div>
+        <div className={styles.updateButton} onClick={updateRecipeIngredient}>Mettre à jour</div>
+        <div className={styles.removeButton} onClick={removeIngredientAndRecipeIngredient}></div>
     </form>
 };
 

@@ -19,10 +19,8 @@ const RecipeDescription :FC = () =>
     const history = useHistory();
     const onClick = () : void => history.push(`/modification-de-la-recette/${id}`, { id : id })
 
-    return <div className={styles.descriptionRecipeContainer}>
-        <h1 className={styles.title}>{title}</h1>
-       
-        <div className={styles.recipeContainer}>
+    return <> <h1 className={styles.title}>{title}</h1>
+        <div className={styles.container}>
             <div className={styles.imageAndIngredientsContainer}>
                 <img className={styles.image} alt='' src={imageData} style={{ backgroundImage : `url(.${imagePath})`}} />
                 <div className={styles.ingredientsContainer}>
@@ -38,11 +36,11 @@ const RecipeDescription :FC = () =>
             <div className={styles.buttonContainer}>
                 <button className={styles.button} onClick={onClick}>Modifier</button>
             </div>
-
             <div>
         </div>
         </div>
-    </div>
+    </>
+    
 }
 
 export default RecipeDescription;

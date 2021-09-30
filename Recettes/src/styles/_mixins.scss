@@ -14,7 +14,8 @@
 
 @mixin flex(
     $justifyContent : undefined, 
-    $alignItems : undefined, $flexDirection : undefined, 
+    $alignItems : undefined, 
+    $flexDirection : undefined, 
     $gap : undefined, 
     $flexWrap : undefined)
 {

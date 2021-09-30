@@ -80,11 +80,11 @@ const EditRecipe : FC<IngredientModel> = ({unity}) =>
         redirectToRecipes()
     }
    
-    return <div className={styles.editRecipeContainer} >
-        <h1 className={styles.formTitle}>Modifier la recette</h1>
-        <div className={styles.addRecipeElement}>
+    return <>
+        <h1 className={styles.title}>Modifier la recette</h1>
+        <div className={styles.container}>
             <div className={styles.changeImageContainer}>
-                <label htmlFor="imageUpload" className={styles.label}>Téléchargez une nouvelle image</label>
+                <label htmlFor="imageUpload" className={styles.downloadImageButton}>Téléchargez une nouvelle image</label>
                 <input className={styles.inputImage} 
                     id="imageUpload" 
                     type="file"  
@@ -95,13 +95,13 @@ const EditRecipe : FC<IngredientModel> = ({unity}) =>
             </div>
 
             <form className={styles.formContainer} onSubmit={onSubmit}>
-                <label className={styles.title}>Titre:</label>
+                <label className={styles.label}>Titre:</label>
                 <input className={styles.input} onChange={onChangeTitle} value={newTitle}/>
                 
-                <label className={styles.title}> Description:</label>
+                <label className={styles.label}> Description:</label>
                 <textarea rows={10} className={styles.input} onChange={onChangeDescription} value={newDescription}/>
 
-                <label className={styles.title}>Ingrédients </label>
+                <label className={styles.label}>Ingrédients :</label>
                 <ul>
                     { newIngredients.map(({id, quantity, unity, title}) => 
                         <li key={id} className={styles.recipeIngredient}>
@@ -132,7 +132,7 @@ const EditRecipe : FC<IngredientModel> = ({unity}) =>
                 <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
             </form>
         </div>
-    </div>
+    </>
 }
 
 export default EditRecipe;

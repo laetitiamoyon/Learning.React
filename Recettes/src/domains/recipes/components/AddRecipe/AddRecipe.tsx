@@ -50,23 +50,23 @@ const AddRecipe :FC = () =>
         redirectToRecipes();
     }
 
-    return <div className={styles.addRecipeContainer}>
-        <h1 className={styles.formTitle}>Ajouter une nouvelle recette</h1>
+    return <>
+        <h1 className={styles.title}>Ajouter une nouvelle recette</h1>
 
-        <div className={styles.addRecipeElement}>
+        <div className={styles.container}>
 
             <AddRecipeImage imageData={imageData} setImageData={setImageData}/>
 
             <div className={styles.formElementContainer}>
                 <form className={styles.formContainer} onSubmit={onSubmit}>
-                    <label className={styles.title}>Titre:</label>
+                    <label className={styles.label}>Titre:</label>
                     <input 
                         onChange={onTitleChange}
                         className={styles.input}
                         name="titre"
                         value={title}/>
                     
-                    <label className={styles.title}> Description:</label>
+                    <label className={styles.label}> Description:</label>
                     <textarea 
                         onChange={onDescriptionChange}
                         rows={5}
@@ -85,7 +85,7 @@ const AddRecipe :FC = () =>
             </div>
         </div>
         
-    </div>
+    </>
 }
 
 export default AddRecipe;

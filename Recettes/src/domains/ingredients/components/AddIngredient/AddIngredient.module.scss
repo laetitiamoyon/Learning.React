@@ -1,6 +1,6 @@
 @import '../../../../styles/styles.scss'; 
 
-.formTitle
+.title
 { 
     @include text($textH3FontSize, $primaryColor, undefined, center);
 
@@ -10,7 +10,7 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.addIngredientContainer
+.container
 {
     @include superBackground(url(../images/backgrounds/add-ingredient.jpg), cover);
     @include marginPadding(auto, 0 24px);
@@ -25,20 +25,11 @@
 
     @include flex(center);
 }
+@media screen and (max-width: 730px) { .formElement { @include flex(center, center, column);}}
 
-.titleLabel { @include text($textH5FontSize, $primaryColor, $fontWeightRegular); }
+.label { @include text($textH5FontSize, $primaryColor, $fontWeightRegular); margin-left: 12px;}
 
-.submitButton
-{
-    @include widthHeight(130px, 30px);
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
-
-    margin-left: 45%;
-}
-.submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
-
-.ingredientInput
+.input
 {
     width: 180px;
 
@@ -49,5 +40,15 @@
 
     text-align: center;
 }
+@media screen and (max-width: 730px) { .input { width: 400px; margin: 22px;}}
 
-.titleLabel { margin-left: 12px;}
+.submitButton
+{
+    @include widthHeight(130px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+
+    margin-left: 45%;
+}
+@media screen and (max-width: 730px) { .submitButton { margin-left: 40%;}}
+.submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

@@ -15,7 +15,7 @@
     @include superBackground(url(../images/backgrounds/recipes-list.jpg), cover);
     @include marginPadding(auto, 0 24px);
 
-    height: 100vh;
+    height: 100%;
 }
 
 .recipes { margin: auto; @include flex(center, undefined, undefined, 32px, wrap);}
