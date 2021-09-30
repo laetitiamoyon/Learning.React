@@ -2,10 +2,11 @@
 
 .containerPage
 {
-    background: url(../../../../images/backgrounds/edit-recipe.jpg) no-repeat center center / cover;;
+    background: url(../../../../images/backgrounds/edit-recipe.jpg) no-repeat center center / cover;
     @include marginPadding(auto, 0 24px);
 
     height: 100%;
+    min-height: 800px;
 }
 
 .title
@@ -29,9 +30,9 @@
 
     padding: 6px;
 }
-@media screen and (max-width: 1100px) { .input { width: 400px; }}
-@media screen and (max-width: 850px) { .input { width: 500px; }}
-@media screen and (max-width: 600px) { .input { width: 400px; margin: auto;}}
+@media (max-width: 1100px) { .input { width: 400px; }}
+@media (max-width: 850px) { .input { width: 500px; }}
+@media (max-width: 600px) { .input { width: 400px; margin: auto;}}
 
 .recipeIngredientInput { width : 50px; margin-right : $spacingXs; }
 
@@ -43,12 +44,12 @@
 
     text-shadow: 2px 2px 4px black;
 }
-@media screen and (max-width: 600px) { .label { margin-left: 22px;}}
+@media (max-width: 600px) { .label { margin-left: 22px;}}
 
 .container { @include flex(center, undefined, undefined, 122px); }
-@media screen and (max-width: 1200px) { .container { 
+@media (max-width: 1200px) { .container { 
     @include flex(center, undefined, undefined, 50px); }}
-@media screen and (max-width: 1120px) { .container { 
+@media (max-width: 1120px) { .container { 
     @include flex(center, center, column); }}
 
 .changeImageContainer
@@ -61,7 +62,7 @@
 
     border: dotted 2px white;
 }
-@media screen and (max-width: 600px) { .changeImageContainer { @include widthHeight(400px, 300px); }}
+@media (max-width: 600px) { .changeImageContainer { @include widthHeight(400px, 300px); }}
 
 .titleImage
 {
@@ -87,8 +88,8 @@
 .inputImage {display: none;}
 
 .recipeIngredient { color : $primaryColor; padding-top: 10px; }
-@media screen and (max-width: 1000px) { .recipeIngredient { width: 410px; }}
-@media screen and (max-width: 850px) { .recipeIngredient { margin: auto; }}
+@media (max-width: 1000px) { .recipeIngredient { width: 410px; }}
+@media (max-width: 850px) { .recipeIngredient { margin: auto; }}
 
 .removeButton
 {
@@ -111,5 +112,5 @@
     margin: 22px 0px;
 }
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
-@media screen and (max-width: 600px) { .submitButton { margin: auto; margin-top: 22px; margin-bottom: 22px;}}
+@media (max-width: 600px) { .submitButton { margin: auto; margin-top: 22px; margin-bottom: 22px;}}
 

@@ -6,6 +6,7 @@
     @include marginPadding(auto, 0 24px);
 
     height: 100%;
+    min-height: 800px;
     padding-bottom: 32px;
 }
 
@@ -24,18 +25,18 @@
 
     box-shadow: 0 1px 0 rgba(0,0,0,0.8);
 }
-@media screen and (max-width: 1250px) { .container { width: 70%; }}
-@media screen and (max-width: 850px) { .container { width: 80%; }}
-@media screen and (max-width: 760px) { .container { width: 90%; }}
+@media (max-width: 1250px) { .container { width: 70%; }}
+@media (max-width: 850px) { .container { width: 80%; }}
+@media (max-width: 760px) { .container { width: 90%; }}
 
 .imageAndIngredientsContainer { 
     @include flex(undefined, center, undefined, 100px);
     margin-left: 12px;
     margin-bottom: 22px;
 }
-@media screen and (max-width: 1250px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 50px); }}
-@media screen and (max-width: 700px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 30px); }}
-@media screen and (max-width: 660px) { .imageAndIngredientsContainer { flex-direction: column; }}
+@media (max-width: 1250px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 50px); }}
+@media (max-width: 700px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 30px); }}
+@media (max-width: 660px) { .imageAndIngredientsContainer { flex-direction: column; }}
 
 .title
 {
@@ -49,15 +50,15 @@
 
 .ingredients{ margin-top: 22px; }
 
-.ingredientsList {  line-height: 12px; font-size: 15px;}
+.ingredientsList {  line-height: 12px; font-size: 15px; }
 
 .description, .ingredients, .ingredientsList { @include marginPadding(auto, 12px); }
-@media screen and (max-width: 550px) { .description, .ingredientsList { font-size: 15px; }}
+@media (max-width: 550px) { .description, .ingredientsList { font-size: 15px; }}
 
 .buttonContainer { @include flex(center);}
 
 .image { background-size: cover; @include widthHeight(320px, 320px); }
-@media screen and (max-width: 950px) { .image { @include widthHeight(250px, 250px);}}
+@media (max-width: 950px) { .image { @include widthHeight(250px, 250px);}}
 
 .button
 {

@@ -45,9 +45,9 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) : Reci
             // calculer la string infoMessage
             return updateRecipeState(state, 
                 state.recipes    
-                .filter(recipe => containRecipeIngredient(recipe, id) ? 
-                recipe.ingredients.map(recipeIngredient => recipeIngredient.id === id ?
-                action.payload.id : recipeIngredient).length > 0 : infoMessage) 
+                // .filter(recipe => containRecipeIngredient(recipe, id) ? 
+                // recipe.ingredients.map(recipeIngredient => recipeIngredient.id === id ?
+                // action.payload.id : recipeIngredient).length > 0 : infoMessage) 
                 .map(recipe => containRecipeIngredient(recipe, id) ? 
                     { 
                         ...recipe,                                                                                              

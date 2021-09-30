@@ -25,7 +25,7 @@
 
     @include flex(center);
 }
-@media screen and (max-width: 730px) { .formElement { @include flex(center, center, column);}}
+@media (max-width: 730px) { .formElement { @include flex(center, center, column);}}
 
 .label { @include text($textH5FontSize, $primaryColor, $fontWeightRegular); margin-left: 12px;}
 
@@ -40,7 +40,7 @@
 
     text-align: center;
 }
-@media screen and (max-width: 730px) { .input { width: 400px; margin: 22px;}}
+@media (max-width: 730px) { .input { width: 400px; margin: 22px;}}
 
 .submitButton
 {
@@ -50,5 +50,5 @@
 
     margin-left: 45%;
 }
-@media screen and (max-width: 730px) { .submitButton { margin-left: 40%;}}
+@media (max-width: 730px) { .submitButton { margin-left: 40%;}}
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

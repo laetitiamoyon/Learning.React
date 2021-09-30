@@ -2,7 +2,16 @@
 
 .ingredients { margin-top: 32px;}
 
-.addedIngredients { list-style : square; }
+.addedIngredients 
+{ 
+    list-style : square; 
+    @include text(undefined, $primaryColor, $fontWeightRegular);
+    font-size: 16px;
+
+    margin-top: 20px; 
+
+    text-shadow: 2px 2px 4px black;
+}
 
 .button
 {
@@ -24,6 +33,7 @@
     margin-top: 32px;
     margin-bottom : 4px;
 }
+@media (max-width: 800px) { .select { width: 400px; }}
 
 .inputContainer { @include grid(80px 1fr); margin-left : 12px; }
 
@@ -35,7 +45,7 @@
 
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include marginPadding(auto, 0 24px);
+    @include marginPadding(auto, 10px 24px);
     
     margin-top: 32px;
 }

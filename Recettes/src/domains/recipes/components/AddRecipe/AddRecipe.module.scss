@@ -10,11 +10,11 @@
 @media (max-width: 1050px) { .containerPage { height: 100%; padding-bottom: 22px}}
 
 .container { @include flex(center, undefined, undefined, 122px); }
-@media screen and (max-width: 1200px) { .container { 
+@media (max-width: 1200px) { .container { 
     @include flex(center, undefined, undefined, 40px); }}
-@media screen and (max-width: 1150px) { .container { 
+@media (max-width: 1150px) { .container { 
     @include flex(center, undefined, undefined, 10px); }}
-@media screen and (max-width: 1050px) { .container { 
+@media (max-width: 1050px) { .container { 
     @include flex(center, center, column, 30px); }}
 
 .title
@@ -40,7 +40,7 @@
     margin-top: 32px;
 }
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
-@media screen and (max-width: 800px) { .submitButton { margin-bottom: 22px; }}
+@media (max-width: 800px) { .submitButton { margin-bottom: 22px; }}
 
 .addIngredientButton 
 {
@@ -58,8 +58,13 @@
    
     padding: 6px;
 }
-@media screen and (max-width: 1000px) { .input { width: 400px; }}
+@media (max-width: 800px) { .input { width: 400px; }}
 
-.label { margin-top: 20px;}
+.label { 
+    margin-top: 20px;
+    @include text($textH5FontSize, $primaryColor, $fontWeightRegular);
+
+    text-shadow: 2px 2px 4px black;
+}
 
 
