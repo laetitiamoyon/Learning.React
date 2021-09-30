@@ -2,10 +2,10 @@
 
 .container
 {
-    @include superBackground(url(../images/backgrounds/ingredients-list.jpg), cover);
+    background: url(../../../../images/backgrounds/ingredients-list.jpg) no-repeat center center / cover;
     @include marginPadding(auto, 0 24px);
 
-    height: 100vh;
+    height: 100%;
 }
 
 .title
@@ -30,4 +30,4 @@
   outline: none;
 }
 
-.ingredientsList { margin-bottom: 32px;}
+.ingredientsList { padding-bottom: 32px;}

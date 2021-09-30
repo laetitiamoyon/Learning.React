@@ -80,7 +80,7 @@ const EditRecipe : FC<IngredientModel> = ({unity}) =>
         redirectToRecipes()
     }
    
-    return <>
+    return <div className={styles.containerPage}>
         <h1 className={styles.title}>Modifier la recette</h1>
         <div className={styles.container}>
             <div className={styles.changeImageContainer}>
@@ -132,7 +132,7 @@ const EditRecipe : FC<IngredientModel> = ({unity}) =>
                 <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
             </form>
         </div>
-    </>
+    </div>
 }
 
 export default EditRecipe;

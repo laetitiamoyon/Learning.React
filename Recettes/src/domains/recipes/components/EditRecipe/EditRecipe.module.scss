@@ -1,8 +1,10 @@
 @import '../../../../styles/styles.scss'; 
 
-body
+.containerPage
 {
-    background: url(../../../../images/backgrounds/edit-recipe.jpg) no-repeat center center fixed; 
+    background: url(../../../../images/backgrounds/edit-recipe.jpg) no-repeat center center / cover;;
+    @include marginPadding(auto, 0 24px);
+
     height: 100%;
 }
 

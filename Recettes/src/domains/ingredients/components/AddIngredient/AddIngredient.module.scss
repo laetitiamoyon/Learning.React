@@ -12,7 +12,7 @@
 
 .container
 {
-    @include superBackground(url(../images/backgrounds/add-ingredient.jpg), cover);
+    background: url(../../../../images/backgrounds/add-ingredient.jpg) no-repeat center center / cover;
     @include marginPadding(auto, 0 24px);
 
     height: 100vh;

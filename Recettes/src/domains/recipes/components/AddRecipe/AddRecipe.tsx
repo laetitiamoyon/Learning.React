@@ -50,7 +50,7 @@ const AddRecipe :FC = () =>
         redirectToRecipes();
     }
 
-    return <>
+    return <div className={styles.containerPage}>
         <h1 className={styles.title}>Ajouter une nouvelle recette</h1>
 
         <div className={styles.container}>
@@ -85,7 +85,7 @@ const AddRecipe :FC = () =>
             </div>
         </div>
         
-    </>
+    </div>
 }
 
 export default AddRecipe;

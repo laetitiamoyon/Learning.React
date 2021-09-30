@@ -19,7 +19,7 @@ const RecipeDescription :FC = () =>
     const history = useHistory();
     const onClick = () : void => history.push(`/modification-de-la-recette/${id}`, { id : id })
 
-    return <> <h1 className={styles.title}>{title}</h1>
+    return <div className={styles.containerPage}> <h1 className={styles.title}>{title}</h1>
         <div className={styles.container}>
             <div className={styles.imageAndIngredientsContainer}>
                 <img className={styles.image} alt='' src={imageData} style={{ backgroundImage : `url(.${imagePath})`}} />
@@ -39,7 +39,7 @@ const RecipeDescription :FC = () =>
             <div>
         </div>
         </div>
-    </>
+    </div>
     
 }
 
