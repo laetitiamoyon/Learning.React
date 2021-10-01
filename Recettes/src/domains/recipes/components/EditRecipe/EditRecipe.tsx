@@ -2,10 +2,9 @@ import { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
-import { updateRecipeAction, updateIngredientRecipeAction } from '../../recipes.action';
+import { updateRecipeAction } from '../../recipes.action';
 import { Recipe } from '../../recipes.model';
 import { imageUploader } from '../../../../shared/utils/imageUploader'; 
-import {Ingredient as IngredientModel} from '../../../ingredients/ingredients.model';
 import { IngredientContext } from '../../../ingredients/ingredients.context';
 
 
@@ -14,7 +13,7 @@ interface RouteProps
     id : string
 }
 
-const EditRecipe : FC<IngredientModel> = ({unity}) =>
+const EditRecipe : FC = () =>
 {
     const { recipesState : { recipes } } = useContext(RecipeContext)
     const { ingredientsState : { ingredients : ingredientList }} = useContext(IngredientContext)
@@ -26,7 +25,6 @@ const EditRecipe : FC<IngredientModel> = ({unity}) =>
     const [newIngredients, setNewIngredients] = useState(ingredients)
     const [newTitle, setNewTitle] = useState(title)
     const [newDescription, setNewDescription] = useState(description)
-    const [newUnity, setNewUnity] = useState(unity)
 
     const removeIngredient = (id : string) : void =>
         setNewIngredients(newIngredients.filter(i => i.id !== id))
@@ -65,12 +63,6 @@ const EditRecipe : FC<IngredientModel> = ({unity}) =>
             imagePath : newImagePath,
             imageData : newImageData,
         }))
-        const ingredient : IngredientModel = {
-            id, 
-            title : newTitle,
-            unity : newUnity
-        }
-        dispatch(updateIngredientRecipeAction(ingredient))
     }
 
     const onSubmit = (event : FormEvent<HTMLFormElement>) : void =>

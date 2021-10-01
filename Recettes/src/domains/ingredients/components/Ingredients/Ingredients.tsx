@@ -2,7 +2,7 @@ import React, { FC, useContext, useState, useEffect, ChangeEvent } from 'react';
 import styles from './Ingredients.module.scss'
 import Ingredient from '../Ingredient/Ingredient';
 import { IngredientContext } from '../../ingredients.context';
-
+import useEmptyRecipeIngredientsToast from '../../../recipes/hooks/useEmptyRecipeIngredientsToast';
 
 const Ingredients :FC = () => 
 {
@@ -14,9 +14,10 @@ const Ingredients :FC = () =>
 
     useEffect(() => {
         setFilteredIngredient(ingredients.filter(ingredient => 
-            ingredient.title.toLowerCase().includes(searchIngredientTerm.toLowerCase())
-            ))
+            ingredient.title.toLowerCase().includes(searchIngredientTerm.toLowerCase())))
     }, [searchIngredientTerm, ingredients])
+
+    useEmptyRecipeIngredientsToast()
 
     return <div className={styles.container}>
         <h1 className={styles.title}>Gérer mes ingrédients</h1>

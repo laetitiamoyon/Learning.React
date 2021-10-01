@@ -59,23 +59,22 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) : Reci
         }     
         
         case RecipeAction.REMOVE_RECIPE_INGREDIENT : 
-        {
+        {           
             const { ingredientId } = action.payload
-            let infoMessage : string | null = null
             
-            return updateRecipeState(state, 
-                state.recipes
-                .filter(recipe => containRecipeIngredient(recipe, ingredientId) ? 
-                    recipe.ingredients.filter(recipeIngredient => recipeIngredient.id !== 
-                    action.payload.ingredientId).length > 0 : infoMessage) 
-                 
-                .map(recipe => containRecipeIngredient(recipe, ingredientId) ? 
-                { 
-                    ...recipe,                                                                                              
-                    ingredients : recipe.ingredients.filter(recipeIngredient => recipeIngredient.id !== 
-                    action.payload.ingredientId)
-                }
-            : recipe))
+            // 1) On supprime les ingrédients des recettes
+            const recipesWithEmptyIngredients = state.recipes.map(r => ({ ...r, ingredients : r.ingredients.filter(i => i.id !== ingredientId)}))
+
+            // 2) On supprime les recettes dont les ingrédients ont étaient supprimés
+            const recipesWithoutEmptyIngredients = recipesWithEmptyIngredients.filter(r => r.ingredients.length !== 0)
+
+            // 3) On calcul le message contenant les recettes qui ont étaient supprimés
+            let infoMessage : string | null = recipesWithEmptyIngredients.filter(r => r.ingredients.length === 0)
+                .map(r => r.title)
+                .join(', ')
+            infoMessage = infoMessage === '' ? null : infoMessage = `Les recettes suivantes ${infoMessage} ont été supprimés`
+
+            return updateRecipeState(state, recipesWithoutEmptyIngredients, infoMessage)
             
         }
         

@@ -19,28 +19,9 @@ export const initialRecipes : Recipe[] = [
             quantity :100
         },
         { 
-            id : "4", 
-            title : "jambon", 
-            unity : "gr",
-            quantity :100
-        },
-        { 
-            id : "7", 
-            title : "pâte à pizza", 
-            unity : "pièce",
-            quantity :1
-        },
-        { 
-            id : "3", 
-            title : "champignon", 
-            unity : "gr",
-            quantity :100
-        },
-        { 
-            id : "5", 
-            title : "sauce tomate", 
-            unity : "gr",
-            quantity :100
+            id : "2", 
+            title : "Huile d'olive", 
+            unity : "gr"
         },
     ],
     title : "Pizza Régina", 
@@ -62,25 +43,7 @@ export const initialRecipes : Recipe[] = [
             title : "huile d'olive", 
             unity : "gr",
             quantity :10
-        },
-        { 
-            id : "8", 
-            title : "laitue", 
-            unity : "gr",
-            quantity :1
-        },
-        { 
-            id : "12", 
-            title : "ail", 
-            unity : "gr",
-            quantity :10
-        },
-        { 
-            id : "13", 
-            title : "Moutarde", 
-            unity : "gr",
-            quantity :10
-        },
+        }
     ],
     title : "Salade César",
     description : "Couper les tranches de pain en cube. Faire revenir les croûtons dans un filet d'huile d'olive pendant 2 minutes et laisser refroidir. Couper le poulet en petits morceaux et faire cuire dans une poêle anti-adhésive sans matière grasse. Faire dorer et laisser refroidir. Déchirer la laitue et petits morceaux. Pour finir dresser dans l'ordre : salade, poulet, croûtons et sauce César." 
@@ -97,10 +60,10 @@ export const initialRecipes : Recipe[] = [
             quantity :1
         },
         { 
-            id : "15", 
-            title : "Pommes Golden", 
-            unity : "pièce",
-            quantity : 6
+            id : "3", 
+            title : "Champignons", 
+            unity : "gr",
+            quantity :1
         },
 
     ],
