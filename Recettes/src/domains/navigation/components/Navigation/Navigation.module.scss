@@ -25,16 +25,11 @@ a {
     text-shadow: 2px 2px 4px #000000c7;
 }
 @media (max-width: 950px) { a { margin-left: 60px; }}
-@media (max-width: 750px) { a {
-        @include text($textH5FontSize, $primaryColor, $fontWeightRegular, center);
-        
-    }
-}
-//@media (max-width: 700px) { a { margin-left: 40px; }}
-
+@media (max-width: 750px) { a { @include text($textH5FontSize);}}
 @media (max-width: 980px) { a { margin-left: 0px; margin-right: 50px;}}
 @media (max-width: 550px) { a { margin-right: 15px; }}
 @media (max-width: 630px) { a { margin-right: 14px; }}
+@media (max-width: 450px) { a { margin-right: 10px; }}
 
 
 a:hover { color: #ffae71; }
@@ -48,4 +43,5 @@ a:hover { color: #ffae71; }
     margin : 0;
     list-style-type: none;
 }
+@media (max-width: 450px) { .leftUl  { padding-left: 9px; }}
 

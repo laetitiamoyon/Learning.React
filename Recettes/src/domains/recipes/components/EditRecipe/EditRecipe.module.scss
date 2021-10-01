@@ -18,6 +18,9 @@
     
     text-shadow: 2px 2px 4px black;
 }
+@media (max-width: 460px) { .title { @include text($textH4FontSize); margin-bottom: -20px;}}
+@media (max-width: 400px) { .title { margin-bottom: -80px;}}
+
 
 .formContainer { @include flex(undefined, undefined, column); }
 
@@ -51,6 +54,8 @@
     @include flex(center, undefined, undefined, 50px); }}
 @media (max-width: 1120px) { .container { 
     @include flex(center, center, column); }}
+@media (max-width: 460px) { .container { transform: scale(0.9); }}
+@media (max-width: 400px) { .container { transform: scale(0.8); }}
 
 .changeImageContainer
 {

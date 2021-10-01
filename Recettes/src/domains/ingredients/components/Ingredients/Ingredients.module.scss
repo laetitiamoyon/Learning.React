@@ -18,8 +18,10 @@
     
     text-shadow: 2px 2px 4px black;
 }
+@media (max-width: 460px) { .title { @include text($textH4FontSize); }}
 
 .form { @include flex(center); margin-bottom: 32px; }
+@media (max-width: 400px) { .form { transform: scale(0.95); }}
 
 .input
 {

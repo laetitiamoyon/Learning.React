@@ -28,6 +28,8 @@
 @media (max-width: 1250px) { .container { width: 70%; }}
 @media (max-width: 850px) { .container { width: 80%; }}
 @media (max-width: 760px) { .container { width: 90%; }}
+@media (max-width: 460px) { .container { transform: scale(0.9); }}
+@media (max-width: 400px) { .container { transform: scale(0.8); }}
 
 .imageAndIngredientsContainer { 
     @include flex(undefined, center, undefined, 100px);
@@ -46,6 +48,9 @@
     margin-bottom: 32px;
     text-shadow: 2px 2px 4px black;
 }
+@media (max-width: 460px) { .title { @include text($textH4FontSize); margin-bottom: 0px;}}
+@media (max-width: 460px) { .title { margin-bottom: -50px;}}
+
 .ingredientsContainer { flex-direction: column; border: dotted 2px;}
 
 .ingredients{ margin-top: 22px; }

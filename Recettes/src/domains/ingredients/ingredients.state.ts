@@ -49,7 +49,7 @@ export const initialIngredients : Ingredient[] = [
 },
 { 
     id : "9", 
-    title : "Blanc de poulet", 
+    title : "Poulet", 
     unity : "pièce"
 },
 { 
@@ -74,12 +74,12 @@ export const initialIngredients : Ingredient[] = [
 },
 { 
     id : "14", 
-    title : "Parmesan rapé", 
+    title : "Parmesan", 
     unity : "gr"
 },
 { 
     id : "15", 
-    title : "Pommes Golden", 
+    title : "Pommes", 
     unity : "pièce"
 },
 { 

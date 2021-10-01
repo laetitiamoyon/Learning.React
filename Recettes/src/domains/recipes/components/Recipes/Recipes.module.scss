@@ -9,6 +9,7 @@
     
     text-shadow: 2px 2px 4px black;
 }
+@media (max-width: 460px) { .title { @include text($textH4FontSize); }}
 
 .container
 {
@@ -16,6 +17,7 @@
     @include marginPadding(auto, 0 24px);
 
     height: 100vh;
+    min-height: 700px;
 }
 @media (max-width: 1063px) { .container { height: 100%; }}
 
@@ -24,6 +26,7 @@
 .addRecipe:hover { color: $secondaryColor; }
 
 .form { @include flex(center); margin-bottom: 32px; }
+@media (max-width: 400px) { .form { transform: scale(0.95); }}
 
 .input
 {

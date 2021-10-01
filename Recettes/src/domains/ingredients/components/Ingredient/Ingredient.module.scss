@@ -17,12 +17,20 @@
     }
 }
 @media (max-width: 600px) { .formContainer > input { width: 120px; font-size: 15px;}}
+@media (max-width: 400px) { .formContainer > input 
+{ 
+    margin-left: 8px; 
+    width: 100px; 
+    transform: scale(0.9);
+}}
+
+@media (max-width: 380px) { .formContainer > input { transform: scale(0.8); margin-left: 5px; width: 98px; }}
 
 .title { margin-top: 20px;}
 
 .removeButton 
 {
-    @include superBackground(url(../images/icons/trash-red.png), cover);
+    @include superBackground(url(../images/icons/trash-red.png), cover, no-repeat);
 
     filter: drop-shadow(0 0 0.75rem black);
 
@@ -33,6 +41,12 @@
     margin-left: 20px;
 }
 @media (max-width: 600px) { .removeButton { @include widthHeight(25px, 25px);}}
+@media (max-width: 400px) { .removeButton 
+{ 
+    @include widthHeight(22px, 22px); 
+    margin-top: 5px; 
+    margin-left: 8px; 
+}}
 
 .updateButton
 {
@@ -47,5 +61,12 @@
     cursor: pointer;
 }
 @media (max-width: 600px) { .updateButton { @include widthHeight(110px, 30px); font-size: 15px;}}
+@media (max-width: 400px) { .updateButton 
+{   
+    font-size: 13px; 
+    transform: scale(0.9);
+    margin-left: 8px;
+}}
+@media (max-width: 380px) { .updateButton { transform: scale(0.88); font-size: 12px; margin-left: 5px; }}
 
 .updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
