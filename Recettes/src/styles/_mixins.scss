@@ -61,6 +61,11 @@
     @if ($height != undefined) { height: $height; }
 }
 
+@mixin square($size)
+{
+    @include widthHeight($size, $size);
+}
+
 @mixin borderAndRadius($border: undefined, $radius : undefined)
 {
     @if ($border != undefined) { border: $border; }

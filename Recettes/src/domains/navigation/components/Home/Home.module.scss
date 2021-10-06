@@ -14,11 +14,11 @@
     @include text($textH3FontSize, $primaryColor, undefined, center);
 
     padding-top: calc(8vh + 32px);
-    margin-bottom: 32px;
+    margin-bottom: $spacingLg;
     
     text-shadow: 2px 2px 4px black;
 }
-@media (max-width: 460px) { .title { @include text($textH4FontSize); }}
+@media (max-width: 550px) { .title { @include text($textH4FontSize);  margin-bottom: $spacingMd;}}
 
 .descriptionAppli
 {

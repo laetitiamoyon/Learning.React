@@ -4,27 +4,20 @@
 {
     margin-top: 50px;
 
-    @include flex(center);
+    @include flex(center, center);
+    gap : 16px;
 
     > input
     {
         @include text(undefined, $tertiaryColor, undefined, center);
         @include borderAndRadius($defaultBorder, $defaultBorderRadius);
 
-        width: 130px;
-
-        margin-left: 20px;
+        height : 26px;
     }
-}
-@media (max-width: 600px) { .formContainer > input { width: 120px; font-size: 15px;}}
-@media (max-width: 400px) { .formContainer > input 
-{ 
-    margin-left: 8px; 
-    width: 100px; 
-    transform: scale(0.9);
-}}
 
-@media (max-width: 380px) { .formContainer > input { transform: scale(0.8); margin-left: 5px; width: 98px; }}
+    @media (max-width: 650px) { gap : 8px; }
+}
+
 
 .title { margin-top: 20px;}
 
@@ -34,39 +27,28 @@
 
     filter: drop-shadow(0 0 0.75rem black);
 
-    @include widthHeight(25px, 25px);
+    @include square($spacingLg);
 
     cursor: pointer;
 
-    margin-left: 20px;
+    @media (max-width: 650px) { @include square($spacingMd); }
 }
-@media (max-width: 600px) { .removeButton { @include widthHeight(25px, 25px);}}
-@media (max-width: 400px) { .removeButton 
-{ 
-    @include widthHeight(22px, 22px); 
-    margin-top: 5px; 
-    margin-left: 8px; 
-}}
 
 .updateButton
 {
-    @include widthHeight(130px, 30px);
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH5LineHeight);
-
-    margin-left: 20px;
+    padding : 0 8px;
+    border : 0;
 
     background-color: #F1EEEB;
 
     cursor: pointer;
 }
-@media (max-width: 600px) { .updateButton { @include widthHeight(110px, 30px); font-size: 15px;}}
-@media (max-width: 400px) { .updateButton 
-{   
-    font-size: 13px; 
-    transform: scale(0.9);
-    margin-left: 8px;
-}}
-@media (max-width: 380px) { .updateButton { transform: scale(0.88); font-size: 12px; margin-left: 5px; }}
+.updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); border : 0; }
 
-.updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+.formContainer > input, .updateButton
+{
+    @media (max-width: 650px) { font-size : 0.8rem; }
+    @media (max-width: 580px) { font-size : 0.62rem; }
+}

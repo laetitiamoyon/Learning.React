@@ -18,8 +18,16 @@ const updateRecipeState = (
     }
 }
 
-const containRecipeIngredient = (recipe : Recipe, id : string) : boolean =>
-    recipe.ingredients.some(recipeIngredient => recipeIngredient.id === id)
+const computeInfoMessage = (recipes : Recipe[]) : string | null =>
+{
+    let infoMessage : string | null = recipes.filter(r => r.ingredients.length === 0)
+        .map(r => r.title)
+        .join(', ')
+
+    infoMessage = infoMessage === '' ? null : infoMessage = `Les recettes suivantes ${infoMessage} ont été supprimées`
+
+    return infoMessage
+}
 
 export const recipesReducer = (state: RecipeState, action: RecipeActions) : RecipeState =>
 {
@@ -40,22 +48,17 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) : Reci
         case RecipeAction.UPDATE_RECIPE_INGREDIENT: 
         {
             const { id } = action.payload
-            let infoMessage : string | null = null
-            // supprimer les recettes avec 0 ingrédients
-            // calculer la string infoMessage
-            return updateRecipeState(state, 
-                state.recipes    
-                // .filter(recipe => containRecipeIngredient(recipe, id) ? 
-                // recipe.ingredients.map(recipeIngredient => recipeIngredient.id === id ?
-                // action.payload.id : recipeIngredient).length > 0 : infoMessage) 
-                .map(recipe => containRecipeIngredient(recipe, id) ? 
-                    { 
-                        ...recipe,                                                                                              
-                        ingredients : recipe.ingredients.map(recipeIngredient => 
-                            recipeIngredient.id === id ? 
-                            action.payload : recipeIngredient)
-                    }
-            : recipe))
+
+            // 1) On met à jour les ingrédients modifiés d'une recette
+            const recipesWithEmptyIngredients = state.recipes.map(r => ({...r, ingredients : r.ingredients.map(i => i.id === id ? action.payload : i)}))
+        
+            // 2) On supprime les recettes qui ne contiennent plus d'ingrédients lorsqu'elles sont modifiées
+            const recipesWithoutEmptyIngredients = recipesWithEmptyIngredients.filter(r => r.ingredients.length !== 0)
+
+            // 3) On calcul notre message contenant les recettes supprimées
+            const infoMessage = computeInfoMessage(recipesWithoutEmptyIngredients)
+            
+            return updateRecipeState(state, recipesWithoutEmptyIngredients, infoMessage)
         }     
         
         case RecipeAction.REMOVE_RECIPE_INGREDIENT : 
@@ -65,17 +68,13 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) : Reci
             // 1) On supprime les ingrédients des recettes
             const recipesWithEmptyIngredients = state.recipes.map(r => ({ ...r, ingredients : r.ingredients.filter(i => i.id !== ingredientId)}))
 
-            // 2) On supprime les recettes dont les ingrédients ont étaient supprimés
+            // 2) On supprime les recettes dont les ingrédients ont été supprimées
             const recipesWithoutEmptyIngredients = recipesWithEmptyIngredients.filter(r => r.ingredients.length !== 0)
 
-            // 3) On calcul le message contenant les recettes qui ont étaient supprimés
-            let infoMessage : string | null = recipesWithEmptyIngredients.filter(r => r.ingredients.length === 0)
-                .map(r => r.title)
-                .join(', ')
-            infoMessage = infoMessage === '' ? null : infoMessage = `Les recettes suivantes ${infoMessage} ont été supprimés`
+            // 3) On calcul le message contenant les recettes qui ont été supprimées
+            const infoMessage = computeInfoMessage(recipesWithEmptyIngredients)
 
             return updateRecipeState(state, recipesWithoutEmptyIngredients, infoMessage)
-            
         }
         
         default : return state

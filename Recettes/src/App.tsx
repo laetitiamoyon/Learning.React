@@ -9,7 +9,7 @@ const App = () =>
     <RecipeContextProvider>
         <IngredientContextProvider>
             <Navigation/>
-            <ToastContainer />
+            <ToastContainer/>
         </IngredientContextProvider>
     </RecipeContextProvider>
 

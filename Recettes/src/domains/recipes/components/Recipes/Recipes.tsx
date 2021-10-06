@@ -1,23 +1,25 @@
 import React, { FC, useContext, useState, useEffect, ChangeEvent } from 'react'
 import styles from './Recipes.module.scss'
-import Recipe from '../Recipe/Recipe';
 import { RecipeContext } from '../../recipes.context'
-import { Recipe as RecipeModel } from '../../recipes.model'
+import useEmptyRecipeIngredientsToast from '../../hooks/useEmptyRecipeIngredientsToast';
+import Recipe from '../Recipe/Recipe';
+import { Highlight } from '../../../../shared/utils/Highlight';
 
-const Recipes : FC<RecipeModel> = () => 
-{
+const Recipes : FC = () => 
+{   
     const { recipesState : { recipes } } = useContext(RecipeContext)
-    const [filteredRecipes, setFilteredRecipes] = useState(recipes)
+   const [filteredRecipes, setFilteredRecipes] = useState(recipes)
     const [searchRecipeTerm, setSearchRecipeTerm] = useState('')
-  
-    const onSearchRecipe = (event : ChangeEvent<HTMLInputElement>) : void => setSearchRecipeTerm(event.target.value)
 
     useEffect(() => {
         setFilteredRecipes(recipes.filter(recipe =>
-            recipe.title.toLowerCase().includes(searchRecipeTerm)))
-        
+            recipe.title.toLowerCase().includes(searchRecipeTerm)))        
     }, [searchRecipeTerm, recipes]);
-    
+
+    useEmptyRecipeIngredientsToast()
+
+    const onChangeRecipeTerm = (event : ChangeEvent<HTMLInputElement>) : void => setSearchRecipeTerm(event.target.value)
+
     return <div className={styles.container}>
         <h1 className={styles.title}>Mes recettes</h1>
         <div className={styles.form}>
@@ -25,12 +27,11 @@ const Recipes : FC<RecipeModel> = () =>
             type="text" 
             placeholder="Rechercher" 
             value={searchRecipeTerm} 
-            onChange={onSearchRecipe}/>
+            onChange={onChangeRecipeTerm}/>
         </div>
         <div className={styles.recipes}>
-        { filteredRecipes.map(recipe => <Recipe key={recipe.id} {...recipe}/>) }
+        { filteredRecipes.map(r => <Recipe {...r} key={r.id} />)} 
       </div>
-    </div> 
+    </div>
 }
-
 export default Recipes;

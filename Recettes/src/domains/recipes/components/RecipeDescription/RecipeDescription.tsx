@@ -25,11 +25,8 @@ const RecipeDescription :FC = () =>
                 <img className={styles.image} alt='' src={imageData} style={{ backgroundImage : `url(.${imagePath})`}} />
                 <div className={styles.ingredientsContainer}>
                     <div className={styles.ingredients}>Ingredients:</div>
-                    {
-                        ingredients.map(({quantity, unity, title, id} : RecipeIngredient) => 
-                            <div className={styles.ingredientsList} key={`RecipeIngredient-${id}`}>{quantity} {unity} de {title}
-                            </div>)
-                    }
+                    {ingredients.map(({quantity, unity, title, id} : RecipeIngredient) => 
+                        <div className={styles.ingredient} key={`RecipeIngredient-${id}`}>- {quantity} {unity} de {title}</div>)}
                 </div>
             </div>
             <div className={styles.description}>{description}</div>

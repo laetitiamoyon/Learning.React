@@ -38,7 +38,7 @@
 }
 @media (max-width: 1250px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 50px); }}
 @media (max-width: 700px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 30px); }}
-@media (max-width: 660px) { .imageAndIngredientsContainer { flex-direction: column; }}
+@media (max-width: 660px) { .imageAndIngredientsContainer { flex-direction: column; margin-left: 0; }}
 
 .title
 {
@@ -51,14 +51,20 @@
 @media (max-width: 460px) { .title { @include text($textH4FontSize); margin-bottom: 0px;}}
 @media (max-width: 460px) { .title { margin-bottom: -50px;}}
 
-.ingredientsContainer { flex-direction: column; border: dotted 2px;}
+.ingredientsContainer
+{
+    flex-direction: column;
+    gap : $spacingXs;
 
-.ingredients{ margin-top: 22px; }
+    border: dotted 2px;
+    padding : 12px;
+}
 
-.ingredientsList {  line-height: 12px; font-size: 15px; }
+.ingredient { font-size: 15px; margin-left : 2px; margin-top : -2px; }
 
-.description, .ingredients, .ingredientsList { @include marginPadding(auto, 12px); }
-@media (max-width: 550px) { .description, .ingredientsList { font-size: 15px; }}
+.description { @include marginPadding(auto, 12px); }
+@media (max-width: 660px) { .description { margin-top : -$spacingMd; padding-bottom : 0;}}
+@media (max-width: 550px) { .description, .ingredient { font-size: 15px; }}
 
 .buttonContainer { @include flex(center);}
 

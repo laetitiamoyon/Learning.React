@@ -2,23 +2,30 @@ import { useState, useContext, ChangeEvent, FormEvent, FC } from 'react';
 import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
-import { updateRecipeAction } from '../../recipes.action';
+import { updateRecipeAction, updateIngredientRecipeAction } from '../../recipes.action';
 import { Recipe } from '../../recipes.model';
 import { imageUploader } from '../../../../shared/utils/imageUploader'; 
 import { IngredientContext } from '../../../ingredients/ingredients.context';
-
+import { Ingredient as IngredientModel } from '../../../ingredients/ingredients.model';
+import useEmptyRecipeIngredientsToast from '../../hooks/useEmptyRecipeIngredientsToast';
 
 interface RouteProps
 {
     id : string
 }
 
-const EditRecipe : FC = () =>
+const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
 {
-    const { recipesState : { recipes } } = useContext(RecipeContext)
     const { ingredientsState : { ingredients : ingredientList }} = useContext(IngredientContext)
-    let { id } = useParams<RouteProps>();
-    const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id) as Recipe
+    const { recipesState : { recipes } } = useContext(RecipeContext)
+    const { id } = useParams<RouteProps>();
+    const history = useHistory()
+    const redirectToRecipes = () : void => history.push('/recettes')
+    if (recipes.find(r => r.id === id) === undefined)
+        redirectToRecipes()
+
+    const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id) as Recipe ??
+    { title : undefined, ingredients : undefined, description : undefined, imagePath : undefined, imageData : undefined}
 
     const [newImageData, setNewImageData] = useState(imageData)
     const [newImagePath, setNewImagePath] = useState(imagePath)
@@ -37,8 +44,6 @@ const EditRecipe : FC = () =>
 
     const { dispatch } = useContext(RecipeContext)
 
-    const history = useHistory()
-    const redirectToRecipes = () : void => history.push('/recettes')
 
     const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
     
@@ -63,6 +68,12 @@ const EditRecipe : FC = () =>
             imagePath : newImagePath,
             imageData : newImageData,
         }))
+        const ingredient : IngredientModel = {
+            id,
+            title : ingredientTitle,
+            unity : unity,
+        }
+        dispatch(updateIngredientRecipeAction(ingredient))
     }
 
     const onSubmit = (event : FormEvent<HTMLFormElement>) : void =>
@@ -71,6 +82,8 @@ const EditRecipe : FC = () =>
         updateRecipe()
         redirectToRecipes()
     }
+
+    useEmptyRecipeIngredientsToast()
    
     return <div className={styles.containerPage}>
         <h1 className={styles.title}>Modifier la recette</h1>

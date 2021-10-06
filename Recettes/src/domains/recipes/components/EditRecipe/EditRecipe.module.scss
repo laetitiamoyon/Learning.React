@@ -76,7 +76,13 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.image { background-size: cover; @include widthHeight(150px, 150px); }
+.image
+{ 
+    border: 2px solid white;
+    border-radius: $spacingXs;
+
+    background-size: cover;
+    @include widthHeight(150px, 150px); }
 
 .downloadImageButton
 {
