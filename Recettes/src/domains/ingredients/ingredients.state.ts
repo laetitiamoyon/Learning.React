@@ -7,115 +7,95 @@ export interface IngredientState
 }
  
 export const initialIngredients : Ingredient[] = [
-{ 
-    id : "1", 
-    title : "sel", 
-    unity : "gr"
+{
+    id: "3",
+    title: "Mozzarella",
+    unity: "gr"
 },
-{ 
-    id : "2", 
-    title : "Huile d'olive", 
-    unity : "gr"
+{
+    id: "4",
+    title: "Basilic",
+    unity: "gr"
 },
-{ 
-    id : "3", 
-    title : "Champignons", 
-    unity : "gr"
+{
+    id: "5",
+    title: "Sel",
+    unity: "gr"
 },
-{ 
-    id : "4", 
-    title : "Jambon", 
-    unity : "gr"
+{
+    id: "6",
+    title: "Huile d'olive",
+    unity: "gr"
 },
-{ 
-    id : "5", 
-    title : "Sauce tomate", 
-    unity : "gr"
+{
+    id: "7",
+    title: "Tomate",
+    unity: "gr"
 },
-{ 
-    id : "6", 
-    title : "Mozzarella", 
-    unity : "gr"
+{
+    id: "8",
+    title: "Vinaigre balsamique",
+    unity: "gr"
 },
-{ 
-    id : "7", 
-    title : "Pâte à pizza", 
-    unity : "gr"
+{
+    id: "9",
+    title: "Pommes",
+    unity: "gr"
 },
-{ 
-    id : "8", 
-    title : "Laitue", 
-    unity : "pièce"
+{
+    id: "10",
+    title: "Pâte feuilletée",
+    unity: "pièce"
 },
-{ 
-    id : "9", 
-    title : "Poulet", 
-    unity : "pièce"
+{
+    id: "11",
+    title: "Crème fraiche",
+    unity: "gr"
 },
-{ 
-    id : "10", 
-    title : "Pain de mie", 
-    unity : "tranche"
+{
+    id: "12",
+    title: "Oeufs",
+    unity: "pièce"
 },
-{ 
-    id : "11", 
-    title : "Lait", 
-    unity : "cuillère à soupe"
+{
+    id: "13",
+    title: "Sucre",
+    unity: "gr"
 },
-{ 
-    id : "12", 
-    title : "Ail", 
-    unity : "gousse"
+{
+    id: "14",
+    title: "Lardons",
+    unity: "gr"
 },
-{ 
-    id : "13", 
-    title : "Moutarde", 
-    unity : "Cuillère à café"
+{
+    id: "15",
+    title: "Parmesan",
+    unity: "gr"
 },
-{ 
-    id : "14", 
-    title : "Parmesan", 
-    unity : "gr"
+{
+    id: "16",
+    title: "Carottes",
+    unity: "gr"
 },
-{ 
-    id : "15", 
-    title : "Pommes", 
-    unity : "pièce"
+{
+    id: "17",
+    title: "Curry",
+    unity: "gr"
 },
-{ 
-    id : "16", 
-    title : "Pâte brisée", 
-    unity : "pièce"
+{
+    id: "18",
+    title: "Lait de coco",
+    unity: "gr"
 },
-{ 
-    id : "17", 
-    title : "Beurre", 
-    unity : "gr"
+{
+    id: "19",
+    title: "Courgette",
+    unity: "gr"
 },
-{ 
-    id : "18", 
-    title : "Lardons", 
-    unity : "gr"
-},
-{ 
-    id : "19", 
-    title : "Pâtes", 
-    unity : "gr"
-},
-{ 
-    id : "20", 
-    title : "Jaunes d'oeuf", 
-    unity : "pièce"
-},
-{ 
-    id : "21", 
-    title : "Oignon", 
-    unity : "pièce"
-},
-{ 
-    id : "22", 
-    title : "Crème fraiche", 
-    unity : "cl"
+{
+    id: "20",
+    title: "Poivron",
+    unity: "gr"
 }]
     
 export const localStorageIngredientState = () : IngredientState => ({

@@ -5,7 +5,7 @@ import { RecipeContext } from '../../recipes.context';
 import { Recipe as RecipeModel } from '../../recipes.model'
 import styles from './RecipeSearchBar.module.scss'
 
-const RecipeSearchBar : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
+const RecipeSearchBar : FC<RecipeModel> = ({id, title, image, imageData}) =>
 {
     const history = useHistory();
     const seeRecipeOnClick = () : void => history.push(`/description-de-la-recette/${id}`, { id : id })
@@ -16,7 +16,7 @@ const RecipeSearchBar : FC<RecipeModel> = ({id, title, imagePath, imageData}) =>
         <div className={styles.removeButton} onClick={removeRecipe}></div>
        
         <div className={styles.element}>
-            <img className={styles.image} alt='' src={imageData} style={{ backgroundImage : `url(${imagePath})`}} />
+            <img className={styles.image} alt='' src={imageData} style={{ backgroundImage : `url(${image})`}} />
             <div className={styles.title}>{title}</div>
             <div className={styles.viewButton} onClick={seeRecipeOnClick}>Voir la recette</div>
         </div>

@@ -8,6 +8,8 @@ import { imageUploader } from '../../../../shared/utils/imageUploader';
 import { IngredientContext } from '../../../ingredients/ingredients.context';
 import { Ingredient as IngredientModel } from '../../../ingredients/ingredients.model';
 import useEmptyRecipeIngredientsToast from '../../hooks/useEmptyRecipeIngredientsToast';
+import EditRecipeImage from '../EditRecipeImage/EditRecipeImage';
+import EditOtherRecipeInformations from '../EditOtherRecipeInformations/EditOtherRecipeInformations';
 
 interface RouteProps
 {
@@ -24,14 +26,16 @@ const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
     if (recipes.find(r => r.id === id) === undefined)
         redirectToRecipes()
 
-    const { title, ingredients, description, imagePath, imageData } = recipes.find(r => r.id === id) as Recipe ??
-    { title : undefined, ingredients : undefined, description : undefined, imagePath : undefined, imageData : undefined}
+    const { title, ingredients, description, image, calories, preparationTime, cookingTime } = recipes.find(r => r.id === id) as Recipe ??
+    { title : undefined, ingredients : undefined, description : undefined, image : undefined, calories : undefined, preparationTime : undefined, cookingTime : undefined}
 
-    const [newImageData, setNewImageData] = useState(imageData)
-    const [newImagePath, setNewImagePath] = useState(imagePath)
+    const [newImage, setNewImage] = useState(image)
     const [newIngredients, setNewIngredients] = useState(ingredients)
     const [newTitle, setNewTitle] = useState(title)
     const [newDescription, setNewDescription] = useState(description)
+    const [newCalories, setNewCalories] = useState<string | undefined>(calories)
+    const [newPreparationTime, setNewPreparationTime] = useState<string | undefined>(preparationTime)
+    const [newCookingTime, setNewCookingTime] = useState<string | undefined>(cookingTime)
 
     const removeIngredient = (id : string) : void =>
         setNewIngredients(newIngredients.filter(i => i.id !== id))
@@ -44,19 +48,9 @@ const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
 
     const { dispatch } = useContext(RecipeContext)
 
-
     const onChangeTitle = (event : ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
     
     const onChangeDescription = (event : ChangeEvent<HTMLTextAreaElement>) : void => setNewDescription(event.target.value)
-
-    const onImageUploaded = (image : string) : void =>
-    {
-        setNewImageData(image)
-        setNewImagePath(undefined)
-    }
-
-    const onChangeImage = (event: ChangeEvent<HTMLInputElement>) : void =>
-        imageUploader(event, onImageUploaded)
 
     const updateRecipe = () : void => {
         dispatch(updateRecipeAction(
@@ -65,8 +59,11 @@ const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
             title : newTitle,
             description : newDescription,
             ingredients : newIngredients,
-            imagePath : newImagePath,
-            imageData : newImageData,
+            image : newImage,
+            imageData : newImage,
+            calories: newCalories,
+            cookingTime: newCookingTime,
+            preparationTime: newPreparationTime
         }))
         const ingredient : IngredientModel = {
             id,
@@ -86,58 +83,68 @@ const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
     useEmptyRecipeIngredientsToast()
    
     return <div className={styles.containerPage}>
-        <h1 className={styles.title}>Modifier la recette</h1>
-        <div className={styles.container}>
-            <div className={styles.changeImageContainer}>
-                <label htmlFor="imageUpload" className={styles.downloadImageButton}>Téléchargez une nouvelle image</label>
-                <input className={styles.inputImage} 
-                    id="imageUpload" 
-                    type="file"  
-                    accept="image/png, image/jpeg" 
-                    onChange={onChangeImage} />
+    <h1 className={styles.title}>Modifier la recette</h1>
+    <form className={styles.form} onSubmit={onSubmit}>
+      <div className={styles.container}>
 
-                <img className={styles.image} alt='' src={newImageData} style={{ backgroundImage : `url(.${imagePath})`}} />
-            </div>
+        <EditRecipeImage newImage={newImage} setNewImage={setNewImage}/>
 
-            <form className={styles.formContainer} onSubmit={onSubmit}>
-                <label className={styles.label}>Titre:</label>
-                <input className={styles.input} onChange={onChangeTitle} value={newTitle}/>
-                
-                <label className={styles.label}> Description:</label>
-                <textarea rows={10} className={styles.input} onChange={onChangeDescription} value={newDescription}/>
+        <div className={styles.element}>
+          <div className={styles.rightElements}>
+              <label className={styles.label}>Titre de la recette</label>
+              <input 
+                className={styles.input}
+                type="text"
+                onChange={onChangeTitle}
+                value={newTitle}
+                name="Titre de la recette"/>
 
-                <label className={styles.label}>Ingrédients :</label>
-                <ul>
-                    { newIngredients.map(({id, quantity, unity, title}) => 
-                        <li key={id} className={styles.recipeIngredient}>
-                            <input
-                                value={quantity}
-                                type="number"
-                                onChange={(event: ChangeEvent<HTMLInputElement>) => updateIngredientQuantity(id, parseInt(event.target.value))}
-                                className={styles.recipeIngredientInput}/>
-                            {unity} de 
+              <label className={styles.label}>Description</label>
+              <textarea
+                className={styles.input}
+                rows={5}
+                onChange={onChangeDescription}
+                value={newDescription}
+                name="Description"/>
 
-                            <select 
-                                className={styles.select}
-                                onChange={(event: ChangeEvent<HTMLSelectElement>) => updateIngredients(id, event.target.value)}
-                                placeholder="Nom de l'ingrédient"> 
-                                <option>{title}</option>
-                                {ingredientList && ingredientList.map(i => <option key={i.id} value={i.title}>{i.title}</option>)}    
-                            </select>
+              <div className={styles.ingredientContainer}>
+                <label className={styles.ingredientLabel}>Ingrédients</label>
+                  {newIngredients.map(({id, title, quantity, unity}) =>
+                  
+                    <li className={styles.ingredients} key={id}>
+                      <input 
+                        className={styles.quantityInput}
+                        type="number"
+                        value={quantity}
+                        onChange={(event: ChangeEvent<HTMLInputElement>) => updateIngredientQuantity(id, parseInt(event.target.value))}/>
+                        <div className={styles.unity}>{unity} de </div>
+                      
+                      <select
+                        className={styles.select}
+                        onChange={(event: ChangeEvent<HTMLSelectElement>)=> updateIngredients(id, event.target.value)}>
+                        <option>{title}</option>
+                        {ingredientList.map(i => <option key={i.id} value={i.title}>{i.title}</option>)}
+                      </select>
 
-                            <button
-                                onClick={()=> removeIngredient(id)} 
-                                className={styles.removeButton}>
-                                Supprimer
-                            </button>
-                        </li>)
-                    }
-                </ul>
-                
-                <button className={styles.submitButton} onClick={updateRecipe}>Enregistrer</button>
-            </form>
+                      <div className={styles.trashIcon} onClick={() => removeIngredient(id)}></div>
+                    </li>)
+                  }
+              </div>
+          </div>
         </div>
-    </div>
-}
+      </div>
+        
+      <EditOtherRecipeInformations
+        newCalories={newCalories}
+        setNewCalories={setNewCalories}
+        newCookingTime={newCookingTime}
+        setNewCookingTime={setNewCookingTime}
+        newPreparationTime={newPreparationTime}
+        setNewPreparationTime={setNewPreparationTime}/>
+
+      <button className={styles.submitButton}>Enregistrer</button>
+    </form>
+  </div>
+};
 
 export default EditRecipe;

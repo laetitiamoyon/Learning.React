@@ -1,39 +1,32 @@
 @import '../../../../styles/styles.scss'; 
 
-.homeContainer
+.container
 {
-    background: url(../../../../images/backgrounds/home.jpeg) no-repeat center center / cover; 
+  background: url(../../../../images/backgrounds/home.jpg) no-repeat center center / cover; 
 
-    @include marginPadding(auto, 0 24px);
+  @include marginPadding(auto, 0 24px);
 
-    height: 100vh;
+  height: 100vh;
 }
 
 .title
 { 
-    @include text($textH3FontSize, $primaryColor, undefined, center);
+  @include text($textH1FontSize, $tertiaryColor, undefined, center);
 
-    padding-top: calc(8vh + 32px);
-    margin-bottom: $spacingLg;
-    
-    text-shadow: 2px 2px 4px black;
+  padding-top: calc(24vh + 32px);
+  margin-bottom: $spacingLg;
+  
+  text-shadow: 2px 2px 4px white;
 }
-@media (max-width: 550px) { .title { @include text($textH4FontSize);  margin-bottom: $spacingMd;}}
 
 .descriptionAppli
 {
-    @include text(undefined, $primaryColor, undefined, center);
+  @include text(undefined, $tertiaryColor, undefined, center);
+  font-size: 18px;
 
-    text-shadow: 3px 3px 6px #000000ad;
- 
-    width: 800px;
- 
-    margin: auto;
+  width: 700px;
+
+  margin: auto;
 }
-@media (max-width: 950px) { .descriptionAppli { width: 700px; }}
-@media (max-width: 800px) { .descriptionAppli { width: 600px; }}
-@media (max-width: 700px) { .descriptionAppli { width: 500px; }}
-@media (max-width: 600px) { .descriptionAppli { width: 450px; }}
-@media (max-width: 480px) { .descriptionAppli { width: 350px; font-size: 14px;}}
-@media (max-width: 390px) { .descriptionAppli { width: 300px; }}
+
 

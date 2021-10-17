@@ -30,30 +30,28 @@ const AddIngredient : FC = () =>
         redirectToIngredients();
     }
 
-    return <>
-        <div className={styles.container}>
-            <h1 className={styles.title}>Ajouter un nouvel ingrédient</h1>
-            <form className={styles.formContainer} onSubmit={onSubmit}>
-                <div className={styles.formElement}>
-                    <label className={styles.label}>Nom de l'ingrédient :</label>
-                    <input 
-                        onChange={onTitleChange}
-                        className={styles.input}
-                        placeholder="Nom de l'ingrédient"
-                        value={title} required/>
-                    
-                    <label className={styles.label}>Unité :</label>
-                    <input 
-                        onChange={onUnityChange}
-                        className={styles.input}
-                        placeholder="Unité"
-                        value={unity} required/>
-                </div>
+    return <div className={styles.container}>
+    <div className={styles.elements}>
+      <h1 className={styles.title}>Ajouter un nouvel ingrédient</h1>
+      <form className={styles.form} onSubmit={onSubmit}>
+        <label>Nom de l'ingrédient</label>
+        <input 
+          className={styles.input}
+          onChange={onTitleChange}
+          value={title}
+          type="text"/>
 
-                <button className={styles.submitButton}>Ajouter</button>
-            </form>
-        </div>
-    </>
+        <label>L'unité</label>
+        <input 
+          className={styles.input}
+          onChange={onUnityChange}
+          value={unity}
+          type="text"/>
+        
+        <button className={styles.submitButton}>Ajouter l'ingrédient</button>
+      </form>
+    </div>
+  </div>
 };
 
 export default AddIngredient;

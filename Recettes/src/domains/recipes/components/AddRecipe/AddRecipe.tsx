@@ -6,13 +6,17 @@ import { useHistory } from 'react-router-dom';
 import { addRecipeAction } from '../../recipes.action';
 import AddRecipeImage from '../AddRecipeImage/AddRecipeImage';
 import { RecipeIngredient } from '../../recipes.model';
+import AddOtherRecipeInformations from '../AddOtherRecipeInformations/AddOtherRecipeInformations';
 
 const AddRecipe :FC = () => 
 {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [imageData, setImageData] = useState<string | undefined>(undefined)
+    const [image, setImage] = useState<string | undefined>('')
     const [ingredients, setIngredients] = useState<RecipeIngredient[]>([])
+    const [cookingTime, setCookingTime] = useState('')
+    const [preparationTime, setpreparationTime] = useState('')
+    const [calories, setCalories] = useState('')
 
     const addIngredient = (ingredient : RecipeIngredient) : void => setIngredients(
         [...ingredients, ingredient])
@@ -31,7 +35,7 @@ const AddRecipe :FC = () =>
         title,
         description,
         ingredients,
-        imageData,
+        image,
     }))
 
     const onTitleChange = (event: ChangeEvent<HTMLInputElement>) : void => 
@@ -51,41 +55,45 @@ const AddRecipe :FC = () =>
     }
 
     return <div className={styles.containerPage}>
-        <h1 className={styles.title}>Ajouter une nouvelle recette</h1>
+    <h1 className={styles.title}>Ajouter une nouvelle recette</h1>
+    <form className={styles.form} onSubmit={onSubmit}>
+      <div className={styles.container}>
 
-        <div className={styles.container}>
+        <AddRecipeImage image={image} setImage={setImage}/>
 
-            <AddRecipeImage imageData={imageData} setImageData={setImageData}/>
+        <div className={styles.element}>
+          <div className={styles.rightElements}>
+              <label className={styles.label}>Titre de la recette</label>
+              <input 
+                className={styles.input}
+                type="text"
+                onChange={onTitleChange}
+                value={title}
+                name="Titre de la recette"/>
 
-            <div className={styles.formElementContainer}>
-                <form className={styles.formContainer} onSubmit={onSubmit}>
-                    <label className={styles.label}>Titre:</label>
-                    <input 
-                        onChange={onTitleChange}
-                        className={styles.input}
-                        name="titre"
-                        value={title}/>
-                    
-                    <label className={styles.label}> Description:</label>
-                    <textarea 
-                        onChange={onDescriptionChange}
-                        rows={5}
-                        className={styles.input} 
-                        name="Description"
-                        value={description}/>
+              <label className={styles.label}>Description</label>
+              <textarea
+                className={styles.input}
+                rows={5}
+                onChange={onDescriptionChange}
+                value={description}
+                name="Description"/>
 
-                    <AddRecipeIngredient
-                        ingredients={ingredients}
-                        addIngredient={addIngredient}
-                        removeIngredient={removeIngredient}/>
-                        
-                    <button className={styles.submitButton}>Enregistrer</button>
-                </form>
-            
-            </div>
+              <div className={styles.addRecipeIngredient}> <AddRecipeIngredient
+                ingredients={ingredients}
+                addIngredient={addIngredient}
+                removeIngredient={removeIngredient}/></div>
+          </div>
         </div>
+      </div>
         
-    </div>
+      <AddOtherRecipeInformations calories={calories} setCalories={setCalories}
+            cookingTime={cookingTime} setCookingTime={setCookingTime}
+            preparationTime={preparationTime} setpreparationTime={setpreparationTime}/>
+
+      <button className={styles.submitButton}>Enregistrer</button>
+    </form>
+  </div>
 }
 
 export default AddRecipe;

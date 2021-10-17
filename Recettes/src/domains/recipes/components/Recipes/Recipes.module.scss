@@ -1,16 +1,5 @@
 @import '../../../../styles/styles.scss'; 
 
-.title
-{
-    @include text($textH3FontSize, $primaryColor, undefined, center);
-
-    padding-top: calc(8vh + 32px);
-    margin-bottom: 32px;
-    
-    text-shadow: 2px 2px 4px black;
-}
-@media (max-width: 460px) { .title { @include text($textH4FontSize); }}
-
 .container
 {
     background: url(../../../../images/backgrounds/recipes-list.jpg) no-repeat center center / cover;
@@ -19,11 +8,18 @@
     height: 100vh;
     min-height: 700px;
 }
-@media (max-width: 1063px) { .container { height: 100%; }}
 
-.recipes { margin: auto; @include flex(center, undefined, undefined, 32px, wrap); padding-bottom: 22px;}
+.title
+{
+    @include text($textH3FontSize, $primaryColor, undefined, center);
 
-.addRecipe:hover { color: $secondaryColor; }
+    padding-top: 82px;
+    margin-bottom: 38px;
+    
+    text-shadow: 2px 2px 4px black;
+}
+
+.recipes { @include flex(center, undefined, undefined, 32px, wrap); padding-bottom: 22px;}
 
 .form { @include flex(center); margin-bottom: 32px; }
 @media (max-width: 400px) { .form { transform: scale(0.95); }}

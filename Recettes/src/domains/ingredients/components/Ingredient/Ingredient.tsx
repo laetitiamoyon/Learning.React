@@ -38,20 +38,24 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
     const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) : void => setNewTitle(event.target.value)
     const onChangeUnity = (event: ChangeEvent<HTMLInputElement>) : void => setNewUnity(event.target.value)
 
-    return <form className={styles.formContainer}>
+    return <div className={styles.container}>
+    <div className={styles.ingredient}>
         <input 
+            className={styles.input} 
             placeholder="titre"
             onChange={onChangeTitle}
             value={newTitle}/>
 
         <input 
+            className={styles.input} 
             placeholder="unité"
             onChange={onChangeUnity}
             value={newUnity}/>
 
         <div className={styles.updateButton} onClick={updateRecipeIngredient}>Mettre à jour</div>
-        <div className={styles.removeButton} onClick={removeIngredientAndRecipeIngredient}></div>
-    </form>
+        <div className={styles.trashIcon} onClick={removeIngredientAndRecipeIngredient}></div>
+    </div>
+</div>
 };
 
 export default Ingredient;

@@ -1,61 +1,53 @@
 @import '../../../../styles/styles.scss'; 
 
-.title
-{ 
-    @include text($textH3FontSize, $primaryColor, undefined, center);
-
-    padding-top: calc(8vh + 32px);
-    margin-bottom: 32px;
-    
-    text-shadow: 2px 2px 4px black;
-}
-@media (max-width: 460px) { .title { @include text($textH4FontSize); }}
-
 .container
 {
-    background: url(../../../../images/backgrounds/add-ingredient.jpg) no-repeat center center / cover;
-    @include marginPadding(auto, 0 24px);
+  background: url(../../../../images/backgrounds/AddIngredient.jpg) no-repeat center center / cover;
+  @include marginPadding(auto, 0 24px);
 
-    height: 100vh;
+  height: 100vh;
 }
 
-.formElement
+.elements { margin-left: 37%; }
+
+.title
+{ 
+  @include text($textH3FontSize, $primaryColor, undefined, center);
+
+  padding-top: calc(8vh + 32px);
+  margin-bottom: 32px;
+  
+  text-shadow: 2px 2px 4px black;
+}
+
+.form
 {
-    margin-top: 80px;
-    margin-bottom: 80px;
-
-    @include flex(center);
+  @include flex(center, center, column, 22px);
+  margin-top: 80px;
 }
-@media (max-width: 730px) { .formElement { @include flex(center, center, column);}}
-@media (max-width: 500px) { .formElement { transform: scale(0.9); margin-top: 50px;}}
-@media (max-width: 450px) { .formElement { transform: scale(0.85);}}
-@media (max-width: 380px) { .formElement { transform: scale(0.82);}}
 
 .label { @include text($textH5FontSize, $primaryColor, $fontWeightRegular); padding-left: 12px;}
 
 .input
 {
-    width: 180px;
 
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
 
-    margin-left: $spacingSm;
-    margin-right: $spacingSm;
+  margin-left: $spacingSm;
+  margin-right: $spacingSm;
+  padding: 8px;
 
-    text-align: center;
+  text-align: center;
 }
-@media (max-width: 730px) { .input { width: 400px; margin: 22px;}}
 
 .submitButton
 {
-    @include widthHeight(130px, 30px);
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center);
 
-    margin-left: 45%;
+  cursor: pointer;
+
+  margin-top: 42px;
+  padding: 12px 22px;
 }
-@media (max-width: 730px) { .submitButton { margin-left: 40%;}}
-@media (max-width: 500px) { .submitButton { margin-left: 38%; }}
-@media (max-width: 450px) { .submitButton { margin-left: 35%;}}
-@media (max-width: 400px) { .submitButton { margin-left: 32%;}}
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

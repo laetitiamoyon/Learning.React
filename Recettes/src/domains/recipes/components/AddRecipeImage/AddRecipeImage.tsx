@@ -4,13 +4,13 @@ import styles from './AddRecipeImage.module.scss'
 
 interface Props
 {
-    imageData : string | undefined
-    setImageData : (imageData : string | undefined) => void
+    image : (string | undefined),
+    setImage : (image : string | undefined) => void
 }
-const AddRecipeImage : FC<Props> = ({imageData, setImageData}) =>
+const AddRecipeImage : FC<Props> = ({image, setImage}) =>
 {    
     const uploadImage = (event: ChangeEvent<HTMLInputElement>) : void =>
-        imageUploader(event, setImageData)
+        imageUploader(event, setImage)
 
     return <div className={styles.container}>
         <div className={styles.title}>Choisissez l'image de votre recette</div>
@@ -22,7 +22,7 @@ const AddRecipeImage : FC<Props> = ({imageData, setImageData}) =>
             accept="image/png, image/jpeg" 
             onChange={uploadImage} />
 
-        <img className={styles.image} alt='' src={imageData}/>
+        <img className={styles.image} alt='' src={image}/>
     </div>
 };
 

@@ -1,85 +1,69 @@
 @import '../../../../styles/styles.scss'; 
 
-.containerPage
-{
-    background: url(../../../../images/backgrounds/description-recipe.jpg) no-repeat center center / cover;;
-    @include marginPadding(auto, 0 24px);
-
-    height: 100%;
-    min-height: 800px;
-    padding-bottom: 32px;
-}
-
 .container
 {
-    background-color: rgb(216, 214, 214);
+  background: url(../../../../images/backgrounds/description.jpg) no-repeat center center / cover;;
+  @include marginPadding(auto, 0 24px);
 
-    // marginPadding
-    margin: auto;
-    padding: 24px;
-
-    width: 60%;
-    line-height: 32px;
-
-    border-radius: $defaultBorderRadius;
-
-    box-shadow: 0 1px 0 rgba(0,0,0,0.8);
+  height: 100%;
+  min-height: 900px;
+  padding-bottom: 32px;
 }
-@media (max-width: 1250px) { .container { width: 70%; }}
-@media (max-width: 850px) { .container { width: 80%; }}
-@media (max-width: 760px) { .container { width: 90%; }}
-@media (max-width: 460px) { .container { transform: scale(0.9); }}
-@media (max-width: 400px) { .container { transform: scale(0.8); }}
-
-.imageAndIngredientsContainer { 
-    @include flex(undefined, center, undefined, 100px);
-    margin-left: 12px;
-    margin-bottom: 22px;
-}
-@media (max-width: 1250px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 50px); }}
-@media (max-width: 700px) { .imageAndIngredientsContainer { @include flex(undefined, center, undefined, 30px); }}
-@media (max-width: 660px) { .imageAndIngredientsContainer { flex-direction: column; margin-left: 0; }}
 
 .title
 {
-    @include text($textH3FontSize, $primaryColor, undefined, center);
+  @include text($textH3FontSize, $primaryColor, undefined, center);
 
-    padding-top: calc(8vh + 32px);
-    margin-bottom: 32px;
-    text-shadow: 2px 2px 4px black;
-}
-@media (max-width: 460px) { .title { @include text($textH4FontSize); margin-bottom: 0px;}}
-@media (max-width: 460px) { .title { margin-bottom: -50px;}}
-
-.ingredientsContainer
-{
-    flex-direction: column;
-    gap : $spacingXs;
-
-    border: dotted 2px;
-    padding : 12px;
+  padding-top: calc(8vh + 32px);
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 4px black;
 }
 
-.ingredient { font-size: 15px; margin-left : 2px; margin-top : -2px; }
+.elements { @include flex(center, undefined, undefined)}
 
-.description { @include marginPadding(auto, 12px); }
-@media (max-width: 660px) { .description { margin-top : -$spacingMd; padding-bottom : 0;}}
-@media (max-width: 550px) { .description, .ingredient { font-size: 15px; }}
+.descriptionContainer 
+{ 
+  width: 600px; 
 
-.buttonContainer { @include flex(center);}
+  padding: 32px;
 
-.image { background-size: cover; @include widthHeight(320px, 320px); }
-@media (max-width: 950px) { .image { @include widthHeight(250px, 250px);}}
+  background-color: #e5e9ec96; 
+
+  text-align: center;
+
+  border-radius: 30%;
+}
+
+.cookInformationContainer {  @include flex(center, center, center, 42px); padding-bottom: 26px;}
+
+.label 
+{ 
+  padding : 20px 0;
+  @include text($textH5FontSize, undefined, $fontWeightSemiBold)
+}
+
+.descriptionContent { margin-bottom: 18px; }
+
+.ingredients { padding-bottom: 8px; }
+
+.image 
+{ 
+  background-repeat: no-repeat;
+  background-position: center;
+  width : 600px;
+
+  border-radius: 8px;
+}
 
 .button
 {
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
-    @include widthHeight(130px, 30px);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  padding: 8px;
 
-    margin-top: 22px;
+  margin-top: 22px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .button:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

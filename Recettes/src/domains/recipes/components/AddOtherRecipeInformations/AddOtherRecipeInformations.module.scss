@@ -1,0 +1,22 @@
+@import '../../../../styles/styles.scss'; 
+
+.container { @include flex(undefined, center, column); }
+
+.title 
+{ 
+  @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold);
+  margin-bottom: 28px;
+
+  text-shadow: 2px 2px 4px white;
+}
+
+.elements { display: flex; gap: 16px; }
+
+.input
+{
+    width: 156px;
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, undefined, center);
+    
+    padding: 8px;
+}

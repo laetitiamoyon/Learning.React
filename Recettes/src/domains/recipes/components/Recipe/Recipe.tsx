@@ -8,7 +8,7 @@ import styles from './Recipe.module.scss'
 import { IngredientContext } from '../../../ingredients/ingredients.context';
 import { Highlight } from '../../../../shared/utils/Highlight';
 
-const Recipe : FC<RecipeModel> = ({ id, title, imagePath, imageData }) =>
+const Recipe : FC<RecipeModel> = ({ id, title, image }) =>
 {
     const history = useHistory();
     const seeRecipeOnClick = () : void => history.push(`/description-de-la-recette/${id}`, { id : id })
@@ -22,17 +22,17 @@ const Recipe : FC<RecipeModel> = ({ id, title, imagePath, imageData }) =>
     }
     const searchRecipeTerm = ""
     
-    return <div className={styles.recipeContainer}>
-        <div className={styles.removeButton} onClick={removeRecipe}></div>
-       
-        <div className={styles.element}>
-            <img className={styles.image} alt='' src={imageData} style={{ backgroundImage : `url(${imagePath})`}} />
-            <Highlight searchTerm={searchRecipeTerm} text={title}/>
-            <div className={styles.title}>{title}</div>
-            <div className={styles.viewButton} onClick={seeRecipeOnClick}>Voir la recette</div>
+      return <div className={styles.container}>
+      <div className={styles.recipe}>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.image} style={{ backgroundImage : `url(${image})`}} />
+        {/* <Highlight searchTerm={searchRecipeTerm} text={title}/> */}
+        <div className={styles.buttonContainer}>
+          <button className={styles.viewDescriptionButton} onClick={seeRecipeOnClick}>Voir la recette</button>
+          <div className={styles.trashIcon} onClick={removeRecipe}></div>
         </div>
+      </div>
     </div>
-    
 }
 
 export default Recipe;

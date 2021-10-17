@@ -10,7 +10,10 @@ export interface Recipe
     id : string
     title : string
     description : string
-    imagePath? : string
+    image? : string
     imageData? : string
+    preparationTime? : string,
+    cookingTime? : string,
+    calories? : string
     ingredients : RecipeIngredient[]
 }

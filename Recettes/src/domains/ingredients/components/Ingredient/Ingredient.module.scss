@@ -1,54 +1,39 @@
 @import '../../../../styles/styles.scss'; 
 
-.formContainer
-{
-    margin-top: 50px;
-
-    @include flex(center, center);
-    gap : 16px;
-
-    > input
-    {
-        @include text(undefined, $tertiaryColor, undefined, center);
-        @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-
-        height : 26px;
-    }
-
-    @media (max-width: 650px) { gap : 8px; }
+.ingredient 
+{ 
+    @include flex(center, center, center, 32px, wrap); 
+    padding-bottom: 22px;
 }
 
+.input 
+{ 
+    text-align: center;
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    background-color: #e7f1f596;
+    height: 32px;
+    padding: 0 10px;
+    cursor: pointer;
+}
 
-.title { margin-top: 20px;}
-
-.removeButton 
+.trashIcon
 {
-    @include superBackground(url(../images/icons/trash-red.png), cover, no-repeat);
-
-    filter: drop-shadow(0 0 0.75rem black);
-
-    @include square($spacingLg);
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
 
     cursor: pointer;
-
-    @media (max-width: 650px) { @include square($spacingMd); }
 }
 
 .updateButton
 {
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH5LineHeight);
-    padding : 0 8px;
+    padding : 0 10px;
     border : 0;
 
     background-color: #F1EEEB;
+    height: 32px;
 
     cursor: pointer;
 }
 .updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); border : 0; }
-
-.formContainer > input, .updateButton
-{
-    @media (max-width: 650px) { font-size : 0.8rem; }
-    @media (max-width: 580px) { font-size : 0.62rem; }
-}

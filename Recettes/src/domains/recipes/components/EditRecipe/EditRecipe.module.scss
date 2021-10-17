@@ -2,126 +2,101 @@
 
 .containerPage
 {
-    background: url(../../../../images/backgrounds/edit-recipe.jpg) no-repeat center center / cover;
-    @include marginPadding(auto, 0 24px);
+  background: url(../../../../images/backgrounds/addRecipe.jpg) no-repeat center center / cover; 
+  @include marginPadding(auto, 0 24px);
 
-    height: 100%;
-    min-height: 800px;
+  height: 100vh;
+  min-height: 1200px;
 }
 
 .title
-{     
-    @include text($textH3FontSize, $primaryColor, undefined, center);
-    
-    padding-top: calc(8vh + 32px);
-    margin-bottom: 32px;
-    
-    text-shadow: 2px 2px 4px black;
+{ 
+  @include text($textH3FontSize, $primaryColor, undefined, center);
+
+  padding-top: calc(8vh + 32px);
+  margin-bottom: 18px;
+  
+  text-shadow: 2px 2px 4px black;
 }
-@media (max-width: 460px) { .title { @include text($textH4FontSize); margin-bottom: -20px;}}
-@media (max-width: 400px) { .title { margin-bottom: -80px;}}
 
+.container { @include flex(center, center, undefined, 122px); }
 
-.formContainer { @include flex(undefined, undefined, column); }
+.elements { @include flex(center, center, undefined); }
+
+.form { @include flex(center, center, column, 52px); }
+
+.rightElements { @include flex(center, center, column); padding-top: 42px}
+
+.label, .ingredientLabel
+{ 
+  @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold);
+
+  text-shadow: 2px 2px 4px white;
+
+  margin: 22px 0px;
+}
+
+.ingredientLabel {text-align: center;}
+
+.ingredientContainer {display: flex; flex-direction: column;}
+
+.ingredients { @include flex(flex-start, center, undefined, 12px ); margin-bottom: 8px;}
 
 .input
 {
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor);
+  width: 500px;
 
-    width: 500px;
-
-    padding: 6px;
-}
-@media (max-width: 1100px) { .input { width: 400px; }}
-@media (max-width: 850px) { .input { width: 500px; }}
-@media (max-width: 600px) { .input { width: 400px; margin: auto;}}
-
-.recipeIngredientInput { width : 50px; margin-right : $spacingXs; }
-
-.label 
-{
-    @include text($textH5FontSize, $primaryColor, $fontWeightRegular);
-
-    margin-top: 20px; 
-
-    text-shadow: 2px 2px 4px black;
-}
-@media (max-width: 600px) { .label { margin-left: 22px;}}
-
-.container { @include flex(center, undefined, undefined, 122px); }
-@media (max-width: 1200px) { .container { 
-    @include flex(center, undefined, undefined, 50px); }}
-@media (max-width: 1120px) { .container { 
-    @include flex(center, center, column); }}
-@media (max-width: 460px) { .container { transform: scale(0.9); }}
-@media (max-width: 400px) { .container { transform: scale(0.8); }}
-
-.changeImageContainer
-{
-    @include widthHeight(500px, 400px);
-    @include flex(space-evenly, center, column);
-
-    margin-top: 22px;
-    padding: 22px;
-
-    border: dotted 2px white;
-}
-@media (max-width: 600px) { .changeImageContainer { @include widthHeight(400px, 300px); }}
-
-.titleImage
-{
-    @include text($textH5FontSize, $primaryColor, undefined, center);
-
-    text-shadow: 2px 2px 4px black;
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text(undefined, $tertiaryColor);
+  
+  padding: 8px;
 }
 
-.image
-{ 
-    border: 2px solid white;
-    border-radius: $spacingXs;
-
-    background-size: cover;
-    @include widthHeight(150px, 150px); }
-
-.downloadImageButton
+.unity
 {
-    @include widthHeight(300px, 40px);
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH3LineHeight);
-    background-color: white;
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  text-shadow: 2px 2px 4px white;
+}
+
+.trashIcon
+{
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
+    margin-left : $spacingXs;
 
     cursor: pointer;
 }
 
-.downloadImageButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
-
-.inputImage {display: none;}
-
-.recipeIngredient { color : $primaryColor; padding-top: 10px; }
-@media (max-width: 1000px) { .recipeIngredient { width: 410px; }}
-@media (max-width: 850px) { .recipeIngredient { margin: auto; }}
-
-.removeButton
+.quantityInput
 {
-    @include widthHeight(100px, 30px);
+    width: 80px;
+
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+    @include text(undefined, $tertiaryColor, undefined, center);
 
-    margin-left: $spacingSm;
+    padding: 8px;
 }
-.removeButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
-.select { margin-left: 12px;}
+.select
+{
+  width: 200px;
+
+  @include text(undefined, $tertiaryColor);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  padding: 3px;
+}
+
+.addRecipeIngredient {margin-bottom: 32px;}
 
 .submitButton
 {
-    @include widthHeight(130px, 30px);
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  padding: 10px 24px;
 
-    margin: 22px 0px;
+  margin-top: 22px;
+
+  cursor: pointer;
 }
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
-@media (max-width: 600px) { .submitButton { margin: auto; margin-top: 22px; margin-bottom: 22px;}}
-
