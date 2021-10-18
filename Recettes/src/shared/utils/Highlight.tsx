@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 interface Props
 {
@@ -10,10 +10,29 @@ interface Props
 export const Highlight : FC<Props> = ({ text, searchTerm, color }) => 
 {
     const removeHtmlTags = (text : string) : string => text.replace( /(<([^>]+)>)/ig, '')
+    const newText = removeHtmlTags(text).replaceAll(new RegExp(searchTerm, 'ig'), 
+        oldText => `<span style="color :${color ?? 'red'}">${oldText}</span>`)
 
-    const newText = removeHtmlTags(text).replaceAll(
-        new RegExp(searchTerm, 'ig'),
-        `<span style="color: ${color ?? 'red'}">${searchTerm}</span>`)
-    
-    return <span dangerouslySetInnerHTML={{__html: newText}}></span>
+    return <div dangerouslySetInnerHTML={{__html: newText}}></div>
+
 };
+
+// interface Proops
+// {
+//     value : string
+//     onChange : (value : string) => void
+//     className? : string
+//     placeholder?: string
+//     rerender? : (value : string) => ReactNode
+// }
+
+// const MyInput : FC<Proops> = ({value, onChange, className, placeholder, rerender}) =>
+// {
+//     const firstRender : boolean
+
+//     return <>
+//         { rerender ? {rerender()} : 
+//           { firstRender ? <div onChange=()>{placeholder}</div> : <div>{value}</div>}
+//         }
+//     </>
+// }

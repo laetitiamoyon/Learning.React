@@ -2,7 +2,7 @@
 
 .container
 {
-  background: url(../../../../images/backgrounds/description.jpg) no-repeat center center / cover;;
+  background: url(../../../../images/backgrounds/description.jpg) no-repeat center center / cover;
   @include marginPadding(auto, 0 24px);
 
   height: 100%;
@@ -19,7 +19,7 @@
   text-shadow: 2px 2px 4px black;
 }
 
-.elements { @include flex(center, undefined, undefined)}
+.elements { @include flex(center, undefined, undefined); }
 
 .descriptionContainer 
 { 
@@ -34,12 +34,16 @@
   border-radius: 30%;
 }
 
-.cookInformationContainer {  @include flex(center, center, center, 42px); padding-bottom: 26px;}
+.cookInformationContainer
+{ 
+    @include flex(center, center, center, 42px);
+    padding-bottom: 26px;
+}
 
 .label 
 { 
   padding : 20px 0;
-  @include text($textH5FontSize, undefined, $fontWeightSemiBold)
+  @include text($textH5FontSize, undefined, $fontWeightSemiBold);
 }
 
 .descriptionContent { margin-bottom: 18px; }

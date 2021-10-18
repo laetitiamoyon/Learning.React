@@ -28,7 +28,8 @@ const Ingredients :FC = () =>
                 onChange={onSearchIngredient}/>
         </div>
         <div className={styles.ingredientsList}>
-            { filteredIngredient.map(ingredient => <Ingredient {...ingredient} key={ingredient.id} />)}
+            { filteredIngredient.map(ingredient => <Ingredient {...ingredient} key={ingredient.id} 
+                searchIngredientTerm={searchIngredientTerm} title={ingredient.title} color="#f8813d" />)}
         </div> 
     </div>
 }

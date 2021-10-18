@@ -3,7 +3,6 @@ import styles from './Recipes.module.scss'
 import { RecipeContext } from '../../recipes.context'
 import useEmptyRecipeIngredientsToast from '../../hooks/useEmptyRecipeIngredientsToast';
 import Recipe from '../Recipe/Recipe';
-import { Highlight } from '../../../../shared/utils/Highlight';
 
 const Recipes : FC = () => 
 {   
@@ -13,7 +12,7 @@ const Recipes : FC = () =>
 
     useEffect(() => {
         setFilteredRecipes(recipes.filter(recipe =>
-            recipe.title.toLowerCase().includes(searchRecipeTerm)))        
+            recipe.title.toLowerCase().includes(searchRecipeTerm.toLowerCase())))        
     }, [searchRecipeTerm, recipes]);
 
     useEmptyRecipeIngredientsToast()
@@ -30,7 +29,8 @@ const Recipes : FC = () =>
             onChange={onChangeRecipeTerm}/>
         </div>
         <div className={styles.recipes}>
-        { filteredRecipes.map(r => <Recipe {...r} key={r.id} />)} 
+        { filteredRecipes.map(r => <Recipe {...r} key={r.id} searchRecipeTerm={searchRecipeTerm} 
+            title={r.title} color="#f8813d"/>)} 
       </div>
     </div>
 }

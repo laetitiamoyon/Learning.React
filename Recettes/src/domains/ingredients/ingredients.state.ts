@@ -7,6 +7,16 @@ export interface IngredientState
 }
  
 export const initialIngredients : Ingredient[] = [
+{ 
+    id : "1", 
+    title : "Pâte à pizza", 
+    unity : "pièce",
+},
+{ 
+    id : "2", 
+    title : "Sauce Tomate", 
+    unity : "gr",
+},
 {
     id: "3",
     title: "Mozzarella",

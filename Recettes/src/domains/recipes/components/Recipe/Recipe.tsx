@@ -8,7 +8,13 @@ import styles from './Recipe.module.scss'
 import { IngredientContext } from '../../../ingredients/ingredients.context';
 import { Highlight } from '../../../../shared/utils/Highlight';
 
-const Recipe : FC<RecipeModel> = ({ id, title, image }) =>
+interface Props extends RecipeModel
+{
+    searchRecipeTerm : string,
+    color : string
+}
+
+const Recipe : FC<Props> = ({ id, title, image, searchRecipeTerm, color }) =>
 {
     const history = useHistory();
     const seeRecipeOnClick = () : void => history.push(`/description-de-la-recette/${id}`, { id : id })
@@ -20,13 +26,11 @@ const Recipe : FC<RecipeModel> = ({ id, title, image }) =>
         dispatch(removeRecipeAction(id))
         ingredientDispatch(removeIngredientAction(id))
     }
-    const searchRecipeTerm = ""
     
       return <div className={styles.container}>
       <div className={styles.recipe}>
-        <div className={styles.title}>{title}</div>
+      <div className={styles.title}><Highlight searchTerm={searchRecipeTerm} text={title} color={color}/></div>
         <div className={styles.image} style={{ backgroundImage : `url(${image})`}} />
-        {/* <Highlight searchTerm={searchRecipeTerm} text={title}/> */}
         <div className={styles.buttonContainer}>
           <button className={styles.viewDescriptionButton} onClick={seeRecipeOnClick}>Voir la recette</button>
           <div className={styles.trashIcon} onClick={removeRecipe}></div>

@@ -4,7 +4,6 @@ import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
 import { updateRecipeAction, updateIngredientRecipeAction } from '../../recipes.action';
 import { Recipe } from '../../recipes.model';
-import { imageUploader } from '../../../../shared/utils/imageUploader'; 
 import { IngredientContext } from '../../../ingredients/ingredients.context';
 import { Ingredient as IngredientModel } from '../../../ingredients/ingredients.model';
 import useEmptyRecipeIngredientsToast from '../../hooks/useEmptyRecipeIngredientsToast';
@@ -65,12 +64,11 @@ const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
             cookingTime: newCookingTime,
             preparationTime: newPreparationTime
         }))
-        const ingredient : IngredientModel = {
+        dispatch(updateIngredientRecipeAction({
             id,
             title : ingredientTitle,
             unity : unity,
-        }
-        dispatch(updateIngredientRecipeAction(ingredient))
+        }))
     }
 
     const onSubmit = (event : FormEvent<HTMLFormElement>) : void =>

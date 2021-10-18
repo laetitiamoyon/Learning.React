@@ -6,7 +6,7 @@
     padding-bottom: 22px;
 }
 
-.input 
+.input, .title
 { 
     text-align: center;
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
@@ -15,6 +15,8 @@
     padding: 0 10px;
     cursor: pointer;
 }
+
+.title {width: 190px; line-height: 30px;}
 
 .trashIcon
 {

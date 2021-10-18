@@ -50,13 +50,22 @@ export const recipesReducer = (state: RecipeState, action: RecipeActions) : Reci
             const { id } = action.payload
 
             // 1) On met à jour les ingrédients modifiés d'une recette
-            const recipesWithEmptyIngredients = state.recipes.map(r => ({...r, ingredients : r.ingredients.map(i => i.id === id ? action.payload : i)}))
+            const recipesWithEmptyIngredients = state.recipes.map(r => (
+            {
+                ...r,
+                ingredients : r.ingredients.map(i => i.id === id ? 
+                    { 
+                        ...i,
+                        ...action.payload 
+                    } : i)
+            }))
+            console.log( state.recipes, recipesWithEmptyIngredients, action.payload)
         
             // 2) On supprime les recettes qui ne contiennent plus d'ingrédients lorsqu'elles sont modifiées
             const recipesWithoutEmptyIngredients = recipesWithEmptyIngredients.filter(r => r.ingredients.length !== 0)
 
             // 3) On calcul notre message contenant les recettes supprimées
-            const infoMessage = computeInfoMessage(recipesWithoutEmptyIngredients)
+            const infoMessage = computeInfoMessage(recipesWithEmptyIngredients)
             
             return updateRecipeState(state, recipesWithoutEmptyIngredients, infoMessage)
         }     

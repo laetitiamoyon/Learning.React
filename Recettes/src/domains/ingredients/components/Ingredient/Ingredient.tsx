@@ -5,11 +5,25 @@ import { Ingredient as IngredientModel } from '../../ingredients.model';
 import styles from './Ingredient.module.scss'
 import { RecipeContext } from '../../../recipes/recipes.context';
 import { removeIngredientRecipeAction, updateIngredientRecipeAction } from '../../../recipes/recipes.action';
+import { Highlight } from '../../../../shared/utils/Highlight';
 
-const Ingredient : FC<IngredientModel> = ({id, title, unity}) => 
+type CurrentWindow = 
+    'EDIT_INGREDIENT_BUTTON' |
+    'UPDATE_INGREDIENT'
+
+interface Props extends IngredientModel
+{
+    searchIngredientTerm : string,
+    color : string
+}
+
+const Ingredient : FC<Props> = ({id, title, unity, searchIngredientTerm, color}) => 
 {
     const [newTitle, setNewTitle] = useState(title)
     const [newUnity, setNewUnity] = useState(unity)
+    const [currentWindow, setWindow] = useState<CurrentWindow>('EDIT_INGREDIENT_BUTTON')
+
+    const clickOnEditIngredient = () : void => setWindow('UPDATE_INGREDIENT')
 
     const { dispatch: ingredientDispatch } = useContext(IngredientContext)
     const { dispatch : recipeDispatch } = useContext(RecipeContext)
@@ -40,12 +54,18 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
 
     return <div className={styles.container}>
     <div className={styles.ingredient}>
-        <input 
-            className={styles.input} 
-            placeholder="titre"
-            onChange={onChangeTitle}
-            value={newTitle}/>
-
+        { currentWindow === 'EDIT_INGREDIENT_BUTTON' && 
+            <div onClick={clickOnEditIngredient} className={styles.title}>
+                <Highlight searchTerm={searchIngredientTerm} text={title} color={color}/></div>}
+        
+            { currentWindow === 'UPDATE_INGREDIENT' &&
+                <input
+                    className={styles.input} 
+                    placeholder="titre"
+                    onChange={onChangeTitle} 
+                    value={newTitle}/> 
+            }
+            
         <input 
             className={styles.input} 
             placeholder="unité"
@@ -56,6 +76,7 @@ const Ingredient : FC<IngredientModel> = ({id, title, unity}) =>
         <div className={styles.trashIcon} onClick={removeIngredientAndRecipeIngredient}></div>
     </div>
 </div>
+
 };
 
 export default Ingredient;

@@ -22,39 +22,40 @@ const RecipeDescription :FC = () =>
     const onClick = () : void => history.push(`/modification-de-la-recette/${id}`, { id : id })
 
     return <div className={styles.container}>
-    <div className={styles.title}>{title}</div>
-    <div className={styles.elements}>
-    <div className={styles.descriptionContainer}>
-        <div className={styles.cookInformationContainer}>
-        <div className={styles.cookInformation}>
-            <SVGPreparationTime/>
-            <div>{preparationTime}</div>
-        </div>
-        <div className={styles.cookInformation}>
-            <SVGCookingTime/>
-            <div>{cookingTime}</div>
-        </div>
-        <div className={styles.cookInformation}>
-            <SVGCalories/>
-            <div>{calories}</div>
-        </div>
-        </div>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.elements}>
+            <div className={styles.descriptionContainer}>
+                <div className={styles.cookInformationContainer}>
+                    <div className={styles.cookInformation}>
+                        <SVGPreparationTime/>
+                        <div>{preparationTime}</div>
+                    </div>
+                    <div className={styles.cookInformation}>
+                        <SVGCookingTime/>
+                        <div>{cookingTime}</div>
+                    </div>
+                    <div className={styles.cookInformation}>
+                        <SVGCalories/>
+                        <div>{calories}</div>
+                    </div>
+                </div>
 
-        <div className={styles.label}>Les étapes de la recette</div>
-        <div className={styles.descriptionContent}>{description}</div>
-        <div className={styles.label}>Les ingrédients</div>
+                <div className={styles.label}>Les étapes de la recette</div>
+                <div className={styles.descriptionContent}>{description}</div>
+                <div className={styles.label}>Les ingrédients</div>
 
-        <div>{ingredients.map(({ title, unity, quantity } : RecipeIngredient ) =>
-        <div className={styles.ingredients} key={`RecipeIngredients${id}`}> 
-            - {quantity} {unity} de {title}</div>)}</div>
-        <button className={styles.button} onClick={onClick}>Modifier la recette</button>
-    </div>
+                <div>{ingredients.map(({ title, unity, quantity, id } : RecipeIngredient) =>
+                    <div className={styles.ingredients} key={`RecipeIngredients-${id}`}> 
+                        - {quantity} {unity} de {title}</div>)}
+                </div>
+                <button className={styles.button} onClick={onClick}>Modifier la recette</button>
+            </div>
 
-    <img className={styles.image} alt='' src={image} style={{ backgroundImage : `url(.${image})`}} />
+            <img className={styles.image} alt='' style={{ backgroundImage : `url(${image})`}} />
+        </div>
     </div>
-    </div>
-    };
-        
+};
+    
 
 
 export default RecipeDescription;
