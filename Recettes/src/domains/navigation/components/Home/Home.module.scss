@@ -18,6 +18,10 @@
   
   text-shadow: 2px 2px 4px white;
 }
+@media (max-width: 700px) { .title { @include text($textH2FontSize); }}
+@media (max-width: 600px) { .title { @include text($textH3FontSize); }}
+@media (max-width: 500px) { .title { font-size: 24px; }}
+@media (max-width: 400px) { .title { font-size: 20px; }}
 
 .descriptionAppli
 {
@@ -28,5 +32,11 @@
 
   margin: auto;
 }
+@media (max-width: 850px) { .descriptionAppli { width: 600px; }}
+@media (max-width: 750px) { .descriptionAppli { width: 550px; }}
+@media (max-width: 600px) { .descriptionAppli { width: 450px; font-size: 17px;}}
+@media (max-width: 500px) { .descriptionAppli { width: 400px; }}
+@media (max-width: 450px) { .descriptionAppli { width: 350px; }}
+@media (max-width: 400px) { .descriptionAppli { width: 300px; font-size: 15px;}}
 
 
