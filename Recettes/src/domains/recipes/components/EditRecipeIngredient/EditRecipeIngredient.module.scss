@@ -1,0 +1,63 @@
+@import '../../../../styles/styles.scss'; 
+
+.ingredient {display: flex; flex-direction: column;}
+
+.ingredients { @include flex(flex-start, center, undefined, 12px ); margin-bottom: 8px;}
+
+.label, .ingredientLabel
+{ 
+  @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold);
+
+  text-shadow: 2px 2px 4px white;
+
+  margin: 22px 0px;
+}
+
+.ingredientLabel {text-align: center;}
+
+.input
+{
+  width: 500px;
+
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text(undefined, $tertiaryColor);
+  
+  padding: 8px;
+}
+
+.unity
+{
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  text-shadow: 2px 2px 4px white;
+}
+
+.trashIcon
+{
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
+    margin-left : $spacingXs;
+
+    cursor: pointer;
+}
+
+.quantityInput
+{
+    width: 80px;
+
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, undefined, center);
+
+    padding: 8px;
+}
+
+.select
+{
+  width: 200px;
+
+  @include text(undefined, $tertiaryColor);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  padding: 3px;
+}
+
+.addRecipeIngredient {margin-bottom: 32px;}

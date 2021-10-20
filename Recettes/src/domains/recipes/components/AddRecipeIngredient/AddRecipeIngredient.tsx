@@ -54,57 +54,58 @@ const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient
         setWindow('ADD_INGREDIENT_BUTTON')
     }
     
-    return <> 
-        { ingredients && <div className={styles.ingredients}></div> }
+    return <div className={styles.container}>
+        { ingredients && 
+        <div className={styles.ingredients}></div> }
         
-        <ul className={styles.addedIngredients}>
-            { ingredients && ingredients.map(i => 
-                <AddedIngredient key={i.id} {...i} removeAddedIngredient={removeIngredient}/>)}
-        </ul> 
+            <ul className={styles.addedIngredients}>
+                { ingredients && ingredients.map(i => 
+                    <AddedIngredient key={i.id} {...i} removeAddedIngredient={removeIngredient}/>)}
+            </ul> 
 
-        { currentWindow === 'ADD_INGREDIENT_BUTTON' && 
-        <button className={styles.button} onClick={clickOnAddIngredient}>
-            Ajouter un ingrédient
-        </button>}
+            { currentWindow === 'ADD_INGREDIENT_BUTTON' && 
+            <button className={styles.button} onClick={clickOnAddIngredient}>
+                Ajouter un ingrédient
+            </button>}
 
-    
-        <div className={styles.formContainer}>
-            { ['SELECT_AN_INGREDIENT','INGREDIENT_SELECTED'].includes(currentWindow) &&
-                <select 
-                    onChange={selectAnIngredient}
-                    className={styles.select}
-                    defaultValue=""
-                    placeholder="Nom de l'ingrédient"> 
-                    <option value="" disabled>Sélectionner votre ingrédient</option>
-                    {ingredientList && ingredientList.map(i => <option value={i.id} key={i.id}>{i.title}</option>)}
-                </select>
-            }
+        
+            <div className={styles.formContainer}>
+                { ['SELECT_AN_INGREDIENT','INGREDIENT_SELECTED'].includes(currentWindow) &&
+                    <select 
+                        onChange={selectAnIngredient}
+                        className={styles.select}
+                        defaultValue=""
+                        placeholder="Nom de l'ingrédient"> 
+                        <option value="" disabled>Sélectionner votre ingrédient</option>
+                        {ingredientList && ingredientList.map(i => <option value={i.id} key={i.id}>{i.title}</option>)}
+                    </select>
+                }
 
-            { currentWindow === 'INGREDIENT_SELECTED' &&
-                <div>
-                    <div className={styles.inputContainer}>
-                        <label>Unité :</label>
-                        <div className={styles.input}>{unity}</div>
-                    </div> 
+                { currentWindow === 'INGREDIENT_SELECTED' &&
+                    <div>
+                        <div className={styles.inputContainer}>
+                            <label>Unité :</label>
+                            <div className={styles.input}>{unity}</div>
+                        </div> 
 
-                    <div className={styles.inputContainer}>
-                        <label>Quantité :</label>
-                        <input
-                            className={styles.input}
-                            type="number"
-                            value={quantity}
-                            onChange={onQuantityChange} />
+                        <div className={styles.inputContainer}>
+                            <label>Quantité :</label>
+                            <input
+                                className={styles.input}
+                                type="number"
+                                value={quantity}
+                                onChange={onQuantityChange} />
+                        </div>
+
+                        {quantity > 0 && 
+                            <button className={styles.addIngredientToTheList} onClick={onSubmit}>
+                                Ajouter votre ingrédient
+                            </button> }
                     </div>
-
-                    {quantity > 0 && 
-                        <button className={styles.addIngredientToTheList} onClick={onSubmit}>
-                            Ajouter votre ingrédient
-                        </button> }
-                </div>
-            }
-            
-        </div>
-    </>
+                }
+                
+            </div>
+     </div>
 };
 
 export default AddIngredient;

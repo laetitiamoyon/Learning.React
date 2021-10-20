@@ -1,13 +1,24 @@
 @import '../../../../styles/styles.scss'; 
 
-.li { padding-top: 10px;}
+.label 
+{  
+    @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold, center);
 
-.removeButton
-{
-    @include widthHeight(100px, 30px);
-    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
-
-    margin-left: 12px;
+    text-shadow: 2px 2px 4px white;
 }
-.removeButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.li 
+{ 
+    display: flex; 
+    padding: 22px 0; 
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+}
+
+.trashIcon
+{
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
+    margin-left : $spacingXs;
+
+    cursor: pointer;
+}

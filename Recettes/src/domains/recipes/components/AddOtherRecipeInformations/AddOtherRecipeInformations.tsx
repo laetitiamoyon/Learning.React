@@ -30,30 +30,36 @@ const AddOtherRecipeInformations : FC<Props> = ({ calories, setCalories, prepara
   return <div className={styles.container}>
     <h1 className={styles.title}>Autres informations</h1>
     <div className={styles.elements}>
-      <SVGPreparationTime/>
-      <input 
-        className={styles.input}
-        type="text"
-        onChange={onChangePreparationTime}
-        value={preparationTime}
-        placeholder="Temps de préparation"/>
+      <div className={styles.items}>
+          <SVGPreparationTime/>
+          <input 
+            className={styles.input}
+            type="text"
+            onChange={onChangePreparationTime}
+            value={preparationTime}
+            placeholder="Temps de préparation"/>
+        </div>
 
-      <SVGCookingTime/>
-      <input 
-        className={styles.input}
-        type="text"
-        onChange={onChangeCookingTime}
-        value={cookingTime}
-        placeholder="Temps de cuisson"/> 
+        <div className={styles.items}>
+          <SVGCookingTime/>
+          <input 
+            className={styles.input}
+            type="text"
+            onChange={onChangeCookingTime}
+            value={cookingTime}
+            placeholder="Temps de cuisson"/> 
+        </div>
 
-      <SVGCalories/>
-      <input 
-        className={styles.input}
-        type="text"
-        onChange={onChangeCalories}
-        value={calories}
-        placeholder="Temps de cuisson"/>
-    </div>
+        <div className={styles.items}>
+          <SVGCalories/>
+          <input 
+            className={styles.input}
+            type="text"
+            onChange={onChangeCalories}
+            value={calories}
+            placeholder="Temps de cuisson"/>
+        </div>
+      </div>
   </div>
 };
 

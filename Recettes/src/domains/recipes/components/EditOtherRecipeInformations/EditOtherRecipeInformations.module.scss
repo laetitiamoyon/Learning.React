@@ -22,7 +22,6 @@
 .elements, .items { display: flex; gap: 16px; }
 @media (max-width: 650px) { .elements {flex-direction: column; }}
 
-
 .input
 {
     width: 156px;

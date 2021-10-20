@@ -1,16 +1,11 @@
 @import '../../../../styles/styles.scss'; 
 
-.ingredients { margin-top: 32px;}
-
-.addedIngredients 
-{ 
-    list-style : square; 
-    @include text(undefined, $primaryColor, $fontWeightRegular);
-    font-size: 16px;
-
-    margin-top: 20px; 
-
-    text-shadow: 2px 2px 4px black;
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .button
@@ -34,6 +29,8 @@
     margin-bottom : 4px;
 }
 @media (max-width: 800px) { .select { width: 400px; }}
+@media (max-width: 600px) { .select, .option { font-size: 15px; }}
+
 
 .inputContainer { @include grid(80px 1fr); margin-left : 12px; }
 
