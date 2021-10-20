@@ -8,6 +8,9 @@
     height: 100vh;
     min-height: 700px;
 }
+@media (max-width: 1380px) { .container { min-height: 800px; }}
+@media (max-width: 850px) { .container { min-height: 1100px; }}
+@media (max-width: 580px) { .container { min-height: 1700px; }}
 
 .title
 {
@@ -18,10 +21,13 @@
     
     text-shadow: 2px 2px 4px black;
 }
+@media (max-width: 650px) { .title {font-size: 24px; }}
+@media (max-width: 600px) { .title {font-size: 20px; }}
 
 .recipes { @include flex(center, undefined, undefined, 32px, wrap); padding-bottom: 22px;}
 
 .form { @include flex(center); margin-bottom: 32px; }
+@media (max-width: 600px) { .form { transform: scale(0.92); }}
 @media (max-width: 400px) { .form { transform: scale(0.95); }}
 
 .input

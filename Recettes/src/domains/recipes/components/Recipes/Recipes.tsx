@@ -7,7 +7,7 @@ import Recipe from '../Recipe/Recipe';
 const Recipes : FC = () => 
 {   
     const { recipesState : { recipes } } = useContext(RecipeContext)
-   const [filteredRecipes, setFilteredRecipes] = useState(recipes)
+    const [filteredRecipes, setFilteredRecipes] = useState(recipes)
     const [searchRecipeTerm, setSearchRecipeTerm] = useState('')
 
     useEffect(() => {
