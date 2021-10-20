@@ -51,7 +51,7 @@ const RecipeDescription :FC = () =>
                 <button className={styles.button} onClick={onClick}>Modifier la recette</button>
             </div>
 
-            <img className={styles.image} alt='' style={{ backgroundImage : `url(${image})`}} />
+            <div className={styles.image} style={{ backgroundImage : `url(${image})`}} />
         </div>
     </div>
 };

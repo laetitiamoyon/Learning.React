@@ -9,6 +9,7 @@
   min-height: 900px;
   padding-bottom: 32px;
 }
+@media (max-width: 600px) { .container { max-height: 500px;}}
 
 .title
 {
@@ -18,14 +19,23 @@
   margin-bottom: 32px;
   text-shadow: 2px 2px 4px black;
 }
+@media (max-width: 800px) { .title { margin-bottom: -10px;}}
+@media (max-width: 650px) { .title {font-size: 24px; }}
+@media (max-width: 600px) { .title {font-size: 20px; margin-bottom: -80px;}}
 
-.elements { @include flex(center, undefined, undefined); }
+.elements { @include flex(space-arround); }
+@media (max-width: 1100px) { .elements { transform: scale(0.9); }}
+@media (max-width: 930px) { .elements { gap: 42px; }}
+@media (max-width: 800px) { .elements {@include flex(center, center, column-reverse);}}
+@media (max-width: 600px) { .elements { transform: scale(0.8); }}
+
 
 .descriptionContainer 
 { 
   width: 600px; 
 
   padding: 32px;
+  margin-left: 100px;
 
   background-color: #e5e9ec96; 
 
@@ -33,22 +43,36 @@
 
   border-radius: 30%;
 }
+@media (max-width: 1080px) { .descriptionContainer { margin-left: 70px; width: 800px; }}
+@media (max-width: 930px) { .descriptionContainer {width: 1000px; margin-left: 0px;}}
+@media (max-width: 850px) { .descriptionContainer { width: 1100px;}}
+@media (max-width: 800px) { .descriptionContainer { width: 600px; }}
+@media (max-width: 650px) { .descriptionContainer { width: 500px; }}
+@media (max-width: 550px) { .descriptionContainer { width: 450px; }}
+@media (max-width: 400px) { .descriptionContainer { width: 400px; }}
+
 
 .cookInformationContainer
 { 
     @include flex(center, center, center, 42px);
     padding-bottom: 26px;
 }
+@media (max-width: 1150px) { .cookInformationContainer { padding-bottom: 8px; }}
+@media (max-width: 1050px) { .cookInformationContainer { @include flex(center, center, center, 22px);}}
 
 .label 
 { 
   padding : 20px 0;
   @include text($textH5FontSize, undefined, $fontWeightSemiBold);
 }
+@media (max-width: 550px) { .label { padding : 10px 0; }}
 
 .descriptionContent { margin-bottom: 18px; }
+@media (max-width: 1150px) { .descriptionContent { margin-bottom: 8px; }}
 
 .ingredients { padding-bottom: 8px; }
+@media (max-width: 1150px) { .ingredients { padding-bottom: 5px; }}
+@media (max-width: 550px) { .ingredients { padding-bottom: 3px; }}
 
 .image 
 { 
@@ -58,6 +82,9 @@
 
   border-radius: 8px;
 }
+@media (max-width: 800px) { .image { height: 300px; }}
+@media (max-width: 600px) { .image { width : 400px; }}
+
 
 .button
 {
