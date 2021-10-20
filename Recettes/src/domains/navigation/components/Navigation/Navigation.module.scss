@@ -22,6 +22,12 @@ a {
 
     text-shadow: 2px 2px 4px #000000c7;
 }
+@media (max-width: 900px) { a { margin-left: 48px; }}
+@media (max-width: 800px) { a { margin-left: 28px; }}
+@media (max-width: 650px) { a {font-size: 18px;}}
+@media (max-width: 600px) { a {font-size: 15px;}}
+@media (max-width: 515px) { a {margin-left: 20px;}}
+@media (max-width: 450px) { a {margin-left: 12px; font-size: 0.75rem;}}
 
 a:hover { color: #ffae71; }
 
@@ -32,3 +38,6 @@ a:hover { color: #ffae71; }
     margin : 0;
     list-style-type: none;
 }
+@media (max-width: 700px) { .leftUl { margin-left: -20px; }}
+@media (max-width: 600px) { .leftUl { margin-left: -30px; }}
+@media (max-width: 500px) { .leftUl { margin-left: -35px; }}
