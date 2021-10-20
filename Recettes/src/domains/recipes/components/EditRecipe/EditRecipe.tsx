@@ -3,30 +3,25 @@ import styles from './EditRecipe.module.scss'
 import { useHistory, useParams } from "react-router-dom";
 import { RecipeContext } from '../../recipes.context';
 import { updateRecipeAction, updateIngredientRecipeAction } from '../../recipes.action';
-import { Recipe } from '../../recipes.model';
-import { IngredientContext } from '../../../ingredients/ingredients.context';
-import { Ingredient as IngredientModel } from '../../../ingredients/ingredients.model';
+import { Recipe, RecipeIngredient } from '../../recipes.model';
 import useEmptyRecipeIngredientsToast from '../../hooks/useEmptyRecipeIngredientsToast';
 import EditRecipeImage from '../EditRecipeImage/EditRecipeImage';
 import EditOtherRecipeInformations from '../EditOtherRecipeInformations/EditOtherRecipeInformations';
+import EditRecipeIngredient from '../EditRecipeIngredient/EditRecipeIngredient';
 
 interface RouteProps
 {
     id : string
 }
 
-const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
+const EditRecipe : FC<RecipeIngredient> = ({unity, title : ingredientTitle, quantity}) =>
 {
-    const { ingredientsState : { ingredients : ingredientList }} = useContext(IngredientContext)
     const { recipesState : { recipes } } = useContext(RecipeContext)
     const { id } = useParams<RouteProps>();
     const history = useHistory()
     const redirectToRecipes = () : void => history.push('/recettes')
-    if (recipes.find(r => r.id === id) === undefined)
-        redirectToRecipes()
 
-    const { title, ingredients, description, image, calories, preparationTime, cookingTime } = recipes.find(r => r.id === id) as Recipe ??
-    { title : undefined, ingredients : undefined, description : undefined, image : undefined, calories : undefined, preparationTime : undefined, cookingTime : undefined}
+    const { title, ingredients, description, image, calories, preparationTime, cookingTime } = recipes.find(r => r.id === id) as Recipe 
 
     const [newImage, setNewImage] = useState(image)
     const [newIngredients, setNewIngredients] = useState(ingredients)
@@ -35,15 +30,6 @@ const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
     const [newCalories, setNewCalories] = useState<string | undefined>(calories)
     const [newPreparationTime, setNewPreparationTime] = useState<string | undefined>(preparationTime)
     const [newCookingTime, setNewCookingTime] = useState<string | undefined>(cookingTime)
-
-    const removeIngredient = (id : string) : void =>
-        setNewIngredients(newIngredients.filter(i => i.id !== id))
-
-    const updateIngredients = (id : string, title : string) : void =>
-        setNewIngredients(newIngredients.map(i => i.id === id ? {...i, title : title} : i))
-
-    const updateIngredientQuantity = (id : string, quantiy : number) : void =>
-        setNewIngredients(newIngredients.map(i => i.id === id ? {...i, quantity : quantiy} : i))
 
     const { dispatch } = useContext(RecipeContext)
 
@@ -105,29 +91,9 @@ const EditRecipe : FC<IngredientModel> = ({unity, title : ingredientTitle}) =>
                 value={newDescription}
                 name="Description"/>
 
-              <div className={styles.ingredientContainer}>
-                <label className={styles.ingredientLabel}>Ingrédients</label>
-                  {newIngredients.map(({id, title, quantity, unity}) =>
-                  
-                    <li className={styles.ingredients} key={id}>
-                      <input 
-                        className={styles.quantityInput}
-                        type="number"
-                        value={quantity}
-                        onChange={(event: ChangeEvent<HTMLInputElement>) => updateIngredientQuantity(id, parseInt(event.target.value))}/>
-                        <div className={styles.unity}>{unity} de </div>
-                      
-                      <select
-                        className={styles.select}
-                        onChange={(event: ChangeEvent<HTMLSelectElement>)=> updateIngredients(id, event.target.value)}>
-                        <option>{title}</option>
-                        {ingredientList.map(i => <option key={i.id} value={i.title}>{i.title}</option>)}
-                      </select>
+              <EditRecipeIngredient 
+                newIngredients={newIngredients} setNewIngredients={setNewIngredients}/>
 
-                      <div className={styles.trashIcon} onClick={() => removeIngredient(id)}></div>
-                    </li>)
-                  }
-              </div>
           </div>
         </div>
       </div>
