@@ -68,7 +68,6 @@ const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient
                 Ajouter un ingrédient
             </button>}
 
-        
             <div className={styles.formContainer}>
                 { ['SELECT_AN_INGREDIENT','INGREDIENT_SELECTED'].includes(currentWindow) &&
                     <select 
@@ -76,7 +75,7 @@ const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient
                         className={styles.select}
                         defaultValue=""
                         placeholder="Nom de l'ingrédient"> 
-                        <option value="" disabled>Sélectionner votre ingrédient</option>
+                        <option className={styles.option} value="" disabled>Sélectionner votre ingrédient</option>
                         {ingredientList && ingredientList.map(i => <option value={i.id} key={i.id}>{i.title}</option>)}
                     </select>
                 }
