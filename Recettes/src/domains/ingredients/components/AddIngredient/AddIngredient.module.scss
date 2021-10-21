@@ -18,15 +18,20 @@
   margin-bottom: 32px;
   
   text-shadow: 2px 2px 4px black;
+
+
+  @include belowSm { font-size: $textH4FontSize;}
 }
 
 .form
 {
   @include flex(center, center, column, 22px);
   margin-top: 80px;
+
+  @include belowSm { transform: scale(0.93); margin-top: $spacingMd; }
 }
 
-.label { @include text($textH5FontSize, $primaryColor, $fontWeightRegular); padding-left: 12px;}
+.label { @include text($textH4FontSize, $tertiaryColor, $fontWeightRegular); padding-left: 12px;}
 
 .input
 {
@@ -49,5 +54,7 @@
 
   margin-top: 42px;
   padding: 12px 22px;
+
+  @include belowSm { transform: scale(0.93); margin-top: $spacingMd;}
 }
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

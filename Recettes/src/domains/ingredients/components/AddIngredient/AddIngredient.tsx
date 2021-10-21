@@ -34,14 +34,14 @@ const AddIngredient : FC = () =>
     <div className={styles.elements}>
       <h1 className={styles.title}>Ajouter un nouvel ingrédient</h1>
       <form className={styles.form} onSubmit={onSubmit}>
-        <label>Nom de l'ingrédient</label>
+        <label className={styles.label}>Nom de l'ingrédient</label>
         <input 
           className={styles.input}
           onChange={onTitleChange}
           value={title}
           type="text"/>
 
-        <label>L'unité</label>
+        <label className={styles.label}>L'unité</label>
         <input 
           className={styles.input}
           onChange={onUnityChange}

@@ -16,10 +16,18 @@
     margin-bottom: 38px;
     
     text-shadow: 2px 2px 4px black;
+
+    @include belowSm { font-size: $textH4FontSize;}
 }
 
-.form { @include flex(center); margin-bottom: 32px; }
-@media (max-width: 400px) { .form { transform: scale(0.95); }}
+.form 
+{ 
+  @include flex(center); 
+
+  margin-bottom: 32px; 
+
+  @include belowSm { transform: scale(0.92);}
+}
 
 .input
 {
@@ -30,3 +38,4 @@
   
   outline: none;
 }
+

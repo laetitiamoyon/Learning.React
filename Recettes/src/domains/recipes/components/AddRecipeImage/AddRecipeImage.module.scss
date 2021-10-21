@@ -9,9 +9,10 @@
     padding: 22px;
 
     border: dotted 2px white;
+
+    @include belowMd { margin-top: -50px; }
+    @include belowXs {@include widthHeight(450px, 350px); }
 }
-@media (max-width: 800px) { .container { margin-top: -30px; }}
-@media (max-width: 400px) { .container { @include widthHeight(450px, 350px); }}
 
 .title
 {

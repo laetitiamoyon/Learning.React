@@ -4,9 +4,11 @@
 {
   background: url(../../../../images/backgrounds/home.jpg) no-repeat center center / cover; 
 
-  @include marginPadding(auto, 0 24px);
+  @include marginPadding(auto, 0 124px);
 
   height: 100vh;
+
+  @include belowMd { padding : 0 $spacingLg; }
 }
 
 .title
@@ -17,20 +19,11 @@
   margin-bottom: $spacingLg;
   
   text-shadow: 2px 2px 4px white;
-}
-@media (max-width: 670px) { .title { @include text($textH3FontSize); }}
-@media (max-width: 400px) { .title { font-size: 20px; }}
 
-.descriptionAppli
+  @include belowMd { font-size: $textH3FontSize; }
+}
+
+.description
 {
-  @include text(undefined, $tertiaryColor, undefined, center);
-  font-size: 18px;
-
-  padding: 0 120px;
-
+  @include text(18px, $tertiaryColor, undefined, center);
 }
-@media (max-width: 850px) { .descriptionAppli { width: 100%; padding: 0 50px;}}
-@media (max-width: 500px) { .descriptionAppli { transform: scale(0.85); padding: 0px;}}
-
-
-

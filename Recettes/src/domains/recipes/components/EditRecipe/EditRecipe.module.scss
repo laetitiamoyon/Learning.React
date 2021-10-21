@@ -7,9 +7,10 @@
 
   height: 100vh;
   min-height: 1200px;
+
+  @include belowMd { min-height: 1700px; }
+  @include belowSm { min-height: 1500px; }
 }
-@media (max-width: 1000px) { .containerPage { min-height: 1700px;}}
-@media (max-width: 500px) { .containerPage { min-height: 1200px;}}
 
 .title
 { 
@@ -19,24 +20,32 @@
   margin-bottom: 18px;
   
   text-shadow: 2px 2px 4px black;
-}
-@media (max-width: 1000px) { .title {margin-bottom: -30px;}}
-@media (max-width: 650px) { .title {font-size: 24px; }}
-@media (max-width: 500px) { .title {font-size: 20px; margin-bottom: -150px;}}
 
-.container { @include flex(center, center, undefined, 122px); width: 100%;}
-@media (max-width: 1050px) { .container {gap: 80px;}}
-@media (max-width: 1000px) { .container 
-{
-  @include flex(center, center, column-reverse); 
-  transform: scale(0.95);
- }}
-@media (max-width: 500px) { .container {transform: scale(0.7);}}
+  @include belowMd { margin-bottom: -30px; }
+  @include belowSm { font-size: textH4FontSize; margin-bottom: -100px;}
+  
+}
+
+.container 
+{ 
+  @include flex(center, center, undefined, 122px); 
+  width: 100%;
+
+  @include belowMd 
+  { 
+    @include flex(center, center, column-reverse); 
+    transform: scale(0.95); 
+  }
+  @include belowSm { transform: scale(0.8); }
+}
 
 .elements { @include flex(center, center, undefined);}
 
-.form { @include flex(center, center, column, 52px); }
-@media (max-width: 500px) { .form {gap: 0px; }}
+.form 
+{ 
+  @include flex(center, center, column, 52px); 
+  @include belowSm { gap: 0px; }
+}
 
 .rightElements 
 { 
@@ -72,6 +81,7 @@
   margin-top: 22px;
 
   cursor: pointer;
+
+  @include belowSm { transform: scale(0.9); margin-top: 12px; }
 }
-@media (max-width: 500px) { .submitButton { transform: scale(0.9); margin-top: 12px;}}
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

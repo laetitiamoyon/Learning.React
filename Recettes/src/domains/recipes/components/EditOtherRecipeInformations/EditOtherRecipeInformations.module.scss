@@ -1,8 +1,11 @@
 @import '../../../../styles/styles.scss'; 
 
-.container { @include flex(undefined, center, column); }
-@media (max-width: 1000px) { .container { transform: scale(0.95);}}
-@media (max-width: 500px) { .container {transform: scale(0.7); margin-top: -150px;}}
+.container { 
+  @include flex(undefined, center, column); 
+
+  @include belowMd {transform: scale(0.95);}
+  @include belowSm {transform: scale(0.8); margin-top: -100px;}
+}
 
 .title 
 { 
@@ -12,8 +15,13 @@
   text-shadow: 2px 2px 4px white;
 }
 
-.elements, .items { display: flex; gap: 16px; }
-@media (max-width: 650px) { .elements {flex-direction: column; }}
+.elements
+{ 
+  display: flex; 
+  gap: 16px; 
+
+  @include belowSm {flex-direction: column;}
+}
 
 .input
 {
@@ -22,4 +30,7 @@
     @include text(undefined, $tertiaryColor, undefined, center);
     
     padding: 8px;
+    margin-left: 8px;
+
+    @include belowMd {width: 136px;}
 }

@@ -4,6 +4,8 @@
 { 
     @include flex(center, center, center, 32px, wrap); 
     padding-bottom: 22px;
+
+    @include belowMd { transform: scale(0.9); gap: 12px;}
 }
 
 .input, .title
@@ -12,8 +14,10 @@
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     background-color: #e7f1f596;
     height: 32px;
-    padding: 0 10px;
+    padding: 0 5px;
     cursor: pointer;
+
+    @include belowSm { max-width: 146px; padding: 0;}
 }
 
 .title {width: 191px; line-height: 30px;}
@@ -35,7 +39,11 @@
 
     background-color: #F1EEEB;
     height: 32px;
+    line-height: 30px;
 
     cursor: pointer;
+
+
+    @include belowSm { font-size: $textH6FontSize; padding: 0 8px;}
 }
 .updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); border : 0; }

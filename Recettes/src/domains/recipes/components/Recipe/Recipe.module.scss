@@ -12,8 +12,9 @@
     padding: $spacingMd $spacingXs;
     
     box-shadow: 0 1px 0 rgba(0,0,0,0.6);
+
+    @include belowSm { transform: scale(0.9);}
 }
-@media (max-width: 650px) { .recipe { transform: scale(0.9); }}
 
 .title
 {

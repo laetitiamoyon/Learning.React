@@ -17,16 +17,21 @@
   padding-top: calc(8vh + 32px);
   margin-bottom: 32px;
   text-shadow: 2px 2px 4px black;
+
+  @include belowMd { margin-bottom: -10px;}
+  @include belowSm { font-size: textH4FontSize; }
+  
 }
-@media (max-width: 800px) { .title { margin-bottom: -10px;}}
-@media (max-width: 650px) { .title {font-size: 24px; margin-bottom: -50px;}}
-@media (max-width: 400px) { .title {font-size: 20px; margin-bottom: -90px;}}
 
 
-.elements { display: flex; justify-content: center; }
-@media (max-width: 800px) { .elements {@include flex(center, center, column-reverse);}}
-@media (max-width: 650px) { .elements { transform: scale(0.9) }}
-@media (max-width: 400px) { .elements { transform: scale(0.8) }}
+.elements 
+{ 
+  @include flex(center);
+
+  @include belowMd { @include flex(center, center, column-reverse);}
+  @include belowSm { ftransform: scale(0.85)}
+
+}
 
 .descriptionContainer 
 { 
@@ -39,33 +44,49 @@
 
   border-radius: 30%;
   width: 50%;
-}
-@media (max-width: 1000px) { .descriptionContainer { margin-left: 40px; width: 70%; }}
-@media (max-width: 800px) { .descriptionContainer { margin-left: 0px; width: 80%; }}
-@media (max-width: 400px) { .descriptionContainer { width: 100%; }}
 
+  @include belowMd 
+  { 
+    margin-left: 0px; 
+    width: 70%; 
+    padding: 22px;  
+    border-radius: 10%;
+  }
+  @include belowSm { width: 80%;}
+
+}
 
 .cookInformationContainer
 { 
     @include flex(center, center, center, 42px);
-    padding-bottom: 26px;
+
+    padding-bottom: 18px;
+
+    @include belowMd { @include flex(center, center, center, 22px);}
 }
-@media (max-width: 1150px) { .cookInformationContainer { padding-bottom: 8px; }}
-@media (max-width: 1050px) { .cookInformationContainer { @include flex(center, center, center, 22px);}}
 
 .label 
 { 
   padding : 20px 0;
   @include text($textH5FontSize, undefined, $fontWeightSemiBold);
+
+  @include belowSm { padding : 10px 0;}
 }
-@media (max-width: 550px) { .label { padding : 10px 0; }}
 
-.descriptionContent { margin-bottom: 18px; }
-@media (max-width: 1150px) { .descriptionContent { margin-bottom: 8px; }}
+.descriptionContent 
+{ 
+  margin-bottom: 18px; 
 
-.ingredients { padding-bottom: 8px; }
-@media (max-width: 1150px) { .ingredients { padding-bottom: 5px; }}
-@media (max-width: 550px) { .ingredients { padding-bottom: 3px; }}
+  @include belowMd { margin-bottom: 8px;}
+}
+
+.ingredients 
+{ 
+  padding-bottom: 8px; 
+
+  @include belowMd { padding-bottom: 5px;}
+  @include belowSm { padding-bottom: 3px;}
+}
 
 .image 
 { 
@@ -74,10 +95,10 @@
   width : 50%;
 
   border-radius: 8px;
-}
-@media (max-width: 800px) { .image { height: 300px; }}
-@media (max-width: 600px) { .image { width : 400px; }}
 
+  @include belowMd { height: 300px;}
+  @include belowSm { pwidth : 400px;}
+}
 
 .button
 {

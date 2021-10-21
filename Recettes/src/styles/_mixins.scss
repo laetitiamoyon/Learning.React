@@ -1,3 +1,5 @@
+@import './breakpoints'; 
+
 @mixin text(
     $fontSize : undefined, 
     $primaryColor : undefined, 
@@ -76,4 +78,19 @@
 {
     @if ($marginAuto != undefined) { margin: $marginAuto; }
     @if ($padding != undefined) { padding: $padding; } 
+}
+
+@mixin belowMd
+{
+    @media (max-width: $mdWidth) { @content; }
+}
+
+@mixin belowSm
+{
+    @media (max-width: $smWidth) { @content; }
+}
+
+@mixin belowXs
+{
+    @media (max-width: $xsWidth) { @content; }
 }
