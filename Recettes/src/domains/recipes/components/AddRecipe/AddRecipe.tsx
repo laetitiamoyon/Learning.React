@@ -79,6 +79,7 @@ const AddRecipe :FC = () =>
                 value={description}
                 name="Description"/>
 
+              <label className={styles.label}>Ingrédients</label>
               <div className={styles.addRecipeIngredient}> <AddRecipeIngredient
                 ingredients={ingredients}
                 addIngredient={addIngredient}

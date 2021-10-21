@@ -97,7 +97,7 @@ const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient
                         </div>
 
                         {quantity > 0 && 
-                            <button className={styles.addIngredientToTheList} onClick={onSubmit}>
+                            <button className={styles.addIngredientToTheListButton} onClick={onSubmit}>
                                 Ajouter votre ingrédient
                             </button> }
                     </div>

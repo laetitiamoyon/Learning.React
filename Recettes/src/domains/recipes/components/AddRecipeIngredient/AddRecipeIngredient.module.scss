@@ -8,11 +8,18 @@
     align-items: center;
 }
 
+.ingredients 
+{ 
+  @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold, center);
+  text-shadow: 2px 2px 4px white;
+}
+
 .button
 {
     @include widthHeight(200px, 40px);
     @include dottedBorderAndRadius($dottedBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+    margin: 22px 0;
 }
 
 .button:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
@@ -36,7 +43,7 @@
 
 .input { margin-left : 12px; }
 
-.addIngredientToTheList
+.addIngredientToTheListButton
 {
     display : flex;
 
@@ -46,7 +53,7 @@
     
     margin-top: 32px;
 }
-.addIngredientToTheList:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+.addIngredientToTheListButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
 
 .removeButton

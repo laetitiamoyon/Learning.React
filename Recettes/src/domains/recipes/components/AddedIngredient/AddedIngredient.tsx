@@ -9,9 +9,8 @@ interface Props extends RecipeIngredient
 
 const AddedIngredient : FC<Props> = ({id, title, quantity, unity, removeAddedIngredient}) =>
     <>
-        <div className={styles.label}>Ingrédients</div>
         <li className={styles.li}>
-            {quantity}{unity} de {title}
+            {quantity} {unity} de {title}
             <div className={styles.trashIcon} onClick={() => removeAddedIngredient(id)}></div> 
         </li>
     </>

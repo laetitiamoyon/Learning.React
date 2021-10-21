@@ -19,11 +19,14 @@
   text-shadow: 2px 2px 4px black;
 }
 @media (max-width: 800px) { .title { margin-bottom: -10px;}}
-@media (max-width: 650px) { .title {font-size: 24px; }}
+@media (max-width: 650px) { .title {font-size: 24px; margin-bottom: -50px;}}
+@media (max-width: 400px) { .title {font-size: 20px; margin-bottom: -90px;}}
 
 
 .elements { display: flex; justify-content: center; }
 @media (max-width: 800px) { .elements {@include flex(center, center, column-reverse);}}
+@media (max-width: 650px) { .elements { transform: scale(0.9) }}
+@media (max-width: 400px) { .elements { transform: scale(0.8) }}
 
 .descriptionContainer 
 { 
@@ -39,8 +42,7 @@
 }
 @media (max-width: 1000px) { .descriptionContainer { margin-left: 40px; width: 70%; }}
 @media (max-width: 800px) { .descriptionContainer { margin-left: 0px; width: 80%; }}
-// @media (max-width: 550px) { .descriptionContainer { width: 450px; }}
-// @media (max-width: 400px) { .descriptionContainer { width: 400px; }}
+@media (max-width: 400px) { .descriptionContainer { width: 100%; }}
 
 
 .cookInformationContainer

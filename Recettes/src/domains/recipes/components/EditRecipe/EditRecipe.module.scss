@@ -9,6 +9,7 @@
   min-height: 1200px;
 }
 @media (max-width: 1000px) { .containerPage { min-height: 1700px;}}
+@media (max-width: 500px) { .containerPage { min-height: 1200px;}}
 
 .title
 { 
@@ -21,7 +22,7 @@
 }
 @media (max-width: 1000px) { .title {margin-bottom: -30px;}}
 @media (max-width: 650px) { .title {font-size: 24px; }}
-@media (max-width: 600px) { .title {font-size: 20px; }}
+@media (max-width: 500px) { .title {font-size: 20px; margin-bottom: -150px;}}
 
 .container { @include flex(center, center, undefined, 122px); width: 100%;}
 @media (max-width: 1050px) { .container {gap: 80px;}}
@@ -30,10 +31,12 @@
   @include flex(center, center, column-reverse); 
   transform: scale(0.95);
  }}
+@media (max-width: 500px) { .container {transform: scale(0.7);}}
 
 .elements { @include flex(center, center, undefined);}
 
 .form { @include flex(center, center, column, 52px); }
+@media (max-width: 500px) { .form {gap: 0px; }}
 
 .rightElements 
 { 

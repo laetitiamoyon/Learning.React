@@ -1,18 +1,6 @@
 @import '../../../../styles/styles.scss'; 
 
-.label 
-{  
-    @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold, center);
-
-    text-shadow: 2px 2px 4px white;
-}
-
-.li 
-{ 
-    display: flex; 
-    padding: 22px 0; 
-    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
-}
+.li { display: flex; padding: 8px 0; @include text(undefined, $tertiaryColor);}
 
 .trashIcon
 {

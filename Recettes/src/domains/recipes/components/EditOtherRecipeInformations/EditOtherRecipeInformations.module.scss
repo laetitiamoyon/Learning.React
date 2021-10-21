@@ -1,15 +1,8 @@
 @import '../../../../styles/styles.scss'; 
 
 .container { @include flex(undefined, center, column); }
-@media (max-width: 1170px) { .container {transform: scale(0.9);}}
-@media (max-width: 1050px) { .container {transform: scale(0.86);}}
-@media (max-width: 970px) { .container {transform: scale(0.8);}}
-@media (max-width: 900px) { .container {transform: scale(0.75); }}
-@media (max-width: 815px) { .container {transform: scale(0.95); }}
-@media (max-width: 600px) { .container {transform: scale(0.9); }}
-@media (max-width: 500px) { .container {transform: scale(0.8); }}
-@media (max-width: 450px) { .container {transform: scale(0.75); }}
-@media (max-width: 400px) { .container {transform: scale(0.7); }}
+@media (max-width: 1000px) { .container { transform: scale(0.95);}}
+@media (max-width: 500px) { .container {transform: scale(0.7); margin-top: -150px;}}
 
 .title 
 { 
