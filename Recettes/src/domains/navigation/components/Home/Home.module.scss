@@ -28,15 +28,12 @@
   @include text(undefined, $tertiaryColor, undefined, center);
   font-size: 18px;
 
-  width: 100%;
-  padding: 0 330px;
+  padding: 0 120px;
 
 }
-// @media (max-width: 850px) { .descriptionAppli { width: 600px; }}
-// @media (max-width: 750px) { .descriptionAppli { width: 550px; }}
-// @media (max-width: 600px) { .descriptionAppli { width: 450px; font-size: 17px;}}
-// @media (max-width: 500px) { .descriptionAppli { width: 400px; }}
-// @media (max-width: 450px) { .descriptionAppli { width: 350px; }}
-// @media (max-width: 400px) { .descriptionAppli { width: 300px; font-size: 15px;}}
+
+@media (max-width: 850px) { .descriptionAppli { width: 100%; padding: 0 50px;}}
+@media (max-width: 500px) { .descriptionAppli { transform: scale(0.85); padding: 0px;}}
+
 
 
