@@ -19,7 +19,7 @@
     list-style-type: none;
 
     @include belowMd { gap : $spacingXL; padding-left : $spacingXL !important; }
-    @include belowSm { gap : $spacingMd; padding-left : $spacingMd !important; }
+    @include belowSm { gap : $spacingMd; padding-left : $spacingMd !important; margin-right : 0px; }
 }
 
 a {
@@ -30,9 +30,8 @@ a {
 
     text-shadow: 2px 2px 4px #000000c7;
     
-    @include belowMd { font-size: 0.98rem; }
-    @include belowSm { font-size: $spacingSm; }
-    @include belowXs { font-size: 0.62rem; }
+    @include belowMd { font-size: $textH5FontSize; }
+    @include belowSm { font-size: 14px; }
 }
 
 a:hover { color: #ffae71; }

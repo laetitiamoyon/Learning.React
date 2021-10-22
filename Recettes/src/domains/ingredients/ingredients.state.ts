@@ -44,7 +44,7 @@ export const initialIngredients : Ingredient[] = [
 },
 {
     id: "8",
-    title: "Vinaigre balsamique",
+    title: "Vinaigre",
     unity: "gr"
 },
 {

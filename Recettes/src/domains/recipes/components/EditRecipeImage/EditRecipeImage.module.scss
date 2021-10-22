@@ -5,14 +5,13 @@
     @include widthHeight(500px, 400px);
     @include flex(space-around, center, column);
 
-    margin-top: 22px;
     padding: 22px;
 
     background-color: #b0b0b196;
     border: dotted 2px white;
 
-    @include belowSm { margin-top: -50px; }
-    @include belowXs {@include widthHeight(450px, 350px); }
+    @include belowMd { @include widthHeight(380px, 100%); }
+    @include belowSm { width : 100%; }
 }
 
 .title
@@ -22,7 +21,7 @@
     text-shadow: 2px 2px 4px black;
 }
 
-.image { @include widthHeight(270px, 270px); background-position: center}
+.image { @include square(270px); background-position: center}
 
 .label
 {

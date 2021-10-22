@@ -13,14 +13,9 @@
   @include text($textH3FontSize, $primaryColor, undefined, center);
 
   padding-top: calc(8vh + 32px);
-  margin-bottom: 18px;
+  margin-bottom : $spacingXL;
   
   text-shadow: 2px 2px 4px black;
-
-  @include belowMd { margin-bottom: -30px; }
-  @include belowSm { font-size: textH4FontSize; margin-bottom: -150px;}
-  @include belowXs { font-size: textH5FontSize; margin-bottom: -200px;}
-  
 }
 
 .container 
@@ -28,27 +23,19 @@
   @include flex(center, center, undefined, 122px); 
   width: 100%;
 
-  @include belowMd 
-  { 
-    @include flex(center, center, column-reverse); 
-    transform: scale(0.95); 
-  }
-  @include belowSm { transform: scale(0.7); }
-  @include belowXs { transform: scale(0.6); }
+  @include belowMd { @include flex(undefined, undefined, column-reverse, 24px); }
 }
 
-.elements { @include flex(center, center, undefined);}
+.elements { @include flex(center, center); }
 
 .form 
 { 
-  @include flex(center, center, column, 52px); 
-  @include belowSm { gap: 0px; }
+  @include flex(center, center, column, 24px); 
 }
 
 .rightElements 
 { 
-  @include flex(center, center, column);
-  padding-top: 42px;
+  @include flex(center, center, column, 24px);
 }
 
 .label
@@ -56,8 +43,6 @@
   @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold);
 
   text-shadow: 2px 2px 4px white;
-
-  margin: 22px 0px;
 }
 
 .input
@@ -67,7 +52,8 @@
   @include borderAndRadius($defaultBorder, $defaultBorderRadius);
   @include text(undefined, $tertiaryColor);
   
-  padding: 8px;
+  padding: $spacingXs;
+  @include belowMd { width : 100%; }
 }
 
 .submitButton
@@ -79,7 +65,5 @@
   margin: 22px 0;
 
   cursor: pointer;
-
-  @include belowSm { transform: scale(0.9); margin-top: 12px; }
 }
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

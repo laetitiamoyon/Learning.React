@@ -25,6 +25,7 @@
 { 
   @include flex(center, center, undefined, 122px); 
   width: 100%;
+  margin-top: 22px;
 
   @include belowMd 
   { 
@@ -32,7 +33,7 @@
     transform: scale(0.95); 
   }
   @include belowSm { transform: scale(0.78); }
-  @include belowXs { transform: scale(0.7); }
+  @include belowXs { transform: scale(0.7); margin-top: 0;}
 }
 
 .elements { @include flex(center, center, undefined); }

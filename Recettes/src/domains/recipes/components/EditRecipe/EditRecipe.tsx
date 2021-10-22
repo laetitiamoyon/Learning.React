@@ -70,7 +70,6 @@ const EditRecipe : FC<RecipeIngredient> = ({unity, title : ingredientTitle, quan
     <h1 className={styles.title}>Modifier la recette</h1>
     <form className={styles.form} onSubmit={onSubmit}>
       <div className={styles.container}>
-
         <EditRecipeImage newImage={newImage} setNewImage={setNewImage}/>
 
         <div className={styles.element}>

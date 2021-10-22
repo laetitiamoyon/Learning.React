@@ -3,10 +3,10 @@
 .container
 {
   background: url(../../../../images/backgrounds/description.jpg) repeat-y center center / cover;
-  @include marginPadding(auto, 0 24px);
+  @include marginPadding(auto, 0 $spacingXXL2 $spacingXL $spacingXXL2);
 
   height: 100%;
-  padding-bottom: 32px;
+  @include belowMd { padding : 0 $spacingXL $spacingXL $spacingXL; }
 }
 
 .title
@@ -14,43 +14,25 @@
   @include text($textH3FontSize, $primaryColor, undefined, center);
 
   padding-top: calc(8vh + 32px);
-  margin-bottom: 32px;
+  margin-bottom: $spacingXL;
   text-shadow: 2px 2px 4px black;
-
-  @include belowMd { margin-bottom: -10px;}
-  @include belowSm { font-size: textH4FontSize; margin-bottom: -130px}
 }
 
 .elements 
 { 
-  @include flex(center);
-
-  @include belowMd { @include flex(center, center, column-reverse);}
-  @include belowSm { transform: scale(0.7)}
-
+  @include grid(1fr 1fr);
+  @include belowMd { @include grid(1fr); }
 }
 
 .descriptionContainer 
 { 
-  margin-left: 100px;
-  padding: 32px;
+  padding: $spacingXL;
 
   background-color: #e5e9ec96; 
 
   text-align: center;
 
-  border-radius: 30%;
-  width: 50%;
-
-  @include belowMd 
-  { 
-    margin-left: 0px; 
-    width: 70%; 
-    padding: 22px;  
-    border-radius: 10%;
-  }
-  @include belowSm { width: 80%; font-size: $textH6FontSize;}
-
+  border-radius: $spacingXXL2;
 }
 
 .cookInformationContainer
@@ -58,43 +40,37 @@
     @include flex(center, center, center, 42px);
 
     padding-bottom: 18px;
-
-    @include belowMd { @include flex(center, center, center, 22px);}
 }
 
 .label 
 { 
   padding : 20px 0;
   @include text($textH5FontSize, undefined, $fontWeightSemiBold);
-
-  @include belowSm { padding : 10px 0;}
 }
 
 .descriptionContent 
 { 
   margin-bottom: 18px; 
-
-  @include belowMd { margin-bottom: 8px;}
 }
 
 .ingredients 
 { 
-  padding-bottom: 8px; 
-
-  @include belowMd { padding-bottom: 5px;}
-  @include belowSm { padding-bottom: 3px;}
+  padding-bottom: $spacingXs; 
 }
 
 .image 
 { 
   background-repeat: no-repeat;
   background-position: center;
-  width : 50%;
 
   border-radius: 8px;
 
-  @include belowMd { height: 300px;}
-  @include belowSm { width : 400px;}
+  @include belowMd
+  { 
+    height: 300px;
+    grid-row: 1;
+    margin-top : -$spacingXL;
+  }
 }
 
 .button

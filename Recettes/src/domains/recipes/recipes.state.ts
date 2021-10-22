@@ -72,7 +72,7 @@ export const initialRecipes : Recipe[] = [
     },
     { 
         id : "8", 
-        title : "Vinaigre balsamique", 
+        title : "Vinaigre", 
         unity : "gr",
         quantity :2
     },
@@ -86,7 +86,7 @@ export const initialRecipes : Recipe[] = [
     preparationTime : "10 minutes",
     cookingTime : "0 minutes",
     calories : "145 Kcal",
-    description : "Couper les tomates et la mozzarella en tranche. Les disposer dans une assiette, assaisonner d'huile d'olive et de vinaigre balsamique. Parsemer de basilic." 
+    description : "Couper les tomates et la mozzarella en tranche. Les disposer dans une assiette, assaisonner d'huile d'olive et de vinaigre. Parsemer de basilic." 
     },
     { 
     id : "3", 
