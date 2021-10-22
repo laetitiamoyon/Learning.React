@@ -19,7 +19,7 @@
     list-style-type: none;
 
     @include belowMd { gap : $spacingXL; padding-left : $spacingXL !important; }
-    @include belowSm { gap : $spacingMd; padding-left : $spacingLg !important; }
+    @include belowSm { gap : $spacingMd; padding-left : $spacingMd !important; }
 }
 
 a {
@@ -31,6 +31,8 @@ a {
     text-shadow: 2px 2px 4px #000000c7;
     
     @include belowMd { font-size: 0.98rem; }
+    @include belowSm { font-size: $spacingSm; }
+    @include belowXs { font-size: 0.62rem; }
 }
 
 a:hover { color: #ffae71; }

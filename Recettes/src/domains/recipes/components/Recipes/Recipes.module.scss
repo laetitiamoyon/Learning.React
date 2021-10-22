@@ -2,15 +2,11 @@
 
 .container
 {
-    background: url(../../../../images/backgrounds/recipes-list.jpg) no-repeat center center / cover;
+    background: url(../../../../images/backgrounds/recipes-list.jpg) repeat-y center center / cover;
     @include marginPadding(auto, 0 24px);
 
-    height: 100vh;
-    min-height: 700px;
+    min-height: 100vh;
 }
-@media (max-width: 1380px) { .container { min-height: 800px; }}
-@media (max-width: 850px) { .container { min-height: 1100px; }}
-@media (max-width: 580px) { .container { min-height: 1700px; }}
 
 .title
 {
@@ -20,8 +16,6 @@
     margin-bottom: 38px;
     
     text-shadow: 2px 2px 4px black;
-
-    @include belowSm { font-size: $textH4FontSize}
 }
 
 .recipes { @include flex(center, undefined, undefined, 32px, wrap); padding-bottom: 22px;}
@@ -31,8 +25,6 @@
   @include flex(center); 
 
   margin-bottom: 32px; 
-
-  @include belowSm { transform: scale(0.92);}
 }
 
 .input
@@ -44,4 +36,3 @@
   
   outline: none;
 }
-

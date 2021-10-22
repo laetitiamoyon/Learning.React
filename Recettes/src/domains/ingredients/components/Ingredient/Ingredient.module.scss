@@ -2,10 +2,17 @@
 
 .ingredient 
 { 
-    @include flex(center, center, center, 32px, wrap); 
+    @include flex(center, center, center, $spacingXL, wrap); 
     padding-bottom: 22px;
-
-    @include belowMd { transform: scale(0.9); gap: 12px;}
+    @include belowMd
+    { 
+        gap: $spacingSm;
+        @include scaleWithoutModifyTheWidth(0.9);
+    }
+    @include belowSm
+    { 
+        @include scaleWithoutModifyTheWidth(0.7);
+    }
 }
 
 .input, .title
@@ -13,7 +20,7 @@
     text-align: center;
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     background-color: #e7f1f596;
-    height: 32px;
+    height: $spacingXL;
     padding: 0 5px;
     cursor: pointer;
 

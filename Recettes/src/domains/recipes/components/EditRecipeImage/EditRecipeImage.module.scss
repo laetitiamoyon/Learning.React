@@ -11,7 +11,7 @@
     background-color: #b0b0b196;
     border: dotted 2px white;
 
-    @include belowSm { margin-top: -30px; }
+    @include belowSm { margin-top: -50px; }
     @include belowXs {@include widthHeight(450px, 350px); }
 }
 

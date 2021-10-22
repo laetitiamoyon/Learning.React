@@ -2,11 +2,11 @@
 
 .container
 {
-  background: url(../../../../images/backgrounds/home.jpg) no-repeat center center / cover; 
+  background: url(../../../../images/backgrounds/home.jpg) repeat-y center center / cover; 
 
   @include marginPadding(auto, 0 124px);
 
-  height: 100vh;
+  height: 100%;
 
   @include belowMd { padding : 0 $spacingLg; }
 }

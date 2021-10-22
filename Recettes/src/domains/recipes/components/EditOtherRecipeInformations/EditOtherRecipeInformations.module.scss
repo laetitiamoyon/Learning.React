@@ -4,7 +4,8 @@
   @include flex(undefined, center, column); 
 
   @include belowMd {transform: scale(0.95);}
-  @include belowSm {transform: scale(0.8); margin-top: -100px;}
+  @include belowSm {transform: scale(0.8); margin-top: -150px;}
+  @include belowXs {transform: scale(0.7); margin-top: -200px;}
 }
 
 .title 

@@ -5,6 +5,6 @@ ul
   margin : 0 $spacingXXL2 0 auto;
 
   @include belowMd { margin-right : $spacingXL; }
-  @include belowSm { margin-right : $spacingLg; }
+  @include belowSm { margin-right : $spacingMd; }
 }
 li { list-style: none; }

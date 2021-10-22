@@ -2,14 +2,10 @@
 
 .containerPage
 {
-  background: url(../../../../images/backgrounds/addRecipe.jpg) no-repeat center center / cover; 
+  background: url(../../../../images/backgrounds/addRecipe.jpg) repeat-y center center / cover; 
   @include marginPadding(auto, 0 24px);
 
-  height: 100vh;
-  min-height: 1100px;
-
-  @include belowMd {min-height: 1600px;}
-  @include belowSm {min-height: 1400px;}
+  height: 100%;
 }
 
 .title
@@ -35,7 +31,8 @@
     @include flex(center, center, column-reverse); 
     transform: scale(0.95); 
   }
-  @include belowSm { transform: scale(0.8); }
+  @include belowSm { transform: scale(0.78); }
+  @include belowXs { transform: scale(0.7); }
 }
 
 .elements { @include flex(center, center, undefined); }
@@ -73,7 +70,7 @@
   @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
   padding: 10px 24px;
 
-  margin-top: 22px;
+  margin: 22px 0;
 
   cursor: pointer;
 

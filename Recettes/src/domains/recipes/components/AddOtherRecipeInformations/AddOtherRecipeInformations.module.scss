@@ -4,7 +4,8 @@
   @include flex(undefined, center, column); 
 
   @include belowMd {transform: scale(0.95);}
-  @include belowSm {margin-top: -100px;}
+  @include belowSm {transform: scale(0.8); margin-top: -80px;}
+  @include belowXs { transform: scale(0.7); margin-top: -130px;}
 }
 
 .title 
@@ -14,7 +15,7 @@
 
   text-shadow: 2px 2px 4px white;
 
-  @include belowSm {font-size: textH4FontSize;}
+  @include belowSm {font-size: textH6FontSize;}
 }
 
 .elements

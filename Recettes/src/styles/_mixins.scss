@@ -94,3 +94,10 @@
 {
     @media (max-width: $xsWidth) { @content; }
 }
+
+@mixin scaleWithoutModifyTheWidth($scale : 0.9, $widthPercent : 100%)
+{
+    transform: scale($scale);
+    width: 1 / $scale * $widthPercent;
+    margin-left : ($widthPercent - (1 / $scale) * $widthPercent) / 2;
+}

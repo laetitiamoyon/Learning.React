@@ -11,7 +11,8 @@
     border: dotted 2px white;
 
     @include belowMd { margin-top: -50px; }
-    @include belowXs {@include widthHeight(450px, 350px); }
+    @include belowSm {@include widthHeight(450px, 350px); }
+    @include belowXs {@include widthHeight(400px, 300px); }
 }
 
 .title

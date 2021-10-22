@@ -2,22 +2,20 @@
 
 .container
 {
-    background: url(../../../../images/backgrounds/ingredientList.jpg) no-repeat center  / cover;
-    @include marginPadding(auto, 0 24px);
-    height: 100%;
-    min-height: 1000px;
+  background: url(../../../../images/backgrounds/ingredientList.jpg) repeat-y center  / cover;
+  @include marginPadding(auto, 0 $spacingMd);
+  
+  height: 100%;
 }
 
 .title
 {
-    @include text($textH3FontSize, $primaryColor, undefined, center);
+  @include text($textH3FontSize, $primaryColor, undefined, center);
 
-    padding-top: 82px;
-    margin-bottom: 38px;
-    
-    text-shadow: 2px 2px 4px black;
-
-    @include belowSm { font-size: $textH4FontSize;}
+  padding-top: 82px;
+  margin-bottom: 38px;
+  
+  text-shadow: 2px 2px 4px black;
 }
 
 .form 
@@ -25,8 +23,6 @@
   @include flex(center); 
 
   margin-bottom: 32px; 
-
-  @include belowSm { transform: scale(0.92);}
 }
 
 .input

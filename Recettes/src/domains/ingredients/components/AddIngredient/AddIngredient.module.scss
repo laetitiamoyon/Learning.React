@@ -2,10 +2,10 @@
 
 .container
 {
-  background: url(../../../../images/backgrounds/AddIngredient.jpg) no-repeat center center / cover;
+  background: url(../../../../images/backgrounds/AddIngredient.jpg) repeat-y center center / cover;
   @include marginPadding(auto, 0 24px);
 
-  height: 100vh;
+  height: 100%;
 }
 
 .elements { margin-left: 37%; }
@@ -28,10 +28,16 @@
   @include flex(center, center, column, 22px);
   margin-top: 80px;
 
-  @include belowSm { transform: scale(0.93); margin-top: $spacingMd; }
+  @include belowSm { transform: scale(0.9); margin-top: $spacingMd; }
 }
 
-.label { @include text($textH4FontSize, $tertiaryColor, $fontWeightRegular); padding-left: 12px;}
+.label 
+{ 
+  @include text($textH4FontSize, $tertiaryColor, $fontWeightRegular); 
+  padding-left: 12px;
+
+  @include belowSm { font-size: $textH5FontSize;}
+}
 
 .input
 {

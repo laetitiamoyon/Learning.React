@@ -2,11 +2,10 @@
 
 .container
 {
-  background: url(../../../../images/backgrounds/description.jpg) no-repeat center center / cover;
+  background: url(../../../../images/backgrounds/description.jpg) repeat-y center center / cover;
   @include marginPadding(auto, 0 24px);
 
   height: 100%;
-  min-height: 900px;
   padding-bottom: 32px;
 }
 
@@ -19,17 +18,15 @@
   text-shadow: 2px 2px 4px black;
 
   @include belowMd { margin-bottom: -10px;}
-  @include belowSm { font-size: textH4FontSize; }
-  
+  @include belowSm { font-size: textH4FontSize; margin-bottom: -130px}
 }
-
 
 .elements 
 { 
   @include flex(center);
 
   @include belowMd { @include flex(center, center, column-reverse);}
-  @include belowSm { ftransform: scale(0.85)}
+  @include belowSm { transform: scale(0.7)}
 
 }
 
@@ -52,7 +49,7 @@
     padding: 22px;  
     border-radius: 10%;
   }
-  @include belowSm { width: 80%;}
+  @include belowSm { width: 80%; font-size: $textH6FontSize;}
 
 }
 
@@ -97,7 +94,7 @@
   border-radius: 8px;
 
   @include belowMd { height: 300px;}
-  @include belowSm { pwidth : 400px;}
+  @include belowSm { width : 400px;}
 }
 
 .button
