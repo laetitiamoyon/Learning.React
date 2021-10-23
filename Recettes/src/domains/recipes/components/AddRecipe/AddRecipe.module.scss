@@ -13,38 +13,27 @@
   @include text($textH3FontSize, $primaryColor, undefined, center);
 
   padding-top: calc(8vh + 32px);
-  margin-bottom: 48px;
+  margin-bottom : $spacingXL;
   
   text-shadow: 2px 2px 4px black;
-
-  @include belowMd {margin-bottom: -30px;}
-  @include belowSm {font-size: textH4FontSize; margin-bottom: -100px;}
 }
 
 .container 
 { 
   @include flex(center, center, undefined, 122px); 
   width: 100%;
-  margin-top: 22px;
 
-  @include belowMd 
-  { 
-    @include flex(center, center, column-reverse); 
-    transform: scale(0.95); 
-  }
-  @include belowSm { transform: scale(0.78); }
-  @include belowXs { transform: scale(0.7); margin-top: 0;}
+  @include belowMd { @include flex(undefined, undefined, column-reverse, 24px); }
 }
 
 .elements { @include flex(center, center, undefined); }
 
 .form 
 { 
-  @include flex(center, center, column, 52px); 
-  @include belowSm { gap: 0px; }
+  @include flex(center, center, column, 24px); 
 }
 
-.rightElements { @include flex(center, center, column, 22px); padding-top: 42px}
+.rightElements { @include flex(center, center, column, 24px); }
 
 .label 
 { 
@@ -60,7 +49,8 @@
   @include borderAndRadius($defaultBorder, $defaultBorderRadius);
   @include text(undefined, $tertiaryColor);
   
-  padding: 8px;
+  padding: $spacingXs;
+  @include belowMd { width : 100%; }
 }
 
 .addRecipeIngredient {margin-bottom: 32px;}
@@ -74,8 +64,6 @@
   margin: 22px 0;
 
   cursor: pointer;
-
-  @include belowSm { transform: scale(0.9); margin-top: 12px; }
 }
 
 .submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

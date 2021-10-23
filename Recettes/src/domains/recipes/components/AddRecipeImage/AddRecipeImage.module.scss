@@ -3,16 +3,14 @@
 .container
 {
     @include widthHeight(500px, 400px);
-    @include flex(space-around, center, column);
+    @include flex(space-around, center, column, 24px);
 
-    margin-top: 22px;
     padding: 22px;
 
     border: dotted 2px white;
 
-    @include belowMd { margin-top: -50px; }
-    @include belowSm {@include widthHeight(450px, 350px); }
-    @include belowXs {@include widthHeight(400px, 300px); }
+    @include belowMd { @include widthHeight(380px, 100%); }
+    @include belowSm { width : 100%; }
 }
 
 .title

@@ -81,7 +81,7 @@ const AddIngredient : FC<Props> = ({ingredients, addIngredient, removeIngredient
                 }
 
                 { currentWindow === 'INGREDIENT_SELECTED' &&
-                    <div>
+                    <div className={styles.elements}>
                         <div className={styles.inputContainer}>
                             <label>Unité :</label>
                             <div className={styles.input}>{unity}</div>

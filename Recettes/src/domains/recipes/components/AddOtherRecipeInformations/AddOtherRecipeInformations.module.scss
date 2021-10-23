@@ -2,10 +2,6 @@
 
 .container { 
   @include flex(undefined, center, column); 
-
-  @include belowMd {transform: scale(0.95);}
-  @include belowSm {transform: scale(0.8); margin-top: -80px;}
-  @include belowXs { transform: scale(0.7); margin-top: -130px;}
 }
 
 .title 
@@ -14,8 +10,6 @@
   margin-bottom: 28px;
 
   text-shadow: 2px 2px 4px white;
-
-  @include belowSm {font-size: textH6FontSize;}
 }
 
 .elements
@@ -28,14 +22,12 @@
 
 .input
 {
-    width: 190px;
+    width: 130px;
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, undefined, center);
     
     padding: 8px;
-    margin-left: 8px;
 
-    @include belowMd {width: 126px;}
 }
 
-.input::placeholder {@include belowMd {font-size: 0.7rem;}}
+.input::placeholder { font-size: $textSmallFontSize; }

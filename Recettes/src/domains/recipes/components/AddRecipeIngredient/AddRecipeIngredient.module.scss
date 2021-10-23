@@ -1,12 +1,6 @@
 @import '../../../../styles/styles.scss'; 
 
-.container
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+.container { @include flex(center, center, column);}
 
 .ingredients 
 { 
@@ -21,7 +15,7 @@
     @include widthHeight(200px, 40px);
     @include dottedBorderAndRadius($dottedBorder, $defaultBorderRadius);
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
-    margin: 22px 0;
+  
 }
 
 .button:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
@@ -34,8 +28,6 @@
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
 
     padding: 6px;
-    margin-top: 32px;
-    margin-bottom : 4px;
 
     @include belowMd { width: 400px; }
     @include belowXs { font-size: $textH6FontSize; }
@@ -43,7 +35,7 @@
 
 .option { @include belowXs { font-size: $textH6FontSize; }}
 
-.inputContainer { @include grid(80px 1fr); margin-left : 12px; }
+.inputContainer { @include grid(80px 1fr); margin-left : 12px; padding: 2px 0;}
 
 .input { margin-left : 12px; }
 
@@ -54,8 +46,9 @@
     @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
     @include borderAndRadius($defaultBorder, $defaultBorderRadius);
     @include marginPadding(auto, 10px 24px);
-    
-    margin-top: 32px;
+    margin-top: 38px;
+
+
 }
 .addIngredientToTheListButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
 
