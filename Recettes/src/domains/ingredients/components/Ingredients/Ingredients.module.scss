@@ -5,7 +5,7 @@
   background: url(../../../../images/backgrounds/ingredientList.jpg) repeat-y center  / cover;
   @include marginPadding(auto, 0 $spacingMd);
   
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .title
