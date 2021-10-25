@@ -1,10 +1,11 @@
 @import '../../../../styles/styles.scss'; 
 
-ul
+.rightUl
 {
-  margin : 0 $spacingXXL2 0 auto;
+  position: absolute;
+  right: 32px;
 
-  @include belowMd { margin-right : $spacingXL; }
-  @include belowSm { margin-right : $spacingMd; }
+  @include belowSm { position: relative; right: 0; margin-bottom: 12px;}
 }
+
 li { list-style: none; }

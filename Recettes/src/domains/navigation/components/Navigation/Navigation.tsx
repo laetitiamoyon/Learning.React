@@ -7,30 +7,53 @@ import RecipeDescription from '../../../recipes/components/RecipeDescription/Rec
 import Home from '../Home/Home'
 import AddIngredient from '../../../ingredients/components/AddIngredient/AddIngredient'
 import AddRecipe from '../../../recipes/components/AddRecipe/AddRecipe'
-
 import routes from '../../../../shared/constants/routes'
 import RightNavigation from '../RightNavigation/RightNavigation'
-import { FC } from 'react'
+import { FC, useState, useEffect } from 'react'
+import NavBarMobile from '../../../../SVG/NavBarMobile';
 
 const Navigation : FC = () => {
 
-    const { recipes, ingredients, addRecipe, addIngredient } = routes
+    const { recipes, ingredients, addRecipe, addIngredient} = routes
+
+    const [toggleMenu, setToggleMenu] = useState(false)
+    const [largeur, setLargeur] = useState(window.innerWidth)
+
+    const toggleNavMobile = () => setToggleMenu(!toggleMenu )
+
+    useEffect(() => 
+    {
+        const changeWidth = () => 
+        {
+            setLargeur(window.innerWidth)
+            if (window.innerWidth > 600){
+                setToggleMenu(false)
+            }
+        }
+
+        window.addEventListener('rezise', changeWidth);
+
+        return () => { window.removeEventListener('resize', changeWidth)}
+
+    },[])
 
     return <BrowserRouter>
         <nav className={styles.navBar}>
-            <ul className={styles.leftUl}>
-                <li>
-                    <Link to="/">Accueil</Link>
-                </li>
-                <li>
-                    <Link to={recipes}>Recettes</Link>
-                </li>
-                <li>
-                    <Link to={ingredients}>Ingrédients</Link>
-                </li>
-            </ul>
-
-            <RightNavigation/>
+            { (toggleMenu || largeur > 600) && ( 
+                <ul className={styles.leftUl}>
+                    <li>
+                        <Link to="/">Accueil</Link>
+                    </li>
+                    <li>
+                        <Link to={recipes}>Recettes</Link>
+                    </li>
+                    <li>
+                        <Link to={ingredients}>Ingrédients</Link>
+                    </li>
+                    <RightNavigation/>
+                </ul> 
+            )}
+            <div className={styles.toggleIcon} onClick={toggleNavMobile}><NavBarMobile/></div>
         </nav>
 
         <Switch>
