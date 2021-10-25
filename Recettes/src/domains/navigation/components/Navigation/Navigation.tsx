@@ -9,42 +9,27 @@ import AddIngredient from '../../../ingredients/components/AddIngredient/AddIngr
 import AddRecipe from '../../../recipes/components/AddRecipe/AddRecipe'
 import routes from '../../../../shared/constants/routes'
 import RightNavigation from '../RightNavigation/RightNavigation'
-import { FC, useState, useEffect } from 'react'
+import { FC, useRef } from 'react'
 import NavBarMobile from '../../../../SVG/NavBarMobile';
 import useToggle from '../../../../shared/hooks/useToggle';
+import { useBreakpoints } from '../../../../shared/hooks/useBreakpoints';
+import { useClickOutside } from '../../../../shared/hooks/useClickOutside';
 
-const Navigation : FC = () => {
-
+// Gérer l'état actif
+// Lazy en second temps
+const Navigation : FC = () =>
+{
     const { recipes, ingredients, addRecipe, addIngredient} = routes
 
-    // useToggle
-    const [toggleMenu, setToggleMenu] = useState(false)
-    const [largeur, setLargeur] = useState(window.innerWidth)
+    const [mobileNavigationIsVisible, toggleMobileNavigation, setMobileNavigationIsVisible] = useToggle(false)
+    const { smOrBelow } = useBreakpoints()
 
-    // from useToggle
-    const toggleNavMobile = () => setToggleMenu(!toggleMenu )
-
-    // const { smOrBelow } = useBreakpoints
-    useEffect(() => 
-    {
-        const changeWidth = () => 
-        {
-            // use my hook useWindowSize + useEffect sur windowSize.width
-            setLargeur(window.innerWidth)
-            if (window.innerWidth > 600){
-                setToggleMenu(false)
-            }
-        }
-
-        window.addEventListener('resize', changeWidth);
-            return () => { window.removeEventListener('resize', changeWidth);
-        }
-
-    }, [])
+    const componentReference = useRef(null);
+	useClickOutside(componentReference, () => setMobileNavigationIsVisible(false));
 
     return <BrowserRouter>
-        <nav className={styles.navBar}>
-            { (toggleMenu || largeur > 600) && ( 
+        <nav className={styles.navBar} ref={componentReference}>
+            { (mobileNavigationIsVisible || !smOrBelow) && ( 
                 <ul className={styles.leftUl}>
                     <li>
                         <Link to="/">Accueil</Link>
@@ -58,7 +43,7 @@ const Navigation : FC = () => {
                     <RightNavigation/>
                 </ul> 
             )}
-            <div className={styles.toggleIcon} onClick={toggleNavMobile}><NavBarMobile/></div>
+            <div className={styles.toggleIcon} onClick={toggleMobileNavigation}><NavBarMobile/></div>
         </nav>
 
         <Switch>
