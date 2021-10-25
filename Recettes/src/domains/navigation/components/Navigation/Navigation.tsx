@@ -11,31 +11,36 @@ import routes from '../../../../shared/constants/routes'
 import RightNavigation from '../RightNavigation/RightNavigation'
 import { FC, useState, useEffect } from 'react'
 import NavBarMobile from '../../../../SVG/NavBarMobile';
+import useToggle from '../../../../shared/hooks/useToggle';
 
 const Navigation : FC = () => {
 
     const { recipes, ingredients, addRecipe, addIngredient} = routes
 
+    // useToggle
     const [toggleMenu, setToggleMenu] = useState(false)
     const [largeur, setLargeur] = useState(window.innerWidth)
 
+    // from useToggle
     const toggleNavMobile = () => setToggleMenu(!toggleMenu )
 
+    // const { smOrBelow } = useBreakpoints
     useEffect(() => 
     {
         const changeWidth = () => 
         {
+            // use my hook useWindowSize + useEffect sur windowSize.width
             setLargeur(window.innerWidth)
             if (window.innerWidth > 600){
                 setToggleMenu(false)
             }
         }
 
-        window.addEventListener('rezise', changeWidth);
+        window.addEventListener('resize', changeWidth);
+            return () => { window.removeEventListener('resize', changeWidth);
+        }
 
-        return () => { window.removeEventListener('resize', changeWidth)}
-
-    },[])
+    }, [])
 
     return <BrowserRouter>
         <nav className={styles.navBar}>

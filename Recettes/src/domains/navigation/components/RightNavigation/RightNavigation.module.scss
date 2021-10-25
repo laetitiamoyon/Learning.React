@@ -5,7 +5,12 @@
   position: absolute;
   right: 32px;
 
-  @include belowSm { position: relative; right: 0; margin-bottom: 12px;}
+  @include belowSm 
+  { 
+    position: relative; 
+    right: 0; 
+    margin-bottom: 12px;
+  }
 }
 
 li { list-style: none; }
