@@ -23,7 +23,7 @@
     @include belowMd { gap : $spacingXL; padding-left : $spacingXL !important; }
     @include belowSm 
     { 
-        @include flex(undefined, undefined, column, 12px);
+        @include flex(undefined, undefined, column);
 
         padding-left: 0 !important;
         margin: 0;
@@ -44,7 +44,15 @@ a
     text-shadow: 2px 2px 4px #000000c7;
     
     @include belowMd { font-size: $textH5FontSize; }
-    @include belowSm { font-size: 14px; }
+    @include belowSm 
+    { 
+        font-size: 14px; 
+        position: absolute; 
+        margin-top: -30px; 
+        margin-left: -50px;
+        width: 200px; 
+ 
+    }
 }
 
 a:hover { color: #ffae71; }
