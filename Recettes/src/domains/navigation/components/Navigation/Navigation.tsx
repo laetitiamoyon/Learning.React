@@ -1,60 +1,79 @@
 import styles from './Navigation.module.scss'
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-import Ingredients from '../../../ingredients/components/Ingredients/Ingredients'
+import {BrowserRouter, Switch, Route} from "react-router-dom"
 import EditRecipe from '../../../recipes/components/EditRecipe/EditRecipe'
-import Recipes from '../../../recipes/components/Recipes/Recipes'
 import RecipeDescription from '../../../recipes/components/RecipeDescription/RecipeDescription'
-import Home from '../Home/Home'
-import AddIngredient from '../../../ingredients/components/AddIngredient/AddIngredient'
-import AddRecipe from '../../../recipes/components/AddRecipe/AddRecipe'
-import routes from '../../../../shared/constants/routes'
-import RightNavigation from '../RightNavigation/RightNavigation'
-import { FC, useRef } from 'react'
+import {FC, lazy, ReactNode, useRef, useState} from 'react'
 import NavBarMobile from '../../../../SVG/NavBarMobile';
 import useToggle from '../../../../shared/hooks/useToggle';
 import { useBreakpoints } from '../../../../shared/hooks/useBreakpoints';
 import { useClickOutside } from '../../../../shared/hooks/useClickOutside';
+import {INavigationElement} from "../../navigation.model";
+import NavigationElement from "../NavigationElement/NavigationElement";
+import React from 'react'
+import RightNavigationUpdater from "../RightNavigationUpdater/RightNavigationUpdater";
+import {initialNavigationElements, routes} from "../../navigation.configuration";
 
-// Gérer l'état actif
-// Lazy en second temps
+const LazyHome = lazy(() => import('../Home/Home'))
+const LazyRecipes = lazy(() => import('../../../recipes/components/Recipes/Recipes'))
+const LazyIngredients = lazy(() => import('../../../ingredients/components/Ingredients/Ingredients'))
+const LazyAddRecipe = lazy(() => import('../../../recipes/components/AddRecipe/AddRecipe'))
+const LazyAddIngredient = lazy(() => import('../../../ingredients/components/AddIngredient/AddIngredient'))
+
+// Il manque 2 lazy components
 const Navigation : FC = () =>
 {
-    const { recipes, ingredients, addRecipe, addIngredient} = routes
-
+    const [navigationElements, setNavigationElements] = useState(initialNavigationElements)
     const [mobileNavigationIsVisible, toggleMobileNavigation, setMobileNavigationIsVisible] = useToggle(false)
     const { smOrBelow } = useBreakpoints()
 
     const componentReference = useRef(null);
 	useClickOutside(componentReference, () => setMobileNavigationIsVisible(false));
 
-    return <BrowserRouter>
-        <nav className={styles.navBar} ref={componentReference}>
-            { (mobileNavigationIsVisible || !smOrBelow) && ( 
-                <ul className={styles.leftUl}>
-                    <li>
-                        <Link to="/">Accueil</Link>
-                    </li>
-                    <li>
-                        <Link to={recipes}>Recettes</Link>
-                    </li>
-                    <li>
-                        <Link to={ingredients}>Ingrédients</Link>
-                    </li>
-                    <RightNavigation/>
-                </ul> 
-            )}
-            <div className={styles.toggleIcon} onClick={toggleMobileNavigation}><NavBarMobile/></div>
-        </nav>
+    const selectNavigationElement = (navigationElement : INavigationElement) =>
+        setNavigationElements(navigationElements.map(e => ({...e, active : e.title === navigationElement.title })))
 
-        <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path={recipes} exact component={Recipes} />
-            <Route path={ingredients} exact component={Ingredients} />
-            <Route path={addRecipe} exact component={AddRecipe} />
-            <Route path="/description-de-la-recette/:id" exact component={RecipeDescription} />
-            <Route path="/modification-de-la-recette/:id" exact component={EditRecipe} />
-            <Route path={addIngredient} exact component={AddIngredient} />
-        </Switch>
+    const showNavigationElements = (elements : INavigationElement[], leftNavigation? : boolean) : ReactNode =>
+        elements
+            .filter(n => (leftNavigation !== undefined ? (n.leftNavigation === leftNavigation) : true) && n.visible)
+            .map(n => <NavigationElement key={n.title} {...n} selectNavigationElement={selectNavigationElement}/>)
+
+    return <BrowserRouter>
+        <RightNavigationUpdater setNavigationElements={setNavigationElements} navigationElements={navigationElements}/>
+        <header ref={componentReference}>
+            <nav className={styles.navBar} >
+                <div className={styles.toggleIcon} onClick={toggleMobileNavigation}><NavBarMobile/></div>
+
+                <div className={styles.leftUl}>
+                    { (!smOrBelow && showNavigationElements(navigationElements, true))  }
+                    { smOrBelow &&
+                    <>
+                        { mobileNavigationIsVisible && showNavigationElements(navigationElements) }
+                    </>
+                    }
+                </div>
+
+                <div className={styles.rightUl}>
+                    { (!smOrBelow && showNavigationElements(navigationElements, false))  }
+                    { smOrBelow &&
+                    <>
+                        { !mobileNavigationIsVisible && showNavigationElements(navigationElements.filter(n => n.active), false) }
+                    </>
+                    }
+                </div>
+            </nav>
+        </header>
+
+        <React.Suspense fallback={<span>Loading...</span>}>
+            <Switch>
+                <Route path={routes.home}  exact component={LazyHome} />
+                <Route path={routes.recipes} exact component={LazyRecipes} />
+                <Route path={routes.ingredients} exact component={LazyIngredients} />
+                <Route path={routes.addRecipe} exact component={LazyAddRecipe} />
+                <Route path={routes.addIngredient} exact component={LazyAddIngredient} />
+                <Route path="/description-de-la-recette/:id" exact component={RecipeDescription} />
+                <Route path="/modification-de-la-recette/:id" exact component={EditRecipe} />
+            </Switch>
+        </React.Suspense>
     </BrowserRouter>
 }
 

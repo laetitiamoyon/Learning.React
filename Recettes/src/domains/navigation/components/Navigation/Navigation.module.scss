@@ -13,53 +13,6 @@
     @include belowSm { flex-direction: column; }
 }
 
-.leftUl
-{
-    @include flex(undefined, center, undefined, $spacingXXL2);
-    margin : 0 $spacingXL 0 0;
-    list-style-type: none;
-    width: 100%;
-
-    @include belowMd { gap : $spacingXL; padding-left : $spacingXL !important; }
-    @include belowSm 
-    { 
-        @include flex(undefined, undefined, column);
-
-        padding-left: 0 !important;
-        margin: 0;
-
-        height: 200px;
-
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-}
-
-a 
-{
-    @include text($textH4FontSize, $primaryColor, $fontWeightRegular);
-
-    text-decoration: none;
-    list-style: none;
-
-    text-shadow: 2px 2px 4px #000000c7;
-    
-    @include belowMd { font-size: $textH5FontSize; }
-    @include belowSm 
-    { 
-        font-size: 14px; 
-
-        position: absolute; 
-        margin-top: -38px; 
-        margin-left: -50px;
-
-        width: 200px; 
-    }
-}
-
-a:hover { color: #ffae71; }
-
-.leftUl:nth-child(1) { @include belowSm {margin-top: 50px;} }
-
 .toggleIcon 
 {
     display: none;
@@ -70,5 +23,40 @@ a:hover { color: #ffae71; }
         display: block; 
         position: absolute;
         cursor: pointer;
+    }
+}
+
+.leftUl
+{
+    @include flex(undefined, center, undefined, $spacingXXL2);
+    margin : 0 $spacingXL 0 0;
+    list-style-type: none;
+    width: 100%;
+    margin-left: 32px;
+
+    @include belowMd { gap : $spacingXL; padding-left : 16px; margin-left: 18px;}
+    @include belowSm
+    {
+        @include flex(undefined, undefined, column);
+        margin: 50px 0 0 0;
+        padding-left : 0;
+
+        height: 200px;
+
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.rightUl
+{
+    position: absolute;
+    right: 32px;
+    top: 13px;
+
+    @include belowSm
+    {
+        position: relative;
+        right: 0;
+        top: 0;
     }
 }
