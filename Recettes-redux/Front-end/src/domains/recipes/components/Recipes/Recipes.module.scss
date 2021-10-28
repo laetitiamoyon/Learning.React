@@ -1,0 +1,35 @@
+@import '../../../../styles/styles.scss'; 
+
+.container
+{
+    background: url(../../../../images/backgrounds/recipes-list.jpg) no-repeat center center / cover;
+    @include marginPadding(auto, 0 24px);
+
+    height: 100vh;
+    min-height: 700px;
+}
+
+.title
+{
+    @include text($textH3FontSize, $primaryColor, undefined, center);
+
+    padding-top: 82px;
+    margin-bottom: 38px;
+    
+    text-shadow: 2px 2px 4px black;
+}
+
+.recipes { @include flex(center, undefined, undefined, 32px, wrap); padding-bottom: 22px;}
+
+.form { @include flex(center); margin-bottom: 42px; }
+@media (max-width: 400px) { .form { transform: scale(0.95); }}
+
+.input
+{
+  @include widthHeight(200px, 32px);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  text-align: center;
+  
+  outline: none;
+}

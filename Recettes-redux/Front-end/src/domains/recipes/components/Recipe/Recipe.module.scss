@@ -1,0 +1,51 @@
+@import '../../../../styles/styles.scss'; 
+
+.recipe
+{
+    @include widthHeight(240px, 248px);
+
+    background-color: #e7f1f596;
+    border-radius: $defaultBorderRadius;
+
+    text-align: center;
+
+    padding: $spacingMd $spacingXs;
+    
+    box-shadow: 0 1px 0 rgba(0,0,0,0.6);
+}
+
+.title
+{
+    cursor: pointer;
+
+    @include text($textH5FontSize, undefined, $fontWeightSemiBold);
+}
+.title:hover { color: $secondaryColor;}
+
+.image
+{
+    background-size: cover;
+    @include widthHeight(150px, 150px);
+}
+
+.buttonContainer { @include flex(undefined, center); }
+
+.viewDescriptionButton
+{
+    @include widthHeight(130px, 30px);
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+
+    cursor: pointer;
+    margin-left : 47px;
+}
+.viewDescriptionButton:hover{ @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.trashIcon
+{
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
+    margin-left : $spacingXs;
+
+    cursor: pointer;
+}

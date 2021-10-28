@@ -1,0 +1,102 @@
+@import '../../../../styles/styles.scss'; 
+
+.containerPage
+{
+  background: url(../../../../images/backgrounds/addRecipe.jpg) no-repeat center center / cover; 
+  @include marginPadding(auto, 0 24px);
+
+  height: 100vh;
+  min-height: 1100px;
+}
+
+.title
+{ 
+  @include text($textH3FontSize, $primaryColor, undefined, center);
+
+  padding-top: calc(8vh + 32px);
+  margin-bottom: 18px;
+  
+  text-shadow: 2px 2px 4px black;
+}
+
+.container { @include flex(center, center, undefined, 122px); }
+
+.elements { @include flex(center, center, undefined); }
+
+.form { @include flex(center, center, column, 52px); }
+
+.rightElements { @include flex(center, center, column); padding-top: 42px}
+
+.label, .ingredientLabel
+{ 
+  @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold);
+
+  text-shadow: 2px 2px 4px white;
+
+  margin: 22px 0px;
+}
+
+.ingredientLabel {text-align: center;}
+
+.ingredientContainer {display: flex; flex-direction: column;}
+
+.ingredients { @include flex(flex-start, center, undefined, 12px ); margin-bottom: 8px;}
+
+.input
+{
+  width: 500px;
+
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text(undefined, $tertiaryColor);
+  
+  padding: 8px;
+}
+
+.unity
+{
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  text-shadow: 2px 2px 4px white;
+}
+
+.trashIcon
+{
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
+    margin-left : $spacingXs;
+
+    cursor: pointer;
+}
+
+.quantityInput
+{
+    width: 80px;
+
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, undefined, center);
+
+    padding: 8px;
+}
+
+.select
+{
+  width: 200px;
+
+  @include text(undefined, $tertiaryColor);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  padding: 3px;
+}
+
+.addRecipeIngredient {margin-bottom: 32px;}
+
+.submitButton
+{
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  padding: 10px 24px;
+
+  margin-top: 22px;
+
+  cursor: pointer;
+}
+.submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

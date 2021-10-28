@@ -1,0 +1,69 @@
+@import '../../../../styles/styles.scss'; 
+
+.container
+{
+  background: url(../../../../images/backgrounds/description.jpg) no-repeat center center / cover;;
+  @include marginPadding(auto, 0 24px);
+
+  height: 100%;
+  min-height: 800px;
+  padding-bottom: 32px;
+}
+
+.title
+{
+  @include text($textH3FontSize, $primaryColor, undefined, center);
+
+  padding-top: calc(8vh + 32px);
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 4px black;
+}
+
+.elements { @include flex(center, undefined, undefined)}
+
+.descriptionContainer 
+{ 
+  width: 600px; 
+
+  padding: 32px;
+
+  background-color: #e5e9ec96; 
+
+  text-align: center;
+
+  border-radius: 30%;
+}
+
+.cookInformationContainer {  @include flex(center, center, center, 42px); padding-bottom: 26px;}
+
+.label 
+{ 
+  padding : 20px 0;
+  @include text($textH5FontSize, undefined, $fontWeightSemiBold)
+}
+
+.descriptionContent { margin-bottom: 18px; }
+
+.ingredients { padding-bottom: 8px; }
+
+.image 
+{ 
+  background-repeat: no-repeat;
+  background-position: center;
+  width : 600px;
+
+  border-radius: 8px;
+}
+
+.button
+{
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  padding: 8px;
+
+  margin-top: 22px;
+
+  cursor: pointer;
+}
+
+.button:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

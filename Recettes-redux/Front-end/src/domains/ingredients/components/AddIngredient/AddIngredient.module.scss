@@ -1,0 +1,53 @@
+@import '../../../../styles/styles.scss'; 
+
+.container
+{
+  background: url(../../../../images/backgrounds/addIngredient.jpg) no-repeat center center / cover;
+  @include marginPadding(auto, 0 24px);
+
+  height: 100vh;
+}
+
+.elements { margin-left: 37%; }
+
+.title
+{ 
+  @include text($textH3FontSize, $primaryColor, undefined, center);
+
+  padding-top: calc(8vh + 32px);
+  margin-bottom: 32px;
+  
+  text-shadow: 2px 2px 4px black;
+}
+
+.form
+{
+  @include flex(center, center, column, 22px);
+  margin-top: 80px;
+}
+
+.label { @include text($textH5FontSize, $primaryColor, $fontWeightRegular); padding-left: 12px;}
+
+.input
+{
+
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  margin-left: $spacingSm;
+  margin-right: $spacingSm;
+  padding: 8px;
+
+  text-align: center;
+}
+
+.submitButton
+{
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center);
+
+  cursor: pointer;
+
+  margin-top: 42px;
+  padding: 12px 22px;
+}
+.submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

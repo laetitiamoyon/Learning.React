@@ -1,0 +1,63 @@
+@import '../../../../styles/styles.scss'; 
+
+.ingredients 
+{ 
+  @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold, center);
+  text-shadow: 2px 2px 4px white;
+}
+
+.addIngredientButton 
+{
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  padding: 12px;
+
+  margin-top: 22px;
+
+  cursor: pointer;
+}
+.addIngredientButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
+
+.ingredientSelectedWindow 
+{ 
+  @include flex(center, center, undefined, 12px);
+
+  margin-top: 12px;
+}
+
+.label
+{
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  text-shadow: 2px 2px 4px white;
+}
+
+.input 
+{ 
+  width: 80px;
+  padding: 6px;
+  @include text(undefined, $tertiaryColor);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+}
+
+
+.select
+{
+  width: 500px;
+
+  @include text(undefined, $tertiaryColor);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+
+  margin-top: 22px;
+  padding: 6px;
+}
+
+.addIngredientToTheList
+{
+  @include flex(center, center);
+  @include text(undefined, $tertiaryColor, $fontWeightSemiBold);
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include marginPadding(auto, 10px 24px);
+    
+  margin-top: 32px;
+}
+.addIngredientToTheList:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }

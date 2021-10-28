@@ -1,0 +1,41 @@
+@import '../../../../styles/styles.scss'; 
+
+.ingredient 
+{ 
+    @include flex(center, center, center, 32px, wrap); 
+    padding-bottom: 22px;
+}
+
+.input, .title
+{ 
+    text-align: center;
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    background-color: #e7f1f596;
+    height: 32px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.title {width: 169px; line-height: 30px; font-size: 0.83rem;}
+
+.trashIcon
+{
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
+
+    cursor: pointer;
+}
+
+.updateButton
+{
+    @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+    @include text(undefined, $tertiaryColor, $fontWeightSemiBold, center, $textH5LineHeight);
+    padding : 0 10px;
+    border : 0;
+
+    background-color: #F1EEEB;
+    height: 32px;
+
+    cursor: pointer;
+}
+.updateButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); border : 0; }

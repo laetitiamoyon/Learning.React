@@ -1,0 +1,12 @@
+@import '../../../../styles/styles.scss'; 
+
+.li { display: flex; padding-top: 18px; @include text(undefined, $tertiaryColor);}
+
+.trashIcon
+{
+    @include superBackground(url(../images/icons/trash.png), cover);
+    @include widthHeight(22px, 22px);
+    margin-left : $spacingXs;
+
+    cursor: pointer;
+}

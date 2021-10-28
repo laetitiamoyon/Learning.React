@@ -1,0 +1,59 @@
+@import '../../../../styles/styles.scss'; 
+
+.containerPage
+{
+  background: url(../../../../images/backgrounds/addRecipe.jpg) no-repeat center center / cover; 
+  @include marginPadding(auto, 0 24px);
+
+  height: 100vh;
+  min-height: 900px;
+}
+
+.title
+{ 
+  @include text($textH3FontSize, $primaryColor, undefined, center);
+
+  padding-top: calc(8vh + 32px);
+  margin-bottom: 48px;
+  
+  text-shadow: 2px 2px 4px black;
+}
+
+.container { @include flex(center, center, undefined, 122px); }
+
+.elements { @include flex(center, center, undefined); }
+
+.form { @include flex(center, center, column, 52px); }
+
+.rightElements { @include flex(center, center, column, 22px); padding-top: 42px}
+
+.label 
+{ 
+  @include text($textH5FontSize, $tertiaryColor, $fontWeightSemiBold);
+
+  text-shadow: 2px 2px 4px white;
+}
+
+.input
+{
+  width: 500px;
+
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text(undefined, $tertiaryColor);
+  
+  padding: 8px;
+}
+
+.addRecipeIngredient {margin-bottom: 32px;}
+
+.submitButton
+{
+  @include borderAndRadius($defaultBorder, $defaultBorderRadius);
+  @include text($textH6FontSize, $tertiaryColor, $fontWeightSemiBold);
+  padding: 10px 24px;
+
+  margin-top: 22px;
+
+  cursor: pointer;
+}
+.submitButton:hover { @include buttonHover($secondaryColor, $defaultBorder, $primaryColor); }
