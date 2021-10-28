@@ -18,8 +18,9 @@ const LazyRecipes = lazy(() => import('../../../recipes/components/Recipes/Recip
 const LazyIngredients = lazy(() => import('../../../ingredients/components/Ingredients/Ingredients'))
 const LazyAddRecipe = lazy(() => import('../../../recipes/components/AddRecipe/AddRecipe'))
 const LazyAddIngredient = lazy(() => import('../../../ingredients/components/AddIngredient/AddIngredient'))
+const LazyRecipeDescription = lazy(() => import('../../../recipes/components/RecipeDescription/RecipeDescription'))
+const LazyEditRecipe = lazy(() => import('../../../recipes/components/EditRecipe/EditRecipe'))
 
-// Il manque 2 lazy components
 const Navigation : FC = () =>
 {
     const [navigationElements, setNavigationElements] = useState(initialNavigationElements)
@@ -70,8 +71,8 @@ const Navigation : FC = () =>
                 <Route path={routes.ingredients} exact component={LazyIngredients} />
                 <Route path={routes.addRecipe} exact component={LazyAddRecipe} />
                 <Route path={routes.addIngredient} exact component={LazyAddIngredient} />
-                <Route path="/description-de-la-recette/:id" exact component={RecipeDescription} />
-                <Route path="/modification-de-la-recette/:id" exact component={EditRecipe} />
+                <Route path="/description-de-la-recette/:id" exact component={LazyRecipeDescription} />
+                <Route path="/modification-de-la-recette/:id" exact component={LazyEditRecipe} />
             </Switch>
         </React.Suspense>
     </BrowserRouter>
