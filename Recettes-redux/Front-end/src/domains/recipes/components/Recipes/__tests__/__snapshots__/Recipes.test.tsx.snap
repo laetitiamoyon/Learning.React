@@ -1,0 +1,501 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipes should match snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1
+      class="title"
+    >
+      Vos recettes
+    </h1>
+    <div
+      class="form"
+    >
+      <input
+        class="input"
+        placeholder="Rechercher une recette"
+      />
+    </div>
+    <div
+      class="recipes"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="recipe"
+        >
+          <div>
+            <span
+              style="color :#f8813d"
+            />
+            P
+            <span
+              style="color :#f8813d"
+            />
+            i
+            <span
+              style="color :#f8813d"
+            />
+            z
+            <span
+              style="color :#f8813d"
+            />
+            z
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            M
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            g
+            <span
+              style="color :#f8813d"
+            />
+            h
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            i
+            <span
+              style="color :#f8813d"
+            />
+            t
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+          </div>
+          <img
+            alt=""
+            class="image"
+            src="../images/pizza.jpg"
+          />
+          <div
+            class="buttonContainer"
+          >
+            <button
+              class="viewDescriptionButton"
+            >
+              Voir la recette
+            </button>
+            <div
+              class="trashIcon"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="recipe"
+        >
+          <div>
+            <span
+              style="color :#f8813d"
+            />
+            L
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            t
+            <span
+              style="color :#f8813d"
+            />
+            o
+            <span
+              style="color :#f8813d"
+            />
+            m
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            t
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            m
+            <span
+              style="color :#f8813d"
+            />
+            o
+            <span
+              style="color :#f8813d"
+            />
+            z
+            <span
+              style="color :#f8813d"
+            />
+            z
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+            l
+            <span
+              style="color :#f8813d"
+            />
+            l
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+          </div>
+          <img
+            alt=""
+            class="image"
+            src="../images/salade.jpg"
+          />
+          <div
+            class="buttonContainer"
+          >
+            <button
+              class="viewDescriptionButton"
+            >
+              Voir la recette
+            </button>
+            <div
+              class="trashIcon"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="recipe"
+        >
+          <div>
+            <span
+              style="color :#f8813d"
+            />
+            T
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            t
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            u
+            <span
+              style="color :#f8813d"
+            />
+            x
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            p
+            <span
+              style="color :#f8813d"
+            />
+            o
+            <span
+              style="color :#f8813d"
+            />
+            m
+            <span
+              style="color :#f8813d"
+            />
+            m
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+            s
+            <span
+              style="color :#f8813d"
+            />
+          </div>
+          <img
+            alt=""
+            class="image"
+            src="../images/tarte-pommes.jpg"
+          />
+          <div
+            class="buttonContainer"
+          >
+            <button
+              class="viewDescriptionButton"
+            >
+              Voir la recette
+            </button>
+            <div
+              class="trashIcon"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="recipe"
+        >
+          <div>
+            <span
+              style="color :#f8813d"
+            />
+            P
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            t
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            C
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            b
+            <span
+              style="color :#f8813d"
+            />
+            o
+            <span
+              style="color :#f8813d"
+            />
+            n
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            a
+            <span
+              style="color :#f8813d"
+            />
+          </div>
+          <img
+            alt=""
+            class="image"
+            src="../images/carbonara.jpg"
+          />
+          <div
+            class="buttonContainer"
+          >
+            <button
+              class="viewDescriptionButton"
+            >
+              Voir la recette
+            </button>
+            <div
+              class="trashIcon"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="recipe"
+        >
+          <div>
+            <span
+              style="color :#f8813d"
+            />
+            C
+            <span
+              style="color :#f8813d"
+            />
+            u
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            r
+            <span
+              style="color :#f8813d"
+            />
+            y
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            d
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+             
+            <span
+              style="color :#f8813d"
+            />
+            l
+            <span
+              style="color :#f8813d"
+            />
+            é
+            <span
+              style="color :#f8813d"
+            />
+            g
+            <span
+              style="color :#f8813d"
+            />
+            u
+            <span
+              style="color :#f8813d"
+            />
+            m
+            <span
+              style="color :#f8813d"
+            />
+            e
+            <span
+              style="color :#f8813d"
+            />
+          </div>
+          <img
+            alt=""
+            class="image"
+            src="../images/curry.jpg"
+          />
+          <div
+            class="buttonContainer"
+          >
+            <button
+              class="viewDescriptionButton"
+            >
+              Voir la recette
+            </button>
+            <div
+              class="trashIcon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

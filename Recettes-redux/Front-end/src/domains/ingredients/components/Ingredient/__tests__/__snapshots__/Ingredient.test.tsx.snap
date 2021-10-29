@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo should match snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="ingredient"
+    >
+      <div
+        class="title"
+      >
+        <div>
+          <span
+            style="color :"
+          />
+          P
+          <span
+            style="color :"
+          />
+          â
+          <span
+            style="color :"
+          />
+          t
+          <span
+            style="color :"
+          />
+          e
+          <span
+            style="color :"
+          />
+           
+          <span
+            style="color :"
+          />
+          à
+          <span
+            style="color :"
+          />
+           
+          <span
+            style="color :"
+          />
+          p
+          <span
+            style="color :"
+          />
+          i
+          <span
+            style="color :"
+          />
+          z
+          <span
+            style="color :"
+          />
+          z
+          <span
+            style="color :"
+          />
+          a
+          <span
+            style="color :"
+          />
+        </div>
+      </div>
+      <input
+        class="input"
+        value="pièce"
+      />
+      <button
+        class="updateButton"
+      >
+        Mettre à jour
+      </button>
+      <div
+        class="trashIcon"
+      />
+    </div>
+  </div>
+</div>
+`;

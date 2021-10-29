@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe should match snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="recipe"
+    >
+      <div>
+        <span
+          style="color :"
+        />
+        P
+        <span
+          style="color :"
+        />
+        i
+        <span
+          style="color :"
+        />
+        z
+        <span
+          style="color :"
+        />
+        z
+        <span
+          style="color :"
+        />
+        a
+        <span
+          style="color :"
+        />
+         
+        <span
+          style="color :"
+        />
+        M
+        <span
+          style="color :"
+        />
+        a
+        <span
+          style="color :"
+        />
+        r
+        <span
+          style="color :"
+        />
+        g
+        <span
+          style="color :"
+        />
+        h
+        <span
+          style="color :"
+        />
+        e
+        <span
+          style="color :"
+        />
+        r
+        <span
+          style="color :"
+        />
+        i
+        <span
+          style="color :"
+        />
+        t
+        <span
+          style="color :"
+        />
+        a
+        <span
+          style="color :"
+        />
+      </div>
+      <img
+        alt=""
+        class="image"
+        src="../images/pizza.jpg"
+      />
+      <div
+        class="buttonContainer"
+      >
+        <button
+          class="viewDescriptionButton"
+        >
+          Voir la recette
+        </button>
+        <div
+          class="trashIcon"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

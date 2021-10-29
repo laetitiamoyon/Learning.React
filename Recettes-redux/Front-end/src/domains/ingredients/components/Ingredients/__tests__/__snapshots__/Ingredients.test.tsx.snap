@@ -1,0 +1,1335 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ingredients should match snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1
+      class="title"
+    >
+      Gérer mes ingrédients
+    </h1>
+    <div
+      class="form"
+    >
+      <input
+        class="input"
+        placeholder="Rechercher un ingrédient"
+      />
+    </div>
+    <div
+      class="ingredients"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              P
+              <span
+                style="color :#f8813d"
+              />
+              â
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              à
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              p
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              z
+              <span
+                style="color :#f8813d"
+              />
+              z
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="pièce"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              S
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              c
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              T
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              m
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              M
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              z
+              <span
+                style="color :#f8813d"
+              />
+              z
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              B
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              s
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              c
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              S
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              H
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              d
+              <span
+                style="color :#f8813d"
+              />
+              '
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              v
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              T
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              m
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              V
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              n
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              g
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              b
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              s
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              m
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              q
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              P
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              m
+              <span
+                style="color :#f8813d"
+              />
+              m
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              s
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              P
+              <span
+                style="color :#f8813d"
+              />
+              â
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              f
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              l
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              é
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="pièce"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              C
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              è
+              <span
+                style="color :#f8813d"
+              />
+              m
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              f
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              c
+              <span
+                style="color :#f8813d"
+              />
+              h
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              O
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              f
+              <span
+                style="color :#f8813d"
+              />
+              s
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="pièce"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              S
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              c
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              L
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              d
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              n
+              <span
+                style="color :#f8813d"
+              />
+              s
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              P
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              m
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              s
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              n
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              C
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              s
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              C
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              y
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              L
+              <span
+                style="color :#f8813d"
+              />
+              a
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              d
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+               
+              <span
+                style="color :#f8813d"
+              />
+              c
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              c
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              C
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              u
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              g
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              t
+              <span
+                style="color :#f8813d"
+              />
+              e
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+      <div
+        class="container"
+      >
+        <div
+          class="ingredient"
+        >
+          <div
+            class="title"
+          >
+            <div>
+              <span
+                style="color :#f8813d"
+              />
+              P
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              i
+              <span
+                style="color :#f8813d"
+              />
+              v
+              <span
+                style="color :#f8813d"
+              />
+              r
+              <span
+                style="color :#f8813d"
+              />
+              o
+              <span
+                style="color :#f8813d"
+              />
+              n
+              <span
+                style="color :#f8813d"
+              />
+            </div>
+          </div>
+          <input
+            class="input"
+            value="gr"
+          />
+          <button
+            class="updateButton"
+          >
+            Mettre à jour
+          </button>
+          <div
+            class="trashIcon"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

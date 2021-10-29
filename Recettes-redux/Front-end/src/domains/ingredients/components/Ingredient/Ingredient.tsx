@@ -16,7 +16,7 @@ interface Props extends IngredientModel
     color : string
 }
 
-const Ingredient : FC<Props> = ({ id, title, unity, searchIngredientTerm, color }) => 
+const Ingredient :FC<Props> = ({ id, title, unity, searchIngredientTerm, color }) =>
 {
   const [newTitle, setNewTitle] = useState(title)
   const [newUnity, setNewUnity] = useState(unity)

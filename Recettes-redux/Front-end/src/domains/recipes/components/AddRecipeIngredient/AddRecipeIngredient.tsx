@@ -25,7 +25,6 @@ const AddRecipeIngredient : FC<Props> = ({ ingredients, addIngredient, removeIng
   const [title, setTitle] = useState('')
   const [unity, setUnity] = useState('')
   const [quantity, setQuantity] = useState(0)
-console.log(ingredientList);
 
   const onClickToSelectAnIngredient = () : void => setCurrentWindow('SELECT_AN_INGREDIENT')
 
