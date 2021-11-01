@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+Développement d'une application de gestion de recette avec les tests en React, Typescript, SASS, Redux Saga, Jest, React Testing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La page d'accueil :
+![Capture d’écran 2021-11-01 à 14 49 55](https://user-images.githubusercontent.com/77897283/139699029-054b6469-29fc-4cba-abbc-9e8b1c56d100.png)
 
-## Available Scripts
+L'ensemble des recettes :
+![Capture d’écran 2021-10-28 à 11 34 40](https://user-images.githubusercontent.com/77897283/139698842-45039889-2ce8-4003-b862-5afac0ddd7b3.png)
 
-In the project directory, you can run:
+La possibilité de filtrer les recettes avec la barre de recherche qui affichera les lettres des titres des recettes d'une autre couleur :
+![Capture d’écran 2021-10-23 à 19 34 51](https://user-images.githubusercontent.com/77897283/139698850-2909aa90-a6fe-4dc0-8bb1-dea87f7c82fb.png)
 
-### `npm start`
+La description d'une recette :
+![Capture d’écran 2021-11-01 à 14 50 13](https://user-images.githubusercontent.com/77897283/139698882-5c8bcd8f-0a5a-4121-b69b-89d12c185fa0.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+La possibilité de modifier la recette :
+![Capture d’écran 2021-10-15 à 19 26 15](https://user-images.githubusercontent.com/77897283/139698914-9a95b6e2-cfa6-4735-8b70-a868e9ea15c2.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+L'ajout d'une recette :
+![Capture d’écran 2021-10-15 à 19 26 51](https://user-images.githubusercontent.com/77897283/139698930-8c52fec2-cb78-4dde-af27-9275e47fdc38.png)
 
-### `npm test`
+L'ensemble des ingrédients :
+![Capture d’écran 2021-10-23 à 19 26 33](https://user-images.githubusercontent.com/77897283/139698944-9d3ddf37-ad7b-436b-aec2-320fb34847a7.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+L'ajout d'un ingrédient :
+![Capture d’écran 2021-10-23 à 19 26 09](https://user-images.githubusercontent.com/77897283/139698957-35db9614-db0a-46e9-8965-682383eeff5c.png)
