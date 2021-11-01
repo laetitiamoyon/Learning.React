@@ -25,3 +25,6 @@ L'ensemble des ingrédients :
 
 L'ajout d'un ingrédient :
 ![Capture d’écran 2021-10-23 à 19 26 09](https://user-images.githubusercontent.com/77897283/139698957-35db9614-db0a-46e9-8965-682383eeff5c.png)
+
+Développement d'une todo list avec redux saga
+![todo](https://user-images.githubusercontent.com/77897283/139700567-c338b0af-989a-4418-bc82-903646c9e40c.jpg)
