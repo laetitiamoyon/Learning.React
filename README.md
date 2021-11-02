@@ -7,10 +7,8 @@ https://laeti-recipes.netlify.app
 
 Environnement technique : 
  
- - Technologies : React Hooks, Typescript, modules SASS.
- 
+ - Technologies : React Hooks, Typescript, modules SASS. 
  - Gestion de l'état : Redux, Redux Saga.
- 
  - Tests : Jest, React Testing, Redux saga test plan
 
 La page d'accueil :
@@ -42,12 +40,9 @@ L'ajout d'un ingrédient :
 
 https://laeti-todo-list.netlify.app.
 
-Environnement technique : 
- 
+**Environnement technique :**
  - Technologies : React Hooks, Typescript, modules SASS.
- 
  - Gestion de l'état : Redux, Redux Saga.
- 
  - Librairie : Axios.
 
 
