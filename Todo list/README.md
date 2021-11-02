@@ -1,13 +1,11 @@
 **Année de développement :** 2021.
 
-Développement d'une todo list https://laeti-todo-list.netlify.app
-
-Cette application permet aux utilisateurs d’ajouter, de modifier, de supprimer et de cocher des tâches une fois qu’elles sont terminées.
+Développement d'une todo list https://laeti-todo-list.netlify.app <br/>Cette application permet aux utilisateurs d’ajouter, de modifier, de supprimer et de cocher des tâches une fois qu’elles sont terminées.<br/><br/>
 
 **Environnement technique** : 
  - Technologies : React Hooks, Typescript, modules SASS.
  - Gestion de l'état : Redux, Redux Saga.
- - Librairie : Axios.
+ - Librairie : Axios.<br/><br/>
 
 Vue PC :
 > ![Image of Yaktocat](https://user-images.githubusercontent.com/77897283/126187551-d23cef7f-417b-4c30-9d90-e3bcec51ae24.png)
