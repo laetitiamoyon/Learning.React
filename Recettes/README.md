@@ -1,11 +1,11 @@
-Développement d'une application de gestion de recette avec les tests https://laeti-recipes.netlify.app
-
-L'application permet aux utilisateurs d’administrer (afficher, ajouter, modifier, supprimer) leurs recettes et leurs ingrédients. Lorsqu’un ingrédient est modifié ou supprimé, la mise à jour sera également faite dans les recettes le contenant.
+Développement d'une application de gestion de recette avec les tests https://laeti-recipes.netlify.app <br />L'application permet aux utilisateurs d’administrer (afficher, ajouter, modifier, supprimer) leurs recettes et leurs ingrédients. Lorsqu’un ingrédient est modifié ou supprimé, la mise à jour sera également faite dans les recettes le contenant.<br /><br />
 
 **Environnement technique** : 
  - Technologies : React Hooks, Typescript, modules SASS.
  - Gestion de l'état : Redux, Redux Saga.
  - Tests : Jest, React Testing, Redux saga test plan
+
+<br />
 
 La page d'accueil :
 >![Capture d’écran 2021-11-01 à 14 49 55](https://user-images.githubusercontent.com/77897283/139699029-054b6469-29fc-4cba-abbc-9e8b1c56d100.png)
