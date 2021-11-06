@@ -2,8 +2,6 @@ import {fireEvent, render} from "@testing-library/react";
 
 import {useDispatch} from "react-redux";
 import {newGuid} from "../../../../../shared/utils/string";
-
-import {ingredientTitleMock, ingredientUnityMock} from "../../../ingredient.mock";
 import {addIngredientRequestAction} from "../../../ingredients.actions";
 import AddIngredient from "../AddIngredient";
 import {useHistory} from "react-router-dom";

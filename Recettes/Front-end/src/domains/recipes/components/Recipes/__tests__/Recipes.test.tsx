@@ -37,16 +37,4 @@ describe("Recipes", () => {
         expect(mockDispatch).toBeCalledWith(getRecipesRequestAction())
     })
 
-    it("should filter title recipes when written some letter in the search bar and when component is mounted", () =>
-    {
-        // Given
-        const {container} = render(<Recipes />)
-        const input = container.getElementsByTagName('input')[0]
-
-        // When
-        //fireEvent.change(input, {target: {value: }})
-
-        // Then
-
-    })
 })

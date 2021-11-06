@@ -1,28 +1,28 @@
 import {useDispatch, useSelector} from "react-redux";
-import {recipeStateMock} from "../../../recipes.mock";
-import {render} from "@testing-library/react";
+import {recipeMock, recipeStateMock} from "../../../recipes.mock";
+import {fireEvent, render} from "@testing-library/react";
 import {getRecipesRequestAction} from "../../../recipes.actions";
-import {useHistory, useParams} from "react-router-dom";
 import RecipeDescription from "../RecipeDescription";
 
-
-jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'),
-    useHistory: () => ({ push: jest.fn()})
-}));
 jest.mock('react-redux')
 const mockUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 const mockDispatch = jest.fn()
 
-let id = useParams()
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
-    useParams: jest.fn().mockReturnValue({ id }),
-    }))
+    useParams: () => ({
+        id: 'id'
+    }),
+    useRouteMatch: () => ({ url: '/modification-de-la-recette/id' }),
+}));
 
-const history = useHistory()
-const mockEditRecipe = jest.fn(history.push)
-
+const mockEditRecipe = jest.fn()
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useHistory: () => ({
+        push: mockEditRecipe,
+    }),
+}));
 
 describe("RecipeDescription", () => {
     beforeEach(() => {
@@ -34,7 +34,7 @@ describe("RecipeDescription", () => {
         (useSelector as jest.Mock).mockReturnValue(recipeStateMock)
 
         // When
-        const {container} = render(<RecipeDescription/>);
+        const {container} = render(<RecipeDescription/>) ;
 
         // Then
         expect(container).toMatchSnapshot()
@@ -50,7 +50,13 @@ describe("RecipeDescription", () => {
 
         // Then
         expect(mockDispatch).toBeCalledWith(getRecipesRequestAction())
-        expect(mockEditRecipe).toHaveBeenCalled()
+    })
+
+    it('Redirects to correct URL on click', () => {
+        const {getByRole} = render(<RecipeDescription/>);
+
+        fireEvent.click(getByRole('button'));
+        expect(mockEditRecipe).toHaveBeenCalledWith('/modification-de-la-recette/')
     })
 
 
