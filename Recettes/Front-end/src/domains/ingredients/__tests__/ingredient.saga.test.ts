@@ -1,114 +1,149 @@
-import { call, put, select, takeLatest } from 'redux-saga/effects'
-import {ITodo} from "../../../../../../Todo list/Front-end/src/domains/Todos/todos.model";
+
+import {call, fork} from "redux-saga-test-plan/matchers";
+import {throwError} from "redux-saga-test-plan/providers";
+import {useSelector} from "react-redux";
+import * as matchers from 'redux-saga-test-plan/matchers';
 import {
-    addTodoFailedAction,
-    AddTodoRequestAction,
-    addTodoSuccessAction,
-    editTodoFailedAction,
-    EditTodoRequestAction,
-    editTodoSuccessAction,
-    getTodosFailedAction,
-    getTodosRequestAction,
-    getTodosSuccessAction,
-    removeTodoFailedAction, RemoveTodoRequestAction,
-    removeTodoSuccessAction,
-    TodoAction,
-    toggleTodoFailedAction, ToggleTodoRequestAction,
-    toggleTodoSuccessAction
-} from "../../../../../../Todo list/Front-end/src/domains/Todos/todos.actions";
-import {
-    addTodo, getAllTodos,
-    patchCompleted,
-    patchTitle,
-    removeTodo
-} from "../../../../../../Todo list/Front-end/src/domains/Todos/todos.api";
-import {selectTodos} from "../../../../../../Todo list/Front-end/src/domains/Todos/todos.selector";
-import {Ingredient} from "../ingredients.model";
-import {TodoState} from "../../../../../../Todo list/Front-end/src/domains/Todos/todos.state";
-import {getAllIngredients} from "../ingredients.api";
+    addIngredientFailedAction,
+    addIngredientRequestAction,
+    addIngredientSuccessAction,
+    editIngredientFailedAction,
+    editIngredientRequestAction,
+    editIngredientSuccessAction,
+    getIngredientsFailedAction,
+    getIngredientsRequestAction,
+    getIngredientsSuccessAction, IngredientAction,
+    removeIngredientFailedAction,
+    removeIngredientRequestAction,
+    RemoveIngredientSuccessAction
+} from "../ingredients.actions";
+import {addIngredient, getAllIngredients, removeIngredient, updateIngredient} from "../ingredients.api";
+import {errorMessageMock, errorMock, ingredientMock, ingredientStateMock} from "../ingredient.mock";
+import {expectSaga} from "redux-saga-test-plan";
+import ingredientSaga, {addIngredientSaga, editIngredientSaga, getAllIngredientsSaga, removeIngredientSaga} from "../ingredients.saga";
+import {takeLatest} from "redux-saga/effects";
+import {excludeSagaPayloadFn} from "../../../shared/domains/Redux/redux.utils";
+import {TodoAction} from "../../../../../../Todo list/Front-end/src/domains/Todos/todos.actions";
 
-export function* getAllIngredientsSaga()
+jest.mock('react-redux')
+jest.mock('../ingredients.api')
+jest.mock('../ingredients.selector')
+
+describe("ingredient.saga", () =>
 {
-    try
+    describe("GET_INGREDIENTS", () =>
     {
-        const ingredients : Ingredient[] = yield call(getAllIngredients);
-        yield put(getAllIngredients(ingredients));
-    }
-    catch (error : any)
+        const action = getIngredientsRequestAction()
+
+        it("should get all the ingredients", () =>
+        {
+            // Given
+            (getAllIngredients as jest.Mock).mockReturnValue(ingredientStateMock.ingredients)
+
+            // When & Then
+            return expectSaga(getAllIngredientsSaga)
+                .provide([call(() => getAllIngredients)])
+                .put(getIngredientsSuccessAction(ingredientStateMock.ingredients))
+                .dispatch(action)
+                .silentRun()
+        })
+
+        it("should handle errors", () =>
+            // When & Then
+            expectSaga(getAllIngredientsSaga)
+                .provide([[matchers.call.fn(getAllIngredients), throwError(errorMock)]])
+                .put(getIngredientsFailedAction(errorMessageMock))
+                .dispatch(action)
+                .silentRun())
+    })
+
+    describe("ADD_INGREDIENT", () =>
     {
-        yield put(getTodosFailedAction(error.message));
-    }
-}
+        const action = addIngredientRequestAction(ingredientMock)
 
-export function* addTodoSaga(action : AddTodoRequestAction)
-{
-    try {
-        const newTodo: ITodo = yield call(addTodo, createTodo(action.payload.title));
+        it("should add a ingredient", () =>
+        {
+            // Given
+            (addIngredient as jest.Mock).mockReturnValue(ingredientMock)
 
-        yield put(addTodoSuccessAction(newTodo));
-        yield put(getTodosRequestAction());
-    }
-    catch (error : any)
+            // When & Then
+            return expectSaga(addIngredientSaga, action)
+                .provide([call(() => addIngredient, ingredientMock), call(() => getAllIngredients, ingredientStateMock.ingredients)])
+                .put(addIngredientSuccessAction(ingredientMock))
+                .put(getIngredientsRequestAction())
+                .dispatch(action)
+                .silentRun()
+        })
+
+        it("should handle errors", () =>
+            // When & Then
+            expectSaga(addIngredientSaga, action)
+                .provide([[matchers.call.fn(addIngredient), throwError(errorMock)]])
+                .put(addIngredientFailedAction(errorMessageMock))
+                .dispatch(action)
+                .silentRun())
+    })
+
+    describe("EDIT_INGREDIENT", () =>
     {
-        yield put(addTodoFailedAction(error.message));
-    }
-}
+        const action = editIngredientRequestAction(ingredientMock)
 
-export function* editTodoSaga(action : EditTodoRequestAction)
-{
-    try
+        it("should edit an ingredient", () =>
+        {
+            (updateIngredient as jest.Mock).mockReturnValue(ingredientMock)
+
+            // When & Then
+            return expectSaga(editIngredientSaga, action)
+                .provide([call(() => updateIngredient, ingredientMock.id, ingredientMock ), call(() => getAllIngredients, ingredientStateMock.ingredients)])
+                .put(editIngredientSuccessAction(ingredientMock))
+                .put(getIngredientsRequestAction())
+                .dispatch(action)
+                .silentRun()
+        })
+
+        it("should handle errors", () =>
+            // When & Then
+            expectSaga(editIngredientSaga, action)
+                .provide([[matchers.call.fn(updateIngredient), throwError(errorMock)]])
+                .put(editIngredientFailedAction(errorMessageMock))
+                .dispatch(action)
+                .silentRun())
+        })
+    })
+
+    describe("REMOVE_INGREDIENT", () =>
     {
-        const { id, title } = action.payload
-        const editedTodo : ITodo = yield call(patchTitle, id, title);
+        const action = removeIngredientRequestAction(ingredientMock.id)
 
-        yield put(editTodoSuccessAction(editedTodo));
-        yield put(getTodosRequestAction());
-    }
-    catch (error : any)
+        it("should remove an ingredient", () =>
+        {
+            // Given
+            (removeIngredient as jest.Mock).mockReturnValue(ingredientMock)
+
+            // When & Then
+            return expectSaga(removeIngredientSaga, action)
+                .provide([call(() => removeIngredient, ingredientMock.id), call(() => getAllIngredients, ingredientStateMock.ingredients)])
+                .put(RemoveIngredientSuccessAction(ingredientMock.id))
+                .put(getIngredientsRequestAction())
+                .dispatch(action)
+                .silentRun()
+        })
+
+        it("should handle errors", () =>
+            // When & Then
+            expectSaga(removeIngredientSaga, action)
+                .provide([[matchers.call.fn(removeIngredient), throwError(errorMock)]])
+                .put(removeIngredientFailedAction(errorMessageMock))
+                .dispatch(action)
+                .silentRun())
+    })
+
+    it("watchIngredientsSagas should watch and takeLatest GET_INGREDIENTS_REQUEST, ADD_INGREDIENTS_REQUEST, EDIT_INGREDIENTS_REQUEST, REMOVE_INGREDIENTS_REQUEST", () =>
     {
-        yield put(editTodoFailedAction(error.message));
-    }
-}
+        const iterator = ingredientSaga();
 
-export function* toggleTodoSaga(action : ToggleTodoRequestAction)
-{
-    try
-    {
-        const { id } = action.payload
-        const todoState : TodoState = yield select(selectTodos);
-        const todo : ITodo = todoState.todos.find(t => t.id === id) as ITodo
-        const toggledTodo : ITodo = { ...todo, completed : !todo.completed}
-
-        yield call(patchCompleted, id, toggledTodo.completed);
-        yield put(toggleTodoSuccessAction(toggledTodo));
-        yield put(getTodosRequestAction());
-    }
-    catch (error : any)
-    {
-        yield put(toggleTodoFailedAction(error.message));
-    }
-}
-
-export function* removeTodoSaga(action : RemoveTodoRequestAction)
-{
-    try
-    {
-        const { id } = action.payload
-
-        yield call(removeTodo, id);
-        yield put(removeTodoSuccessAction(id));
-        yield put(getTodosRequestAction());
-    }
-    catch (error : any)
-    {
-        yield put(removeTodoFailedAction(error.message));
-    }
-}
-
-export default function* todoSaga() : Generator {
-    yield takeLatest(TodoAction.GET_TODOS_REQUEST, getAllTodosSaga);
-    yield takeLatest(TodoAction.ADD_TODO_REQUEST, addTodoSaga);
-    yield takeLatest(TodoAction.EDIT_TODO_REQUEST, editTodoSaga);
-    yield takeLatest(TodoAction.TOGGLE_TODO_REQUEST, toggleTodoSaga);
-    yield takeLatest(TodoAction.REMOVE_TODO_REQUEST, removeTodoSaga);
-}
+        expect(excludeSagaPayloadFn(iterator.next().value)).toEqual(excludeSagaPayloadFn(fork(takeLatest, IngredientAction.GET_INGREDIENTS_REQUEST, getAllIngredientsSaga)));
+        expect(excludeSagaPayloadFn(iterator.next().value)).toEqual(excludeSagaPayloadFn(fork(takeLatest, IngredientAction.ADD_INGREDIENT_REQUEST, addIngredientSaga)));
+        expect(excludeSagaPayloadFn(iterator.next().value)).toEqual(excludeSagaPayloadFn(fork(takeLatest, IngredientAction.EDIT_INGREDIENT_REQUEST, editIngredientSaga)));
+        expect(excludeSagaPayloadFn(iterator.next().value)).toEqual(excludeSagaPayloadFn(fork(takeLatest, IngredientAction.REMOVE_INGREDIENT_REQUEST, removeIngredientSaga)));
+    })

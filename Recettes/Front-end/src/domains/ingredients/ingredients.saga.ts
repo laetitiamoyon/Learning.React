@@ -3,7 +3,7 @@ import { addIngredientFailedAction, AddIngredientRequestAction, addIngredientSuc
 import { Ingredient } from './ingredients.model';
 import { addIngredient, getAllIngredients, updateIngredient, removeIngredient } from './ingredients.api';
 
-function* getAllIngredientsSaga()
+export function* getAllIngredientsSaga()
 {
    try
    {
@@ -17,7 +17,7 @@ function* getAllIngredientsSaga()
    }
 }
 
-function* addIngredientSaga(action : AddIngredientRequestAction)
+export function* addIngredientSaga(action : AddIngredientRequestAction)
 {
    try
    {
@@ -32,7 +32,7 @@ function* addIngredientSaga(action : AddIngredientRequestAction)
    }
 }
 
-function* editIngredientSaga(action : EditIngredientRequestAction)
+export function* editIngredientSaga(action : EditIngredientRequestAction)
 {
    try
    {
@@ -48,7 +48,7 @@ function* editIngredientSaga(action : EditIngredientRequestAction)
    }
 }
 
-function* removeIngredientSaga(action : RemoveIngredientRequestAction)
+export function* removeIngredientSaga(action : RemoveIngredientRequestAction)
 {
    try
    {
@@ -64,11 +64,9 @@ function* removeIngredientSaga(action : RemoveIngredientRequestAction)
    }
 }
 
-function* watchIngredientsSagas() {
+export default function* ingredientSaga() : Generator {
   yield takeLatest(IngredientAction.GET_INGREDIENTS_REQUEST, getAllIngredientsSaga);
   yield takeLatest(IngredientAction.ADD_INGREDIENT_REQUEST, addIngredientSaga);
   yield takeLatest(IngredientAction.EDIT_INGREDIENT_REQUEST, editIngredientSaga);
   yield takeLatest(IngredientAction.REMOVE_INGREDIENT_REQUEST, removeIngredientSaga);
 }
-
-export default watchIngredientsSagas;
