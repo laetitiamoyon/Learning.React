@@ -6,6 +6,7 @@ import { getIngredientsRequestAction } from '../../ingredients.actions';
 import styles from './Ingredients.module.scss'
 import Ingredient from '../Ingredient/Ingredient';
 import { useInformationMessage } from '../../../recipes/hooks/useInformationMessage';
+import {filterIngredients} from "../../ingredients.utils";
 
 const Ingredients : FC = () => 
 {
@@ -16,9 +17,8 @@ const Ingredients : FC = () =>
 
   useEffect(() => 
   {
-    setFilteredIngredients(ingredientsState.ingredients
-      .filter(r => r.title.toLowerCase()
-      .includes(searchTerm.toLowerCase())))
+      const filteredIngredients = filterIngredients(ingredientsState.ingredients, searchTerm)
+      setFilteredIngredients(filteredIngredients)
   }, [ingredientsState, searchTerm])
   
   const onSearchTermChange = (event : ChangeEvent<HTMLInputElement>) : void => setSearchTerm(event.target.value)

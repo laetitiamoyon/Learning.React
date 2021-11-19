@@ -49,7 +49,6 @@ const Ingredient :FC<Props> = ({ id, title, unity, searchIngredientTerm, color }
       title : newTitle,
       unity : newUnity
     }))
-    
   }
 
   return <div className={styles.container}>

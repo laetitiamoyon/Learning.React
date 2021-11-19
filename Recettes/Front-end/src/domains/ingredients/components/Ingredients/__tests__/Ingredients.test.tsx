@@ -1,9 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {ingredientStateMock} from "../../../ingredient.mock";
-import {getTodosRequestAction} from "../../../../../../../../todo-list/Front-end/src/domains/Todos/todos.actions";
 import Ingredients from "../Ingredients";
-import Todos from "../../../../../../../../todo-list/Front-end/src/domains/Todos/components/Todos/Todos";
-import {act, render} from "@testing-library/react";
+import { render} from "@testing-library/react";
 import {getIngredientsRequestAction} from "../../../ingredients.actions";
 
 
@@ -13,9 +11,7 @@ const mockDispatch = jest.fn()
 
 
 describe("Ingredients", () => {
-    beforeEach(() => {
-        (mockUseDispatch as jest.Mock).mockReturnValue(mockDispatch)
-    })
+    beforeEach(() => (mockUseDispatch as jest.Mock).mockReturnValue(mockDispatch))
 
     it("should match snapshot", async () => {
         // Given
@@ -38,18 +34,5 @@ describe("Ingredients", () => {
 
         // Then
         expect(mockDispatch).toBeCalledWith(getIngredientsRequestAction())
-    })
-
-    it("should filter title recipes when written some letter in the search bar and when component is mounted", () =>
-    {
-        // Given
-        const {container} = render(<Ingredients />)
-        const input = container.getElementsByTagName('input')[0]
-
-        // When
-       //fireEvent.change(input, {target: {value: }})
-
-        // Then
-
     })
 })

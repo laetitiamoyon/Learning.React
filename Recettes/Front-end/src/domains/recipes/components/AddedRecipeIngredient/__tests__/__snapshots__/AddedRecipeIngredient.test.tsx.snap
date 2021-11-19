@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddedRecipeIngredient should match snapshot 1`] = `
+<div>
+  <li
+    class="li"
+  >
+    - 
+     
+    
+     de 
+    
+    <div
+      class="trashIcon"
+    />
+  </li>
+</div>
+`;

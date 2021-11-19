@@ -4,22 +4,20 @@ import React from "react";
 import AddRecipe from "../AddRecipe";
 import {addRecipeRequestAction} from "../../../recipes.actions";
 import {newGuid} from "../../../../../shared/utils/string";
-import {useHistory} from "react-router-dom";
 import {recipeStateMock} from "../../../recipes.mock";
 import {ingredientStateMock} from "../../../../ingredients/ingredient.mock";
 
 jest.mock('../../../../../shared/utils/string')
+
+const mockHistoryPush = jest.fn()
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
-    useHistory: () => ({ push: jest.fn()})
+    useHistory: () => ({ push: mockHistoryPush })
 }));
+
 jest.mock('react-redux')
-const mockUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 const mockDispatch = jest.fn()
-
-const history = useHistory()
-const mockRedirectToRecipeList = jest.fn(history.push)
-
+const mockUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 
 describe("AddRecipe", () => {
 
@@ -59,10 +57,7 @@ describe("AddRecipe", () => {
             image: "",
             calories: "",
             cookingTime: ""
-
         }));
-        expect(mockRedirectToRecipeList).toHaveBeenCalled()
-        expect(mockUseDispatch).toHaveBeenCalled()
+        expect(mockHistoryPush).toHaveBeenCalledWith('/recettes')
     })
-
 })

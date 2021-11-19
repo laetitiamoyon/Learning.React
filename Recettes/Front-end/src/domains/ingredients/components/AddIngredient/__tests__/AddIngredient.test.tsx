@@ -4,21 +4,18 @@ import {useDispatch} from "react-redux";
 import {newGuid} from "../../../../../shared/utils/string";
 import {addIngredientRequestAction} from "../../../ingredients.actions";
 import AddIngredient from "../AddIngredient";
-import {useHistory} from "react-router-dom";
 
 jest.mock('../../../../../shared/utils/string')
+
+const mockHistoryPush = jest.fn()
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
-    useHistory: () => ({ push: jest.fn()})
+    useHistory: () => ({ push: mockHistoryPush })
 }));
+
 jest.mock('react-redux')
 const mockDispatch = jest.fn()
-
 const mockUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
-
-const history = useHistory()
-const mockRedirectToIngredientList = jest.fn(history.push)
-
 
 describe("AddIngredient", () =>
 {
@@ -50,9 +47,7 @@ describe("AddIngredient", () =>
             unity : '',
             id : consistentGuid
         }));
-        expect(mockRedirectToIngredientList).toHaveBeenCalled()
+        expect(mockHistoryPush).toHaveBeenCalledWith('/ingrédients')
         expect(mockUseDispatch).toHaveBeenCalled()
-
     })
-
 })

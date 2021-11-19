@@ -37,7 +37,6 @@ const AddRecipe : FC = () =>
     preparationTime,
     calories,
     ingredients 
-
   }))
 
   const history = useHistory()

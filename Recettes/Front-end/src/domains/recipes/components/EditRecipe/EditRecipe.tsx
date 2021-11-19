@@ -16,7 +16,7 @@ interface RouteProps
   id : string
 }
 
-const EditRecipe : FC<Ingredient> = ({id : ingredientId, title : ingredientTitle, unity}) => 
+const EditRecipe : FC<Ingredient> = ({id : ingredientId, title : ingredientTitle, unity}) =>
 {
   let { id } = useParams<RouteProps>()
   const recipes = useSelector(selectRecipes)
@@ -51,7 +51,7 @@ const EditRecipe : FC<Ingredient> = ({id : ingredientId, title : ingredientTitle
     dispatch(updateRecipeIngredientRequestAction({
       id : ingredientId,
       title : ingredientTitle,
-      unity
+      unity : unity
     }))
   }
   

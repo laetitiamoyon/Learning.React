@@ -1,11 +1,8 @@
-import {fireEvent, getAllByText, getByRole, getByText, render} from "@testing-library/react";
+import {fireEvent, getByText, render} from "@testing-library/react";
 import {useDispatch} from "react-redux";
 import Ingredient from "../Ingredient";
-import {ingredientMock, ingredientTitleMock, ingredientUnityMock} from "../../../ingredient.mock";
+import {ingredientMock} from "../../../ingredient.mock";
 import {editIngredientRequestAction, removeIngredientRequestAction} from "../../../ingredients.actions";
-import {Ingredient as IngredientModel} from "../../../ingredients.model";
-import {Recipe} from "../../../../recipes/recipes.model";
-import {removeTodoRequestAction} from "../../../../../../../../todo-list/Front-end/src/domains/Todos/todos.actions";
 import {
     removeRecipeIngredientRequestAction,
     updateRecipeIngredientRequestAction
@@ -27,26 +24,19 @@ describe("Ingredient", () => {
         expect(container).toMatchSnapshot()
     })
 
-    it("should dispatch editIngredientRequestAction updateRecipeIngredientRequestAction when add updateRecipeIngredient button is clicked", () =>
+    it("should dispatch editIngredientRequestAction and updateRecipeIngredientRequestAction when add updateRecipeIngredient button is clicked", () =>
     {
         // Given
         const {getByText} = render(<Ingredient {...ingredientMock} color={""} searchIngredientTerm={""}/>)
         const button = getByText("Mettre à jour")
+        const actionParameters = { id : '', title : '', unity : '' }
 
         // When
         fireEvent.click(button)
 
         // Then
-        expect(mockDispatch).toBeCalledWith(editIngredientRequestAction({
-            id : '',
-            title : '',
-            unity : ''
-        }));
-        expect(mockDispatch).toBeCalledWith(updateRecipeIngredientRequestAction({
-            id : '',
-            title : '',
-            unity : ''
-        }));
+        expect(mockDispatch).toBeCalledWith(editIngredientRequestAction(actionParameters));
+        expect(mockDispatch).toBeCalledWith(updateRecipeIngredientRequestAction(actionParameters));
     })
 
     it("should dispatch removeIngredientRequestAction and removeRecipeIngredientRequestAction when trash icon is clicked", () =>
@@ -63,3 +53,6 @@ describe("Ingredient", () => {
         expect(mockDispatch).toBeCalledWith(removeRecipeIngredientRequestAction(ingredientMock.id));
     })
 })
+
+// Tester que les éléments attendus sont présent quand la current window change.
+// Quand le state ou le searchterm est modifiée, vérifier que filterIngredients est appelé avec les bons paramètres et renvoit les bons paramètres

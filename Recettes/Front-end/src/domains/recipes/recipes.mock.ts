@@ -2,11 +2,11 @@ import {RecipeState} from "./recipes.state";
 import {ActionStatus} from "../../shared/domains/Redux/redux.model";
 
 export const emptyRecipeStateMock : RecipeState =
-    {
-        status : ActionStatus.Loading,
-        error : undefined,
-        recipes : []
-    }
+{
+    status : ActionStatus.Loading,
+    error : undefined,
+    recipes : []
+}
 
 export const recipeStateMock : RecipeState =
     {

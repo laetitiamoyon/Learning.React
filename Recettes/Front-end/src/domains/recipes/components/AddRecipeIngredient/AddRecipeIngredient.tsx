@@ -37,8 +37,8 @@ const AddRecipeIngredient : FC<Props> = ({ ingredients, addIngredient, removeIng
     setQuantity(0)
   }
 
-  const addIngredientToTheList = () : void => addIngredient(
-    { id : '',
+  const addIngredientToTheList = () : void => addIngredient({
+      id : '',
       title,
       unity,
       quantity

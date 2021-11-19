@@ -6,20 +6,17 @@ import {
     removeRecipeRequestAction,
 } from "../../../recipes.actions";
 import {recipeMock} from "../../../recipes.mock";
-import {useHistory} from "react-router-dom";
 
 jest.mock('react-redux')
 const mockUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 const mockDispatch = jest.fn()
+const mockRecipeId = recipeMock.id
 
-const history = useHistory()
-const mockOnClickToTheDescription = jest.fn(history.push)
+const mockOnClickToTheDescription = jest.fn()
 jest.mock('react-router-dom', () => ({
-
     ...jest.requireActual('react-router-dom'),
-    useHistory: () => ({
-        push: mockOnClickToTheDescription,
-    }),
+    useHistory: () => ({ push: mockOnClickToTheDescription }),
+    useParams: () => ({ id: mockRecipeId }),
 }));
 
 describe("Recipe", () => {
@@ -42,8 +39,8 @@ describe("Recipe", () => {
         // When
         fireEvent.click(trashIcon)
         // Then
-        expect(mockDispatch).toBeCalledWith(removeRecipeRequestAction(recipeMock.id))
-        expect(mockDispatch).toBeCalledWith(removeRecipeIngredientRequestAction(recipeMock.id));
+        expect(mockDispatch).toBeCalledWith(removeRecipeRequestAction(mockRecipeId))
+        expect(mockDispatch).toBeCalledWith(removeRecipeIngredientRequestAction(mockRecipeId));
     })
 
     it("should redirected to description of the recipe when viewDescription Button is clicked ", () => {
@@ -51,11 +48,10 @@ describe("Recipe", () => {
         const { getByText } = render(<Recipe {...recipeMock} color={""} searchTerm={""}/>)
         const button = getByText("Voir la recette")
 
-
         // When
         fireEvent.click(button)
 
         // Then
-        expect(mockOnClickToTheDescription).toHaveBeenCalledWith('`/modification-de-la-recette/${id}`, { id : id }');
+        expect(mockOnClickToTheDescription).toHaveBeenCalledWith(`/description-de-la-recette/${mockRecipeId}`, { id : mockRecipeId})
     })
 })

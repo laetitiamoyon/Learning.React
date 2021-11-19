@@ -15,7 +15,7 @@ interface RouteProps
 
 const RecipeDescription : FC = () => 
 {
-  let { id } = useParams<RouteProps>();
+  const { id } = useParams<RouteProps>();
   const recipes = useSelector(selectRecipes)
   const { title, description, image, ingredients, calories, cookingTime, preparationTime } = recipes.recipes.find(r => r.id === id) as Recipe
 

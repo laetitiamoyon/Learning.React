@@ -8,7 +8,6 @@ jest.mock('react-redux')
 const mockUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 const mockDispatch = jest.fn()
 
-
 describe("Recipes", () => {
     beforeEach(() => {
         (mockUseDispatch as jest.Mock).mockReturnValue(mockDispatch)
