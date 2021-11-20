@@ -1,21 +1,16 @@
-import {ingredientsReducer} from "../ingredients.reducer";
-import {emptyIngredientStateMock, errorMessageMock, ingredientStateMock} from "../ingredient.mock";
-import {
-    getIngredientsFailedAction,
-    getIngredientsRequestAction,
-    getIngredientsSuccessAction
-} from "../ingredients.actions";
-
 import {ActionStatus} from "../../../shared/domains/Redux/redux.model";
+import {recipesReducer} from "../recipes.reducer";
+import {emptyRecipeStateMock, errorMessageMock, recipeStateMock} from "../recipes.mock";
+import {getRecipesFailedAction, getRecipesRequestAction, getRecipesSuccessAction} from "../recipes.actions";
 
-describe("ingredient.reducer", () =>
+describe("recipe.reducer", () =>
 {
-    describe("GET_INGREDIENTS", () =>
+    describe("GET_RECIPES", () =>
     {
         it("Should change the status to loading and set the error to undefined on request", () =>
         {
             // Given & When
-            const newState = ingredientsReducer(emptyIngredientStateMock, getIngredientsRequestAction())
+            const newState = recipesReducer(emptyRecipeStateMock, getRecipesRequestAction())
 
             // Then
             expect(newState).toEqual(expect.objectContaining({
@@ -24,23 +19,23 @@ describe("ingredient.reducer", () =>
             }))
         })
 
-        it("Should set the ingredients, change the status to loaded and set the error to undefined on success", () =>
+        it("Should set the recipe, change the status to loaded and set the error to undefined on success", () =>
         {
             // Given & When
-            const newState = ingredientsReducer(emptyIngredientStateMock, getIngredientsSuccessAction(ingredientStateMock.ingredients))
+            const newState = recipesReducer(emptyRecipeStateMock, getRecipesSuccessAction(recipeStateMock.recipes))
 
             // Then
             expect(newState).toEqual({
                 status: ActionStatus.Loaded,
                 error: undefined,
-                ingredients : ingredientStateMock.ingredients
+                recipes : recipeStateMock.recipes
             })
         })
 
         it("Should change the status to failed and set the error on failed", () =>
         {
             // Given & When
-            const newState = ingredientsReducer(emptyIngredientStateMock, getIngredientsFailedAction(errorMessageMock))
+            const newState = recipesReducer(emptyRecipeStateMock, getRecipesFailedAction(errorMessageMock))
 
             // Then
             expect(newState).toEqual(expect.objectContaining({

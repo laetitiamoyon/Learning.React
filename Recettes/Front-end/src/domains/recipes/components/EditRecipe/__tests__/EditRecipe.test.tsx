@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {recipeMock, recipeStateMock} from "../../../recipes.mock";
 import {fireEvent, getByText, render} from "@testing-library/react";
 import EditRecipe from "../EditRecipe";
-import {ingredientMock, ingredientStateMock} from "../../../../ingredients/ingredient.mock";
+import {ingredientStateMock} from "../../../../ingredients/ingredient.mock";
 import {
     editRecipeRequestAction,
     updateRecipeIngredientRequestAction
@@ -44,13 +44,12 @@ describe("EditRecipe", () => {
         (useSelector as jest.Mock).mockReturnValueOnce(recipeStateMock).mockReturnValueOnce(ingredientStateMock)
         const { getByText } = render(<EditRecipe id={''} title={''} unity={''}/>)
         const button = getByText("Enregistrer")
-        //const actionParameters = { id : '', title : '', description : '', image : "", ingredients : [], calories : "",cookingTime: "", preparationTime: ""}
 
         // When
         fireEvent.click(button)
 
         // Then
-        //expect(mockDispatch).toBeCalledWith(editRecipeRequestAction(actionParameters));
+        expect(mockDispatch).toBeCalledWith(editRecipeRequestAction(recipeMock));
 
         expect(mockDispatch).toBeCalledWith(updateRecipeIngredientRequestAction({
             id : "",

@@ -1,7 +1,6 @@
 
 import {call, fork} from "redux-saga-test-plan/matchers";
 import {throwError} from "redux-saga-test-plan/providers";
-import {useSelector} from "react-redux";
 import * as matchers from 'redux-saga-test-plan/matchers';
 import {
     addIngredientFailedAction,
@@ -23,7 +22,6 @@ import {expectSaga} from "redux-saga-test-plan";
 import ingredientSaga, {addIngredientSaga, editIngredientSaga, getAllIngredientsSaga, removeIngredientSaga} from "../ingredients.saga";
 import {takeLatest} from "redux-saga/effects";
 import {excludeSagaPayloadFn} from "../../../shared/domains/Redux/redux.utils";
-import {TodoAction} from "../../../../../../Todo list/Front-end/src/domains/Todos/todos.actions";
 
 jest.mock('react-redux')
 jest.mock('../ingredients.api')

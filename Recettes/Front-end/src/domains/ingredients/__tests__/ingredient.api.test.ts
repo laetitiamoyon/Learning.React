@@ -26,7 +26,7 @@ describe("ingredient.api", () =>
         expect(axios.get).toHaveBeenCalledWith(url, configuration);
     })
 
-    it("addIngredient should return add a todo and axios.post should be called with routes.api and httpConfiguration.default", async () =>
+    it("addIngredient should return add an ingredient and axios.post should be called with routes.api and configuration", async () =>
     {
         // Given
         (axios.post as jest.Mock).mockReturnValue(Promise.resolve({ data : ingredientMock }))

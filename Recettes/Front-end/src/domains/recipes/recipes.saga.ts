@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { getRecipesFailedAction, AddRecipeRequestAction, addRecipeSuccessAction, addRecipeFailedAction, EditRecipeRequestAction, RemoveRecipeRequestAction, RemoveRecipeSuccessAction, removeRecipeFailedAction, getRecipesSuccessAction, editRecipeSuccessAction, editRecipeFailedAction, RecipeAction, getRecipesRequestAction, UpdateRecipeIngredientRequestAction, updateRecipeIngredientSuccessAction, updateRecipeIngredientFailedAction, removeRecipeIngredientSuccessAction, removeRecipeIngredientFailedAction, RemoveRecipeIngredientRequestAction, setInformationMessageAction, updateRecipeIngredientRequestAction } from './recipes.actions';
+import { getRecipesFailedAction, AddRecipeRequestAction, addRecipeSuccessAction, addRecipeFailedAction, EditRecipeRequestAction, RemoveRecipeRequestAction, RemoveRecipeSuccessAction, removeRecipeFailedAction, getRecipesSuccessAction, editRecipeSuccessAction, editRecipeFailedAction, RecipeAction, getRecipesRequestAction, UpdateRecipeIngredientRequestAction, updateRecipeIngredientSuccessAction, updateRecipeIngredientFailedAction, removeRecipeIngredientSuccessAction, removeRecipeIngredientFailedAction, RemoveRecipeIngredientRequestAction, setInformationMessageAction } from './recipes.actions';
 import { Recipe } from './recipes.model';
 import { addRecipe, getAllRecipes, updateRecipe, removeRecipe } from './recipes.api';
 
@@ -12,7 +12,7 @@ const computeInformationMessage = (recipes : Recipe[]) : string | undefined =>
    recipesWithoutIngredient.map(r => r.title).join(',')
 }
 
-function* getAllRecipesSaga()
+export function* getAllRecipesSaga()
 {
    try
    {
@@ -26,7 +26,7 @@ function* getAllRecipesSaga()
    }
 }
 
-function* addRecipeSaga(action : AddRecipeRequestAction)
+export function* addRecipeSaga(action : AddRecipeRequestAction)
 {
    try
    {
@@ -41,7 +41,7 @@ function* addRecipeSaga(action : AddRecipeRequestAction)
    }
 }
 
-function* editRecipeSaga(action : EditRecipeRequestAction)
+export function* editRecipeSaga(action : EditRecipeRequestAction)
 {
    try
    {      
@@ -56,7 +56,7 @@ function* editRecipeSaga(action : EditRecipeRequestAction)
    }
 }
 
-function* updateRecipeIngredientSaga(action : UpdateRecipeIngredientRequestAction)
+export function* updateRecipeIngredientSaga(action : UpdateRecipeIngredientRequestAction)
 {
    try
    {
@@ -97,7 +97,7 @@ function* updateRecipeIngredientSaga(action : UpdateRecipeIngredientRequestActio
    }
 }
 
-function* removeRecipeSaga(action : RemoveRecipeRequestAction)
+export function* removeRecipeSaga(action : RemoveRecipeRequestAction)
 {
    try
    {
@@ -114,7 +114,7 @@ function* removeRecipeSaga(action : RemoveRecipeRequestAction)
    }
 }
 
-function* removeRecipeIngredientSaga(action : RemoveRecipeIngredientRequestAction)
+export function* removeRecipeIngredientSaga(action : RemoveRecipeIngredientRequestAction)
 {
    try
    {
@@ -154,7 +154,7 @@ function* removeRecipeIngredientSaga(action : RemoveRecipeIngredientRequestActio
    }
 }
 
-function* watchRecipesSagas() {
+export default function* recipeSaga() : Generator {
   yield takeLatest(RecipeAction.GET_RECIPES_REQUEST, getAllRecipesSaga);
   yield takeLatest(RecipeAction.ADD_RECIPE_REQUEST, addRecipeSaga);
   yield takeLatest(RecipeAction.EDIT_RECIPE_REQUEST, editRecipeSaga);
@@ -162,5 +162,3 @@ function* watchRecipesSagas() {
   yield takeLatest(RecipeAction.REMOVE_RECIPE_REQUEST, removeRecipeSaga);
   yield takeLatest(RecipeAction.REMOVE_RECIPE_INGREDIENT_REQUEST, removeRecipeIngredientSaga);
 }
-
-export default watchRecipesSagas;

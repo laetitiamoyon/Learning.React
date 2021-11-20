@@ -1,6 +1,6 @@
 **Année de développement :** 2021.
 
-Développement d'une application de gestion de recette avec les tests https://laeti-recipes.netlify.app <br />L'application permet aux utilisateurs d’administrer (afficher, ajouter, modifier, supprimer) leurs recettes et leurs ingrédients. Lorsqu’un ingrédient est modifié ou supprimé, la mise à jour sera également faite dans les recettes le contenant.<br /><br />
+Développement d'une application de gestion de recette avec 80% de couverture de tests https://laeti-recipes.netlify.app <br />L'application permet aux utilisateurs d’administrer (afficher, ajouter, modifier, supprimer) leurs recettes et leurs ingrédients. Lorsqu’un ingrédient est modifié ou supprimé, la mise à jour sera également faite dans les recettes le contenant.<br /><br />
 
 **Environnement technique** : 
  - Technologies : React Hooks, Typescript, modules SASS.

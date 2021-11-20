@@ -34,10 +34,11 @@ describe("Recipe", () => {
     it("should dispatch removeRecipeRequestAction and removeRecipeIngredientRequestAction when trash icon is clicked ", () => {
         // Given
         const {container} = render(<Recipe {...recipeMock} color={""} searchTerm={""}/>)
-        const trashIcon = container.getElementsByTagName('div')[3]
+        const trashIcon = container.querySelector('button + div')!
 
         // When
         fireEvent.click(trashIcon)
+
         // Then
         expect(mockDispatch).toBeCalledWith(removeRecipeRequestAction(mockRecipeId))
         expect(mockDispatch).toBeCalledWith(removeRecipeIngredientRequestAction(mockRecipeId));

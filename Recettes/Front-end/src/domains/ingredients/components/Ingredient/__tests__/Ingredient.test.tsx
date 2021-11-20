@@ -29,21 +29,20 @@ describe("Ingredient", () => {
         // Given
         const {getByText} = render(<Ingredient {...ingredientMock} color={""} searchIngredientTerm={""}/>)
         const button = getByText("Mettre à jour")
-        const actionParameters = { id : '', title : '', unity : '' }
 
         // When
         fireEvent.click(button)
 
         // Then
-        expect(mockDispatch).toBeCalledWith(editIngredientRequestAction(actionParameters));
-        expect(mockDispatch).toBeCalledWith(updateRecipeIngredientRequestAction(actionParameters));
+        expect(mockDispatch).toBeCalledWith(editIngredientRequestAction(ingredientMock));
+        expect(mockDispatch).toBeCalledWith(updateRecipeIngredientRequestAction(ingredientMock));
     })
 
     it("should dispatch removeIngredientRequestAction and removeRecipeIngredientRequestAction when trash icon is clicked", () =>
     {
         // Given
         const {container} = render(<Ingredient {...ingredientMock} color={""} searchIngredientTerm={""}/>)
-        const trashIcon = container.getElementsByTagName('div')[3]
+        const trashIcon = container.querySelector('button + div')!
 
         // When
         fireEvent.click(trashIcon)

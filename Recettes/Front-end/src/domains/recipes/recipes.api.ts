@@ -1,8 +1,8 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios'
 import { Recipe } from './recipes.model'
 
-const url : string = 'http://localhost:3001/recipes'
-const configuration : AxiosRequestConfig = { headers : { 'Content-Type' : 'application/json' } }
+export const url : string = 'http://localhost:3001/recipes'
+export const configuration : AxiosRequestConfig = { headers : { 'Content-Type' : 'application/json' } }
 
 
 export const getAllRecipes = async () : Promise<AxiosResponse<Recipe[]>> =>

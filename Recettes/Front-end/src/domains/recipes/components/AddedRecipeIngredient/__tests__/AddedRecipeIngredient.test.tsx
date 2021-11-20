@@ -21,9 +21,7 @@ describe("AddedRecipeIngredient", () =>
     it("should removeRecipeIngredient when trash icon is clicked", () =>
     {
         // Given
-        const {container} = render(<AddedRecipeIngredient
-        removeAddedIngredient={mockRemoveIngredient} id={''} unity={''} title={''} quantity={undefined}
-        />)
+        const {container} = render(<AddedRecipeIngredient removeAddedIngredient={mockRemoveIngredient} {...ingredientMock} quantity={undefined}/>)
         const trashIcon = container.getElementsByTagName('div')[0]
 
         // When
