@@ -2,10 +2,10 @@ import soundex from "../soundex";
 
 describe('Soundex', () =>
 {
-  it("tes un bete", () =>
+  it("should return the expected values", () =>
   {
     // Arrange
-    const parametersAndResults = new Map([
+    const parametersAndResults = [
       ["Johnson", "J525"],
       ["Jonson", "J525"],
       ["Adams", "A352"],
@@ -13,12 +13,12 @@ describe('Soundex', () =>
       ["Davis", "D120"],
       ["Davies", "D120"],
       ["Simons", "S520"],
-      ["Simmons", "S520"],
-    ])
-    const expectedValues = [...parametersAndResults].map(e => e[1])
+      ["Simmons", "S520"]
+    ]
+    const expectedValues = parametersAndResults.map(e => e[1])
 
     // Act
-    const actualValues = [...parametersAndResults].map(e => soundex(e[0]))
+    const actualValues = parametersAndResults.map(e => soundex(e[0]))
 
     // Asset
     expect(actualValues).toEqual(expectedValues)
