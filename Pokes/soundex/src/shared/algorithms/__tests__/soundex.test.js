@@ -20,7 +20,7 @@ describe('Soundex', () =>
     // Act
     const actualValues = parametersAndResults.map(e => soundex(e[0]))
 
-    // Asset
+    // Assert
     expect(actualValues).toEqual(expectedValues)
   })
 })
