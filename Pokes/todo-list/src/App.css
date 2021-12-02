@@ -1,27 +1,5 @@
-.container {
+.App {
   text-align: center;
-  margin-top: 42px;
-}
-
-.label { margin-right: 12px;}
-
-.title {margin-bottom: 30px;}
-
-.input 
-{
-  padding-left: 8px;
-  border-radius: 8px; 
-  width: 200px; 
-  height: 18px;
-}
-
-.input::placeholder {font-size: 18px;}
-
-
-
-.result
-{
-  margin-top: 12px;
 }
 
 .App-logo {

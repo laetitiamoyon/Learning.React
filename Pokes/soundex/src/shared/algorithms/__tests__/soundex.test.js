@@ -6,14 +6,10 @@ describe('Soundex', () =>
   {
     // Arrange
     const parametersAndResults = [
-      ["Johnson", "J525"],
-      ["Jonson", "J525"],
-      ["Adams", "A352"],
-      ["Addams", "A352"],
-      ["Davis", "D120"],
-      ["Davies", "D120"],
-      ["Simons", "S520"],
-      ["Simmons", "S520"]
+      ["Johnson", "J525"],  ["Jonson", "J525"],
+      ["Adams", "A352"],    ["Addams", "A352"],
+      ["Davis", "D120"],    ["Davies", "D120"],
+      ["Simons", "S520"],   ["Simmons", "S520"]
     ]
     const expectedValues = parametersAndResults.map(e => e[1])
 

@@ -1,25 +1,60 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState, useRef} from "react";
+import soundex from './shared/algorithms/soundex';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// Formulaire non contrôlé : useRef, ref, defaultValue, onSubmit
+const SoundexWithReference = () =>
+{
+    const inputRef = useRef()
+    const [soundexValue, setSoundexValue] = useState('')
+
+    const onSubmit = event =>
+    {
+        event.preventDefault()
+        setSoundexValue(soundex(inputRef.current.value))
+    }
+
+    return <form className="container" onSubmit={onSubmit}>
+        <h1 className="title">Algorithme soundex</h1>
+        <label className="label">Nom :</label>
+        <input
+            className="input"
+            type="text"
+            defaultValue="your text"
+            ref={inputRef}/>
+        <button>Envoyer</button>
+        <div className="result">{soundexValue}</div>
+    </form>
+}
+
+// Formulaire controlé : value, onChange
+const Soundex = () =>
+{
+    const [text, setText] = useState(' ')
+    const [soundexValue, setSoundexValue] = useState('')
+
+    useEffect(() => setSoundexValue(soundex(text)), [text])
+
+    const onTextChange = event => setText(event.target.value)
+ 
+    return <div className="container">
+        <h1 className="title">Algorithme soundex</h1>
+        <label className="label">Nom :</label>
+        <input
+            className="input"
+            type="text"
+            value={text}
+            onChange={onTextChange} />
+        <div className="result">{soundexValue}</div>
     </div>
-  );
+}
+
+const App = () =>
+{
+    return <div className="App">
+        <Soundex/>
+        <SoundexWithReference/>
+    </div>
 }
 
 export default App;

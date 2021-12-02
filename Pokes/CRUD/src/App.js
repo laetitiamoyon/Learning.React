@@ -3,8 +3,8 @@ import {useState} from "react";
 
 const AddUser = ({addUser}) =>
 {
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
 
   const onChangeFirstName = event => setFirstName(event.target.value)
   const onChangeLastName = event => setLastName(event.target.value)
@@ -12,21 +12,18 @@ const AddUser = ({addUser}) =>
   return <div>
     <input
         type="text"
-        placeholder="firstName"
         value={firstName}
-        onChange={onChangeFirstName} />
-
+        onChange={onChangeFirstName}/>
     <input
         type="text"
-        placeholder="lastName"
         value={lastName}
-        onChange={onChangeLastName} />
-
-    <button onClick={() => addUser({firstName, lastName})}>Ajouter un utilisateur</button>
+        onChange={onChangeLastName}/>
+    <button onClick={() => addUser({firstName, lastName})}>Send</button>
   </div>
+
 }
 
-const User = ({id, firstName : iFirstName, lastName : iLastName, removeUser, updateUser}) =>
+const User = ({id, firstName : iFirstName, lastName : iLastName, updateUser, removeUser}) =>
 {
   const [firstName, setFirstName] = useState(iFirstName)
   const [lastName, setLastName] = useState(iLastName)
@@ -37,48 +34,50 @@ const User = ({id, firstName : iFirstName, lastName : iLastName, removeUser, upd
   return <div>
     <input
         type="text"
-        placeholder="firstName"
         value={firstName}
-        onChange={onChangeFirstName} />
+        onChange={onChangeFirstName}/>
 
     <input
         type="text"
-        placeholder="lastName"
         value={lastName}
-        onChange={onChangeLastName} />
-
-    <button onClick={() => removeUser(id)}>X</button>
-    <button onClick={() => updateUser({id, firstName, lastName})}>Mettre à jour</button>
+        onChange={onChangeLastName}/>
+    <button onClick={() => updateUser({id, firstName, lastName})}>Update</button>
+    <button onClick={() => removeUser(id)}>Remove</button>
   </div>
+
 }
 
-const UserList = ({users, removeUser, updateUser}) =>
-  <div className="user-list">
-    {users.map(u =>
-    <User
+const UserList = ({ user, updateUser, removeUser }) =>
+{
+  return <div>
+    {user.map(u => <User
         {...u}
         key={`User${u.id}`}
-        removeUser={removeUser}
-        updateUser={updateUser}/>)}
+        updateUser={updateUser}
+        removeUser={removeUser}/>)}
   </div>
+  
+}
 
 //Learning.React/Pokes/CRUD with internal state
 const DEFAULT_USERS = [{ id : 1, firstName : 'toto', lastName : "tata" }]
 const App = () =>
 {
-  const [users, setUsers] = useState(DEFAULT_USERS)
+  const [user, setUser] = useState(DEFAULT_USERS)
+  const generateNewId = () => user.map(u => u.id).reduce((a, b) => a > b ? a + 1 : b + 1, 1)
+  const addUser = ({firstName, lastName}) => setUser([...user, {id: generateNewId(), firstName, lastName}])
+  const removeUser = id => setUser(user.filter(u => u.id !== id))
+  const updateUser = users => setUser(user.map(u => u.id === users.id ? users : u))
 
-  const generateNewId = () => users.map(u => u.id).reduce((a , b) => a > b ? a + 1 : b + 1, 0)
-  const addUser = ({firstName, lastName}) => setUsers([...users, {id : generateNewId(), firstName, lastName}])
-
-  const updateUser = user => setUsers(users.map(u => u.id === user.id ? user : u))
-
-  const removeUser = id => setUsers(users.filter(u => u.id !== id ))
-
+  console.log(user)
   return <div>
-    <AddUser addUser={addUser} />
-    <UserList users={users} removeUser={removeUser} updateUser={updateUser} />
+    <AddUser addUser={addUser}/>
+    <UserList
+        user={user}
+        removeUser={removeUser}
+        updateUser={updateUser}/>
   </div>
+
 
 }
 
