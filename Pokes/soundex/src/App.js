@@ -22,7 +22,7 @@ const SoundexWithReference = () =>
             type="text"
             defaultValue="your text"
             ref={inputRef}/>
-        <button>Envoyer</button>
+        <button>Convertir</button>
         <div className="result">{soundexValue}</div>
     </form>
 }
@@ -52,7 +52,6 @@ const Soundex = () =>
 const App = () =>
 {
     return <div className="App">
-        <Soundex/>
         <SoundexWithReference/>
     </div>
 }
