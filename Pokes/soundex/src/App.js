@@ -16,11 +16,10 @@ const SoundexWithReference = () =>
 
     return <form className="container" onSubmit={onSubmit}>
         <h1 className="title">Algorithme soundex</h1>
-        <label className="label">Nom :</label>
         <input
             className="input"
             type="text"
-            defaultValue="your text"
+            defaultValue="Saisir du texte"
             ref={inputRef}/>
         <button>Convertir</button>
         <div className="result">{soundexValue}</div>
