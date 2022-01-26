@@ -27,3 +27,5 @@ const Players = () => {
 };
 
 export default Players;
+export default Players;
+
