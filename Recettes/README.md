@@ -4,6 +4,7 @@ Développement d'une application de gestion de recette avec 80% de couverture de
 
 **Environnement technique** : 
  - Technologies : React Hooks, Typescript, modules SASS.
+ - Formulaires avec validation : React Hook Form, Formik et Yup.
  - Gestion de l'état : Redux, Redux Saga.
  - Tests : Jest, React Testing, Redux saga test plan
 

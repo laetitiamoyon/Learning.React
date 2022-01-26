@@ -1,0 +1,51 @@
+.container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.albums
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+}
+
+.active {display: inline;}
+
+.searchBar
+{
+  margin-top: 22px;
+  margin-bottom: 30px;
+  padding-left: 12px;
+
+  width: 280px;
+  height: 30px;
+
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.button
+{
+  background-color: #0061DF;
+
+  color: white;
+  font-size: 18px;
+
+  border-radius: 5px;
+  border: none;
+
+  padding: 14px 16px;
+  margin-top: 22px;
+  margin-bottom: 22px;
+
+  cursor: pointer;
+}
