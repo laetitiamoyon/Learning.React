@@ -1,4 +1,3 @@
-import React from 'react';
 import {useNavigate} from "react-router-dom";
 import usePlayer from '../../../../hooks/usePlayer'
 import styles from './PlayerInformation.module.css'
