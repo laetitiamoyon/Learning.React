@@ -1,4 +1,4 @@
-import {fireEvent, getByText, render} from "@testing-library/react";
+import {fireEvent, render} from "@testing-library/react";
 import {playerMock} from "../../../players.mock";
 import Player from "../Player";
 
@@ -10,7 +10,6 @@ jest.mock('../../../hooks/usePlayer',() => ({
     usePlayer: () => mockPlayer,
 }));
 
-// @ts-ignore
 jest.mock("react-router-dom", () => ({
     ...jest.requireActual("react-router-dom"),
     useNavigate: () => mockOnClickToTheDescription,
