@@ -1,5 +1,4 @@
-import React, {ChangeEvent, useMemo, useState} from 'react';
-import React, {ChangeEvent, useEffect, useMemo, useState} from 'react';
+import {ChangeEvent, useMemo, useState} from 'react';
 import useBestPlayers from '../../../../hooks/useBestPlayers'
 import Player from "../Player/Player";
 import {Player as PlayerModel} from "../../player.model";
