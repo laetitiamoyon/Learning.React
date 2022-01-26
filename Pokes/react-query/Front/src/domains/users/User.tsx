@@ -22,6 +22,8 @@ const User : FC<IUser & Props> = (user) =>
             <input className={styles.input} value={firstName} onChange={onChangeFirstName}/>
             <input className={styles.input} value={lastName} onChange={onChangeLastName}/>
             <button className={styles.updateButton} onClick={() => updateUser({id, firstName, lastName})}>Mettre à jour</button>
+            <button className={styles.updateButton} onClick={() => updateUser({id, firstName, lastName})}>Mettre à jour</button>
+            <button className={styles.updateButton} onClick={() => updateUser({firstName, lastName, id})}>Mettre à jour</button>
             <button className={styles.deleteButton} onClick={() => removeUser(id)}>X</button>
         </div>
 };

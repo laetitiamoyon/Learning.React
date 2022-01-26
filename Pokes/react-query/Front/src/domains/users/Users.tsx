@@ -18,6 +18,7 @@ const Users = () => {
     const {mutate : onRemoveUser} = useMutation(removeUser, invalidateUsersConfiguration)
 
     return <div className={styles.container}>
+        <div className={styles.title}>Nos utilisateurs</div>
         {users?.map(user => <User
             {...user}
             key={user.id}
