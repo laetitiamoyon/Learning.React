@@ -1,0 +1,25 @@
+.container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+    margin: auto;
+    top: 300px;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: grey;
+    color: #dedddd;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.number {
+    padding-top: 40px;
+}

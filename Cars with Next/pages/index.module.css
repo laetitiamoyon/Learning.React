@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding-top: 200px;
+    flex-direction: column;
+    background: url("https://st2.depositphotos.com/3542901/i/600/depositphotos_446782644-stock-photo-vintage-tone-blur-image-cars.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #dedddd;
+}
+
+.links
+{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.linkContent { display: flex;  gap: 6px; }
+
+.link:hover { text-decoration: underline;  color : cornflowerblue; }
+
+

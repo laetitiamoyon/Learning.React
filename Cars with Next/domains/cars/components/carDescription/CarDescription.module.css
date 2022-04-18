@@ -1,0 +1,62 @@
+.container {
+    padding: 0px 220px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width: 1400px) { .container { padding: 0px 50px;} }
+@media (max-width: 800px) { .container { margin-top: -30px;} }
+@media (max-width: 600px) { .container { margin-top: -70px;} }
+
+.title {
+    font-weight: 700;
+    padding-bottom: 8px;
+    border-bottom: 1px #0166c9 solid;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category:first-child { font-weight: 700; padding-bottom: 12px;}
+
+.label, .detail { flex: 1; }
+
+.informationContent {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 400px;
+    font-size: 13px;
+    color: #545353;
+    font-weight: 500;
+}
+
+.optionContent {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 500px;
+    font-size: 12px;
+    color: #545353;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) { .optionContent { flex-wrap: nowrap; margin: auto;} }
+
+.sellerName {
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    padding-left: 22px;
+    padding-bottom: 12px;
+}
+
+.equipementContent { padding-bottom: 22px;}
+
+.titleEquipement { font-weight: 700; font-size: 16px; }

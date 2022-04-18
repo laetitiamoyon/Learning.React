@@ -1,0 +1,1178 @@
+{
+    "cars": [
+        {
+            "id": "E40012456",
+            "lastUpdate": "2022-01-11T15:33:15.022Z",
+            "vehicle": {
+                "category": "CITADINE",
+                "firstHand": true,
+                "standardComputed": "WLTP",
+                "firstCirculationDate": "2021-07-30",
+                "model": "IBIZA",
+                "mileage": 150,
+                "doors": 5,
+                "energy": "ESSENCE",
+                "year": "2021",
+                "externalColor": "blanc",
+                "gearbox": "MANUAL",
+                "powerDIN": 95,
+                "version": "V 1.0 TSI 95 XCELLENCE",
+                "make": "SEAT",
+                "length": 4059,
+                "commercialName": "IBIZA 5",
+                "fourWheelDrive": false,
+                "ratedHorsePower": 5,
+                "weight": 1145,
+                "height": 1444,
+                "width": 1780,
+                "trunkVolume": 355,
+                "displayedLength": 4.059,
+                "displayedHeight": 1.444,
+                "displayedWidth": 1.78,
+                "critAir": 1,
+                "pollutionNorm": "EURO6",
+                "seats": 5,
+                "owners": 1,
+                "conversionBonusEligibility": false
+            },
+            "customerType": "PRO",
+            "zipCode": "39100",
+            "contacts": {
+                "email": "sarah.connor@yopmail.com",
+                "phone1": {
+                    "value": "0232323232",
+                    "note": "CONNOR Sarah"
+                }
+            },
+            "constructorWarranty": {
+                "duration": 24,
+                "mileage": 999999,
+                "endDate": "2023-07-29"
+            },
+            "visitPlace": "39",
+            "publicationEndDate": "2023-01-01T00:00:00Z",
+            "status": "ONLINE",
+            "creationDate": "2021-09-02T06:52:46.043Z",
+            "firstOnlineDate": "2021-09-02"
+        },
+        {
+            "id": "F40012456",
+            "lastUpdate": "2022-01-11T15:33:15.589Z",
+            "vehicle": {
+                "category": "SUV_4X4_CROSSOVER",
+                "firstHand": true,
+                "standardComputed": "WLTP",
+                "firstCirculationDate": "2020-06-22",
+                "model": "CAPTUR",
+                "mileage": 14700,
+                "doors": 5,
+                "energy": "ESSENCE",
+                "year": "2020",
+                "externalColor": "gris",
+                "gearbox": "MANUAL",
+                "powerDIN": 100,
+                "version": "II 1.0 TCE 100 BUSINESS 2020",
+                "make": "RENAULT",
+                "length": 4227,
+                "commercialName": "CAPTUR 2",
+                "fourWheelDrive": false,
+                "ratedHorsePower": 5,
+                "weight": 1190,
+                "height": 1576,
+                "width": 1797,
+                "trunkVolume": 422,
+                "displayedLength": 4.227,
+                "displayedHeight": 1.576,
+                "displayedWidth": 1.797,
+                "critAir": 1,
+                "pollutionNorm": "EURO6",
+                "seats": 5,
+                "owners": 1,
+                "conversionBonusEligibility": true
+            },
+            "customerType": "PRO",
+            "zipCode": "92000",
+            "contacts": {
+                "email": "contact@mlavoiturejaune.fr",
+                "phone1": {
+                    "value": "0112344321",
+                    "note": "SOCIETE LA VOITURE JAUNE"
+                }
+            },
+            "constructorWarranty": {
+                "duration": 24,
+                "mileage": 999999,
+                "endDate": "2022-06-21"
+            },
+            "visitPlace": "92",
+            "publicationEndDate": "2023-01-01T00:00:00Z",
+            "status": "ONLINE",
+            "creationDate": "2021-08-26T15:39:26.878Z",
+            "firstOnlineDate": "2021-08-26"
+        },
+        {
+            "id": "G40012456",
+            "lastUpdate": "2022-02-15T14:35:18.840Z",
+            "vehicle": {
+                "category": "COUPE",
+                "firstHand": false,
+                "standardComputed": "NEDC",
+                "firstCirculationDate": "2019-02-01",
+                "model": "I8",
+                "mileage": 123000,
+                "doors": 2,
+                "energy": "HYBRID_ESSENCE_ELECTRIC",
+                "year": "2019",
+                "externalColor": "marron clair verni",
+                "gearbox": "AUTO",
+                "powerDIN": 362,
+                "version": "362 PROTONIC FROZEN EDITION BVA6",
+                "make": "BMW",
+                "length": 4689,
+                "commercialName": "I8",
+                "fourWheelDrive": true,
+                "ratedHorsePower": 11,
+                "weight": 1560,
+                "height": 1297,
+                "width": 1942,
+                "trunkVolume": 154,
+                "displayedLength": 4.689,
+                "displayedHeight": 1.297,
+                "displayedWidth": 1.942,
+                "critAir": 1,
+                "pollutionNorm": "EURO6",
+                "seats": 4,
+                "owners": 1,
+                "conversionBonusEligibility": true
+            },
+            "customerType": "PART",
+            "zipCode": "53970",
+            "contacts": {
+                "email": "john.smith@yopmail.com",
+                "phone1": {}
+            },
+            "constructorWarranty": {
+                "duration": 24,
+                "mileage": 999999
+            },
+            "visitPlace": "53",
+            "publicationEndDate": "2022-03-17T22:59:59Z",
+            "status": "ONLINE",
+            "creationDate": "2022-02-15T14:25:08.035Z",
+            "firstOnlineDate": "2022-02-15"
+        }
+    ],
+    "photos": [
+        {
+            "id": "E40012456",
+            "outside": {
+                "label": "Extérieur",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza1-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza1-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza2-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza2-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza3-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza3-vignette.jpeg"}
+                ]
+            },
+            "inside": {
+                "label": "Intérieur",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza4-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza4-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza5-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza5-vignette.jpeg"}       
+                ]
+            },
+            "seats": {
+                "label": "Sièges",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza6-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza6-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza7-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/ibiza/ibiza7-vignette.jpeg"}
+                ]
+            }
+        },
+        {
+            "id": "F40012456",
+            "outside": {
+                "label": "Extérieur",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur1-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur1-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur2-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur2-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur3-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur3-vignette.jpeg"}
+                ]
+            },
+            "inside": {
+                "label": "Intérieur",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur4-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur4-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur5-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur5-vignette.jpeg"}
+                ]
+            },
+            "seats": {
+                "label": "Sièges",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur6-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur6-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur7-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/captur/captur7-vignette.jpeg"}
+                ]
+            }
+        },
+        {
+            "id": "G40012456",
+            "outside": {
+                "label": "Extérieur",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i81-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i81-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i82-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i82-vignette.jpeg"},
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i83-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i83-vignette.jpeg"}
+                ]
+            },
+            "inside": {
+                "label": "Intérieur",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i84-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i84-vignette.jpeg"}
+                ]
+            },
+            "seats": {
+                "label": "Sièges",
+                "photos": [
+                    {"url_full": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i85-full.jpeg","url_vignette": "https://glc-codingtest.s3.eu-west-1.amazonaws.com/img-vo/i8/i85-vignette.jpeg"}
+                ]
+            }
+        }
+    ],
+    "pricing": [
+        {
+            "id": "E40012456",
+            "variation": {
+            "prices": {
+                "initial": 19990,
+                "current": 19990,
+                "percentage": 0,
+                "history": [
+                    19990
+                ],
+                "isPriceCrossed": false
+            }
+        }
+    },
+    {
+        "id": "F40012456",
+        "variation": {
+        "prices": {
+            "initial": 15980,
+            "current": 14980,
+            "history": [
+                15980,
+                14980
+            ],
+            "isPriceCrossed": true
+        }
+        }
+    },
+    {
+    "id": "G40012456",
+    "variation": {
+    "prices": {
+        "initial": 23000,
+        "current": 23000,
+        "percentage": 0,
+        "history": [
+            23000
+        ],
+        "isPriceCrossed": false
+        }  
+        }
+    }
+    ],
+    "options": [
+        {
+            "id": "E40012456",
+            "equipmentsOrOptions": [
+            {
+                "label": "pack design",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "airbags rideaux",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "siège passager réglable",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "aide parking",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "ordinateur de bord",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Pack Vision plus",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Connectivity Box avec chargeur à induction",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Sellerie tissu ''Edge''",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Logo ''X'' sur le volant",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Technologie Full Link (MirrorLink + Android Auto + Apple CarPlay)",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Phares antibrouillard AV avec fonction ''Cornering light''",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "toit ouvrant",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "roue de secours",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "pack chrome",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "climatisation automatique",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "compte tours",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "airbags frontaux",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Bluetooth",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Pare-soleil avec porte-carte côté conducteur",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Alerte de non-bouclage des ceintures à l'AV",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "jantes alu",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Sieges arrières rabattable",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Lampes de lecture AV",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "écran tactile",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "sièges réglables en hauteur",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Tableau de bord Noir Titan avec insert Gris Mat",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Front assist avec freinage d'urgence et détection de piétons",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "airbags latéraux",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "kit de réparation crevaison",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Projecteurs AV double optique halogène avec feux de jour",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Témoin de niveau de carburant",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Pack Rangement",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "3 appuie-têtes AR",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "radio numérique",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "dimension des jantes : 16 pouces",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "fermeture électrique",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Keyless Access: Accès et démarrage sans clé",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Détecteur de fatigue",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Affichage de la température extérieure",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Poche de rangement au dos des sièges AV",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "FAP",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "feux automatiques",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "fixations ISOFIX",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "détecteur de pluie",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "6 HP",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Pare-soleil conducteur et passager",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Ceintures de sécurité 3 points",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Lave-glace AR à balayage intermittent",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "phares av. de jour à LED",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Système Multimédia",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Spots de lecture l'AV",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Peinture vernie Blanc Candy",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Intérieur ''Xcellence''",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "SEAT Connect",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Garantie 2 ans kilométrage illimité",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Poignées de portes couleur carrosserie",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Tableau de bord noir Titan avec insert Blanc Mat",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Pack Conducteur",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "peinture intégrale",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "régulateur limiteur de vitesse",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Peinture Rouge Passion",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "ESC (Correcteur électronique de trajectoire)",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Cockpit numérique",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Sièges AV Confort",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "contrôle de pression des pneus",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Direction à assistance électromécanique",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "vitres électriques",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "rétroviseurs électriques et dégivrants",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Coques de rétroviseurs Atom Grey",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "5 places",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "siège conducteur réglable hauteur",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "ABS",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "tapis de sol",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "aide au démarrage en côte",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "rétroviseur int. jour/nuit auto",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "GPS",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "ciel de pavillon noir",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Eclairage d'ambiance à LED à l'intérieur des portières en rouge ou blanc",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            }
+        ]},
+        {
+            "id": "F40012456",
+            "equipmentsOrOptions": [
+            {
+                "label": "caméra de recul",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "aide parking",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Eclairage AV et AR Full LED Pure Vision",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "2'' et compteurs analogiques",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "roue de secours",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "EASY LINK avec écran 7'' et navigation",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Console centrale de rangement avec accoudoir",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "airbags frontaux",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Répétiteurs latéraux de changement de direction",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Alerte distance de sécurité - Information dans tableau de bord",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "jantes alu",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Mode ECO",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Appel d'Urgence Renault",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Système de détection de la pression des pneumatiques",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "airbags latéraux",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Indicateur de changement de vitesse",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "AFU",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Feux AR LED avec signature en forme de ''C''",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "fermeture électrique",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "barres de toit",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "feux automatiques",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "fixations ISOFIX",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Volant TEP",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Tableau de bord avec écran numérique 4",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Appuie-têtes AR",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Banquette AR coulissante et rabattable 1/3 - 2/3",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "régulateur limiteur de vitesse",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Ceintures de sécurité AV réglables en hauteur",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "carte main libre",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "rétroviseurs dégivrants",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Lunette AR chauffante",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "régulateur de vitesse",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Assistant maintien dans la voie",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "détection des panneaux routiers",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "vitres électriques",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Alerte oubli des ceintures de sécurité aux 5 places",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "climatisation",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "5 places",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "siège conducteur réglable hauteur",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "ABS",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "feux ar. à LED",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "aide au démarrage en côte",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Peinture Gris Highland",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "rétroviseur int. jour/nuit auto",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            }
+        ]},
+        {
+            "id": "G40012456",
+            "equipmentsOrOptions": [
+            {
+                "label": "Airbags latéraux",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Ampoules de phares LED",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Lecteur MP3",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Avertisseur de franchissement de ligne",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Bluetooth inclut musique en streaming, connexion téléphone",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Air conditionné auto",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Assistance au freinage d'urgence",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Volant multi-fonction",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Feux de route à LED",
+                "category": "autre",
+                "categoryLabel": "Autre"
+            },
+            {
+                "label": "Caméra d'aide au stationnement à 360°",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Système de navigation info trafic",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Bouton démarrage",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Siège avant électrique",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Antipatinage",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Système de navigation",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Réglage du volant en hauteur, en profondeur",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Phares à allumage automatique",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Bluetooth",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Volant alu & cuir",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Freins régénérateurs",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Régulateur de vitesse adaptatif",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Siège avant chauffant",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "ESP",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "6 airbags",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Palettes au volant",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Air conditionné 2 zones",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Tableau de bord vision tête haute",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "7 haut-parleurs",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Reconnaissance vocale",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Contrôle de freinage en courbe",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Ouverture du coffre à distance",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Taille écran multi-fonctions 8.8 pouces",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Smart card / Smart key",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Taille écran navigation 8.8 pouces",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Tapis de sol",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Rétroviseur jour/nuit",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Aide au stationnement arrière",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Feux de croisement automatiques",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Essuie glace capteur de pluie",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Airbags rideaux",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Feux arrières à LED",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Indicateur de sous-gonflage des pneus",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Rétroviseurs extérieurs réglage électrique",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Rétroviseurs rabattables électriquement",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Rétroviseurs extérieurs chauffants",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "Limiteur de vitesse",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Kit anticrevaison",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Lave-phares",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Système détection de collision",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Différentiel à glissement limité avant",
+                "category": "exterieur et chassis",
+                "categoryLabel": "Extérieur et Chassis"
+            },
+            {
+                "label": "ABS",
+                "category": "securite",
+                "categoryLabel": "Sécurité"
+            },
+            {
+                "label": "Accoudoir central avant",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Ordinateur de bord",
+                "category": "interieur",
+                "categoryLabel": "Intérieur"
+            },
+            {
+                "label": "Alarme",
+                "category": "antivol",
+                "categoryLabel": "Antivol"
+            }
+        ]}
+    ]
+  }
