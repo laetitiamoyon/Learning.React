@@ -1,0 +1,24 @@
+.rank {
+    margin: auto;
+    background: #fff;
+    color: #0d2b5e;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rank-1 {
+    background: #0d2b5e;
+    flex-grow: 2;
+}
+.rank-1 img {
+    width: 180px;
+    height: 180px;
+}
+.rank-2,
+.rank-3 {
+    background: #5a6e9c;
+}

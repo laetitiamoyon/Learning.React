@@ -1,0 +1,131 @@
+.results-page {
+    text-align: center;
+    padding: 20px;
+    background: #0d2b5e;
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  .header h1 {
+    margin-bottom: 40px;
+  }
+  
+  .podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin: 40px 0;
+  }
+  
+  .podium-item {
+    text-align: center;
+    color: #0d2b5e;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    flex: 1;
+    max-width: 200px;
+  }
+  
+  .podium-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .podium-item.first {
+    transform: translateY(-20px);
+  }
+  
+  .podium-item.first img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .podium-item.first {
+    background: linear-gradient(135deg, #FFD700 0%, #FFC000 50%, #FFAA00 100%); 
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  }
+  
+  .podium-item.second {
+    background: linear-gradient(135deg, #F0F0F0 0%, #C0C0C0 50%, #909090 100%);
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+  
+  .podium-item.third {
+    background: linear-gradient(135deg, #B78965 0%, #C48C6B 50%, #D49E7D 100%); 
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  .podium-item.second img,
+  .podium-item.third img {
+    width: 110px;
+    height: 110px;
+  }
+
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  
+  .grid-item {
+    background: #fff;
+    color: #000;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .grid-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-bottom: 8px;
+  }
+  
+  .footer {
+    position: sticky;
+    bottom: 20px; 
+    margin: 0 auto;
+    width: 250px;
+    background: #fff;
+    color: #0d2b5e;
+    padding: 15px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+  
+  .footer a {
+    display: block;
+    margin-bottom: 8px;
+    padding: 8px 16px;
+    background: #0d2b5e;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  
+  .footer a:hover {
+    background: #334a7d;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  
+  
