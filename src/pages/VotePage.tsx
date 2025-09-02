@@ -1,30 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { type Cat } from "../types/cat";
 import "./VotePage.css";  
-import CatCard from "../components/CatCard/CatCard";
+import CatCard from "../domains/cats/components/CatCard/CatCard";
+import type { Cat } from "../domains/cats/cats.model";
+import { getTwoFirstCats } from "../domains/cats/cats.utils";
 
 interface VotePageProps {
   cats: Cat[];
-  onVote: (id: number) => void;
-  matches: number;
-  onMatch: () => void; 
+  onVote: (id: string) => void;
+  votesCount: number;
 }
 
 
-const VotePage: React.FC<VotePageProps> = ({ cats, onVote, matches, onMatch }) => {
+const VotePage: React.FC<VotePageProps> = ({ cats, onVote, votesCount }) => {
 
-  if (cats.length < 2) return <p>Chargement...</p>;
+  if (cats.length < 2) return <p>Erreur lors de la récupération des chats...</p>; 
 
-  const [cat1, cat2] = [...cats]
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 2);
-
-    const handleVote = (id: number) => {
-      onVote(id);
-      onMatch(); 
-    };
-    
+  const [cat1, cat2] = getTwoFirstCats(cats);
 
   return (
     <div className="vote-page">
@@ -33,16 +25,16 @@ const VotePage: React.FC<VotePageProps> = ({ cats, onVote, matches, onMatch }) =
       </header>
 
       <div className="vote-container">
-          <CatCard id={cat1.id} name={cat1.name} url={cat1.url} onVote={handleVote} />
+          <CatCard cat={cat1} onVote={onVote} />
 
         <div className="divider"></div>
-          <CatCard id={cat2.id} name={cat2.name} url={cat2.url} onVote={handleVote} />
+          <CatCard cat={cat2} onVote={onVote} />
       </div>
 
-      <footer className="footer">
-        <Link to="/results">Voir le classement des chats</Link>
-        <p>{matches} matchs joués</p>
-      </footer>
+      {votesCount > 0 && <footer className="footer">
+        <Link to="/results">Voir le classement des chats</Link> 
+        <p>{votesCount} matchs {votesCount > 1 ? "joués" : "joué" }</p> 
+      </footer>}
     </div>
   );
 };

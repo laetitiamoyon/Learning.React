@@ -29,3 +29,14 @@
     margin-top: 40px;
   }
   
+  @media (max-width: 700px) { 
+    .divider {
+      display: none;
+    }
+
+    .vote-container {
+      flex-direction: column;
+      gap: 40px;
+      padding: 0 40px;
+    }
+  }
