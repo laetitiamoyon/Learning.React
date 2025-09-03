@@ -1,19 +1,17 @@
 import React from "react";
 import "./CatCard.css";
-import type { Cat } from "../../cats.model";
+import type { CatWithVotes } from "../../cats.model";
 
 interface CatCardProps {
-  cat: Cat;
+  cat: CatWithVotes;
   onVote: (id: string) => void;
 }
 
-const CatCard: React.FC<CatCardProps> = ({ cat, onVote }) => {
-  const { id, name, url } = cat;
-  return <div className="cat-choice-card">
-    <img src={url} alt={name} />
-    <h2>Chat {name}</h2>
+const CatCard: React.FC<CatCardProps> = ({ cat: { id, url }, onVote }) => 
+ <div className="cat-choice-card">
+    <img src={url} alt={id} />
+    <h2>Chat {id}</h2>
     <button onClick={() => onVote(id)}>J’aime ❤️</button>
   </div>
-};
 
 export default CatCard;

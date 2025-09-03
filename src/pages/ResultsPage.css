@@ -47,12 +47,14 @@
   }
 
   .podium-item.first {
+    order: 2;
     background: linear-gradient(135deg, #FFD700 0%, #FFC000 50%, #FFAA00 100%); 
     color: #fff;
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
   }
   
   .podium-item.second {
+    order: 1;
     background: linear-gradient(135deg, #F0F0F0 0%, #C0C0C0 50%, #909090 100%); 
     color: #fff;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
@@ -63,6 +65,7 @@
     color: #fff;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     height: 250px;
+    order: 3;
   }
   
   

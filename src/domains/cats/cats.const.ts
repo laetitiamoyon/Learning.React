@@ -1,0 +1,1 @@
+export const RANK_OFFSET = 4;

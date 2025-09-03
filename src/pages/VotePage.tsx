@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./VotePage.css";  
 import CatCard from "../domains/cats/components/CatCard/CatCard";
-import type { Cat } from "../domains/cats/cats.model";
-import { getTwoFirstCats } from "../domains/cats/cats.utils";
+import { voteToCatFromLocalStorage, incrementVoteCountFromLocalStorage, resetCatsVoteFromLocalStorageIfNotDefined, getVoteCountFromLocalStorage } from "../domains/cats/cats.localStorage";
+import Error from "../domains/cats/components/Error";
+import { useCats } from "../domains/cats/hooks/useCats";
+import { shuffle } from "../shared/utils/array/shuffle";
+import Loading from "../domains/cats/components/Loading";
 
-interface VotePageProps {
-  cats: Cat[];
-  onVote: (id: string) => void;
-  votesCount: number;
-}
+const VotePage: React.FC = () => {
+  const { cats, isLoading, isError } = useCats();
+  const catsWithVotes = resetCatsVoteFromLocalStorageIfNotDefined(cats);
 
+  const [firstCat, secondCat] = shuffle(catsWithVotes).slice(0,2)
+  const [votesCount, setVotesCount] = useState(getVoteCountFromLocalStorage());
 
-const VotePage: React.FC<VotePageProps> = ({ cats, onVote, votesCount }) => {
+  const handleVote = (id: string) => {
+    voteToCatFromLocalStorage(id);
+    incrementVoteCountFromLocalStorage();
+    setVotesCount(getVoteCountFromLocalStorage());
+  };
 
-  if (cats.length < 2) return <p>Erreur lors de la récupération des chats...</p>; 
+  if (isLoading) return <Loading />;
+  if (isError || catsWithVotes.length < 2) return <Error message="Oups 😿 Impossible de trouver deux chats à comparer." />;
 
-  const [cat1, cat2] = getTwoFirstCats(cats);
 
   return (
     <div className="vote-page">
@@ -25,15 +32,15 @@ const VotePage: React.FC<VotePageProps> = ({ cats, onVote, votesCount }) => {
       </header>
 
       <div className="vote-container">
-          <CatCard cat={cat1} onVote={onVote} />
+          <CatCard cat={firstCat} onVote={handleVote} />
 
         <div className="divider"></div>
-          <CatCard cat={cat2} onVote={onVote} />
+          <CatCard cat={secondCat} onVote={handleVote} />
       </div>
 
       {votesCount > 0 && <footer className="footer">
         <Link to="/results">Voir le classement des chats</Link> 
-        <p>{votesCount} matchs {votesCount > 1 ? "joués" : "joué" }</p> 
+        <p>{votesCount} match{votesCount > 1 && `s`} joué{votesCount > 1 && `s`}</p>
       </footer>}
     </div>
   );

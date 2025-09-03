@@ -1,10 +1,9 @@
-export interface ApiCat {
+export interface Cat { 
     id: string;      
     url: string;   
-  }
+}
   
-  export interface Cat extends ApiCat {
-    name: string;
-    votes: number;
-  }
+export interface CatWithVotes extends Cat {
+  votes: number;
+}
     

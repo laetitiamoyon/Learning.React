@@ -2,16 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ResultsPage.css";
 import CatResult from "../domains/cats/components/CatResult/CatResult";
-import type { Cat } from "../domains/cats/cats.model";
 import { sortedCatsByVotes } from "../domains/cats/cats.utils";
+import { useCats } from "../domains/cats/hooks/useCats";
+import { getVoteCountFromLocalStorage, resetCatsVoteFromLocalStorageIfNotDefined } from "../domains/cats/cats.localStorage";
+import Loading from "../domains/cats/components/Loading";
+import Error from "../domains/cats/components/Error";
+import { RANK_OFFSET } from "../domains/cats/cats.const";
 
-interface ResultsPageProps {
-  cats: Cat[];
-  votesCount: number; 
-}
+const ResultsPage: React.FC = () => {
+  const { cats, isLoading, isError } = useCats();
+  const catsWithVotes = resetCatsVoteFromLocalStorageIfNotDefined(cats);
+  const top3 = sortedCatsByVotes(catsWithVotes).slice(0, 3);
+  const others = sortedCatsByVotes(catsWithVotes).slice(3);
+  const votesCount = getVoteCountFromLocalStorage()
 
-const ResultsPage: React.FC<ResultsPageProps> = ({ cats, votesCount: matches }) => {
-  const { top3, others } = sortedCatsByVotes(cats);
+  if (isLoading) return <Loading />;
+  if (!cats || isError) return <Error message="Erreur lors du chargement du classement des chats" />;
 
   return (
     <div className="results-page">
@@ -31,15 +37,14 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ cats, votesCount: matches }) 
       <section className="grid">
         {others.map((cat, index) => (
           <div key={index} className="grid-item">
-            {/* domains/cats/cats.const.ts */}
-            <CatResult rank={index + 4} cat={cat}  />
+            <CatResult rank={index + RANK_OFFSET} cat={cat}  />
           </div>
         ))}
       </section>
 
       <footer className="footer">
         <Link to="/vote">Revenir au vote</Link>
-        <p>{matches} matchs joués</p> {/* Pluralisés */}
+        <p>{votesCount} match{votesCount > 1 && `s`} joué{votesCount > 1 && `s`}</p>
       </footer>
     </div>
   );
