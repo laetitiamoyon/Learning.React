@@ -1,0 +1,32 @@
+.cat-choice-card {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 220px;
+  }
+  
+  .cat-choice-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #0d2b5e;
+  }
+  
+  .cat-choice-card button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #0d2b5e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    .cat-choice-card {
+      width: 100%;
+    } 
+  }

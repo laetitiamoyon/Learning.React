@@ -1,0 +1,42 @@
+.vote-page {
+    text-align: center;
+    padding: 20px;
+    background: #0d2b5e;
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  .header h1 {
+    margin-bottom: 40px;
+  }
+  
+  .vote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+  }
+  
+  .divider {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    border-left: 2px dashed #ccc;
+  }
+  
+  .footer {
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 700px) { 
+    .divider {
+      display: none;
+    }
+
+    .vote-container {
+      flex-direction: column;
+      gap: 40px;
+      padding: 0 40px;
+    }
+  }
