@@ -1,15 +1,16 @@
-import type { JSX } from 'react'
-import { useBookingDispatch } from '../hooks/useBooking'
-import type { CartItem } from '../types'
-import { formatPrice } from '../utils/formats'
+
+import type { JSX } from "react";
+import { useBookingDispatch } from "../hooks/useBooking";
+import type { CartItem } from "../types";
+import { formatPrice } from "../utils/formats";
 
 interface PrestationCartItemProps {
-  item: CartItem
+  item: CartItem;
 }
 
 export function PrestationCartItem({ item }: PrestationCartItemProps): JSX.Element {
-  const dispatch = useBookingDispatch()
-  const { prestation, quantity } = item
+  const dispatch = useBookingDispatch();
+  const { prestation, quantity } = item;
 
   return (
     <div className="flex items-center justify-between">
@@ -25,7 +26,7 @@ export function PrestationCartItem({ item }: PrestationCartItemProps): JSX.Eleme
           className="px-2 text-lg"
           onClick={() =>
             dispatch({
-              type: 'REMOVE_PRESTATION',
+              type: "REMOVE_PRESTATION",
               reference: prestation.reference,
             })
           }
@@ -39,7 +40,7 @@ export function PrestationCartItem({ item }: PrestationCartItemProps): JSX.Eleme
           className="px-2 text-lg"
           onClick={() =>
             dispatch({
-              type: 'ADD_PRESTATION',
+              type: "ADD_PRESTATION",
               prestation,
             })
           }
@@ -48,5 +49,5 @@ export function PrestationCartItem({ item }: PrestationCartItemProps): JSX.Eleme
         </button>
       </div>
     </div>
-  )
+  );
 }

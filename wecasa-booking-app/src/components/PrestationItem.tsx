@@ -1,16 +1,20 @@
-import { useState, type JSX } from 'react'
-import type { Prestation } from '../types'
+import { useState, type JSX } from "react";
+import type { Prestation } from "../types";
 
 interface PrestationItemProps {
-  title: string
-  prestations: Prestation[]
-  onAdd: (prestation: Prestation) => void
+  title: string;
+  prestations: Prestation[];
+  onAdd: (prestation: Prestation) => void;
 }
 
-export function PrestationItem({ title, prestations, onAdd }: PrestationItemProps): JSX.Element {
-  const [expanded, setExpanded] = useState(false)
+export function PrestationItem({
+  title,
+  prestations,
+  onAdd,
+} : PrestationItemProps): JSX.Element {
+  const [expanded, setExpanded] = useState(false);
 
-  const visiblePrestations = expanded ? prestations : prestations.slice(0, 2)
+  const visiblePrestations = expanded ? prestations : prestations.slice(0, 2);
 
   return (
     <div className="mb-8">
@@ -24,7 +28,9 @@ export function PrestationItem({ title, prestations, onAdd }: PrestationItemProp
           >
             <div>
               <p className="font-medium text-gray-800">{p.title}</p>
-              <p className="text-sm text-gray-500">{(p.price / 100).toFixed(2)} €</p>
+              <p className="text-sm text-gray-500">
+                {(p.price / 100).toFixed(2)} €
+              </p>
               <p className="text-sm text-gray-400">{p.duration} min</p>
             </div>
 
@@ -44,10 +50,10 @@ export function PrestationItem({ title, prestations, onAdd }: PrestationItemProp
             onClick={() => setExpanded(!expanded)}
             className="text-purple-600 hover:text-purple-700 font-medium text-sm cursor-pointer"
           >
-            {expanded ? 'Voir moins ▲' : 'Voir plus ▼'}
+            {expanded ? "Voir moins ▲" : "Voir plus ▼"}
           </button>
         </div>
       )}
     </div>
-  )
-}
+  );
+};

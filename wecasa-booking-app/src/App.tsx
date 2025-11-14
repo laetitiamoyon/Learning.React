@@ -1,11 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { BookingStepsLayout } from './components/BookingStepsLayout'
-import AddressPage from './pages/AddressPage'
-import AppointmentPage from './pages/AppointmentPage'
-import ConfirmationPage from './pages/ConfirmationPage'
-import PrestationsPage from './pages/PrestationsPage'
-import { BookingProvider } from './store/BookingProvider'
-import type { JSX } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BookingStepsLayout } from "./components/BookingStepsLayout";
+import AddressPage from "./pages/AddressPage";
+import AppointmentPage from "./pages/AppointmentPage";
+import ConfirmationPage from "./pages/ConfirmationPage";
+import PrestationsPage from "./pages/PrestationsPage";
+import { BookingProvider } from "./store/BookingProvider";
+import type { JSX } from "react";
+
 
 export default function App(): JSX.Element {
   return (
@@ -21,5 +22,5 @@ export default function App(): JSX.Element {
         </Routes>
       </BrowserRouter>
     </BookingProvider>
-  )
+  );
 }
