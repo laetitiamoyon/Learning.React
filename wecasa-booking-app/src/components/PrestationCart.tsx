@@ -1,18 +1,18 @@
 
-import { useBookingState } from "../store/BookingProvider";
 import { PrestationCartItem } from "./PrestationCartItem";
 import { formatPrice, formatDuration } from "../utils/formats";
 import type { CartItem } from "../types";
 import { usePrestationCartTotals } from "../hooks/usePrestationCartTotals";
+import { useBookingState } from "../hooks/useBooking";
+import type { JSX } from "react";
 
-export function PrestationCart() {
+export function PrestationCart(): JSX.Element {
   const { items } = useBookingState() as { items: CartItem[] };
   const { totalPrice, totalDuration } = usePrestationCartTotals();
 
   return (
     <aside className="p-4 bg-white shadow rounded max-w-sm">
       <h3 className="font-semibold mb-2">Mon panier de prestations</h3>
-
       <div className="space-y-2">
         {items.length === 0 ? (
           <div className="text-sm text-gray-500">Aucune prestation ajoutée</div>

@@ -1,34 +1,37 @@
-import { useEffect, useState } from "react";
-import { useBookingState, useBookingDispatch } from "../store/BookingProvider";
+import { useState, type JSX } from "react";
 import { isAfter } from "date-fns";
+import { useBookingState, useBookingDispatch } from "../hooks/useBooking";
 
-export default function AppointmentPage() {
+export default function AppointmentPage(): JSX.Element {
   const state = useBookingState();
   const dispatch = useBookingDispatch();
   const [datetime, setDatetime] = useState(state.appointment ?? "");
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!datetime) return;
-    const dt = new Date(datetime);
-    if (isAfter(dt, new Date())) {
-      dispatch({ type: "SET_APPOINTMENT", appointment: datetime });
+  const handleDateChange = (value: string): void => {
+    setDatetime(value);
+  
+    const selectedDate = new Date(value);
+    const currentDate = new Date();
+  
+    if (isAfter(selectedDate, currentDate)) {
+      dispatch({ type: "SET_APPOINTMENT", appointment: value });
+      setError(null);
     } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setError("La date doit être ultérieure à celle d'aujourd'hui");
+      setError("Nous n'avons pas pu enregistrer ce créneau. Veuillez en choisir un autre.");
     }
-  }, [datetime, dispatch]);
+  };  
 
   return (
     <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
       <main className="col-span-2">
-        <h1 className="text-xl font-bold mb-4">Choisir un créneau</h1>
         <label className="block mb-2">Date et heure</label>
         <input
           type="datetime-local"
           value={datetime}
-          onChange={e => setDatetime(e.target.value)}
+          onChange={(e) => handleDateChange(e.target.value)}
           className="w-full p-2 border rounded"
+          min={new Date().toISOString().slice(0, 16)} 
         />
 
         {error && <div className="text-red-500 mt-3">{error}</div>}

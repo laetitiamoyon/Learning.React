@@ -1,8 +1,13 @@
-import { useBookingState } from "../store/BookingProvider";
+import { useBookingState } from "./useBooking";
 
-export function usePrestationCartTotals() {
+interface PrestationCartTotals {
+  totalPrice: number;
+  totalDuration: number;
+}
+
+export function usePrestationCartTotals(): PrestationCartTotals {
   const state = useBookingState();
-  const totalPrice = state.items.reduce((s, i) => s + i.prestation.price * i.quantity, 0);
-  const totalDuration = state.items.reduce((s, i) => s + i.prestation.duration * i.quantity, 0);
+  const totalPrice = state.items.reduce((state, item) => state + item.prestation.price * item.quantity, 0);
+  const totalDuration = state.items.reduce((state, item) => state + item.prestation.duration * item.quantity, 0);
   return { totalPrice, totalDuration };
 }

@@ -1,17 +1,15 @@
-import { useUniverse } from "../hooks/useUniverse";
-import { useBookingDispatch } from "../store/BookingProvider";
+import { useFetchPrestation } from "../hooks/useFetchPrestation";
 import { PrestationItem } from "../components/PrestationItem";
+import type { JSX } from "react";
+import { useBookingDispatch } from "../hooks/useBooking";
+import type { Prestation } from "../types";
 
-export default function PrestationsPage() {
-  const { data, loading, error } = useUniverse();
+export default function PrestationsPage(): JSX.Element | null {
+  const { data, loading, error } = useFetchPrestation();
   const dispatch = useBookingDispatch();
+  const handleAdd = (prestation: Prestation) => dispatch({ type: "ADD_PRESTATION", prestation });
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleAdd = (p: any) => {
-        dispatch({ type: "ADD_PRESTATION", prestation: p });
-  };
-
-  if (loading) return <div>Chargement...</div>;
+  if (loading) return <div>Chargement des prestations...</div>;
   if (error) return <div>{error}</div>;
   if (!data) return null;
 

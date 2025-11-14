@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useBookingState, useBookingDispatch } from "../store/BookingProvider";
+import { useEffect, useState, type JSX } from "react";
+import { useBookingDispatch, useBookingState } from "../hooks/useBooking";
 
-export default function AddressPage() {
+export default function AddressPage(): JSX.Element {
   const state = useBookingState();
   const dispatch = useBookingDispatch();
   const [address, setAddress] = useState(state.address ?? "");

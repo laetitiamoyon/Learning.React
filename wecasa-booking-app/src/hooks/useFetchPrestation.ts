@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 import type { Category } from "../types";
-import { fetchUniverse } from "../api";
+import { fetchPrestation } from "../api";
 
-export function useUniverse() {
+interface UseFetchPrestationResult {
+  data: Category[] | null;
+  loading: boolean;
+  error: string | null;
+}
+
+export function useFetchPrestation(): UseFetchPrestationResult {
   const [data, setData] = useState<Category[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let mounted = true;
-    fetchUniverse()
+    fetchPrestation()
       .then(categories => {
         if (mounted) setData(categories);
       })

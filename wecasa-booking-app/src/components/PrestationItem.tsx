@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, type JSX } from "react";
 import type { Prestation } from "../types";
 
 interface PrestationItemProps {
@@ -7,11 +7,11 @@ interface PrestationItemProps {
   onAdd: (prestation: Prestation) => void;
 }
 
-export const PrestationItem: React.FC<PrestationItemProps> = ({
+export function PrestationItem({
   title,
   prestations,
   onAdd,
-}) => {
+} : PrestationItemProps): JSX.Element {
   const [expanded, setExpanded] = useState(false);
 
   const visiblePrestations = expanded ? prestations : prestations.slice(0, 2);

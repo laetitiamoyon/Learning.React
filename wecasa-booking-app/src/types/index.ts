@@ -19,3 +19,9 @@ export interface CartItem {
   prestation: Prestation;
   quantity: number;
 }
+
+export interface BookingResponse {
+  appointment: string;
+  address: string;
+  prestations: string[];
+}

@@ -1,11 +1,11 @@
-import React from "react";
+import { type JSX } from "react";
 
 interface StepperProps {
-  steps: string[];
+  steps: readonly string[];
   currentStep: number;
 }
 
-export const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
+export function Stepper({ steps, currentStep } : StepperProps) : JSX.Element {
   return (
     <div className="flex flex-col items-center space-y-4">
       <div className="text-center">
@@ -37,9 +37,9 @@ export const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
       </div>
 
       <div className="text-center mt-4">
-        <h3 className="text-xl font-medium text-gray-700">
+      <h1 className="text-2xl font-bold mb-3">
           {steps[currentStep - 1]}
-        </h3>
+        </h1>
       </div>
     </div>
   );

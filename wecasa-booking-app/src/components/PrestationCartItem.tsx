@@ -1,5 +1,6 @@
 
-import { useBookingDispatch } from "../store/BookingProvider";
+import type { JSX } from "react";
+import { useBookingDispatch } from "../hooks/useBooking";
 import type { CartItem } from "../types";
 import { formatPrice } from "../utils/formats";
 
@@ -7,7 +8,7 @@ interface PrestationCartItemProps {
   item: CartItem;
 }
 
-export function PrestationCartItem({ item }: PrestationCartItemProps) {
+export function PrestationCartItem({ item }: PrestationCartItemProps): JSX.Element {
   const dispatch = useBookingDispatch();
   const { prestation, quantity } = item;
 

@@ -1,25 +1,24 @@
-import { useBookingState, useBookingDispatch } from "../store/BookingProvider";
 import { Link, useNavigate } from "react-router-dom";
-import { formatPrice } from "../utils/formats";
+import { formatDuration, formatPrice } from "../utils/formats";
+import type { JSX } from "react";
+import { computeCartTotals } from "../utils/cart";
+import { useBookingState, useBookingDispatch } from "../hooks/useBooking";
 
-export default function ConfirmationPage() {
+export default function ConfirmationPage(): JSX.Element {
   const state = useBookingState();
   const dispatch = useBookingDispatch();
   const navigate = useNavigate();
-
-  const totalPrice = state.items.reduce((s, i) => s + i.prestation.price * i.quantity, 0);
-  const totalDuration = state.items.reduce((s, i) => s + i.prestation.duration * i.quantity, 0);
+  const { totalPrice, totalDuration } = computeCartTotals(state.items);
 
   return (
     <div className="p-6 max-w-2xl mx-auto text-center">
-      <h1 className="text-2xl font-bold mb-3">Réservation confirmée</h1>
       <p className="text-gray-700">Merci — votre rendez-vous est enregistré.</p>
 
       <div className="mt-6 p-4 border rounded">
         <div><strong>Adresse :</strong> {state.address}</div>
         <div><strong>Rendez-vous :</strong> {state.appointment ? new Date(state.appointment).toLocaleString() : "—"}</div>
         <div><strong>Prix :</strong> {formatPrice(totalPrice)}</div>
-        <div><strong>Durée :</strong> {totalDuration}</div>
+        <div><strong>Durée :</strong> {formatDuration(totalDuration)}</div>
       </div>
 
       <div className="mt-6">
