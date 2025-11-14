@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { BookingStateContext, BookingDispatchContext } from "../store/BookingProvider";
 import type { State, Action } from "../store/booking.types";
 

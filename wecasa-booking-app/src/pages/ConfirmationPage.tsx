@@ -34,7 +34,7 @@ export default function ConfirmationPage(): JSX.Element {
       </div>
 
       <div className="mt-4">
-        <Link to="/">Retour à l'accueil</Link>
+        <Link to="/">Retour à l&lsquo;accueil</Link>
       </div>
     </div>
   );

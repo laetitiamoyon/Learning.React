@@ -60,7 +60,7 @@ ESLint + Prettier intégrés
 
 Fix automatique :
 
-npm run lint -- --fix
+npm run lint:fix
 
 
 VS Code : formatage à la sauvegarde configuré

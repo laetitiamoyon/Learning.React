@@ -18,6 +18,22 @@ export default [
           jsx: true,
         },
       },
+      globals: {
+        // Globaux du navigateur
+        window: 'readonly',
+        document: 'readonly',
+        console: 'readonly',
+        alert: 'readonly',
+        localStorage: 'readonly',
+        sessionStorage: 'readonly',
+        fetch: 'readonly',
+        // Autres globaux courants
+        navigator: 'readonly',
+        location: 'readonly',
+        HTMLElement: 'readonly',
+        Event: 'readonly',
+        CustomEvent: 'readonly',
+      },
     },
     plugins: {
       '@typescript-eslint': tseslint,
