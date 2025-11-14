@@ -1,15 +1,12 @@
 export function formatPrice(cents: number): string {
-    const euros = cents / 100;
-    return euros.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
+  const euros = cents / 100
+  return euros.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })
 }
 
 export function formatDuration(totalMinutes: number): string {
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
-    if (hours === 0) return `${minutes}min`;
-    if (minutes === 0) return `${hours}h`;
-    return `${hours}h${minutes.toString().padStart(2, "0")}`;
+  const hours = Math.floor(totalMinutes / 60)
+  const minutes = totalMinutes % 60
+  if (hours === 0) return `${minutes}min`
+  if (minutes === 0) return `${hours}h`
+  return `${hours}h${minutes.toString().padStart(2, '0')}`
 }
-
-
-  
